@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#d96c3d" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="TQ Orders" />
+    <title>Agen tạo đơn hàng</title>
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <p class="eyebrow">Thiên Quang Smarttools</p>
+        <h1>Agen tạo đơn hàng</h1>
+        <p class="hero-copy">
+          Nhập đơn khách gọi điện thật nhanh trên điện thoại, rồi chuẩn bị payload
+          gửi AI tạo đơn Sapo.
+        </p>
+      </header>
+
+      <main class="dashboard">
+        <section class="panel">
+          <div class="panel-heading">
+            <h2>Thông tin khách</h2>
+            <p>Nhập số điện thoại trước để gợi ý khách cũ và địa chỉ gần nhất.</p>
+          </div>
+
+          <label class="field">
+            <span>Số điện thoại</span>
+            <input id="customerPhone" type="tel" inputmode="numeric" placeholder="09..." />
+          </label>
+
+          <div id="customerSuggestions" class="suggestion-stack" hidden></div>
+
+          <label class="field">
+            <span>Tên khách</span>
+            <input id="customerName" type="text" placeholder="Tên người nhận" />
+          </label>
+        </section>
+
+        <section class="panel">
+          <div class="panel-heading">
+            <h2>Địa chỉ giao hàng</h2>
+            <p>Chọn theo tỉnh, huyện, xã rồi nhập địa chỉ cụ thể như thôn, ấp, số nhà.</p>
+          </div>
+
+          <div class="address-grid">
+            <label class="field">
+              <span>Tỉnh / Thành phố</span>
+              <select id="provinceSelect">
+                <option value="">Chọn tỉnh / thành phố</option>
+              </select>
+            </label>
+
+            <label class="field">
+              <span>Quận / Huyện</span>
+              <select id="districtSelect" disabled>
+                <option value="">Chọn quận / huyện</option>
+              </select>
+            </label>
+
+            <label class="field">
+              <span>Phường / Xã</span>
+              <select id="wardSelect" disabled>
+                <option value="">Chọn phường / xã</option>
+              </select>
+            </label>
+          </div>
+
+          <label class="field">
+            <span>Địa chỉ cụ thể</span>
+            <textarea
+              id="addressDetail"
+              rows="3"
+              placeholder="Số nhà, thôn, ấp, hẻm, đường..."
+            ></textarea>
+          </label>
+        </section>
+
+        <section class="panel">
+          <div class="panel-heading">
+            <h2>Sản phẩm</h2>
+            <p>Tìm bằng SKU hoặc tên sản phẩm. Chọn nhiều dòng và nhập số lượng.</p>
+          </div>
+
+          <label class="field">
+            <span>Tìm sản phẩm</span>
+            <input
+              id="productSearch"
+              type="search"
+              inputmode="search"
+              placeholder="Ví dụ: V30, X8-2X1T, bay cắt ron..."
+            />
+          </label>
+
+          <div id="productResults" class="product-results"></div>
+          <div id="selectedItems" class="selected-items empty-state">
+            Chưa có sản phẩm nào được chọn.
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-heading">
+            <h2>Đơn hàng</h2>
+            <p>Chỉ cần nhập tổng giá trị cuối cùng khách phải trả, đã gồm phí ship.</p>
+          </div>
+
+          <label class="field">
+            <span>Tổng giá trị đơn hàng</span>
+            <input
+              id="orderTotal"
+              type="number"
+              inputmode="numeric"
+              min="0"
+              step="1000"
+              placeholder="350000"
+            />
+          </label>
+
+          <label class="field">
+            <span>Ghi chú admin</span>
+            <textarea
+              id="orderNote"
+              rows="3"
+              placeholder="Ghi chú thêm nếu khách dặn giờ giao, cổng, số phụ..."
+            ></textarea>
+          </label>
+
+          <button id="queueRequest" class="primary-button" type="button">
+            Gửi AI tạo đơn
+          </button>
+          <p class="helper">
+            Sau khi gửi, hệ thống sẽ đưa yêu cầu vào luồng xử lý tạo đơn cho Sapo.
+          </p>
+          <p id="formMessage" class="form-message" aria-live="polite"></p>
+        </section>
+
+        <section id="opsPanel" class="panel" hidden>
+          <div class="panel-heading">
+            <h2>Hàng chờ AI</h2>
+            <p>Các đơn đã gửi sẽ nằm ở đây để copy, tải file JSON, hoặc nối inbox ở bước sau.</p>
+          </div>
+
+          <div class="inbox-config">
+            <label class="field">
+              <span>Inbox URL</span>
+              <input id="inboxUrl" type="url" placeholder="https://script.google.com/macros/s/.../exec" />
+            </label>
+
+            <label class="field">
+              <span>Inbox key</span>
+              <input id="inboxKey" type="password" placeholder="inbox key" />
+            </label>
+          </div>
+
+          <div class="queue-actions">
+            <button id="sendQueue" class="ghost-button" type="button">Gửi inbox</button>
+            <button id="copyQueue" class="ghost-button" type="button">Copy queue</button>
+            <button id="downloadQueue" class="ghost-button" type="button">Tải queue JSON</button>
+            <button id="clearQueue" class="ghost-button" type="button">Xóa queue</button>
+          </div>
+
+          <p id="queueMessage" class="form-message" aria-live="polite"></p>
+          <div id="queueItems" class="selected-items empty-state">Chưa có yêu cầu nào trong queue.</div>
+        </section>
+
+        <section id="payloadPanel" class="panel payload-panel" hidden>
+          <div class="panel-heading">
+            <h2>Payload preview</h2>
+            <p>Đây là dữ liệu chuẩn mà bước sau sẽ gửi vào AI queue.</p>
+          </div>
+
+          <pre id="payloadPreview" class="payload-preview">Chưa có payload.</pre>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
