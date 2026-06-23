@@ -1,0 +1,6069 @@
+{
+  "schema": "tq-product-catalog/v1",
+  "exported_at": "2026-06-23T17:05:37.965Z",
+  "product_count": 305,
+  "variant_count": 358,
+  "items": [
+    {
+      "variant_id": 199239478,
+      "product_id": 77505016,
+      "sku": "PVN84",
+      "barcode": "PVN84",
+      "product_name": "Bàn chà gỗ lim xanh",
+      "variant_name": "Default Title",
+      "display_name": "Bàn chà gỗ lim xanh",
+      "keywords": [
+        "PVN84",
+        "PVN84",
+        "Bàn chà gỗ lim xanh",
+        "Default Title",
+        "ban-cha-go-lim-xanh"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 197370735,
+      "product_id": 76332096,
+      "sku": "XT8-XTC",
+      "barcode": "XT8-XTC",
+      "product_name": "XT8-XTC_Combo Xây Tô Chỉ - Bay Lá Đề Cán Tre",
+      "variant_name": "XT8-XTC_Combo Xây Tô Chỉ - Bay Lá Đề Cán Tre",
+      "display_name": "XT8-XTC_Combo Xây Tô Chỉ - Bay Lá Đề Cán Tre",
+      "keywords": [
+        "XT8-XTC",
+        "XT8-XTC",
+        "XT8-XTC_Combo Xây Tô Chỉ - Bay Lá Đề Cán Tre",
+        "XT8-XTC_Combo Xây Tô Chỉ - Bay Lá Đề Cán Tre",
+        "xt8-xtc-combo-xay-to-chi-bay-la-de-can-tre"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 197352409,
+      "product_id": 76316101,
+      "sku": "X9-2X1T",
+      "barcode": "X9-2X1T",
+      "product_name": "X9-2X1T: Combo 2 Xây 1 Tô - Bay Xây Xoài BĐ",
+      "variant_name": "X9-2X1T: Combo 2 Xây 1 Tô - Bay Xây Xoài BĐ",
+      "display_name": "X9-2X1T: Combo 2 Xây 1 Tô - Bay Xây Xoài BĐ",
+      "keywords": [
+        "X9-2X1T",
+        "X9-2X1T",
+        "X9-2X1T: Combo 2 Xây 1 Tô - Bay Xây Xoài BĐ",
+        "X9-2X1T: Combo 2 Xây 1 Tô - Bay Xây Xoài BĐ",
+        "x9-2x1t-combo-2-xay-1-to-bay-xay-xoai-bd"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 197352300,
+      "product_id": 76316046,
+      "sku": "X8-2X1T",
+      "barcode": "X8-2X1T",
+      "product_name": "X8-2X1T: Combo 2 Xây 1 Tô - Bay Xây Vuông A1",
+      "variant_name": "X8-2X1T: Combo 2 Xây 1 Tô - Bay Xây Vuông A1",
+      "display_name": "X8-2X1T: Combo 2 Xây 1 Tô - Bay Xây Vuông A1",
+      "keywords": [
+        "X8-2X1T",
+        "X8-2X1T",
+        "X8-2X1T: Combo 2 Xây 1 Tô - Bay Xây Vuông A1",
+        "X8-2X1T: Combo 2 Xây 1 Tô - Bay Xây Vuông A1",
+        "x8-2x1t-combo-2-xay-1-to-bay-xay-vuong-a1"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 197352272,
+      "product_id": 76316024,
+      "sku": "X6-2X1T",
+      "barcode": "X6-2X1T",
+      "product_name": "X6-2X1T: Combo 2 Xây 1 Tô - Bay Xây Lá Đề SU",
+      "variant_name": "X6-2X1T: Combo 2 Xây 1 Tô - Bay Xây Lá Đề SU",
+      "display_name": "X6-2X1T: Combo 2 Xây 1 Tô - Bay Xây Lá Đề SU",
+      "keywords": [
+        "X6-2X1T",
+        "X6-2X1T",
+        "X6-2X1T: Combo 2 Xây 1 Tô - Bay Xây Lá Đề SU",
+        "X6-2X1T: Combo 2 Xây 1 Tô - Bay Xây Lá Đề SU",
+        "x6-2x1t-combo-2-xay-1-to-bay-xay-la-de-su"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 197352230,
+      "product_id": 76316000,
+      "sku": "X4-2X1T",
+      "barcode": "X4-2X1T",
+      "product_name": "X4-2X1T: Combo 2 Xây 1 Tô - Bay Xây Quảng",
+      "variant_name": "X4-2X1T: Combo 2 Xây 1 Tô - Bay Xây Quảng",
+      "display_name": "X4-2X1T: Combo 2 Xây 1 Tô - Bay Xây Quảng",
+      "keywords": [
+        "X4-2X1T",
+        "X4-2X1T",
+        "X4-2X1T: Combo 2 Xây 1 Tô - Bay Xây Quảng",
+        "X4-2X1T: Combo 2 Xây 1 Tô - Bay Xây Quảng",
+        "x4-2x1t-combo-2-xay-1-to-bay-xay-quang"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 197352165,
+      "product_id": 76315982,
+      "sku": "X3-2X1T",
+      "barcode": "X3-2X1T",
+      "product_name": "X3-2X1T: Combo 2 Xây 1 Tô - Bay Xây TT Đế Đồng",
+      "variant_name": "X3-2X1T: Combo 2 Xây 1 Tô - Bay Xây TT Đế Đồng",
+      "display_name": "X3-2X1T: Combo 2 Xây 1 Tô - Bay Xây TT Đế Đồng",
+      "keywords": [
+        "X3-2X1T",
+        "X3-2X1T",
+        "X3-2X1T: Combo 2 Xây 1 Tô - Bay Xây TT Đế Đồng",
+        "X3-2X1T: Combo 2 Xây 1 Tô - Bay Xây TT Đế Đồng",
+        "x3-2x1t-combo-2-xay-1-to-bay-xay-tt-de-dong"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 197352118,
+      "product_id": 76315956,
+      "sku": "X2-2X1T",
+      "barcode": "X2-2X1T",
+      "product_name": "X2-2X1T: Combo 2 Xây 1 Tô - Bay Xây Cán Trắng",
+      "variant_name": "X2-2X1T: Combo 2 Xây 1 Tô - Bay Xây Cán Trắng",
+      "display_name": "X2-2X1T: Combo 2 Xây 1 Tô - Bay Xây Cán Trắng",
+      "keywords": [
+        "X2-2X1T",
+        "X2-2X1T",
+        "X2-2X1T: Combo 2 Xây 1 Tô - Bay Xây Cán Trắng",
+        "X2-2X1T: Combo 2 Xây 1 Tô - Bay Xây Cán Trắng",
+        "x2-2x1t-combo-2-xay-1-to-bay-xay-can-trang"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 197351406,
+      "product_id": 76315559,
+      "sku": "X1-2X1T",
+      "barcode": "X1-2X1T",
+      "product_name": "X1-2X1T: Combo 2 Xây 1 Tô - Bay Xây A1",
+      "variant_name": "X1-2X1T: Combo 2 Xây 1 Tô - Bay Xây A1",
+      "display_name": "X1-2X1T: Combo 2 Xây 1 Tô - Bay Xây A1",
+      "keywords": [
+        "X1-2X1T",
+        "X1-2X1T",
+        "X1-2X1T: Combo 2 Xây 1 Tô - Bay Xây A1",
+        "X1-2X1T: Combo 2 Xây 1 Tô - Bay Xây A1",
+        "x1-2x1t-combo-2-xay-1-to-bay-xay-a1"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 197351251,
+      "product_id": 76315439,
+      "sku": "X9-XTC",
+      "barcode": "X9-XTC",
+      "product_name": "X9-XTC_Combo Xây Tô Chỉ - Bay Xây Xoài BĐ",
+      "variant_name": "X9-XTC_Combo Xây Tô Chỉ - Bay Xây Xoài BĐ",
+      "display_name": "X9-XTC_Combo Xây Tô Chỉ - Bay Xây Xoài BĐ",
+      "keywords": [
+        "X9-XTC",
+        "X9-XTC",
+        "X9-XTC_Combo Xây Tô Chỉ - Bay Xây Xoài BĐ",
+        "X9-XTC_Combo Xây Tô Chỉ - Bay Xây Xoài BĐ",
+        "x9-xtc-combo-xay-to-chi-bay-xay-xoai-bd"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 197351228,
+      "product_id": 76315421,
+      "sku": "X8-XTC",
+      "barcode": "X8-XTC",
+      "product_name": "X8-XTC_Combo Xây Tô Chỉ - Bay Xây Vuông A1",
+      "variant_name": "X8-XTC_Combo Xây Tô Chỉ - Bay Xây Vuông A1",
+      "display_name": "X8-XTC_Combo Xây Tô Chỉ - Bay Xây Vuông A1",
+      "keywords": [
+        "X8-XTC",
+        "X8-XTC",
+        "X8-XTC_Combo Xây Tô Chỉ - Bay Xây Vuông A1",
+        "X8-XTC_Combo Xây Tô Chỉ - Bay Xây Vuông A1",
+        "x8-xtc-combo-xay-to-chi-bay-xay-vuong-a1"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 197351196,
+      "product_id": 76315395,
+      "sku": "X6-XTC",
+      "barcode": "X6-XTC",
+      "product_name": "X6-XTC_Combo Xây Tô Chỉ - Bay Xây Lá đề Su",
+      "variant_name": "X6-XTC_Combo Xây Tô Chỉ - Bay Xây Lá đề Su",
+      "display_name": "X6-XTC_Combo Xây Tô Chỉ - Bay Xây Lá đề Su",
+      "keywords": [
+        "X6-XTC",
+        "X6-XTC",
+        "X6-XTC_Combo Xây Tô Chỉ - Bay Xây Lá đề Su",
+        "X6-XTC_Combo Xây Tô Chỉ - Bay Xây Lá đề Su",
+        "x6-xtc-combo-xay-to-chi-bay-xay-la-de-su"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 197351114,
+      "product_id": 76315350,
+      "sku": "X4-XTC",
+      "barcode": "X4-XTC",
+      "product_name": "X4-XTC_Combo Xây Tô Chỉ - Bay Xây Quảng",
+      "variant_name": "X4-XTC_Combo Xây Tô Chỉ - Bay Xây Quảng",
+      "display_name": "X4-XTC_Combo Xây Tô Chỉ - Bay Xây Quảng",
+      "keywords": [
+        "X4-XTC",
+        "X4-XTC",
+        "X4-XTC_Combo Xây Tô Chỉ - Bay Xây Quảng",
+        "X4-XTC_Combo Xây Tô Chỉ - Bay Xây Quảng",
+        "x4-xtc-combo-xay-to-chi-bay-xay-quang"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 197351072,
+      "product_id": 76315315,
+      "sku": "X3-XTC",
+      "barcode": "X3-XTC",
+      "product_name": "X3-XTC_Combo Xây Tô Chỉ - Bay Xây TT Đế Đồng",
+      "variant_name": "X3-XTC_Combo Xây Tô Chỉ - Bay Xây TT Đế Đồng",
+      "display_name": "X3-XTC_Combo Xây Tô Chỉ - Bay Xây TT Đế Đồng",
+      "keywords": [
+        "X3-XTC",
+        "X3-XTC",
+        "X3-XTC_Combo Xây Tô Chỉ - Bay Xây TT Đế Đồng",
+        "X3-XTC_Combo Xây Tô Chỉ - Bay Xây TT Đế Đồng",
+        "x3-xtc-combo-xay-to-chi-bay-xay-tt-de-dong"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 197351032,
+      "product_id": 76315278,
+      "sku": "X2-XTC",
+      "barcode": "X2-XTC",
+      "product_name": "X2-XTC_Combo Xây Tô Chỉ - Bay Xây TT Cán Trắng",
+      "variant_name": "X2-XTC_Combo Xây Tô Chỉ - Bay Xây TT Cán Trắng",
+      "display_name": "X2-XTC_Combo Xây Tô Chỉ - Bay Xây TT Cán Trắng",
+      "keywords": [
+        "X2-XTC",
+        "X2-XTC",
+        "X2-XTC_Combo Xây Tô Chỉ - Bay Xây TT Cán Trắng",
+        "X2-XTC_Combo Xây Tô Chỉ - Bay Xây TT Cán Trắng",
+        "x2-xtc-combo-xay-to-chi-bay-xay-tt-can-trang"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 197350991,
+      "product_id": 76315241,
+      "sku": "X1-XTC",
+      "barcode": "X1-XTC",
+      "product_name": "X1-XTC_Combo Xây Tô Chỉ - Bay Xây A1",
+      "variant_name": "X1-XTC_Combo Xây Tô Chỉ - Bay Xây A1",
+      "display_name": "X1-XTC_Combo Xây Tô Chỉ - Bay Xây A1",
+      "keywords": [
+        "X1-XTC",
+        "X1-XTC",
+        "X1-XTC_Combo Xây Tô Chỉ - Bay Xây A1",
+        "X1-XTC_Combo Xây Tô Chỉ - Bay Xây A1",
+        "x1-xtc-combo-xay-to-chi-bay-xay-a1"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 197262332,
+      "product_id": 76275055,
+      "sku": "BXD-XT7",
+      "barcode": "BXD-XT7",
+      "product_name": "XT7-Bay CÁN TRE truyền thống 8 phân - TRẮNG",
+      "variant_name": "Default Title",
+      "display_name": "XT7-Bay CÁN TRE truyền thống 8 phân - TRẮNG",
+      "keywords": [
+        "BXD-XT7",
+        "BXD-XT7",
+        "XT7-Bay CÁN TRE truyền thống 8 phân - TRẮNG",
+        "Default Title",
+        "xt7-bay-can-tre-truyen-thong-8-phan-trang-1"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 196943820,
+      "product_id": 76000706,
+      "sku": "BK-N-2330D",
+      "barcode": "BK-N-2330D",
+      "product_name": "BK-N_Bàn Kéo NHÔM - KT: 23*30 Tay nắm ĐỨNG",
+      "variant_name": "Default Title",
+      "display_name": "BK-N_Bàn Kéo NHÔM - KT: 23*30 Tay nắm ĐỨNG",
+      "keywords": [
+        "BK-N-2330D",
+        "BK-N-2330D",
+        "BK-N_Bàn Kéo NHÔM - KT: 23*30 Tay nắm ĐỨNG",
+        "Default Title",
+        "bk-n-ban-keo-nhom-kt-23-30-tay-nam-dung"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 196943816,
+      "product_id": 76000702,
+      "sku": "BK-N-2330N",
+      "barcode": "BK-N-2330N",
+      "product_name": "BK-N_Bàn Kéo NHÔM - KT: 23*30 Tay nắm NGANG",
+      "variant_name": "Default Title",
+      "display_name": "BK-N_Bàn Kéo NHÔM - KT: 23*30 Tay nắm NGANG",
+      "keywords": [
+        "BK-N-2330N",
+        "BK-N-2330N",
+        "BK-N_Bàn Kéo NHÔM - KT: 23*30 Tay nắm NGANG",
+        "Default Title",
+        "bk-n-ban-keo-nhom-kt-23-30-tay-nam-ngang"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 196943813,
+      "product_id": 76000699,
+      "sku": "BK-N-1728N",
+      "barcode": "BK-N-1728N",
+      "product_name": "BK-N_Bàn Kéo NHÔM - KT: 17*28 Tay nắm NGANG",
+      "variant_name": "Default Title",
+      "display_name": "BK-N_Bàn Kéo NHÔM - KT: 17*28 Tay nắm NGANG",
+      "keywords": [
+        "BK-N-1728N",
+        "BK-N-1728N",
+        "BK-N_Bàn Kéo NHÔM - KT: 17*28 Tay nắm NGANG",
+        "Default Title",
+        "bk-n-ban-keo-nhom-kt-17-28-tay-nam-ngang"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 196943789,
+      "product_id": 76000675,
+      "sku": "BK-N-1728D",
+      "barcode": "BK-N-1728D",
+      "product_name": "BK-N_Bàn Kéo NHÔM - KT: 17*28 Tay nắm ĐỨNG",
+      "variant_name": "Default Title",
+      "display_name": "BK-N_Bàn Kéo NHÔM - KT: 17*28 Tay nắm ĐỨNG",
+      "keywords": [
+        "BK-N-1728D",
+        "BK-N-1728D",
+        "BK-N_Bàn Kéo NHÔM - KT: 17*28 Tay nắm ĐỨNG",
+        "Default Title",
+        "bk-n-ban-keo-nhom-kt-17-28-tay-nam-dung"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 196943785,
+      "product_id": 76000671,
+      "sku": "BK-N-2028D",
+      "barcode": "BK-N-2028D",
+      "product_name": "BK-N_Bàn Kéo NHÔM - KT: 20*28 Tay nắm ĐỨNG",
+      "variant_name": "Default Title",
+      "display_name": "BK-N_Bàn Kéo NHÔM - KT: 20*28 Tay nắm ĐỨNG",
+      "keywords": [
+        "BK-N-2028D",
+        "BK-N-2028D",
+        "BK-N_Bàn Kéo NHÔM - KT: 20*28 Tay nắm ĐỨNG",
+        "Default Title",
+        "bk-n-ban-keo-nhom-kt-20-28-tay-nam-dung"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 196501200,
+      "product_id": 75748427,
+      "sku": "BRC-T",
+      "barcode": "BRC-T",
+      "product_name": "BRC-T_Bay Răng Cưa Tay Trái",
+      "variant_name": "Default Title",
+      "display_name": "BRC-T_Bay Răng Cưa Tay Trái",
+      "keywords": [
+        "BRC-T",
+        "BRC-T",
+        "BRC-T_Bay Răng Cưa Tay Trái",
+        "Default Title",
+        "brc-t-bay-rang-cua-tay-phai"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 196501145,
+      "product_id": 75748380,
+      "sku": "BRC-P",
+      "barcode": "BRC-P",
+      "product_name": "BRC-P_Bay Răng Cưa Tay Phải",
+      "variant_name": "Default Title",
+      "display_name": "BRC-P_Bay Răng Cưa Tay Phải",
+      "keywords": [
+        "BRC-P",
+        "BRC-P",
+        "BRC-P_Bay Răng Cưa Tay Phải",
+        "Default Title",
+        "brc-p-bay-rang-cua-tay-phai"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 195719030,
+      "product_id": 75310132,
+      "sku": "PVN82",
+      "barcode": "PVN82",
+      "product_name": "CB3: Combo 4 bay CÁN TRE TRUYỀN THỐNG.",
+      "variant_name": "CB3: Combo 4 bay CÁN TRE TRUYỀN THỐNG.",
+      "display_name": "CB3: Combo 4 bay CÁN TRE TRUYỀN THỐNG.",
+      "keywords": [
+        "PVN82",
+        "PVN82",
+        "CB3: Combo 4 bay CÁN TRE TRUYỀN THỐNG.",
+        "CB3: Combo 4 bay CÁN TRE TRUYỀN THỐNG.",
+        "cb3-combo-4-bay-can-tre-truyen-thong"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 195526555,
+      "product_id": 75202117,
+      "sku": "XT7",
+      "barcode": "XT7",
+      "product_name": "XT7-Bay CÁN TRE truyền thống 8 phân - TRẮNG",
+      "variant_name": "Default Title",
+      "display_name": "XT7-Bay CÁN TRE truyền thống 8 phân - TRẮNG",
+      "keywords": [
+        "XT7",
+        "XT7",
+        "XT7-Bay CÁN TRE truyền thống 8 phân - TRẮNG",
+        "Default Title",
+        "xt7-bay-can-tre-truyen-thong-8-phan-trang"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 195526448,
+      "product_id": 75202035,
+      "sku": "C1",
+      "barcode": "C1",
+      "product_name": "C1-Bay chỉ CÁN GỖ 5 phân -xanh",
+      "variant_name": "Default Title",
+      "display_name": "C1-Bay chỉ CÁN GỖ 5 phân -xanh",
+      "keywords": [
+        "C1",
+        "C1",
+        "C1-Bay chỉ CÁN GỖ 5 phân -xanh",
+        "Default Title",
+        "c1-bay-chi-can-go-5-phan-xanh"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 195526271,
+      "product_id": 75201876,
+      "sku": "BXD-C2",
+      "barcode": "BXD-C2",
+      "product_name": "C2-Bay chỉ CÁN TRE truyền thống 4 phân -xanh",
+      "variant_name": "Default Title",
+      "display_name": "C2-Bay chỉ CÁN TRE truyền thống 4 phân -xanh",
+      "keywords": [
+        "BXD-C2",
+        "BXD-C2",
+        "C2-Bay chỉ CÁN TRE truyền thống 4 phân -xanh",
+        "Default Title",
+        "t5-bay-chi-can-tre-truyen-thong-4-phan-xanh"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 195526123,
+      "product_id": 75201753,
+      "sku": "BXD-T4",
+      "barcode": "BXD-T4",
+      "product_name": "T4-Bay chỉ cán tre truyền thống 6 phân -xanh",
+      "variant_name": "Default Title",
+      "display_name": "T4-Bay chỉ cán tre truyền thống 6 phân -xanh",
+      "keywords": [
+        "BXD-T4",
+        "BXD-T4",
+        "T4-Bay chỉ cán tre truyền thống 6 phân -xanh",
+        "Default Title",
+        "t4-bay-chi-can-tre-truyen-thong-6-phan-xanh"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 195526059,
+      "product_id": 75201702,
+      "sku": "BXD-XT3",
+      "barcode": "BXD-XT3",
+      "product_name": "XT3-Bay Núi cán gỗ 9 phân",
+      "variant_name": "Default Title",
+      "display_name": "XT3-Bay Núi cán gỗ 9 phân",
+      "keywords": [
+        "BXD-XT3",
+        "BXD-XT3",
+        "XT3-Bay Núi cán gỗ 9 phân",
+        "Default Title",
+        "xt3-bay-nui-can-go-9-phan"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 195526025,
+      "product_id": 75201680,
+      "sku": "BXD-XT2",
+      "barcode": "BXD-XT2",
+      "product_name": "XT2_Bay Núi cán gỗ 10 phân",
+      "variant_name": "Default Title",
+      "display_name": "XT2_Bay Núi cán gỗ 10 phân",
+      "keywords": [
+        "BXD-XT2",
+        "BXD-XT2",
+        "XT2_Bay Núi cán gỗ 10 phân",
+        "Default Title",
+        "xt2-bay-nui-can-go-9-5-phan"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 195525298,
+      "product_id": 75201243,
+      "sku": "BXD-XT5",
+      "barcode": "BXD-XT5",
+      "product_name": "XT5- Bay CÁN TRE truyền thống 8 phân -XANH",
+      "variant_name": "Default Title",
+      "display_name": "XT5- Bay CÁN TRE truyền thống 8 phân -XANH",
+      "keywords": [
+        "BXD-XT5",
+        "BXD-XT5",
+        "XT5- Bay CÁN TRE truyền thống 8 phân -XANH",
+        "Default Title",
+        "xt5-bay-can-tre-truyen-thong-8-phan-xanh"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 195525271,
+      "product_id": 75201218,
+      "sku": "BXD-XT4",
+      "barcode": "BXD-XT4",
+      "product_name": "XT4 - Bay CÁN TRE truyền thống 9.5 phân -XANH",
+      "variant_name": "Default Title",
+      "display_name": "XT4 - Bay CÁN TRE truyền thống 9.5 phân -XANH",
+      "keywords": [
+        "BXD-XT4",
+        "BXD-XT4",
+        "XT4 - Bay CÁN TRE truyền thống 9.5 phân -XANH",
+        "Default Title",
+        "xt4-bay-can-tre-truyen-thong-9-5-phan-xanh"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 195477369,
+      "product_id": 75168808,
+      "sku": "BXD-X3",
+      "barcode": "BXD-X3",
+      "product_name": "X3 - Bay Xây Truyền Thống - ĐẾ ĐỒNG",
+      "variant_name": "Default Title",
+      "display_name": "X3 - Bay Xây Truyền Thống - ĐẾ ĐỒNG",
+      "keywords": [
+        "BXD-X3",
+        "BXD-X3",
+        "X3 - Bay Xây Truyền Thống - ĐẾ ĐỒNG",
+        "Default Title",
+        "x3-bay-xay-truyen-thong-de-dong"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 195050200,
+      "product_id": 74902755,
+      "sku": "BXD-X7",
+      "barcode": "BXD-X7",
+      "product_name": "X7 - Bay xây CÁN TRE LÁ ĐỀ 1.1 ly",
+      "variant_name": "Default Title",
+      "display_name": "X7 - Bay xây CÁN TRE LÁ ĐỀ 1.1 ly",
+      "keywords": [
+        "BXD-X7",
+        "BXD-X7",
+        "X7 - Bay xây CÁN TRE LÁ ĐỀ 1.1 ly",
+        "Default Title",
+        "x7-bay-xay-la-de-can-tre-1-1-ly"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 194731498,
+      "product_id": 74729231,
+      "sku": "XT8-XTC",
+      "barcode": "XT8-XTC",
+      "product_name": "CB4: Combo bay LÁ ĐỀ CÁN TRE",
+      "variant_name": "CB4: Combo bay LÁ ĐỀ CÁN TRE",
+      "display_name": "CB4: Combo bay LÁ ĐỀ CÁN TRE",
+      "keywords": [
+        "XT8-XTC",
+        "XT8-XTC",
+        "CB4: Combo bay LÁ ĐỀ CÁN TRE",
+        "CB4: Combo bay LÁ ĐỀ CÁN TRE",
+        "cb-004-combo-bay-la-de-can-tre"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 194730334,
+      "product_id": 74729161,
+      "sku": "CB3",
+      "barcode": "CB3",
+      "product_name": "CB3: Combo 4 bay CÁN TRE TRUYỀN THỐNG",
+      "variant_name": "CB3: Combo 4 bay CÁN TRE TRUYỀN THỐNG",
+      "display_name": "CB3: Combo 4 bay CÁN TRE TRUYỀN THỐNG",
+      "keywords": [
+        "CB3",
+        "CB3",
+        "CB3: Combo 4 bay CÁN TRE TRUYỀN THỐNG",
+        "CB3: Combo 4 bay CÁN TRE TRUYỀN THỐNG",
+        "cb-003-combo-4-bay-can-tre-truyen-thong"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 194730187,
+      "product_id": 74729098,
+      "sku": "X5-2X1T",
+      "barcode": "X5-2X1T",
+      "product_name": "X5-2X1T: Combo 2 Xây 1 Tô - Bay Lá Đề Đế Đồng",
+      "variant_name": "X5-2X1T: Combo 2 Xây 1 Tô - Bay Lá Đề Đế Đồng",
+      "display_name": "X5-2X1T: Combo 2 Xây 1 Tô - Bay Lá Đề Đế Đồng",
+      "keywords": [
+        "X5-2X1T",
+        "X5-2X1T",
+        "X5-2X1T: Combo 2 Xây 1 Tô - Bay Lá Đề Đế Đồng",
+        "X5-2X1T: Combo 2 Xây 1 Tô - Bay Lá Đề Đế Đồng",
+        "cb-002-combo-2-bay-xay-1-bay-to-la-de-go"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 194730129,
+      "product_id": 74729060,
+      "sku": "X5-XTC",
+      "barcode": "X5-XTC",
+      "product_name": "X5-XTC_Combo Xây Tô Chỉ - Bay Xây Lá Đề Đế Đồng",
+      "variant_name": "X5-XTC_Combo Xây Tô Chỉ - Bay Xây Lá Đề Đế Đồng",
+      "display_name": "X5-XTC_Combo Xây Tô Chỉ - Bay Xây Lá Đề Đế Đồng",
+      "keywords": [
+        "X5-XTC",
+        "X5-XTC",
+        "X5-XTC_Combo Xây Tô Chỉ - Bay Xây Lá Đề Đế Đồng",
+        "X5-XTC_Combo Xây Tô Chỉ - Bay Xây Lá Đề Đế Đồng",
+        "cb-001-combo-bay-xay-to-chi-la-de-1"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 194729945,
+      "product_id": 74728974,
+      "sku": "CB-001",
+      "barcode": "CB-001",
+      "product_name": "CB-001: Combo Bay xây tô chỉ lá đề",
+      "variant_name": "Default Title",
+      "display_name": "CB-001: Combo Bay xây tô chỉ lá đề",
+      "keywords": [
+        "CB-001",
+        "CB-001",
+        "CB-001: Combo Bay xây tô chỉ lá đề",
+        "Default Title",
+        "cb-001-combo-bay-xay-to-chi-la-de"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 194723433,
+      "product_id": 74723688,
+      "sku": "CB-1X1T1C-LDG",
+      "barcode": "CB-1X1T1C-LDG",
+      "product_name": "Combo 1 bay xây, 1 tô, 1 chỉ - LÁ ĐỀ GỖ",
+      "variant_name": "Default Title",
+      "display_name": "Combo 1 bay xây, 1 tô, 1 chỉ - LÁ ĐỀ GỖ",
+      "keywords": [
+        "CB-1X1T1C-LDG",
+        "CB-1X1T1C-LDG",
+        "Combo 1 bay xây, 1 tô, 1 chỉ - LÁ ĐỀ GỖ",
+        "Default Title",
+        "combo-bay-la-de-can-go-bay-la-de-dong-bay-trat-la-de-bay-chi-cao-cap"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 194721666,
+      "product_id": 74722115,
+      "sku": "CB-002",
+      "barcode": "CB-002",
+      "product_name": "CB-002: Combo 2 Bay xây 1 bay tô lá đề gỗ",
+      "variant_name": "Default Title",
+      "display_name": "CB-002: Combo 2 Bay xây 1 bay tô lá đề gỗ",
+      "keywords": [
+        "CB-002",
+        "CB-002",
+        "CB-002: Combo 2 Bay xây 1 bay tô lá đề gỗ",
+        "Default Title",
+        "combo-2-bay-xay-1-bay-to-la-de-go"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 193442179,
+      "product_id": 74015517,
+      "sku": "BK-N-2028N",
+      "barcode": "BK-N-2028N",
+      "product_name": "BK-N_Bàn Kéo NHÔM - KT: 20*28 Tay nắm NGANG",
+      "variant_name": "Default Title",
+      "display_name": "BK-N_Bàn Kéo NHÔM - KT: 20*28 Tay nắm NGANG",
+      "keywords": [
+        "BK-N-2028N",
+        "BK-N-2028N",
+        "BK-N_Bàn Kéo NHÔM - KT: 20*28 Tay nắm NGANG",
+        "Default Title",
+        "ban-keo-nhom-day-2-ly-kt-20-28"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 187863477,
+      "product_id": 70630621,
+      "sku": "BLK-1.5",
+      "barcode": "BLK-1.5",
+      "product_name": "Bộ Linh Kiện Lắp Ráp Thước Dây Gạt Vữa 2m - Bộ linh kiện 1.5m",
+      "variant_name": "Default Title",
+      "display_name": "Bộ Linh Kiện Lắp Ráp Thước Dây Gạt Vữa 2m - Bộ linh kiện 1.5m",
+      "keywords": [
+        "BLK-1.5",
+        "BLK-1.5",
+        "Bộ Linh Kiện Lắp Ráp Thước Dây Gạt Vữa 2m - Bộ linh kiện 1.5m",
+        "Default Title",
+        "bo-linh-kien-lap-rap-thuoc-day-gat-vua-2m-bo-linh-kien-1-5m"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 187765455,
+      "product_id": 70563861,
+      "sku": "BLCC",
+      "barcode": "BLCC",
+      "product_name": "Bulong căng cáp",
+      "variant_name": "Default Title",
+      "display_name": "Bulong căng cáp",
+      "keywords": [
+        "BLCC",
+        "BLCC",
+        "Bulong căng cáp",
+        "Default Title",
+        "bulong-cang-cap"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 171922108,
+      "product_id": 60825115,
+      "sku": "MKRC-I-L5090",
+      "barcode": "MKRC-I-L5090",
+      "product_name": "Máng kéo răng cưa INOX LOẠI VIP, KT: 50-90 -Tay nắm inox",
+      "variant_name": "Default Title",
+      "display_name": "Máng kéo răng cưa INOX LOẠI VIP, KT: 50-90 -Tay nắm inox",
+      "keywords": [
+        "MKRC-I-L5090",
+        "MKRC-I-L5090",
+        "Máng kéo răng cưa INOX LOẠI VIP, KT: 50-90 -Tay nắm inox",
+        "Default Title",
+        "mang-keo-rang-cua-inox-kt-50-90cm"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 169027114,
+      "product_id": 59175809,
+      "sku": "BCR-I-V40",
+      "barcode": "BCR-I-V40",
+      "product_name": "BCR-V40_ Bay cắt ron INOX Vuông 40",
+      "variant_name": "Default Title",
+      "display_name": "BCR-V40_ Bay cắt ron INOX Vuông 40",
+      "keywords": [
+        "BCR-I-V40",
+        "BCR-I-V40",
+        "BCR-V40_ Bay cắt ron INOX Vuông 40",
+        "Default Title",
+        "bay-cat-ron-chi-am-tuong-inox-vuong-40"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 168725840,
+      "product_id": 59000563,
+      "sku": "MKRC-TNI-1.13",
+      "barcode": "MKRC-TNI-1.13",
+      "product_name": "Máng kéo răng cưa INOX LOẠI VIP KT: 60-1m13 -Tay nắm inox",
+      "variant_name": "Default Title",
+      "display_name": "Máng kéo răng cưa INOX LOẠI VIP KT: 60-1m13 -Tay nắm inox",
+      "keywords": [
+        "MKRC-TNI-1.13",
+        "MKRC-TNI-1.13",
+        "Máng kéo răng cưa INOX LOẠI VIP KT: 60-1m13 -Tay nắm inox",
+        "Default Title",
+        "mang-keo-rang-cua-inox-tay-nam-inox-1m13"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 166905875,
+      "product_id": 57924286,
+      "sku": "BCR-I-T30",
+      "barcode": "BCR-I-T30",
+      "product_name": "BCR-T30_Bay cắt ron Inox loại tròn 30",
+      "variant_name": "Default Title",
+      "display_name": "BCR-T30_Bay cắt ron Inox loại tròn 30",
+      "keywords": [
+        "BCR-I-T30",
+        "BCR-I-T30",
+        "BCR-T30_Bay cắt ron Inox loại tròn 30",
+        "Default Title",
+        "bay-cat-ron-chi-am-tuong-inox-loai-tron-30"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 166007422,
+      "product_id": 57479655,
+      "sku": "MKRC-TNI-1.2",
+      "barcode": "MKRC-TNI-1.2",
+      "product_name": "Máng kéo răng cưa INOX LOẠI VÍP, KT: 65-1m2 -Tay nắm Inox",
+      "variant_name": "Default Title",
+      "display_name": "Máng kéo răng cưa INOX LOẠI VÍP, KT: 65-1m2 -Tay nắm Inox",
+      "keywords": [
+        "MKRC-TNI-1.2",
+        "MKRC-TNI-1.2",
+        "Máng kéo răng cưa INOX LOẠI VÍP, KT: 65-1m2 -Tay nắm Inox",
+        "Default Title",
+        "mang-keo-rang-cua-tay-nam-inox-loai-dai-1-2m"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 165949358,
+      "product_id": 57447528,
+      "sku": "BLK-TDGV-1M",
+      "barcode": "BLK-TDGV-1M",
+      "product_name": "Bộ linh kiệ thước dây gạt vữa loại 1m",
+      "variant_name": "Default Title",
+      "display_name": "Bộ linh kiệ thước dây gạt vữa loại 1m",
+      "keywords": [
+        "BLK-TDGV-1M",
+        "BLK-TDGV-1M",
+        "Bộ linh kiệ thước dây gạt vữa loại 1m",
+        "Default Title",
+        "bo-linh-kie-thuoc-day-gat-vua-loai-1m"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 165172707,
+      "product_id": 56978283,
+      "sku": "PVN80",
+      "barcode": "PVN80",
+      "product_name": "Đổi hàng",
+      "variant_name": "Default Title",
+      "display_name": "Đổi hàng",
+      "keywords": [
+        "PVN80",
+        "PVN80",
+        "Đổi hàng",
+        "Default Title",
+        "doi-hang"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 164776808,
+      "product_id": 56822326,
+      "sku": "B-KPS-900",
+      "barcode": "B-KPS-900",
+      "product_name": "Búa kapusi 900 gr",
+      "variant_name": "Default Title",
+      "display_name": "Búa kapusi 900 gr",
+      "keywords": [
+        "B-KPS-900",
+        "B-KPS-900",
+        "Búa kapusi 900 gr",
+        "Default Title",
+        "bua-kapusi-900-gr"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 164466697,
+      "product_id": 56621043,
+      "sku": "BLKTDGV-2P",
+      "barcode": "BLKTDGV-2P",
+      "product_name": "Pát 2 đầu TDGV",
+      "variant_name": "Default Title",
+      "display_name": "Pát 2 đầu TDGV",
+      "keywords": [
+        "BLKTDGV-2P",
+        "BLKTDGV-2P",
+        "Pát 2 đầu TDGV",
+        "Default Title",
+        "pat-2-dau-tdgv"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 164147644,
+      "product_id": 56475735,
+      "sku": "DG-TDGV",
+      "barcode": "DG-TDGV",
+      "product_name": "Chốt đinh giữa TDGV",
+      "variant_name": "Default Title",
+      "display_name": "Chốt đinh giữa TDGV",
+      "keywords": [
+        "DG-TDGV",
+        "DG-TDGV",
+        "Chốt đinh giữa TDGV",
+        "Default Title",
+        "chot-dinh-giua-tdgv"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 164122858,
+      "product_id": 56462456,
+      "sku": "PVN79",
+      "barcode": "PVN79",
+      "product_name": "Sợi dây inox thước dây gạt vữa",
+      "variant_name": "Default Title",
+      "display_name": "Sợi dây inox thước dây gạt vữa",
+      "keywords": [
+        "PVN79",
+        "PVN79",
+        "Sợi dây inox thước dây gạt vữa",
+        "Default Title",
+        "soi-day-inox-thuoc-day-gat-vua"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 163464282,
+      "product_id": 56061200,
+      "sku": "LCRG",
+      "barcode": "LCRG",
+      "product_name": "Lưỡi cắt ron gạch men-dày 1.2mm, KT 100mm",
+      "variant_name": "Default Title",
+      "display_name": "Lưỡi cắt ron gạch men-dày 1.2mm, KT 100mm",
+      "keywords": [
+        "LCRG",
+        "LCRG",
+        "Lưỡi cắt ron gạch men-dày 1.2mm, KT 100mm",
+        "Default Title",
+        "luoi-cat-ron-gach-men-day-1-2mm-kt-100mm"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 160989553,
+      "product_id": 54832339,
+      "sku": "BKH-I-2028D",
+      "barcode": "BKH-I-2028D",
+      "product_name": "BK-I_Bàn kéo INOX -KT: 20x28 Tay nắm ĐỨNG",
+      "variant_name": "Default Title",
+      "display_name": "BK-I_Bàn kéo INOX -KT: 20x28 Tay nắm ĐỨNG",
+      "keywords": [
+        "BKH-I-2028D",
+        "BKH-I-2028D",
+        "BK-I_Bàn kéo INOX -KT: 20x28 Tay nắm ĐỨNG",
+        "Default Title",
+        "ban-keo-ho-inox-can-dung"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 160815219,
+      "product_id": 54688556,
+      "sku": "BCR-I-T20",
+      "barcode": "BCR-I-T20",
+      "product_name": "BCR-T20_Bay cắt ron INOX loại Tròn 20",
+      "variant_name": "Default Title",
+      "display_name": "BCR-T20_Bay cắt ron INOX loại Tròn 20",
+      "keywords": [
+        "BCR-I-T20",
+        "BCR-I-T20",
+        "BCR-T20_Bay cắt ron INOX loại Tròn 20",
+        "Default Title",
+        "bay-cat-ron-chi-am-tuong-inox-loai-tron-20"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 160815156,
+      "product_id": 54688512,
+      "sku": "BCR-I-T25",
+      "barcode": "BCR-I-T25",
+      "product_name": "BCR-T25_Bay cắt ron INOX loại Tròn 25",
+      "variant_name": "Default Title",
+      "display_name": "BCR-T25_Bay cắt ron INOX loại Tròn 25",
+      "keywords": [
+        "BCR-I-T25",
+        "BCR-I-T25",
+        "BCR-T25_Bay cắt ron INOX loại Tròn 25",
+        "Default Title",
+        "bay-cat-ron-chi-am-tuong-inox-loai-tron-25"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 160814716,
+      "product_id": 54688187,
+      "sku": "BCR-I-V20",
+      "barcode": "BCR-I-V20",
+      "product_name": "BCR-V20_Bay cắt ron INOX loại Vuông 20",
+      "variant_name": "Default Title",
+      "display_name": "BCR-V20_Bay cắt ron INOX loại Vuông 20",
+      "keywords": [
+        "BCR-I-V20",
+        "BCR-I-V20",
+        "BCR-V20_Bay cắt ron INOX loại Vuông 20",
+        "Default Title",
+        "bay-cat-ron-chi-am-tuong-inox-loai-vuong-20"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 160814703,
+      "product_id": 54688180,
+      "sku": "BCR-I-V50",
+      "barcode": "BCR-I-V50",
+      "product_name": "BCR-V50_Bay cắt ron INOX loại Vuông 50",
+      "variant_name": "Default Title",
+      "display_name": "BCR-V50_Bay cắt ron INOX loại Vuông 50",
+      "keywords": [
+        "BCR-I-V50",
+        "BCR-I-V50",
+        "BCR-V50_Bay cắt ron INOX loại Vuông 50",
+        "Default Title",
+        "bay-cat-ron-chi-am-tuong-inox-loai-vuong-50"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 159215699,
+      "product_id": 53790221,
+      "sku": "BKH-I-2028N",
+      "barcode": "BKH-I-2028D",
+      "product_name": "BK-I_Bàn Kéo INOX - KT: 20*28 Tay nắm NGANG",
+      "variant_name": "Default Title",
+      "display_name": "BK-I_Bàn Kéo INOX - KT: 20*28 Tay nắm NGANG",
+      "keywords": [
+        "BKH-I-2028N",
+        "BKH-I-2028D",
+        "BK-I_Bàn Kéo INOX - KT: 20*28 Tay nắm NGANG",
+        "Default Title",
+        "ban-keo-om-ho-inox-kt-20-28"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 158775761,
+      "product_id": 53577567,
+      "sku": "KNG-550",
+      "barcode": "KNG-550",
+      "product_name": "Kích nâng Gạch Ốp Tường _Loại 550g",
+      "variant_name": "Default Title",
+      "display_name": "Kích nâng Gạch Ốp Tường _Loại 550g",
+      "keywords": [
+        "KNG-550",
+        "KNG-550",
+        "Kích nâng Gạch Ốp Tường _Loại 550g",
+        "Default Title",
+        "kich-nang-gach-op-tuong-loai-550g"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 157915010,
+      "product_id": 53277579,
+      "sku": "PVN78",
+      "barcode": "PVN78",
+      "product_name": "hàng thiếu bổ sung",
+      "variant_name": "Default Title",
+      "display_name": "hàng thiếu bổ sung",
+      "keywords": [
+        "PVN78",
+        "PVN78",
+        "hàng thiếu bổ sung",
+        "Default Title",
+        "hang-thieu-bo-sung"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 157914964,
+      "product_id": 53277548,
+      "sku": "PVN77",
+      "barcode": "PVN77",
+      "product_name": "hàng gửi thiếu bổ sung",
+      "variant_name": "Default Title",
+      "display_name": "hàng gửi thiếu bổ sung",
+      "keywords": [
+        "PVN77",
+        "PVN77",
+        "hàng gửi thiếu bổ sung",
+        "Default Title",
+        "hang-gui-thieu-bo-sung"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 153254660,
+      "product_id": 50308184,
+      "sku": "BCR-I-V30",
+      "barcode": "BCR-I-V30",
+      "product_name": "BCR-V30_Bay cắt ron Inox loại Vuông 30",
+      "variant_name": "Default Title",
+      "display_name": "BCR-V30_Bay cắt ron Inox loại Vuông 30",
+      "keywords": [
+        "BCR-I-V30",
+        "BCR-I-V30",
+        "BCR-V30_Bay cắt ron Inox loại Vuông 30",
+        "Default Title",
+        "bay-cat-ron-am-tuong-inox-vuong-30"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 148002782,
+      "product_id": 46881139,
+      "sku": "BCR-I-V25",
+      "barcode": "BCR-I-V25",
+      "product_name": "BCR-V25_Bay cắt ron INOX loại Vuông 25",
+      "variant_name": "Default Title",
+      "display_name": "BCR-V25_Bay cắt ron INOX loại Vuông 25",
+      "keywords": [
+        "BCR-I-V25",
+        "BCR-I-V25",
+        "BCR-V25_Bay cắt ron INOX loại Vuông 25",
+        "Default Title",
+        "bay-cat-ron-chi-am-tuong-inox-loai-vuong-25"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 145763570,
+      "product_id": 45480237,
+      "sku": "CHI.GIA.TY",
+      "barcode": "CHI.GIA.TY",
+      "product_name": "bàn chà CHỈ GIÃ TỴ",
+      "variant_name": "Default Title",
+      "display_name": "bàn chà CHỈ GIÃ TỴ",
+      "keywords": [
+        "CHI.GIA.TY",
+        "CHI.GIA.TY",
+        "bàn chà CHỈ GIÃ TỴ",
+        "Default Title",
+        "ban-cha-chi-gia-ty"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 142588136,
+      "product_id": 43771648,
+      "sku": "PVN76",
+      "barcode": "PVN76",
+      "product_name": "Khuôn kéo keo gạch AAC",
+      "variant_name": "Default Title",
+      "display_name": "Khuôn kéo keo gạch AAC",
+      "keywords": [
+        "PVN76",
+        "PVN76",
+        "Khuôn kéo keo gạch AAC",
+        "Default Title",
+        "khuon-keo-keo-gach-aac"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 142211130,
+      "product_id": 43538876,
+      "sku": "PVN75",
+      "barcode": "PVN75",
+      "product_name": "Mỹ Phẩm",
+      "variant_name": "Default Title",
+      "display_name": "Mỹ Phẩm",
+      "keywords": [
+        "PVN75",
+        "PVN75",
+        "Mỹ Phẩm",
+        "Default Title",
+        "my-pham"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 140404629,
+      "product_id": 42575630,
+      "sku": "Bankeo+Bayxay+Bayto",
+      "barcode": "Bankeo+Bayxay+Bayto",
+      "product_name": "Combo < Bàn kéo hồ + Bay xây đề + Bay tô đề >",
+      "variant_name": "Default Title",
+      "display_name": "Combo < Bàn kéo hồ + Bay xây đề + Bay tô đề >",
+      "keywords": [
+        "Bankeo+Bayxay+Bayto",
+        "Bankeo+Bayxay+Bayto",
+        "Combo < Bàn kéo hồ + Bay xây đề + Bay tô đề >",
+        "Default Title",
+        "combo-ban-keo-ho-bay-xay-de-bay-to-de"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 139038739,
+      "product_id": 42101747,
+      "sku": "KCB-3L",
+      "barcode": "KCB-3L",
+      "product_name": "Ke cân bằng ốp lát gạch-Độ dày 3 ly",
+      "variant_name": "Default Title",
+      "display_name": "Ke cân bằng ốp lát gạch-Độ dày 3 ly",
+      "keywords": [
+        "KCB-3L",
+        "KCB-3L",
+        "Ke cân bằng ốp lát gạch-Độ dày 3 ly",
+        "Default Title",
+        "ke-can-bang-op-lat-gach-do-day-3-ly"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 137679061,
+      "product_id": 41434969,
+      "sku": "Galip",
+      "barcode": "Galip",
+      "product_name": "Gá lip 45 độ- Gắn vào máy cắt",
+      "variant_name": "Default Title",
+      "display_name": "Gá lip 45 độ- Gắn vào máy cắt",
+      "keywords": [
+        "Galip",
+        "Galip",
+        "Gá lip 45 độ- Gắn vào máy cắt",
+        "Default Title",
+        "ga-lip-45-do-gan-vao-may-cat"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 137675064,
+      "product_id": 41434573,
+      "sku": "BCM-45-TQ",
+      "barcode": "BCM-45-TQ",
+      "product_name": "Bàn Cắt Mòi 45 Độ - Trung Quốc",
+      "variant_name": "Default Title",
+      "display_name": "Bàn Cắt Mòi 45 Độ - Trung Quốc",
+      "keywords": [
+        "BCM-45-TQ",
+        "BCM-45-TQ",
+        "Bàn Cắt Mòi 45 Độ - Trung Quốc",
+        "Default Title",
+        "ban-cat-moi-45-do-trung-quoc"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 134262079,
+      "product_id": 39983769,
+      "sku": "TT-0.9-G",
+      "barcode": "TT-0.9-G",
+      "product_name": "Bay chuyên tô (trát) - TRUYỀN THỐNG 0.9mm",
+      "variant_name": "Default Title",
+      "display_name": "Bay chuyên tô (trát) - TRUYỀN THỐNG 0.9mm",
+      "keywords": [
+        "TT-0.9-G",
+        "TT-0.9-G",
+        "Bay chuyên tô (trát) - TRUYỀN THỐNG 0.9mm",
+        "Default Title",
+        "bay-xay-to-truyen-thong-0-9li-can-trang"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 133319574,
+      "product_id": 39697032,
+      "sku": "PVN73",
+      "barcode": "PVN73",
+      "product_name": "BAY XÂY TÔ bị lỗi bất kỳ tặng khách",
+      "variant_name": "Default Title",
+      "display_name": "BAY XÂY TÔ bị lỗi bất kỳ tặng khách",
+      "keywords": [
+        "PVN73",
+        "PVN73",
+        "BAY XÂY TÔ bị lỗi bất kỳ tặng khách",
+        "Default Title",
+        "bay-xay-to-bi-loi-bat-ky-tang-khach"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 131968368,
+      "product_id": 39261006,
+      "sku": "PVN72",
+      "barcode": "PVN72",
+      "product_name": "Ke vít xoáy chữ T_ốp lát gạch (Tái sử dụng)_Loại 1mm",
+      "variant_name": "Default Title",
+      "display_name": "Ke vít xoáy chữ T_ốp lát gạch (Tái sử dụng)_Loại 1mm",
+      "keywords": [
+        "PVN72",
+        "PVN72",
+        "Ke vít xoáy chữ T_ốp lát gạch (Tái sử dụng)_Loại 1mm",
+        "Default Title",
+        "ke-vit-xoay-chu-t-op-lat-gach-tai-su-dung-loai-1mm"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 131214453,
+      "product_id": 39008328,
+      "sku": "bankeoho+banchaxop",
+      "barcode": "bankeoho+banchaxop",
+      "product_name": "COMBO BÀN KÉO HỒ + BÀN CHÀ XỐP",
+      "variant_name": "Default Title",
+      "display_name": "COMBO BÀN KÉO HỒ + BÀN CHÀ XỐP",
+      "keywords": [
+        "bankeoho+banchaxop",
+        "bankeoho+banchaxop",
+        "COMBO BÀN KÉO HỒ + BÀN CHÀ XỐP",
+        "Default Title",
+        "combo-ban-keo-ho-ban-cha-xop"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 131149381,
+      "product_id": 38982093,
+      "sku": "PVN71",
+      "barcode": "PVN71",
+      "product_name": "COMBO 2 xây 1 tô Truyền Thống đế đồng",
+      "variant_name": "Default Title",
+      "display_name": "COMBO 2 xây 1 tô Truyền Thống đế đồng",
+      "keywords": [
+        "PVN71",
+        "PVN71",
+        "COMBO 2 xây 1 tô Truyền Thống đế đồng",
+        "Default Title",
+        "combo-2-xay-1-to-truyen-thong-de-dong"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 130548798,
+      "product_id": 38826309,
+      "sku": "KD-15l",
+      "barcode": "KD-15l",
+      "product_name": "Ke đá ốp lát 1.5 ly",
+      "variant_name": "Default Title",
+      "display_name": "Ke đá ốp lát 1.5 ly",
+      "keywords": [
+        "KD-15l",
+        "KD-15l",
+        "Ke đá ốp lát 1.5 ly",
+        "Default Title",
+        "ke-da-op-lat-1-5-ly"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 130479470,
+      "product_id": 38788278,
+      "sku": "BCR-I-V15",
+      "barcode": "BCR-I-V15",
+      "product_name": "BCR-V15_Bay cắt ron Inox loại vuông 15",
+      "variant_name": "Default Title",
+      "display_name": "BCR-V15_Bay cắt ron Inox loại vuông 15",
+      "keywords": [
+        "BCR-I-V15",
+        "BCR-I-V15",
+        "BCR-V15_Bay cắt ron Inox loại vuông 15",
+        "Default Title",
+        "bay-at-ron-chi-am-tuong-loai-vuong-15"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 129760920,
+      "product_id": 38598804,
+      "sku": "CB-XTC-CTLD",
+      "barcode": "CB-XTC-CTLD",
+      "product_name": "Combo 3 bay Xây tô chỉ -CÁN TRE LÁ ĐỀ",
+      "variant_name": "Default Title",
+      "display_name": "Combo 3 bay Xây tô chỉ -CÁN TRE LÁ ĐỀ",
+      "keywords": [
+        "CB-XTC-CTLD",
+        "CB-XTC-CTLD",
+        "Combo 3 bay Xây tô chỉ -CÁN TRE LÁ ĐỀ",
+        "Default Title",
+        "combo-2-bay-can-tre-la-de-0-7li-0-9li-tang-bay-chi"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 129760911,
+      "product_id": 38598800,
+      "sku": "PVN70",
+      "barcode": "PVN70",
+      "product_name": "COMBO 2 XÂY TẶNG 1 TÔ LÁ ĐỀ ĐẾ ĐỒNG",
+      "variant_name": "Default Title",
+      "display_name": "COMBO 2 XÂY TẶNG 1 TÔ LÁ ĐỀ ĐẾ ĐỒNG",
+      "keywords": [
+        "PVN70",
+        "PVN70",
+        "COMBO 2 XÂY TẶNG 1 TÔ LÁ ĐỀ ĐẾ ĐỒNG",
+        "Default Title",
+        "combo-2-xay-tang-1-to-la-de-de-dong"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 129638813,
+      "product_id": 38557029,
+      "sku": "PVN69",
+      "barcode": "PVN69",
+      "product_name": "COMBO 4 BAY cán tre truyền thống THÉP TRẮNG",
+      "variant_name": "Default Title",
+      "display_name": "COMBO 4 BAY cán tre truyền thống THÉP TRẮNG",
+      "keywords": [
+        "PVN69",
+        "PVN69",
+        "COMBO 4 BAY cán tre truyền thống THÉP TRẮNG",
+        "Default Title",
+        "combo-4-bay-can-tre-truyen-thong-thep-trang"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 129566226,
+      "product_id": 38536874,
+      "sku": "KD-1.5L",
+      "barcode": "KD-1.5L",
+      "product_name": "Ke trắng ốp đá 1,5 ly",
+      "variant_name": "Default Title",
+      "display_name": "Ke trắng ốp đá 1,5 ly",
+      "keywords": [
+        "KD-1.5L",
+        "KD-1.5L",
+        "Ke trắng ốp đá 1,5 ly",
+        "Default Title",
+        "ke-trang-op-da-1-5-ly"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 129541574,
+      "product_id": 38526211,
+      "sku": "CB-(BX-XOP+BXD-LD.07.G+BX-MIT)",
+      "barcode": "CB-(BX-XOP+BXD-LD.07.G+BX-MIT)",
+      "product_name": "Combo bàn xoa xốp + mít + bay lá đề 0.7 gỗ",
+      "variant_name": "Combo bàn xoa xốp + mít + bay lá đề 0.7 gỗ",
+      "display_name": "Combo bàn xoa xốp + mít + bay lá đề 0.7 gỗ",
+      "keywords": [
+        "CB-(BX-XOP+BXD-LD.07.G+BX-MIT)",
+        "CB-(BX-XOP+BXD-LD.07.G+BX-MIT)",
+        "Combo bàn xoa xốp + mít + bay lá đề 0.7 gỗ",
+        "Combo bàn xoa xốp + mít + bay lá đề 0.7 gỗ",
+        "combo-ban-xoa-xop-mit-bay-la-de-0-7-go"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 129537815,
+      "product_id": 38524402,
+      "sku": "BC-CAN",
+      "barcode": "BC-CAN",
+      "product_name": "Cán bàn chà",
+      "variant_name": "Default Title",
+      "display_name": "Cán bàn chà",
+      "keywords": [
+        "BC-CAN",
+        "BC-CAN",
+        "Cán bàn chà",
+        "Default Title",
+        "can-ban-cha"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 129536416,
+      "product_id": 38523646,
+      "sku": "CB-(LC-100x10+1)",
+      "barcode": "CB-(LC-100x10+1)",
+      "product_name": "Combo 10 lưỡi cắt Deyi 100mm tặng 1",
+      "variant_name": "Combo 10 lưỡi cắt Deyi 100mm tặng 1",
+      "display_name": "Combo 10 lưỡi cắt Deyi 100mm tặng 1",
+      "keywords": [
+        "CB-(LC-100x10+1)",
+        "CB-(LC-100x10+1)",
+        "Combo 10 lưỡi cắt Deyi 100mm tặng 1",
+        "Combo 10 lưỡi cắt Deyi 100mm tặng 1",
+        "combo-10-luoi-cat-deyi-100mm-tang-1"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 129536409,
+      "product_id": 38523641,
+      "sku": "CB-(LC-125x10+1)",
+      "barcode": "CB-(LC-125x10+1)",
+      "product_name": "Combo 10 lưỡi cắt Deyi 125mm tặng 1",
+      "variant_name": "Combo 10 lưỡi cắt Deyi 125mm tặng 1",
+      "display_name": "Combo 10 lưỡi cắt Deyi 125mm tặng 1",
+      "keywords": [
+        "CB-(LC-125x10+1)",
+        "CB-(LC-125x10+1)",
+        "Combo 10 lưỡi cắt Deyi 125mm tặng 1",
+        "Combo 10 lưỡi cắt Deyi 125mm tặng 1",
+        "combo-10-luoi-cat-deyi-125mm-tang-1"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 129536408,
+      "product_id": 38523640,
+      "sku": "CB-(LC-125x5)",
+      "barcode": "CB-(LC-125x5)",
+      "product_name": "Combo 5 lưỡi 125mm",
+      "variant_name": "Combo 5 lưỡi 125mm",
+      "display_name": "Combo 5 lưỡi 125mm",
+      "keywords": [
+        "CB-(LC-125x5)",
+        "CB-(LC-125x5)",
+        "Combo 5 lưỡi 125mm",
+        "Combo 5 lưỡi 125mm",
+        "combo-5-luoi-125mm"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 129536407,
+      "product_id": 38523639,
+      "sku": "CB-(LC-100x5)",
+      "barcode": "CB-(LC-100x5)",
+      "product_name": "Combo 5 lưỡi 100mm DEYI",
+      "variant_name": "Combo 5 lưỡi 100mm DEYI",
+      "display_name": "Combo 5 lưỡi 100mm DEYI",
+      "keywords": [
+        "CB-(LC-100x5)",
+        "CB-(LC-100x5)",
+        "Combo 5 lưỡi 100mm DEYI",
+        "Combo 5 lưỡi 100mm DEYI",
+        "combo-5-luoi-100mm-deyi"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 129279301,
+      "product_id": 38440443,
+      "sku": "BDC-5CT",
+      "barcode": "BDC-5CT",
+      "product_name": "Bộ dụng cụ 5 chi tiết",
+      "variant_name": "Default Title",
+      "display_name": "Bộ dụng cụ 5 chi tiết",
+      "keywords": [
+        "BDC-5CT",
+        "BDC-5CT",
+        "Bộ dụng cụ 5 chi tiết",
+        "Default Title",
+        "bo-dung-cu-5-chi-tiet"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 127910059,
+      "product_id": 38001737,
+      "sku": "CB-(LC-125+LC-100)",
+      "barcode": "CB-(LC-125+LC-100)",
+      "product_name": "Combo lưỡi cắt Deyi 125 và 100",
+      "variant_name": "Combo lưỡi cắt Deyi 125 và 100",
+      "display_name": "Combo lưỡi cắt Deyi 125 và 100",
+      "keywords": [
+        "CB-(LC-125+LC-100)",
+        "CB-(LC-125+LC-100)",
+        "Combo lưỡi cắt Deyi 125 và 100",
+        "Combo lưỡi cắt Deyi 125 và 100",
+        "combo-luoi-cat-deyi-125-va-100"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 127902820,
+      "product_id": 38001072,
+      "sku": "TT-DD-TT",
+      "barcode": "TT-DD-TT",
+      "product_name": "Bay truyền thống thép trắng đế đồng",
+      "variant_name": "Default Title",
+      "display_name": "Bay truyền thống thép trắng đế đồng",
+      "keywords": [
+        "TT-DD-TT",
+        "TT-DD-TT",
+        "Bay truyền thống thép trắng đế đồng",
+        "Default Title",
+        "bay-truyen-thong-thep-trang-de-dong"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 127888516,
+      "product_id": 37996069,
+      "sku": "CB-(LC-100+CG)",
+      "barcode": "CB-(LC-100+CG)",
+      "product_name": "Combo lưỡi cắt 100 và chân gài",
+      "variant_name": "Combo lưỡi cắt 100 và chân gài",
+      "display_name": "Combo lưỡi cắt 100 và chân gài",
+      "keywords": [
+        "CB-(LC-100+CG)",
+        "CB-(LC-100+CG)",
+        "Combo lưỡi cắt 100 và chân gài",
+        "Combo lưỡi cắt 100 và chân gài",
+        "combo-luoi-cat-100-va-chan-gai"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 127888495,
+      "product_id": 37996051,
+      "sku": "CB-(LC-125+CG)",
+      "barcode": "CB-(LC-125+CG)",
+      "product_name": "Combo lưỡi cắt 125 và chân gài",
+      "variant_name": "Combo lưỡi cắt 125 và chân gài",
+      "display_name": "Combo lưỡi cắt 125 và chân gài",
+      "keywords": [
+        "CB-(LC-125+CG)",
+        "CB-(LC-125+CG)",
+        "Combo lưỡi cắt 125 và chân gài",
+        "Combo lưỡi cắt 125 và chân gài",
+        "combo-luoi-cat-125-va-chan-gai"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 127888030,
+      "product_id": 37995855,
+      "sku": "CB-(GL-125+LC-125+CG)",
+      "barcode": "CB-(GL-125+LC-125+CG)",
+      "product_name": "GL-125 kèm lưỡi cắt và chân gài",
+      "variant_name": "GL-125 kèm lưỡi cắt và chân gài",
+      "display_name": "GL-125 kèm lưỡi cắt và chân gài",
+      "keywords": [
+        "CB-(GL-125+LC-125+CG)",
+        "CB-(GL-125+LC-125+CG)",
+        "GL-125 kèm lưỡi cắt và chân gài",
+        "GL-125 kèm lưỡi cắt và chân gài",
+        "gl-125-kem-luoi-cat-va-chan-gai"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 127888020,
+      "product_id": 37995847,
+      "sku": "CB-(GL-100+LC-100+CG)",
+      "barcode": "CB-(GL-100+LC-100+CG)",
+      "product_name": "GL-100 kèm lưỡi cắt và chân gài",
+      "variant_name": "GL-100 kèm lưỡi cắt và chân gài",
+      "display_name": "GL-100 kèm lưỡi cắt và chân gài",
+      "keywords": [
+        "CB-(GL-100+LC-100+CG)",
+        "CB-(GL-100+LC-100+CG)",
+        "GL-100 kèm lưỡi cắt và chân gài",
+        "GL-100 kèm lưỡi cắt và chân gài",
+        "gl-100-kem-luoi-cat-va-chan-gai"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 127887677,
+      "product_id": 37995610,
+      "sku": "CB-(GL-100+LC-100)",
+      "barcode": "CB-(GL-100+LC-100)",
+      "product_name": "GL-100 Tặng lưỡi cắt 100mm",
+      "variant_name": "GL-100 Tặng lưỡi cắt 100mm",
+      "display_name": "GL-100 Tặng lưỡi cắt 100mm",
+      "keywords": [
+        "CB-(GL-100+LC-100)",
+        "CB-(GL-100+LC-100)",
+        "GL-100 Tặng lưỡi cắt 100mm",
+        "GL-100 Tặng lưỡi cắt 100mm",
+        "gl-100-tang-luoi-cat-100mm"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 127887654,
+      "product_id": 37995600,
+      "sku": "CB-(GL-125+LC-125)",
+      "barcode": "CB-(GL-125+LC-125)",
+      "product_name": "GL-125 Tặng lưỡi cắt 125mm",
+      "variant_name": "GL-125 Tặng lưỡi cắt 125mm",
+      "display_name": "GL-125 Tặng lưỡi cắt 125mm",
+      "keywords": [
+        "CB-(GL-125+LC-125)",
+        "CB-(GL-125+LC-125)",
+        "GL-125 Tặng lưỡi cắt 125mm",
+        "GL-125 Tặng lưỡi cắt 125mm",
+        "gl-125-tang-luoi-cat-125mm"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 127883595,
+      "product_id": 37993333,
+      "sku": "CB-(GL-125+CG)",
+      "barcode": "CB-(GL-125+CG)",
+      "product_name": "GL-125 Tặng chân gài",
+      "variant_name": "GL-125 Tặng chân gài",
+      "display_name": "GL-125 Tặng chân gài",
+      "keywords": [
+        "CB-(GL-125+CG)",
+        "CB-(GL-125+CG)",
+        "GL-125 Tặng chân gài",
+        "GL-125 Tặng chân gài",
+        "gl-125-tang-chan-gai"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 127883557,
+      "product_id": 37993300,
+      "sku": "CB-(GL-100+CG)",
+      "barcode": "CB-(GL-100+CG)",
+      "product_name": "GL-100 tặng chân gài gạch",
+      "variant_name": "GL-100 tặng chân gài gạch",
+      "display_name": "GL-100 tặng chân gài gạch",
+      "keywords": [
+        "CB-(GL-100+CG)",
+        "CB-(GL-100+CG)",
+        "GL-100 tặng chân gài gạch",
+        "GL-100 tặng chân gài gạch",
+        "gl-100-tang-chan-gai-gach"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 127877147,
+      "product_id": 37991290,
+      "sku": "CB-(GL-125+GL-100)",
+      "barcode": "CB-(GL-125+GL-100)",
+      "product_name": "Combo Gá líp 45 độ GL-100 & GL-125",
+      "variant_name": "Combo Gá líp 45 độ GL-100 & GL-125",
+      "display_name": "Combo Gá líp 45 độ GL-100 & GL-125",
+      "keywords": [
+        "CB-(GL-125+GL-100)",
+        "CB-(GL-125+GL-100)",
+        "Combo Gá líp 45 độ GL-100 & GL-125",
+        "Combo Gá líp 45 độ GL-100 & GL-125",
+        "combo-ga-lip-45-do-gl-100-gl-125"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 127871688,
+      "product_id": 37989969,
+      "sku": "LC-125",
+      "barcode": "LC-125",
+      "product_name": "Lưỡi cắt kim cương DEYI 125mm",
+      "variant_name": "Default Title",
+      "display_name": "Lưỡi cắt kim cương DEYI 125mm",
+      "keywords": [
+        "LC-125",
+        "LC-125",
+        "Lưỡi cắt kim cương DEYI 125mm",
+        "Default Title",
+        "luoi-cat-kim-cuong-deyi-125mm"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 127871626,
+      "product_id": 37989923,
+      "sku": "LC-100",
+      "barcode": "LC-100",
+      "product_name": "Lưỡi cắt kim cương DEYI 100mm",
+      "variant_name": "Default Title",
+      "display_name": "Lưỡi cắt kim cương DEYI 100mm",
+      "keywords": [
+        "LC-100",
+        "LC-100",
+        "Lưỡi cắt kim cương DEYI 100mm",
+        "Default Title",
+        "luoi-cat-kim-cuong-deyi-100mm"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 127871531,
+      "product_id": 37989895,
+      "sku": "CG",
+      "barcode": "CG",
+      "product_name": "Chân gài gạch",
+      "variant_name": "Default Title",
+      "display_name": "Chân gài gạch",
+      "keywords": [
+        "CG",
+        "CG",
+        "Chân gài gạch",
+        "Default Title",
+        "chan-gai-gach"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 127335637,
+      "product_id": 37790407,
+      "sku": "PVN66",
+      "barcode": "PVN66",
+      "product_name": "Hồ sơ",
+      "variant_name": "Default Title",
+      "display_name": "Hồ sơ",
+      "keywords": [
+        "PVN66",
+        "PVN66",
+        "Hồ sơ",
+        "Default Title",
+        "ho-so"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 126636581,
+      "product_id": 37605122,
+      "sku": "BC-CHI",
+      "barcode": "BC-CHI",
+      "product_name": "Bàn chà chỉ gỗ mít",
+      "variant_name": "Default Title",
+      "display_name": "Bàn chà chỉ gỗ mít",
+      "keywords": [
+        "BC-CHI",
+        "BC-CHI",
+        "Bàn chà chỉ gỗ mít",
+        "Default Title",
+        "ban-cha-chi-go-mit"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 126375123,
+      "product_id": 37555561,
+      "sku": "GL-125",
+      "barcode": "GL-125",
+      "product_name": "Bàn Cắt Mòi Gạch 45 Độ - GL-125",
+      "variant_name": "Default Title",
+      "display_name": "Bàn Cắt Mòi Gạch 45 Độ - GL-125",
+      "keywords": [
+        "GL-125",
+        "GL-125",
+        "Bàn Cắt Mòi Gạch 45 Độ - GL-125",
+        "Default Title",
+        "ban-cat-moi-gach-45-do-gl-125"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 126375119,
+      "product_id": 37555557,
+      "sku": "GL-100",
+      "barcode": "GL-100",
+      "product_name": "Bàn Cắt Mòi Gạch 45 Độ-GL-100",
+      "variant_name": "Default Title",
+      "display_name": "Bàn Cắt Mòi Gạch 45 Độ-GL-100",
+      "keywords": [
+        "GL-100",
+        "GL-100",
+        "Bàn Cắt Mòi Gạch 45 Độ-GL-100",
+        "Default Title",
+        "ban-cat-moi-gach-45-do-gl100"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 124716706,
+      "product_id": 37209307,
+      "sku": "LC-DEYI-125",
+      "barcode": "LC-DEYI-125",
+      "product_name": "Lưỡi cắt kim cương DEYI-125",
+      "variant_name": "Default Title",
+      "display_name": "Lưỡi cắt kim cương DEYI-125",
+      "keywords": [
+        "LC-DEYI-125",
+        "LC-DEYI-125",
+        "Lưỡi cắt kim cương DEYI-125",
+        "Default Title",
+        "luoi-cat-kim-cuong-deyi-125"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 124716670,
+      "product_id": 37209293,
+      "sku": "LC-DEYI-100",
+      "barcode": "LC-DEYI-100",
+      "product_name": "Lưỡi cắt kim cương DEYI-100",
+      "variant_name": "Default Title",
+      "display_name": "Lưỡi cắt kim cương DEYI-100",
+      "keywords": [
+        "LC-DEYI-100",
+        "LC-DEYI-100",
+        "Lưỡi cắt kim cương DEYI-100",
+        "Default Title",
+        "luoi-cat-kim-cuong-deyi-100"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 123759322,
+      "product_id": 36976351,
+      "sku": "XOPROI_EVA",
+      "barcode": "XOPROI_EVA",
+      "product_name": "MIếng xốp rời EVa",
+      "variant_name": "Default Title",
+      "display_name": "MIếng xốp rời EVa",
+      "keywords": [
+        "XOPROI_EVA",
+        "XOPROI_EVA",
+        "MIếng xốp rời EVa",
+        "Default Title",
+        "mieng-xop-roi-eva"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 123344175,
+      "product_id": 36868008,
+      "sku": "BXD-X8",
+      "barcode": "BXD-X8",
+      "product_name": "X8 - Bay Xây Vuông A1",
+      "variant_name": "Default Title",
+      "display_name": "X8 - Bay Xây Vuông A1",
+      "keywords": [
+        "BXD-X8",
+        "BXD-X8",
+        "X8 - Bay Xây Vuông A1",
+        "Default Title",
+        "bay-xay-dung-vuong-thep-xanh-kt09-7"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 123002491,
+      "product_id": 36801990,
+      "sku": "BX-GT-L2",
+      "barcode": "BX-GT-L2",
+      "product_name": "Bàn xoa GIÁ TỴ - Loại 2_Lõi 70%",
+      "variant_name": "Default Title",
+      "display_name": "Bàn xoa GIÁ TỴ - Loại 2_Lõi 70%",
+      "keywords": [
+        "BX-GT-L2",
+        "BX-GT-L2",
+        "Bàn xoa GIÁ TỴ - Loại 2_Lõi 70%",
+        "Default Title",
+        "ban-cha-gia-ty-loai-2-70-loi"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 123001515,
+      "product_id": 36801528,
+      "sku": "BXD-XT6",
+      "barcode": "BXD-XT6",
+      "product_name": "XT6-Bay CÁN TRE truyền thống 9.5 phân - TRẮNG",
+      "variant_name": "Default Title",
+      "display_name": "XT6-Bay CÁN TRE truyền thống 9.5 phân - TRẮNG",
+      "keywords": [
+        "BXD-XT6",
+        "BXD-XT6",
+        "XT6-Bay CÁN TRE truyền thống 9.5 phân - TRẮNG",
+        "Default Title",
+        "bay-bd-can-tre-thep-trang-loai-8-16"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 123001474,
+      "product_id": 36801510,
+      "sku": "BCT_THEPTRANG10",
+      "barcode": "BCT_THEPTRANG10",
+      "product_name": "Bay Bình ĐỊnh CÁN TRE THÉP TRẮNG_Loại 9,5*18",
+      "variant_name": "Default Title",
+      "display_name": "Bay Bình ĐỊnh CÁN TRE THÉP TRẮNG_Loại 9,5*18",
+      "keywords": [
+        "BCT_THEPTRANG10",
+        "BCT_THEPTRANG10",
+        "Bay Bình ĐỊnh CÁN TRE THÉP TRẮNG_Loại 9,5*18",
+        "Default Title",
+        "bay-bd-can-tre-thep-trang-loai-10-18"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 122939335,
+      "product_id": 36787473,
+      "sku": "PVN65",
+      "barcode": "PVN65",
+      "product_name": "Hít gạch",
+      "variant_name": "Default Title",
+      "display_name": "Hít gạch",
+      "keywords": [
+        "PVN65",
+        "PVN65",
+        "Hít gạch",
+        "Default Title",
+        "hit-gach"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 122939322,
+      "product_id": 36787467,
+      "sku": "PVN64",
+      "barcode": "PVN64",
+      "product_name": "hít gạch, hít đá vặn xít",
+      "variant_name": "Default Title",
+      "display_name": "hít gạch, hít đá vặn xít",
+      "keywords": [
+        "PVN64",
+        "PVN64",
+        "hít gạch, hít đá vặn xít",
+        "Default Title",
+        "hit-gach-hit-da-van-xit"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 122679681,
+      "product_id": 36710886,
+      "sku": "DAOCAORONGACH",
+      "barcode": "DAOCAORONGACH",
+      "product_name": "Dao cạo ron gạch_Tặng 5 lưỡi",
+      "variant_name": "Default Title",
+      "display_name": "Dao cạo ron gạch_Tặng 5 lưỡi",
+      "keywords": [
+        "DAOCAORONGACH",
+        "DAOCAORONGACH",
+        "Dao cạo ron gạch_Tặng 5 lưỡi",
+        "Default Title",
+        "dao-cao-ron-gach-tang-5-luoi"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 121721638,
+      "product_id": 36524012,
+      "sku": "MR_HITGACHTOYAM",
+      "barcode": "MR_HITGACHTOYAM",
+      "product_name": "Máy rung hít gạch Toyama",
+      "variant_name": "Default Title",
+      "display_name": "Máy rung hít gạch Toyama",
+      "keywords": [
+        "MR_HITGACHTOYAM",
+        "MR_HITGACHTOYAM",
+        "Máy rung hít gạch Toyama",
+        "Default Title",
+        "may-rung-hit-gach-toyama"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 120206263,
+      "product_id": 36281728,
+      "sku": "BK-PVC-2028",
+      "barcode": "BK-PVC-2028",
+      "product_name": "BK-PVC_Bàn Kéo Hồ PVC 20x28",
+      "variant_name": "Default Title",
+      "display_name": "BK-PVC_Bàn Kéo Hồ PVC 20x28",
+      "keywords": [
+        "BK-PVC-2028",
+        "BK-PVC-2028",
+        "BK-PVC_Bàn Kéo Hồ PVC 20x28",
+        "Default Title",
+        "ban-keo-ho-nhua"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 119977468,
+      "product_id": 36267019,
+      "sku": "THUOCDAY_5M",
+      "barcode": "THUOCDAY_5M",
+      "product_name": "Thước dây 5m Gofuther",
+      "variant_name": "Default Title",
+      "display_name": "Thước dây 5m Gofuther",
+      "keywords": [
+        "THUOCDAY_5M",
+        "THUOCDAY_5M",
+        "Thước dây 5m Gofuther",
+        "Default Title",
+        "thuoc-day-5m-gofuther"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 119104480,
+      "product_id": 36135629,
+      "sku": "Ly-l1",
+      "barcode": "Ly-l1",
+      "product_name": "Cái ly loại 1",
+      "variant_name": "Default Title",
+      "display_name": "Cái ly loại 1",
+      "keywords": [
+        "Ly-l1",
+        "Ly-l1",
+        "Cái ly loại 1",
+        "Default Title",
+        "cai-ly-loai-1"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 117857427,
+      "product_id": 35937356,
+      "sku": "BC-X",
+      "barcode": "BC-X",
+      "product_name": "BC-X_Bàn Chà XỐP EVA",
+      "variant_name": "Default Title",
+      "display_name": "BC-X_Bàn Chà XỐP EVA",
+      "keywords": [
+        "BC-X",
+        "BC-X",
+        "BC-X_Bàn Chà XỐP EVA",
+        "Default Title",
+        "ban-xoa-xop-eva"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 117856799,
+      "product_id": 35937104,
+      "sku": "BX-GT-L1",
+      "barcode": "BX-GT-L1",
+      "product_name": "Bàn xoa GIÁ TỴ - Loại 1. Lõi 85%",
+      "variant_name": "Default Title",
+      "display_name": "Bàn xoa GIÁ TỴ - Loại 1. Lõi 85%",
+      "keywords": [
+        "BX-GT-L1",
+        "BX-GT-L1",
+        "Bàn xoa GIÁ TỴ - Loại 1. Lõi 85%",
+        "Default Title",
+        "ban-xoa-gia-ty-loai-1-loi-85"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 117845436,
+      "product_id": 35931506,
+      "sku": "BCGT_L1",
+      "barcode": "BCGT_L1",
+      "product_name": "Bàn Chà Giá Tỵ LOẠI 1",
+      "variant_name": "Default Title",
+      "display_name": "Bàn Chà Giá Tỵ LOẠI 1",
+      "keywords": [
+        "BCGT_L1",
+        "BCGT_L1",
+        "Bàn Chà Giá Tỵ LOẠI 1",
+        "Default Title",
+        "ban-cha-gia-ty-loai-1"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 116225384,
+      "product_id": 35634196,
+      "sku": "TAYNAM",
+      "barcode": "TAYNAM",
+      "product_name": "Tay nắm gỗ bàn xoa vữa",
+      "variant_name": "Default Title",
+      "display_name": "Tay nắm gỗ bàn xoa vữa",
+      "keywords": [
+        "TAYNAM",
+        "TAYNAM",
+        "Tay nắm gỗ bàn xoa vữa",
+        "Default Title",
+        "tay-nam-go-ban-xoa-vua"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 116225379,
+      "product_id": 35634193,
+      "sku": "BXD-XT8",
+      "barcode": "BXD-XT8",
+      "product_name": "XT8 - Bay Xây tô Lá Đề Cán Tre 0.9 ly",
+      "variant_name": "Default Title",
+      "display_name": "XT8 - Bay Xây tô Lá Đề Cán Tre 0.9 ly",
+      "keywords": [
+        "BXD-XT8",
+        "BXD-XT8",
+        "XT8 - Bay Xây tô Lá Đề Cán Tre 0.9 ly",
+        "Default Title",
+        "bay-can-tre-la-de-0-9ly"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 115711528,
+      "product_id": 35578718,
+      "sku": "BX-MIT",
+      "barcode": "BX-MIT",
+      "product_name": "Bàn xoa gỗ MÍT NGHỆ",
+      "variant_name": "Default Title",
+      "display_name": "Bàn xoa gỗ MÍT NGHỆ",
+      "keywords": [
+        "BX-MIT",
+        "BX-MIT",
+        "Bàn xoa gỗ MÍT NGHỆ",
+        "Default Title",
+        "ban-cha-mit"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 115286942,
+      "product_id": 35546019,
+      "sku": "MRG_MAKITA",
+      "barcode": "MRG_MAKITA",
+      "product_name": "Máy hít rung gạch Makita",
+      "variant_name": "Default Title",
+      "display_name": "Máy hít rung gạch Makita",
+      "keywords": [
+        "MRG_MAKITA",
+        "MRG_MAKITA",
+        "Máy hít rung gạch Makita",
+        "Default Title",
+        "may-hit-rung-gach-makita"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 114494265,
+      "product_id": 35417447,
+      "sku": "BXD_Chacgach",
+      "barcode": "BXD_Chacgach",
+      "product_name": "Bay Xây Chặc Gạch Dày 1.6mm",
+      "variant_name": "Default Title",
+      "display_name": "Bay Xây Chặc Gạch Dày 1.6mm",
+      "keywords": [
+        "BXD_Chacgach",
+        "BXD_Chacgach",
+        "Bay Xây Chặc Gạch Dày 1.6mm",
+        "Default Title",
+        "bay-xay-chuyen-chac-gach-1-8ly"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 114401981,
+      "product_id": 35405694,
+      "sku": "BX-GT-DB",
+      "barcode": "BX-GT-DB",
+      "product_name": "Bàn xoa gỗ GIÁ TỴ - Loại Đặc Biệt 100% lõi",
+      "variant_name": "Default Title",
+      "display_name": "Bàn xoa gỗ GIÁ TỴ - Loại Đặc Biệt 100% lõi",
+      "keywords": [
+        "BX-GT-DB",
+        "BX-GT-DB",
+        "Bàn xoa gỗ GIÁ TỴ - Loại Đặc Biệt 100% lõi",
+        "Default Title",
+        "ban-cha-go-gia-ty-loai-1"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 114163933,
+      "product_id": 35356231,
+      "sku": "PVN61",
+      "barcode": "PVN61",
+      "product_name": "Chân kim T - Loại 1.5 ly (Túi 50 kim)",
+      "variant_name": "Default Title",
+      "display_name": "Chân kim T - Loại 1.5 ly (Túi 50 kim)",
+      "keywords": [
+        "PVN61",
+        "PVN61",
+        "Chân kim T - Loại 1.5 ly (Túi 50 kim)",
+        "Default Title",
+        "chan-kim-t-loai-1-5-ly-tui-50-kim"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 113579115,
+      "product_id": 35236122,
+      "sku": "OL_HITGACH_2C",
+      "barcode": "OL_HITGACH_2C",
+      "product_name": "HÍT GẠCH, HÍT KÍNH cầm tay 2 chấu_Deto_Màu Xanh",
+      "variant_name": "Default Title",
+      "display_name": "HÍT GẠCH, HÍT KÍNH cầm tay 2 chấu_Deto_Màu Xanh",
+      "keywords": [
+        "OL_HITGACH_2C",
+        "OL_HITGACH_2C",
+        "HÍT GẠCH, HÍT KÍNH cầm tay 2 chấu_Deto_Màu Xanh",
+        "Default Title",
+        "hit-gach-2-chau-deto"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 113579111,
+      "product_id": 35236118,
+      "sku": "MCG_ROYBI",
+      "barcode": "MCG_ROYBI",
+      "product_name": "Máy cắt gạch Royobi 1m2",
+      "variant_name": "Default Title",
+      "display_name": "Máy cắt gạch Royobi 1m2",
+      "keywords": [
+        "MCG_ROYBI",
+        "MCG_ROYBI",
+        "Máy cắt gạch Royobi 1m2",
+        "Default Title",
+        "may-cat-gach-royobi-1m2"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 113579096,
+      "product_id": 35236112,
+      "sku": "OL_KNG_A2",
+      "barcode": "OL_KNG_A2",
+      "product_name": "Kích nâng gạch ốp lát_A2",
+      "variant_name": "Default Title",
+      "display_name": "Kích nâng gạch ốp lát_A2",
+      "keywords": [
+        "OL_KNG_A2",
+        "OL_KNG_A2",
+        "Kích nâng gạch ốp lát_A2",
+        "Default Title",
+        "kich-nang-gach-l1"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 113486350,
+      "product_id": 35220999,
+      "sku": "BXD-LK-0816",
+      "barcode": "BXD-LK-0816",
+      "product_name": "Bay xây liền khối - Loại 8x16 cm",
+      "variant_name": "Default Title",
+      "display_name": "Bay xây liền khối - Loại 8x16 cm",
+      "keywords": [
+        "BXD-LK-0816",
+        "BXD-LK-0816",
+        "Bay xây liền khối - Loại 8x16 cm",
+        "Default Title",
+        "bay-xay-lien-khoi-loai-8x16-cm"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 113486328,
+      "product_id": 35220990,
+      "sku": "BXD-XT1",
+      "barcode": "BXD-XT1",
+      "product_name": "XT1_Bay Quảng Xây Tô - 10x18 thép 0.9mm",
+      "variant_name": "Default Title",
+      "display_name": "XT1_Bay Quảng Xây Tô - 10x18 thép 0.9mm",
+      "keywords": [
+        "BXD-XT1",
+        "BXD-XT1",
+        "XT1_Bay Quảng Xây Tô - 10x18 thép 0.9mm",
+        "Default Title",
+        "bay-quang-co-dai-10x19-9zem"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 113401615,
+      "product_id": 35203165,
+      "sku": "BXD-CB-TT",
+      "barcode": "PVN60",
+      "product_name": "Combo Bay Truyền Thống (tặng bay chỉ)",
+      "variant_name": "Default Title",
+      "display_name": "Combo Bay Truyền Thống (tặng bay chỉ)",
+      "keywords": [
+        "BXD-CB-TT",
+        "PVN60",
+        "Combo Bay Truyền Thống (tặng bay chỉ)",
+        "Default Title",
+        "combo-bay-truyen-thong-tang-bay-chi"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 113400364,
+      "product_id": 35202312,
+      "sku": "BXD-Q-CB",
+      "barcode": "BXD-Q-CB",
+      "product_name": "Combo Bay Quảng",
+      "variant_name": "Default Title",
+      "display_name": "Combo Bay Quảng",
+      "keywords": [
+        "BXD-Q-CB",
+        "BXD-Q-CB",
+        "Combo Bay Quảng",
+        "Default Title",
+        "combo-bay-quang"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 113274318,
+      "product_id": 35182287,
+      "sku": "KIMCB-1.0",
+      "barcode": "KIMCB-1.0",
+      "product_name": "Chân kim chữ T - Loại 1.0 ly",
+      "variant_name": "Default Title",
+      "display_name": "Chân kim chữ T - Loại 1.0 ly",
+      "keywords": [
+        "KIMCB-1.0",
+        "KIMCB-1.0",
+        "Chân kim chữ T - Loại 1.0 ly",
+        "Default Title",
+        "chan-kim-chu-t-loai-1-0-ly"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 113274315,
+      "product_id": 35182284,
+      "sku": "KEVITXOAY_L1.5",
+      "barcode": "VITCB-1.0",
+      "product_name": "Ke  vít xoáy chữ T_ốp lát gạch (Tái sử dụng)_Loại 1.5mm",
+      "variant_name": "Default Title",
+      "display_name": "Ke  vít xoáy chữ T_ốp lát gạch (Tái sử dụng)_Loại 1.5mm",
+      "keywords": [
+        "KEVITXOAY_L1.5",
+        "VITCB-1.0",
+        "Ke  vít xoáy chữ T_ốp lát gạch (Tái sử dụng)_Loại 1.5mm",
+        "Default Title",
+        "vit-van-can-bang-gach-loai-1mm"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 113120120,
+      "product_id": 35163097,
+      "sku": "RYOBI-QC-BOBI",
+      "barcode": "RYOBI-QC-BOBI",
+      "product_name": "Bộ Bi bàn cắt gạch Ryobi-QC",
+      "variant_name": "Default Title",
+      "display_name": "Bộ Bi bàn cắt gạch Ryobi-QC",
+      "keywords": [
+        "RYOBI-QC-BOBI",
+        "RYOBI-QC-BOBI",
+        "Bộ Bi bàn cắt gạch Ryobi-QC",
+        "Default Title",
+        "bo-bi-ban-cat-gach-ryobi-qc"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 112918711,
+      "product_id": 35133420,
+      "sku": "BXD-X10",
+      "barcode": "BXD-X10",
+      "product_name": "X10_Bay Xây - Chuyên chặc gạch. dày 1.6mm",
+      "variant_name": "Default Title",
+      "display_name": "X10_Bay Xây - Chuyên chặc gạch. dày 1.6mm",
+      "keywords": [
+        "BXD-X10",
+        "BXD-X10",
+        "X10_Bay Xây - Chuyên chặc gạch. dày 1.6mm",
+        "Default Title",
+        "bay-xay-chuyen-chac-gach-day-1-6mm"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 112811757,
+      "product_id": 35106103,
+      "sku": "OL_KCT1.5L",
+      "barcode": "OL_KCT1.5L",
+      "product_name": "Ke chữ thập 1.5 ly",
+      "variant_name": "Default Title",
+      "display_name": "Ke chữ thập 1.5 ly",
+      "keywords": [
+        "OL_KCT1.5L",
+        "OL_KCT1.5L",
+        "Ke chữ thập 1.5 ly",
+        "Default Title",
+        "ke-chu-thap-1-5-ly"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 112809769,
+      "product_id": 35106064,
+      "sku": "OL_NCB",
+      "barcode": "OP_NCB",
+      "product_name": "Nêm cân bằng",
+      "variant_name": "Default Title",
+      "display_name": "Nêm cân bằng",
+      "keywords": [
+        "OL_NCB",
+        "OP_NCB",
+        "Nêm cân bằng",
+        "Default Title",
+        "nem-can-bang"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 112808709,
+      "product_id": 35106059,
+      "sku": "OP_KT1.5L",
+      "barcode": "OP_KT1.5L",
+      "product_name": "ke trắng 1.5 ly",
+      "variant_name": "Default Title",
+      "display_name": "ke trắng 1.5 ly",
+      "keywords": [
+        "OP_KT1.5L",
+        "OP_KT1.5L",
+        "ke trắng 1.5 ly",
+        "Default Title",
+        "ke-trang-1-5-ly"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 112807299,
+      "product_id": 35106055,
+      "sku": "OP_KT1L",
+      "barcode": "OP_KT1L",
+      "product_name": "ke trắng 1 ly",
+      "variant_name": "Default Title",
+      "display_name": "ke trắng 1 ly",
+      "keywords": [
+        "OP_KT1L",
+        "OP_KT1L",
+        "ke trắng 1 ly",
+        "Default Title",
+        "ke-trang-1-ly"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 112791042,
+      "product_id": 35105954,
+      "sku": "OP_KSMC",
+      "barcode": "OP_KSMC",
+      "product_name": "Kiềm siết màu cam",
+      "variant_name": "Default Title",
+      "display_name": "Kiềm siết màu cam",
+      "keywords": [
+        "OP_KSMC",
+        "OP_KSMC",
+        "Kiềm siết màu cam",
+        "Default Title",
+        "kiem-siet-mau-cam"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 112790854,
+      "product_id": 35105883,
+      "sku": "CHOTGIUA_LK",
+      "barcode": "CHOTGIUA_LK",
+      "product_name": "Chốt giữa linh kiện",
+      "variant_name": "Default Title",
+      "display_name": "Chốt giữa linh kiện",
+      "keywords": [
+        "CHOTGIUA_LK",
+        "CHOTGIUA_LK",
+        "Chốt giữa linh kiện",
+        "Default Title",
+        "chot-giua-linh-kien"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 112553509,
+      "product_id": 35056314,
+      "sku": "BXD-T3",
+      "barcode": "BXD-T3",
+      "product_name": "T3 - Bay Trát LA ĐỀ CÁN TRE - 0.7mm",
+      "variant_name": "Default Title",
+      "display_name": "T3 - Bay Trát LA ĐỀ CÁN TRE - 0.7mm",
+      "keywords": [
+        "BXD-T3",
+        "BXD-T3",
+        "T3 - Bay Trát LA ĐỀ CÁN TRE - 0.7mm",
+        "Default Title",
+        "bay-la-de-can-tre-9x18cm-thep-day-7zem"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 112374491,
+      "product_id": 35026986,
+      "sku": "BUACS-B",
+      "barcode": "BUACS-B",
+      "product_name": "Búa Cao Su ốp lát gạch",
+      "variant_name": "Búa Lớn",
+      "display_name": "Búa Cao Su ốp lát gạch - Búa Lớn",
+      "keywords": [
+        "BUACS-B",
+        "BUACS-B",
+        "Búa Cao Su ốp lát gạch",
+        "Búa Lớn",
+        "bua-cao-su-op-lat-gach"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 112374492,
+      "product_id": 35026986,
+      "sku": "BUACS-Bu",
+      "barcode": "BUACS-Bu",
+      "product_name": "Búa Cao Su ốp lát gạch",
+      "variant_name": "Búa Nhỏ",
+      "display_name": "Búa Cao Su ốp lát gạch - Búa Nhỏ",
+      "keywords": [
+        "BUACS-Bu",
+        "BUACS-Bu",
+        "Búa Cao Su ốp lát gạch",
+        "Búa Nhỏ",
+        "bua-cao-su-op-lat-gach"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 111006549,
+      "product_id": 34758917,
+      "sku": "BXD-X4",
+      "barcode": "BXD-X4",
+      "product_name": "X4 - Bay Quảng Xây dày 1.1mm",
+      "variant_name": "Default Title",
+      "display_name": "X4 - Bay Quảng Xây dày 1.1mm",
+      "keywords": [
+        "BXD-X4",
+        "BXD-X4",
+        "X4 - Bay Quảng Xây dày 1.1mm",
+        "Default Title",
+        "bay-quang-09x17cm-thep-luoi-cua-day-1-1mm"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 108299102,
+      "product_id": 34320518,
+      "sku": "",
+      "barcode": "",
+      "product_name": "Bộ máy khoan pin và đồ nghề cầm tay 128 chi tiết Total THKTHP11282",
+      "variant_name": "Default Title",
+      "display_name": "Bộ máy khoan pin và đồ nghề cầm tay 128 chi tiết Total THKTHP11282",
+      "keywords": [
+        "Bộ máy khoan pin và đồ nghề cầm tay 128 chi tiết Total THKTHP11282",
+        "Default Title",
+        "bo-may-khoan-pin-va-do-nghe-cam-tay-128-chi-tiet-total-thkthp11282"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 108298858,
+      "product_id": 34320509,
+      "sku": "",
+      "barcode": "",
+      "product_name": "Bộ đồ nghề cầm tay 9 chi tiết Total THKTHP90096",
+      "variant_name": "Default Title",
+      "display_name": "Bộ đồ nghề cầm tay 9 chi tiết Total THKTHP90096",
+      "keywords": [
+        "Bộ đồ nghề cầm tay 9 chi tiết Total THKTHP90096",
+        "Default Title",
+        "bo-do-nghe-cam-tay-9-chi-tiet-total-thkthp90096"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 108298726,
+      "product_id": 34320504,
+      "sku": "",
+      "barcode": "",
+      "product_name": "Bộ đồ nghề cầm tay 59 chi tiết Total THTCS12591",
+      "variant_name": "Default Title",
+      "display_name": "Bộ đồ nghề cầm tay 59 chi tiết Total THTCS12591",
+      "keywords": [
+        "Bộ đồ nghề cầm tay 59 chi tiết Total THTCS12591",
+        "Default Title",
+        "bo-do-nghe-cam-tay-59-chi-tiet-total-thtcs12591"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 108298649,
+      "product_id": 34320501,
+      "sku": "",
+      "barcode": "",
+      "product_name": "Bộ đồ nghề cầm tay Total THKTHP21426 142 chi tiết",
+      "variant_name": "Default Title",
+      "display_name": "Bộ đồ nghề cầm tay Total THKTHP21426 142 chi tiết",
+      "keywords": [
+        "Bộ đồ nghề cầm tay Total THKTHP21426 142 chi tiết",
+        "Default Title",
+        "bo-do-nghe-cam-tay-total-thkthp21426-142-chi-tiet"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 108298560,
+      "product_id": 34320468,
+      "sku": "",
+      "barcode": "",
+      "product_name": "Bộ đồ nghề 25 chi tiết Total THKTHP90256",
+      "variant_name": "Default Title",
+      "display_name": "Bộ đồ nghề 25 chi tiết Total THKTHP90256",
+      "keywords": [
+        "Bộ đồ nghề 25 chi tiết Total THKTHP90256",
+        "Default Title",
+        "bo-do-nghe-25-chi-tiet-total-thkthp90256"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 108298447,
+      "product_id": 34320463,
+      "sku": "",
+      "barcode": "",
+      "product_name": "Bộ đồ nghề vali kéo 147 chi tiết Total THKTHP21476",
+      "variant_name": "Default Title",
+      "display_name": "Bộ đồ nghề vali kéo 147 chi tiết Total THKTHP21476",
+      "keywords": [
+        "Bộ đồ nghề vali kéo 147 chi tiết Total THKTHP21476",
+        "Default Title",
+        "bo-do-nghe-vali-keo-147-chi-tiet-total-thkthp21476"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 108297439,
+      "product_id": 34320254,
+      "sku": "",
+      "barcode": "",
+      "product_name": "Bộ 26 công cụ dùng cho thợ điện Total TKETS0261",
+      "variant_name": "Default Title",
+      "display_name": "Bộ 26 công cụ dùng cho thợ điện Total TKETS0261",
+      "keywords": [
+        "Bộ 26 công cụ dùng cho thợ điện Total TKETS0261",
+        "Default Title",
+        "bo-26-cong-cu-dung-cho-tho-dien-total-tkets0261"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107979519,
+      "product_id": 34284789,
+      "sku": "TOTAL-TAGLI2012582",
+      "barcode": "TOTAL-TAGLI2012582",
+      "product_name": "Máy mài góc dùng pin Lithium 20V Total TAGLI2012582",
+      "variant_name": "Default Title",
+      "display_name": "Máy mài góc dùng pin Lithium 20V Total TAGLI2012582",
+      "keywords": [
+        "TOTAL-TAGLI2012582",
+        "TOTAL-TAGLI2012582",
+        "Máy mài góc dùng pin Lithium 20V Total TAGLI2012582",
+        "Default Title",
+        "may-mai-goc-dung-pin-lithium-20v-total-tagli2012582",
+        "Đồ Nghề - Phụ Kiện"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107979427,
+      "product_id": 34284712,
+      "sku": "TOTAL-TAGLI201258",
+      "barcode": "TOTAL-TAGLI201258",
+      "product_name": "Máy mài góc dùng pin Lithium 20V Total TAGLI201258 (Chưa Pin & Sạc)",
+      "variant_name": "Default Title",
+      "display_name": "Máy mài góc dùng pin Lithium 20V Total TAGLI201258 (Chưa Pin & Sạc)",
+      "keywords": [
+        "TOTAL-TAGLI201258",
+        "TOTAL-TAGLI201258",
+        "Máy mài góc dùng pin Lithium 20V Total TAGLI201258 (Chưa Pin & Sạc)",
+        "Default Title",
+        "may-mai-goc-dung-pin-lithium-20v-total-tagli201258-chua-pin-sac"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107979350,
+      "product_id": 34284664,
+      "sku": "TOTAL-TAGLI201072",
+      "barcode": "TOTAL-TAGLI201072",
+      "product_name": "Máy mài góc dùng pin Lithium 20V Total TAGLI201072",
+      "variant_name": "Default Title",
+      "display_name": "Máy mài góc dùng pin Lithium 20V Total TAGLI201072",
+      "keywords": [
+        "TOTAL-TAGLI201072",
+        "TOTAL-TAGLI201072",
+        "Máy mài góc dùng pin Lithium 20V Total TAGLI201072",
+        "Default Title",
+        "may-mai-goc-dung-pin-lithium-20v-total-tagli201072"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107979293,
+      "product_id": 34284613,
+      "sku": "TOTAL-TAGLI20107",
+      "barcode": "TOTAL-TAGLI20107",
+      "product_name": "Máy mài góc dùng pin Lithium 20V Total TAGLI20107 (Chưa Pin & Sạc)",
+      "variant_name": "Default Title",
+      "display_name": "Máy mài góc dùng pin Lithium 20V Total TAGLI20107 (Chưa Pin & Sạc)",
+      "keywords": [
+        "TOTAL-TAGLI20107",
+        "TOTAL-TAGLI20107",
+        "Máy mài góc dùng pin Lithium 20V Total TAGLI20107 (Chưa Pin & Sạc)",
+        "Default Title",
+        "may-mai-goc-dung-pin-lithium-20v-total-tagli20107-chua-pin-sac"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107979220,
+      "product_id": 34284570,
+      "sku": "TOTAL-TAGLI2010082",
+      "barcode": "TOTAL-TAGLI2010082",
+      "product_name": "Máy Mài Góc Dùng Pin 20V Total TAGLI2010082",
+      "variant_name": "Default Title",
+      "display_name": "Máy Mài Góc Dùng Pin 20V Total TAGLI2010082",
+      "keywords": [
+        "TOTAL-TAGLI2010082",
+        "TOTAL-TAGLI2010082",
+        "Máy Mài Góc Dùng Pin 20V Total TAGLI2010082",
+        "Default Title",
+        "may-mai-goc-dung-pin-20v-total-tagli2010082"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107979083,
+      "product_id": 34284491,
+      "sku": "TOTAL-TAGLI1001",
+      "barcode": "TOTAL-TAGLI1001",
+      "product_name": "Máy mài góc dùng pin 20V Total TAGLI1001 (Chưa Pin & Sạc)",
+      "variant_name": "Default Title",
+      "display_name": "Máy mài góc dùng pin 20V Total TAGLI1001 (Chưa Pin & Sạc)",
+      "keywords": [
+        "TOTAL-TAGLI1001",
+        "TOTAL-TAGLI1001",
+        "Máy mài góc dùng pin 20V Total TAGLI1001 (Chưa Pin & Sạc)",
+        "Default Title",
+        "may-mai-goc-dung-pin-20v-total-tagli1001-chua-pin-sac"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107978822,
+      "product_id": 34284276,
+      "sku": "TOTAL-TAGLI201008",
+      "barcode": "TOTAL-TAGLI201008",
+      "product_name": "Máy mài góc dùng pin 20V Total TAGLI201008 (Chưa Pin & Sạc)",
+      "variant_name": "Default Title",
+      "display_name": "Máy mài góc dùng pin 20V Total TAGLI201008 (Chưa Pin & Sạc)",
+      "keywords": [
+        "TOTAL-TAGLI201008",
+        "TOTAL-TAGLI201008",
+        "Máy mài góc dùng pin 20V Total TAGLI201008 (Chưa Pin & Sạc)",
+        "Default Title",
+        "may-mai-goc-dung-pin-20v-total-tagli201008-chua-pin-sac"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107978786,
+      "product_id": 34284249,
+      "sku": "TOTAL-TAGLI1002",
+      "barcode": "TOTAL-TAGLI1002",
+      "product_name": "Máy mài góc dùng pin 20V Total TAGLI1002 (không kèm pin và sạc)",
+      "variant_name": "Default Title",
+      "display_name": "Máy mài góc dùng pin 20V Total TAGLI1002 (không kèm pin và sạc)",
+      "keywords": [
+        "TOTAL-TAGLI1002",
+        "TOTAL-TAGLI1002",
+        "Máy mài góc dùng pin 20V Total TAGLI1002 (không kèm pin và sạc)",
+        "Default Title",
+        "may-mai-goc-dung-pin-20v-total-tagli1002-khong-kem-pin-va-sac"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107978730,
+      "product_id": 34284200,
+      "sku": "TOTAL-TAGLI21104",
+      "barcode": "TOTAL-TAGLI21104",
+      "product_name": "Máy Mài Góc Dùng Pin 20V Total TAGLI21104",
+      "variant_name": "Default Title",
+      "display_name": "Máy Mài Góc Dùng Pin 20V Total TAGLI21104",
+      "keywords": [
+        "TOTAL-TAGLI21104",
+        "TOTAL-TAGLI21104",
+        "Máy Mài Góc Dùng Pin 20V Total TAGLI21104",
+        "Default Title",
+        "may-mai-goc-dung-pin-20v-total-tagli21104"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107978442,
+      "product_id": 34283953,
+      "sku": "DEKTON-M21-AG100BT",
+      "barcode": "DEKTON-M21-AG100BT",
+      "product_name": "Máy mài góc Pin Dekton M21-AG100BT (Chưa Pin & Sạc)",
+      "variant_name": "Default Title",
+      "display_name": "Máy mài góc Pin Dekton M21-AG100BT (Chưa Pin & Sạc)",
+      "keywords": [
+        "DEKTON-M21-AG100BT",
+        "DEKTON-M21-AG100BT",
+        "Máy mài góc Pin Dekton M21-AG100BT (Chưa Pin & Sạc)",
+        "Default Title",
+        "may-mai-goc-pin-dekton-m21-ag100bt-chua-pin-sac"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107978349,
+      "product_id": 34283862,
+      "sku": "DEKTON-M21-AG100CP",
+      "barcode": "DEKTON-M21-AG100CP",
+      "product_name": "Máy Mài Góc Dùng Pin Dekton M21-AG100CP (Chưa Pin & Sạc)",
+      "variant_name": "Default Title",
+      "display_name": "Máy Mài Góc Dùng Pin Dekton M21-AG100CP (Chưa Pin & Sạc)",
+      "keywords": [
+        "DEKTON-M21-AG100CP",
+        "DEKTON-M21-AG100CP",
+        "Máy Mài Góc Dùng Pin Dekton M21-AG100CP (Chưa Pin & Sạc)",
+        "Default Title",
+        "may-mai-goc-dung-pin-dekton-m21-ag100cp-chua-pin-sac"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107978157,
+      "product_id": 34283787,
+      "sku": "DEKTON-M21-AG100S",
+      "barcode": "DEKTON-M21-AG100S",
+      "product_name": "Máy Mài Góc Pin Dekton M21-AG100S (Chưa Pin & Sạc)",
+      "variant_name": "Default Title",
+      "display_name": "Máy Mài Góc Pin Dekton M21-AG100S (Chưa Pin & Sạc)",
+      "keywords": [
+        "DEKTON-M21-AG100S",
+        "DEKTON-M21-AG100S",
+        "Máy Mài Góc Pin Dekton M21-AG100S (Chưa Pin & Sạc)",
+        "Default Title",
+        "may-mai-goc-pin-dekton-m21-ag100s-chua-pin-sac"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107977691,
+      "product_id": 34283383,
+      "sku": "DEKTON-D20-AG100S",
+      "barcode": "DEKTON-D20-AG100S",
+      "product_name": "Máy Mài Góc Dùng Pin 20V Dekton D20-AG100S (Chưa Pin & Sạc)",
+      "variant_name": "Default Title",
+      "display_name": "Máy Mài Góc Dùng Pin 20V Dekton D20-AG100S (Chưa Pin & Sạc)",
+      "keywords": [
+        "DEKTON-D20-AG100S",
+        "DEKTON-D20-AG100S",
+        "Máy Mài Góc Dùng Pin 20V Dekton D20-AG100S (Chưa Pin & Sạc)",
+        "Default Title",
+        "may-mai-goc-dung-pin-20v-dekton-d20-ag100s-chua-pin-sac"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107960162,
+      "product_id": 34281931,
+      "sku": "DEKTON-D21-MM100",
+      "barcode": "DEKTON-D21-MM100",
+      "product_name": "Máy Mài Góc Dùng Pin 21V Dekton D21-MM100 (Chưa Pin & sạc)",
+      "variant_name": "Default Title",
+      "display_name": "Máy Mài Góc Dùng Pin 21V Dekton D21-MM100 (Chưa Pin & sạc)",
+      "keywords": [
+        "DEKTON-D21-MM100",
+        "DEKTON-D21-MM100",
+        "Máy Mài Góc Dùng Pin 21V Dekton D21-MM100 (Chưa Pin & sạc)",
+        "Default Title",
+        "may-mai-goc-dung-pin-21v-dekton-d21-mm100-chua-pin-sac"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107948172,
+      "product_id": 34281555,
+      "sku": "DEKON-M21-D360LM",
+      "barcode": "DEKON-M21-D360LM",
+      "product_name": "Đèn Cầm Tay Dekton M21-D360LM (Chưa Pin và Sạc)",
+      "variant_name": "Default Title",
+      "display_name": "Đèn Cầm Tay Dekton M21-D360LM (Chưa Pin và Sạc)",
+      "keywords": [
+        "DEKON-M21-D360LM",
+        "DEKON-M21-D360LM",
+        "Đèn Cầm Tay Dekton M21-D360LM (Chưa Pin và Sạc)",
+        "Default Title",
+        "den-cam-tay-dekton-m21-d360lm-chua-pin-va-sac"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107943669,
+      "product_id": 34280700,
+      "sku": "DEKTON-M21-CG165BL",
+      "barcode": "DEKTON-M21-CG165BL",
+      "product_name": "Máy Cưa Đĩa Dùng Pin Dekton M21-CG165BL",
+      "variant_name": "Default Title",
+      "display_name": "Máy Cưa Đĩa Dùng Pin Dekton M21-CG165BL",
+      "keywords": [
+        "DEKTON-M21-CG165BL",
+        "DEKTON-M21-CG165BL",
+        "Máy Cưa Đĩa Dùng Pin Dekton M21-CG165BL",
+        "Default Title",
+        "may-cua-dia-dung-pin-dekton-m21-cg165bl"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107943188,
+      "product_id": 34280482,
+      "sku": "DEKTON-M21-AG100PRO",
+      "barcode": "DEKTON-M21-AG100PRO",
+      "product_name": "Thân Máy Mài Pin Dekton M21-AG100PRO (chưa có pin và sạc)",
+      "variant_name": "Default Title",
+      "display_name": "Thân Máy Mài Pin Dekton M21-AG100PRO (chưa có pin và sạc)",
+      "keywords": [
+        "DEKTON-M21-AG100PRO",
+        "DEKTON-M21-AG100PRO",
+        "Thân Máy Mài Pin Dekton M21-AG100PRO (chưa có pin và sạc)",
+        "Default Title",
+        "than-may-mai-pin-dekton-m21-ag100pro-chua-co-pin-va-sac"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107941077,
+      "product_id": 34279401,
+      "sku": "DEKTON-DK-LS1601",
+      "barcode": "DEKTON-DK-LS1601",
+      "product_name": "Máy Cân Bằng Laser 16 Tia Dekton DK-LS1601 (Không Kèm Chân Máy)",
+      "variant_name": "Default Title",
+      "display_name": "Máy Cân Bằng Laser 16 Tia Dekton DK-LS1601 (Không Kèm Chân Máy)",
+      "keywords": [
+        "DEKTON-DK-LS1601",
+        "DEKTON-DK-LS1601",
+        "Máy Cân Bằng Laser 16 Tia Dekton DK-LS1601 (Không Kèm Chân Máy)",
+        "Default Title",
+        "may-can-bang-laser-16-tia-dekton-dk-ls1601-khong-kem-chan-may"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107889028,
+      "product_id": 34278500,
+      "sku": "BCG-RYOBI-QC-1200",
+      "barcode": "BCG-RYOBI-QC-1200",
+      "product_name": "Bàn Cắt Gạch Đẩy Tay RYOBI-QC-1200",
+      "variant_name": "Default Title",
+      "display_name": "Bàn Cắt Gạch Đẩy Tay RYOBI-QC-1200",
+      "keywords": [
+        "BCG-RYOBI-QC-1200",
+        "BCG-RYOBI-QC-1200",
+        "Bàn Cắt Gạch Đẩy Tay RYOBI-QC-1200",
+        "Default Title",
+        "ban-sao-cua-ban-cat-gach-day-tay-rioby-qc-1200"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107889017,
+      "product_id": 34278493,
+      "sku": "BCG-RYOBI-QC-800",
+      "barcode": "BCG-RYOBI-QC-800",
+      "product_name": "Bàn Cắt Gạch Đẩy Tay RYOBI-QC-800",
+      "variant_name": "Default Title",
+      "display_name": "Bàn Cắt Gạch Đẩy Tay RYOBI-QC-800",
+      "keywords": [
+        "BCG-RYOBI-QC-800",
+        "BCG-RYOBI-QC-800",
+        "Bàn Cắt Gạch Đẩy Tay RYOBI-QC-800",
+        "Default Title",
+        "ban-cat-gach-day-tay-rioby-qc-800"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107888968,
+      "product_id": 34278468,
+      "sku": "BCG-RYOBI-QC-1000",
+      "barcode": "BCG-RYOBI-QC-1000",
+      "product_name": "Bàn Cắt Gạch Đẩy Tay RYOBI-QC-1000",
+      "variant_name": "Default Title",
+      "display_name": "Bàn Cắt Gạch Đẩy Tay RYOBI-QC-1000",
+      "keywords": [
+        "BCG-RYOBI-QC-1000",
+        "BCG-RYOBI-QC-1000",
+        "Bàn Cắt Gạch Đẩy Tay RYOBI-QC-1000",
+        "Default Title",
+        "ban-cat-gach-day-tay-rioby-qc-1000"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107888733,
+      "product_id": 34278376,
+      "sku": "BCG-PanaPRO-1000",
+      "barcode": "BCG-PanaPRO-1000",
+      "product_name": "Bàn Cắt Gạch Đẩy Tay PanaPRO NTP-1000",
+      "variant_name": "Không Đệm Trợ Lực",
+      "display_name": "Bàn Cắt Gạch Đẩy Tay PanaPRO NTP-1000 - Không Đệm Trợ Lực",
+      "keywords": [
+        "BCG-PanaPRO-1000",
+        "BCG-PanaPRO-1000",
+        "Bàn Cắt Gạch Đẩy Tay PanaPRO NTP-1000",
+        "Không Đệm Trợ Lực",
+        "ban-cat-gach-day-tay-panapro-ntp-1000"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107888734,
+      "product_id": 34278376,
+      "sku": "BCG-PanaPRO-1000-DTL",
+      "barcode": "BCG-PanaPRO-1000-DTL",
+      "product_name": "Bàn Cắt Gạch Đẩy Tay PanaPRO NTP-1000",
+      "variant_name": "Có Đệm Trợ Lực",
+      "display_name": "Bàn Cắt Gạch Đẩy Tay PanaPRO NTP-1000 - Có Đệm Trợ Lực",
+      "keywords": [
+        "BCG-PanaPRO-1000-DTL",
+        "BCG-PanaPRO-1000-DTL",
+        "Bàn Cắt Gạch Đẩy Tay PanaPRO NTP-1000",
+        "Có Đệm Trợ Lực",
+        "ban-cat-gach-day-tay-panapro-ntp-1000"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107888697,
+      "product_id": 34278367,
+      "sku": "BCG-PanaPRO-1500-K",
+      "barcode": "BCG-PanaPRO-1500-K",
+      "product_name": "Bàn Cắt Gạch Đẩy Tay PanaPRO NTP-1500",
+      "variant_name": "Không Đệm Trợ Lực",
+      "display_name": "Bàn Cắt Gạch Đẩy Tay PanaPRO NTP-1500 - Không Đệm Trợ Lực",
+      "keywords": [
+        "BCG-PanaPRO-1500-K",
+        "BCG-PanaPRO-1500-K",
+        "Bàn Cắt Gạch Đẩy Tay PanaPRO NTP-1500",
+        "Không Đệm Trợ Lực",
+        "ban-sao-cua-ban-cat-gach-day-tay-panapro-ntp-1500"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107888698,
+      "product_id": 34278367,
+      "sku": "BCG-PanaPRO-1500-C",
+      "barcode": "BCG-PanaPRO-1500-C",
+      "product_name": "Bàn Cắt Gạch Đẩy Tay PanaPRO NTP-1500",
+      "variant_name": "Có Đệm Trợ Lực",
+      "display_name": "Bàn Cắt Gạch Đẩy Tay PanaPRO NTP-1500 - Có Đệm Trợ Lực",
+      "keywords": [
+        "BCG-PanaPRO-1500-C",
+        "BCG-PanaPRO-1500-C",
+        "Bàn Cắt Gạch Đẩy Tay PanaPRO NTP-1500",
+        "Có Đệm Trợ Lực",
+        "ban-sao-cua-ban-cat-gach-day-tay-panapro-ntp-1500"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107888583,
+      "product_id": 34278302,
+      "sku": "BCG-PanaPRO-1200-K",
+      "barcode": "BCG-PanaPRO-1200-K",
+      "product_name": "Bàn Cắt Gạch Đẩy Tay PanaPRO NTP-1200",
+      "variant_name": "Không Đệm Trợ Lực",
+      "display_name": "Bàn Cắt Gạch Đẩy Tay PanaPRO NTP-1200 - Không Đệm Trợ Lực",
+      "keywords": [
+        "BCG-PanaPRO-1200-K",
+        "BCG-PanaPRO-1200-K",
+        "Bàn Cắt Gạch Đẩy Tay PanaPRO NTP-1200",
+        "Không Đệm Trợ Lực",
+        "ban-cat-gach-day-tay-panapro-ntp-1200"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107888584,
+      "product_id": 34278302,
+      "sku": "BCG-PanaPRO-1200-C",
+      "barcode": "BCG-PanaPRO-1200-C",
+      "product_name": "Bàn Cắt Gạch Đẩy Tay PanaPRO NTP-1200",
+      "variant_name": "Có Đệm Trợ Lực",
+      "display_name": "Bàn Cắt Gạch Đẩy Tay PanaPRO NTP-1200 - Có Đệm Trợ Lực",
+      "keywords": [
+        "BCG-PanaPRO-1200-C",
+        "BCG-PanaPRO-1200-C",
+        "Bàn Cắt Gạch Đẩy Tay PanaPRO NTP-1200",
+        "Có Đệm Trợ Lực",
+        "ban-cat-gach-day-tay-panapro-ntp-1200"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107888317,
+      "product_id": 34278274,
+      "sku": "BCG-PanaPRO-NTP-600T",
+      "barcode": "BCG-PanaPRO-NTP-600T",
+      "product_name": "Bàn Cắt Gạch Đẩy Tay PanaPRO NTP-600T (Không Đệm)",
+      "variant_name": "Default Title",
+      "display_name": "Bàn Cắt Gạch Đẩy Tay PanaPRO NTP-600T (Không Đệm)",
+      "keywords": [
+        "BCG-PanaPRO-NTP-600T",
+        "BCG-PanaPRO-NTP-600T",
+        "Bàn Cắt Gạch Đẩy Tay PanaPRO NTP-600T (Không Đệm)",
+        "Default Title",
+        "ban-cat-gach-day-tay-panapro-ntp-600t-khong-dem"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107885518,
+      "product_id": 34278022,
+      "sku": "BCG-PanaPRO-NTP-600T-DTL",
+      "barcode": "BCG-PanaPRO-NTP-600T-DTL",
+      "product_name": "Bàn Cắt Gạch Đẩy Tay PanaPRO NTP-600T (Có Đệm Trợ Lực)",
+      "variant_name": "Default Title",
+      "display_name": "Bàn Cắt Gạch Đẩy Tay PanaPRO NTP-600T (Có Đệm Trợ Lực)",
+      "keywords": [
+        "BCG-PanaPRO-NTP-600T-DTL",
+        "BCG-PanaPRO-NTP-600T-DTL",
+        "Bàn Cắt Gạch Đẩy Tay PanaPRO NTP-600T (Có Đệm Trợ Lực)",
+        "Default Title",
+        "ban-cat-gach-day-tay-panapro-ntp-600t-co-dem-tro-luc"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107884872,
+      "product_id": 34277813,
+      "sku": "BCG-PanaPRO-NTP-800T-DTL",
+      "barcode": "BCG-PanaPRO-NTP-800T-DTL",
+      "product_name": "Bàn Cắt Gạch Đẩy Tay PanaPRO NTP-800T (Có Đệm Trợ Lực)",
+      "variant_name": "Default Title",
+      "display_name": "Bàn Cắt Gạch Đẩy Tay PanaPRO NTP-800T (Có Đệm Trợ Lực)",
+      "keywords": [
+        "BCG-PanaPRO-NTP-800T-DTL",
+        "BCG-PanaPRO-NTP-800T-DTL",
+        "Bàn Cắt Gạch Đẩy Tay PanaPRO NTP-800T (Có Đệm Trợ Lực)",
+        "Default Title",
+        "ban-cat-gach-day-tay-panapro-ntp-800t-co-dem-tro-luc"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107884666,
+      "product_id": 34277709,
+      "sku": "BCG-PanaPRO-NTP-800T",
+      "barcode": "BCG-PanaPRO-NTP-800T",
+      "product_name": "Bàn Cắt Gạch Đẩy Tay PanaPRO NTP-800T (Không Đệm)",
+      "variant_name": "Default Title",
+      "display_name": "Bàn Cắt Gạch Đẩy Tay PanaPRO NTP-800T (Không Đệm)",
+      "keywords": [
+        "BCG-PanaPRO-NTP-800T",
+        "BCG-PanaPRO-NTP-800T",
+        "Bàn Cắt Gạch Đẩy Tay PanaPRO NTP-800T (Không Đệm)",
+        "Default Title",
+        "ban-cat-gach-day-tay-panapro-ntp-800t"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107874254,
+      "product_id": 34271931,
+      "sku": "LC-MAKITA-D-42628",
+      "barcode": "LC-MAKITA-D-42628",
+      "product_name": "Lưỡi Cắt Gạch MAKITA D-42628",
+      "variant_name": "Default Title",
+      "display_name": "Lưỡi Cắt Gạch MAKITA D-42628",
+      "keywords": [
+        "LC-MAKITA-D-42628",
+        "LC-MAKITA-D-42628",
+        "Lưỡi Cắt Gạch MAKITA D-42628",
+        "Default Title",
+        "luoi-cat-gach-makita-d-42628"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107874036,
+      "product_id": 34271869,
+      "sku": "LC-BOSCH-105",
+      "barcode": "LC-BOSCH-105",
+      "product_name": "Lưỡi Cắt Gạch BOSCH-105",
+      "variant_name": "Default Title",
+      "display_name": "Lưỡi Cắt Gạch BOSCH-105",
+      "keywords": [
+        "LC-BOSCH-105",
+        "LC-BOSCH-105",
+        "Lưỡi Cắt Gạch BOSCH-105",
+        "Default Title",
+        "luoi-cat-gach-bosch-105"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107873765,
+      "product_id": 34271701,
+      "sku": "LC-SENKYO-114",
+      "barcode": "LC-SENKYO-114",
+      "product_name": "Lưỡi Cắt Bê Tông SENKYO-114",
+      "variant_name": "Default Title",
+      "display_name": "Lưỡi Cắt Bê Tông SENKYO-114",
+      "keywords": [
+        "LC-SENKYO-114",
+        "LC-SENKYO-114",
+        "Lưỡi Cắt Bê Tông SENKYO-114",
+        "Default Title",
+        "luoi-cat-be-tong-senkyo-114"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107873744,
+      "product_id": 34271686,
+      "sku": "LC-SENKYO-110",
+      "barcode": "LC-SENKYO-110",
+      "product_name": "Lưỡi Cắt Gạch SENKYO-110",
+      "variant_name": "Default Title",
+      "display_name": "Lưỡi Cắt Gạch SENKYO-110",
+      "keywords": [
+        "LC-SENKYO-110",
+        "LC-SENKYO-110",
+        "Lưỡi Cắt Gạch SENKYO-110",
+        "Default Title",
+        "luoi-cat-gach-senkyo-110"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107873730,
+      "product_id": 34271672,
+      "sku": "LC-BCTM-110",
+      "barcode": "LC-BCTM-110",
+      "product_name": "Lưỡi Cắt Gạch BCTM-110 (Đức)",
+      "variant_name": "Default Title",
+      "display_name": "Lưỡi Cắt Gạch BCTM-110 (Đức)",
+      "keywords": [
+        "LC-BCTM-110",
+        "LC-BCTM-110",
+        "Lưỡi Cắt Gạch BCTM-110 (Đức)",
+        "Default Title",
+        "luoi-cat-gach-bctm-110-duc"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107873713,
+      "product_id": 34271663,
+      "sku": "LC-HOTSSMAN-110-T",
+      "barcode": "LC-HOTSSMAN-110-T",
+      "product_name": "Lưỡi Cắt Gạch HOTSSMAN-110 U.S.A - Tím",
+      "variant_name": "Default Title",
+      "display_name": "Lưỡi Cắt Gạch HOTSSMAN-110 U.S.A - Tím",
+      "keywords": [
+        "LC-HOTSSMAN-110-T",
+        "LC-HOTSSMAN-110-T",
+        "Lưỡi Cắt Gạch HOTSSMAN-110 U.S.A - Tím",
+        "Default Title",
+        "luoi-cat-gach-hotssman-110-u-s-a-tim"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107873695,
+      "product_id": 34271646,
+      "sku": "LC-DRAGON-110-V",
+      "barcode": "LC-DRAGON-110-V",
+      "product_name": "Lưỡi Cắt Gạch RỒNG VÀNG -110 - Màu Vàng",
+      "variant_name": "Default Title",
+      "display_name": "Lưỡi Cắt Gạch RỒNG VÀNG -110 - Màu Vàng",
+      "keywords": [
+        "LC-DRAGON-110-V",
+        "LC-DRAGON-110-V",
+        "Lưỡi Cắt Gạch RỒNG VÀNG -110 - Màu Vàng",
+        "Default Title",
+        "luoi-cat-gach-rong-vang-110-mau-vang"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107873525,
+      "product_id": 34271563,
+      "sku": "LC-EUROKING-105",
+      "barcode": "LC-EUROKING-105",
+      "product_name": "Lưỡi Cắt Gạch EUROKING-105",
+      "variant_name": "Default Title",
+      "display_name": "Lưỡi Cắt Gạch EUROKING-105",
+      "keywords": [
+        "LC-EUROKING-105",
+        "LC-EUROKING-105",
+        "Lưỡi Cắt Gạch EUROKING-105",
+        "Default Title",
+        "luoi-cat-gach-euroking-105"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107873506,
+      "product_id": 34271548,
+      "sku": "LC-KTOMER-115",
+      "barcode": "LC-KTOMER-115",
+      "product_name": "Lưỡi Cắt Gạch KTOMER-115",
+      "variant_name": "Default Title",
+      "display_name": "Lưỡi Cắt Gạch KTOMER-115",
+      "keywords": [
+        "LC-KTOMER-115",
+        "LC-KTOMER-115",
+        "Lưỡi Cắt Gạch KTOMER-115",
+        "Default Title",
+        "luoi-cat-gach-ktomer-115"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107873466,
+      "product_id": 34271532,
+      "sku": "LC-RIOBY-105",
+      "barcode": "LC-RIOBY-105",
+      "product_name": "Lưỡi Cắt Gạch RIOBY-105",
+      "variant_name": "Default Title",
+      "display_name": "Lưỡi Cắt Gạch RIOBY-105",
+      "keywords": [
+        "LC-RIOBY-105",
+        "LC-RIOBY-105",
+        "Lưỡi Cắt Gạch RIOBY-105",
+        "Default Title",
+        "luoi-cat-gach-rioby-105"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107873437,
+      "product_id": 34271509,
+      "sku": "LC-POWER-110",
+      "barcode": "LC-POWER-110",
+      "product_name": "Lưỡi Cắt Gạch POWER-110",
+      "variant_name": "Default Title",
+      "display_name": "Lưỡi Cắt Gạch POWER-110",
+      "keywords": [
+        "LC-POWER-110",
+        "LC-POWER-110",
+        "Lưỡi Cắt Gạch POWER-110",
+        "Default Title",
+        "luoi-cat-gach-power-110"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107873405,
+      "product_id": 34271492,
+      "sku": "LC-OMEGA-105-D",
+      "barcode": "LC-OMEGA-105-D",
+      "product_name": "Lưỡi Cắt Gạch OMEGA-105-Đỏ",
+      "variant_name": "Default Title",
+      "display_name": "Lưỡi Cắt Gạch OMEGA-105-Đỏ",
+      "keywords": [
+        "LC-OMEGA-105-D",
+        "LC-OMEGA-105-D",
+        "Lưỡi Cắt Gạch OMEGA-105-Đỏ",
+        "Default Title",
+        "luoi-cat-gach-omega-105-do"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107873371,
+      "product_id": 34271462,
+      "sku": "LC-TOSAN-110",
+      "barcode": "LC-TOSAN-110",
+      "product_name": "Lưỡi Cắt Gạch TOSAN-110",
+      "variant_name": "Default Title",
+      "display_name": "Lưỡi Cắt Gạch TOSAN-110",
+      "keywords": [
+        "LC-TOSAN-110",
+        "LC-TOSAN-110",
+        "Lưỡi Cắt Gạch TOSAN-110",
+        "Default Title",
+        "luoi-cat-gach-tosan-110"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107873344,
+      "product_id": 34271438,
+      "sku": "LC-SENKYO-105-DN",
+      "barcode": "LC-SENKYO-105-DN",
+      "product_name": "Lưỡi Cắt & Mài Gạch Phủ Kim Cương SENKYO-105",
+      "variant_name": "Default Title",
+      "display_name": "Lưỡi Cắt & Mài Gạch Phủ Kim Cương SENKYO-105",
+      "keywords": [
+        "LC-SENKYO-105-DN",
+        "LC-SENKYO-105-DN",
+        "Lưỡi Cắt & Mài Gạch Phủ Kim Cương SENKYO-105",
+        "Default Title",
+        "luoi-cat-mai-gach-phu-kim-cuong-senkyo-105"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107873199,
+      "product_id": 34271346,
+      "sku": "LC-OSAKA-105",
+      "barcode": "LC-OSAKA-105",
+      "product_name": "Lưỡi Cắt Gạch OSAKA-105-Xanh",
+      "variant_name": "Default Title",
+      "display_name": "Lưỡi Cắt Gạch OSAKA-105-Xanh",
+      "keywords": [
+        "LC-OSAKA-105",
+        "LC-OSAKA-105",
+        "Lưỡi Cắt Gạch OSAKA-105-Xanh",
+        "Default Title",
+        "luoi-cat-gach-osaka-105-xanh"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107873127,
+      "product_id": 34271313,
+      "sku": "LC-HOTSSMAN-110-X",
+      "barcode": "LC-HOTSSMAN-110-X",
+      "product_name": "Lưỡi Cắt Gạch HOTSSMAN-110 U.S.A - Xanh",
+      "variant_name": "Default Title",
+      "display_name": "Lưỡi Cắt Gạch HOTSSMAN-110 U.S.A - Xanh",
+      "keywords": [
+        "LC-HOTSSMAN-110-X",
+        "LC-HOTSSMAN-110-X",
+        "Lưỡi Cắt Gạch HOTSSMAN-110 U.S.A - Xanh",
+        "Default Title",
+        "luoi-cat-gach-hotssman-110-u-s-a-xanh"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107873060,
+      "product_id": 34271288,
+      "sku": "LC-DRAGON-114",
+      "barcode": "LC-DRAGON-114",
+      "product_name": "Lưỡi Cắt Gạch RỒNG VÀNG -114",
+      "variant_name": "Default Title",
+      "display_name": "Lưỡi Cắt Gạch RỒNG VÀNG -114",
+      "keywords": [
+        "LC-DRAGON-114",
+        "LC-DRAGON-114",
+        "Lưỡi Cắt Gạch RỒNG VÀNG -114",
+        "Default Title",
+        "ban-sao-cua-luoi-cat-gach-rong-do-114"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107872999,
+      "product_id": 34271237,
+      "sku": "LC-DRAGON-110-D",
+      "barcode": "LC-DRAGON-110-D",
+      "product_name": "Lưỡi Cắt Gạch RỒNG VÀNG -110 - Màu Đỏ",
+      "variant_name": "Default Title",
+      "display_name": "Lưỡi Cắt Gạch RỒNG VÀNG -110 - Màu Đỏ",
+      "keywords": [
+        "LC-DRAGON-110-D",
+        "LC-DRAGON-110-D",
+        "Lưỡi Cắt Gạch RỒNG VÀNG -110 - Màu Đỏ",
+        "Default Title",
+        "luoi-cat-gach-rong-do-110"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107872938,
+      "product_id": 34271203,
+      "sku": "LC-HOTSSMAN-110-V",
+      "barcode": "LC-HOTSSMAN-110-V",
+      "product_name": "Lưỡi Cắt Gạch HOTSSMAN-110 U.S.A - Vàng",
+      "variant_name": "Default Title",
+      "display_name": "Lưỡi Cắt Gạch HOTSSMAN-110 U.S.A - Vàng",
+      "keywords": [
+        "LC-HOTSSMAN-110-V",
+        "LC-HOTSSMAN-110-V",
+        "Lưỡi Cắt Gạch HOTSSMAN-110 U.S.A - Vàng",
+        "Default Title",
+        "luoi-cat-gach-hotssman-110-u-s-a"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107872873,
+      "product_id": 34271159,
+      "sku": "LC-SENKYO-105",
+      "barcode": "LC-SENKYO-105",
+      "product_name": "Lưỡi Cắt Gạch Phủ Kim Cương SENKYO-105",
+      "variant_name": "Default Title",
+      "display_name": "Lưỡi Cắt Gạch Phủ Kim Cương SENKYO-105",
+      "keywords": [
+        "LC-SENKYO-105",
+        "LC-SENKYO-105",
+        "Lưỡi Cắt Gạch Phủ Kim Cương SENKYO-105",
+        "Default Title",
+        "luoi-cat-gach-phu-kim-cuong-senkyo-105"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107872838,
+      "product_id": 34271132,
+      "sku": "LC-SENKYO-125",
+      "barcode": "LC-SENKYO-125",
+      "product_name": "Lưỡi Cắt Bê Tông SENKYO-125",
+      "variant_name": "Default Title",
+      "display_name": "Lưỡi Cắt Bê Tông SENKYO-125",
+      "keywords": [
+        "LC-SENKYO-125",
+        "LC-SENKYO-125",
+        "Lưỡi Cắt Bê Tông SENKYO-125",
+        "Default Title",
+        "luoi-cat-be-tong-senko-125"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107872795,
+      "product_id": 34271105,
+      "sku": "LC-NRT-105",
+      "barcode": "LC-NRT-105",
+      "product_name": "Lưỡi Cắt Gạch NRT-105 Nhật Bản",
+      "variant_name": "Default Title",
+      "display_name": "Lưỡi Cắt Gạch NRT-105 Nhật Bản",
+      "keywords": [
+        "LC-NRT-105",
+        "LC-NRT-105",
+        "Lưỡi Cắt Gạch NRT-105 Nhật Bản",
+        "Default Title",
+        "luoi-cat-gach-nrt-105-nhat-ban"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107803063,
+      "product_id": 34266078,
+      "sku": "BRC-NHUA",
+      "barcode": "BRC-NHUA",
+      "product_name": "Bay Răng Cưa Nhựa (Cán Cam)_KT: 11x30cm_Răng 10mm",
+      "variant_name": "Default Title",
+      "display_name": "Bay Răng Cưa Nhựa (Cán Cam)_KT: 11x30cm_Răng 10mm",
+      "keywords": [
+        "BRC-NHUA",
+        "BRC-NHUA",
+        "Bay Răng Cưa Nhựa (Cán Cam)_KT: 11x30cm_Răng 10mm",
+        "Default Title",
+        "bay-rang-cua-nhua-kich-thuoc-11x30cm-rang-8mm"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107785512,
+      "product_id": 34255721,
+      "sku": "KEGACH-T-1.0",
+      "barcode": "KEGACH-T-1.0",
+      "product_name": "Ke Cân Bằng Ốp Lát Gạch - Loại Thấp - 1.0kg khoảng 340 cái",
+      "variant_name": "Độ dày 1.0mm",
+      "display_name": "Ke Cân Bằng Ốp Lát Gạch - Loại Thấp - 1.0kg khoảng 340 cái - Độ dày 1.0mm",
+      "keywords": [
+        "KEGACH-T-1.0",
+        "KEGACH-T-1.0",
+        "Ke Cân Bằng Ốp Lát Gạch - Loại Thấp - 1.0kg khoảng 340 cái",
+        "Độ dày 1.0mm",
+        "ke-can-bang-op-lat-gach-loai-thap-1-0kg-khoang-340-cai"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107785515,
+      "product_id": 34255721,
+      "sku": "KEGACH-T-1.5.",
+      "barcode": "KEGACH-T-1.5.",
+      "product_name": "Ke Cân Bằng Ốp Lát Gạch - Loại Thấp - 1.0kg khoảng 340 cái",
+      "variant_name": "Độ dày 1.5mm",
+      "display_name": "Ke Cân Bằng Ốp Lát Gạch - Loại Thấp - 1.0kg khoảng 340 cái - Độ dày 1.5mm",
+      "keywords": [
+        "KEGACH-T-1.5.",
+        "KEGACH-T-1.5.",
+        "Ke Cân Bằng Ốp Lát Gạch - Loại Thấp - 1.0kg khoảng 340 cái",
+        "Độ dày 1.5mm",
+        "ke-can-bang-op-lat-gach-loai-thap-1-0kg-khoang-340-cai"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107785516,
+      "product_id": 34255721,
+      "sku": "KEGACH-T-2.0.",
+      "barcode": "KEGACH-T-2.0.",
+      "product_name": "Ke Cân Bằng Ốp Lát Gạch - Loại Thấp - 1.0kg khoảng 340 cái",
+      "variant_name": "Độ dày 2.0mm",
+      "display_name": "Ke Cân Bằng Ốp Lát Gạch - Loại Thấp - 1.0kg khoảng 340 cái - Độ dày 2.0mm",
+      "keywords": [
+        "KEGACH-T-2.0.",
+        "KEGACH-T-2.0.",
+        "Ke Cân Bằng Ốp Lát Gạch - Loại Thấp - 1.0kg khoảng 340 cái",
+        "Độ dày 2.0mm",
+        "ke-can-bang-op-lat-gach-loai-thap-1-0kg-khoang-340-cai"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107784589,
+      "product_id": 34255353,
+      "sku": "KICHGACH-N",
+      "barcode": "KICHGACH-N",
+      "product_name": "Kích Nâng Gạch Ốp Tường - Loại Nhựa - Bộ 10 Cái",
+      "variant_name": "Default Title",
+      "display_name": "Kích Nâng Gạch Ốp Tường - Loại Nhựa - Bộ 10 Cái",
+      "keywords": [
+        "KICHGACH-N",
+        "KICHGACH-N",
+        "Kích Nâng Gạch Ốp Tường - Loại Nhựa - Bộ 10 Cái",
+        "Default Title",
+        "kich-nang-gach-op-tuong-loai-nhua-bo-10-cai"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107784217,
+      "product_id": 34255166,
+      "sku": "KICHGACH-BL",
+      "barcode": "KICHGACH-BL",
+      "product_name": "Kích Nâng Gạch Ốp Tường - Loại Bản Lề Ghép",
+      "variant_name": "Default Title",
+      "display_name": "Kích Nâng Gạch Ốp Tường - Loại Bản Lề Ghép",
+      "keywords": [
+        "KICHGACH-BL",
+        "KICHGACH-BL",
+        "Kích Nâng Gạch Ốp Tường - Loại Bản Lề Ghép",
+        "Default Title",
+        "kich-nang-gach-op-tuong-loai-ban-le-ghep"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107783824,
+      "product_id": 34255045,
+      "sku": "KICHGACH-1T",
+      "barcode": "KICHGACH-1T",
+      "product_name": "Kích Nâng Gạch Ốp Tường - Loại 1 Trụ",
+      "variant_name": "Default Title",
+      "display_name": "Kích Nâng Gạch Ốp Tường - Loại 1 Trụ",
+      "keywords": [
+        "KICHGACH-1T",
+        "KICHGACH-1T",
+        "Kích Nâng Gạch Ốp Tường - Loại 1 Trụ",
+        "Default Title",
+        "kich-nang-gach-op-tuong-loai-1-tru"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107701467,
+      "product_id": 34250419,
+      "sku": "OL-KCT-1.0mm",
+      "barcode": "OL-KCT-1.0mm",
+      "product_name": "Ke Chữ Thập Ốp Lát Gạch - Túi 100g",
+      "variant_name": "Ke loại 1.0 mm",
+      "display_name": "Ke Chữ Thập Ốp Lát Gạch - Túi 100g - Ke loại 1.0 mm",
+      "keywords": [
+        "OL-KCT-1.0mm",
+        "OL-KCT-1.0mm",
+        "Ke Chữ Thập Ốp Lát Gạch - Túi 100g",
+        "Ke loại 1.0 mm",
+        "tui-100g-ke-chu-thap-ke-dau-cong-ho-tro-op-lat-gach-loai-1"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107701468,
+      "product_id": 34250419,
+      "sku": "OL-KCT-1.5mm",
+      "barcode": "OL-KCT-1.5mm",
+      "product_name": "Ke Chữ Thập Ốp Lát Gạch - Túi 100g",
+      "variant_name": "Ke loại 1.5 mm",
+      "display_name": "Ke Chữ Thập Ốp Lát Gạch - Túi 100g - Ke loại 1.5 mm",
+      "keywords": [
+        "OL-KCT-1.5mm",
+        "OL-KCT-1.5mm",
+        "Ke Chữ Thập Ốp Lát Gạch - Túi 100g",
+        "Ke loại 1.5 mm",
+        "tui-100g-ke-chu-thap-ke-dau-cong-ho-tro-op-lat-gach-loai-1"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107701469,
+      "product_id": 34250419,
+      "sku": "OL-KCT-2.0mm",
+      "barcode": "OL-KCT-2.0mm",
+      "product_name": "Ke Chữ Thập Ốp Lát Gạch - Túi 100g",
+      "variant_name": "Ke loại 2.0 mm",
+      "display_name": "Ke Chữ Thập Ốp Lát Gạch - Túi 100g - Ke loại 2.0 mm",
+      "keywords": [
+        "OL-KCT-2.0mm",
+        "OL-KCT-2.0mm",
+        "Ke Chữ Thập Ốp Lát Gạch - Túi 100g",
+        "Ke loại 2.0 mm",
+        "tui-100g-ke-chu-thap-ke-dau-cong-ho-tro-op-lat-gach-loai-1"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107701470,
+      "product_id": 34250419,
+      "sku": "OL-KCT-3.0mm",
+      "barcode": "OL-KCT-3.0mm",
+      "product_name": "Ke Chữ Thập Ốp Lát Gạch - Túi 100g",
+      "variant_name": "Ke loại 3.0 mm",
+      "display_name": "Ke Chữ Thập Ốp Lát Gạch - Túi 100g - Ke loại 3.0 mm",
+      "keywords": [
+        "OL-KCT-3.0mm",
+        "OL-KCT-3.0mm",
+        "Ke Chữ Thập Ốp Lát Gạch - Túi 100g",
+        "Ke loại 3.0 mm",
+        "tui-100g-ke-chu-thap-ke-dau-cong-ho-tro-op-lat-gach-loai-1"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107701471,
+      "product_id": 34250419,
+      "sku": "OL-KCT-5.0mm",
+      "barcode": "OL-KCT-5.0mm",
+      "product_name": "Ke Chữ Thập Ốp Lát Gạch - Túi 100g",
+      "variant_name": "Ke loại 5.0 mm",
+      "display_name": "Ke Chữ Thập Ốp Lát Gạch - Túi 100g - Ke loại 5.0 mm",
+      "keywords": [
+        "OL-KCT-5.0mm",
+        "OL-KCT-5.0mm",
+        "Ke Chữ Thập Ốp Lát Gạch - Túi 100g",
+        "Ke loại 5.0 mm",
+        "tui-100g-ke-chu-thap-ke-dau-cong-ho-tro-op-lat-gach-loai-1"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107701403,
+      "product_id": 34250374,
+      "sku": "KECHUTHAP-1.0",
+      "barcode": "KECHUTHAP-1.0",
+      "product_name": "Ke Chữ Thập Ốp Lát Gạch - Túi 1.0 kg",
+      "variant_name": "Ke 1.0 mm",
+      "display_name": "Ke Chữ Thập Ốp Lát Gạch - Túi 1.0 kg - Ke 1.0 mm",
+      "keywords": [
+        "KECHUTHAP-1.0",
+        "KECHUTHAP-1.0",
+        "Ke Chữ Thập Ốp Lát Gạch - Túi 1.0 kg",
+        "Ke 1.0 mm",
+        "ke-chu-thap-op-lat-gach"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107701404,
+      "product_id": 34250374,
+      "sku": "KECHUTHAP-1.5",
+      "barcode": "KECHUTHAP-1.5",
+      "product_name": "Ke Chữ Thập Ốp Lát Gạch - Túi 1.0 kg",
+      "variant_name": "Ke 1.5 mm",
+      "display_name": "Ke Chữ Thập Ốp Lát Gạch - Túi 1.0 kg - Ke 1.5 mm",
+      "keywords": [
+        "KECHUTHAP-1.5",
+        "KECHUTHAP-1.5",
+        "Ke Chữ Thập Ốp Lát Gạch - Túi 1.0 kg",
+        "Ke 1.5 mm",
+        "ke-chu-thap-op-lat-gach"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107701405,
+      "product_id": 34250374,
+      "sku": "KECHUTHAP-2.0",
+      "barcode": "KECHUTHAP-2.0",
+      "product_name": "Ke Chữ Thập Ốp Lát Gạch - Túi 1.0 kg",
+      "variant_name": "Ke 2.0 mm",
+      "display_name": "Ke Chữ Thập Ốp Lát Gạch - Túi 1.0 kg - Ke 2.0 mm",
+      "keywords": [
+        "KECHUTHAP-2.0",
+        "KECHUTHAP-2.0",
+        "Ke Chữ Thập Ốp Lát Gạch - Túi 1.0 kg",
+        "Ke 2.0 mm",
+        "ke-chu-thap-op-lat-gach"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107701406,
+      "product_id": 34250374,
+      "sku": "KECHUTHAP-3.0",
+      "barcode": "KECHUTHAP-3.0",
+      "product_name": "Ke Chữ Thập Ốp Lát Gạch - Túi 1.0 kg",
+      "variant_name": "Ke 3.0 mm",
+      "display_name": "Ke Chữ Thập Ốp Lát Gạch - Túi 1.0 kg - Ke 3.0 mm",
+      "keywords": [
+        "KECHUTHAP-3.0",
+        "KECHUTHAP-3.0",
+        "Ke Chữ Thập Ốp Lát Gạch - Túi 1.0 kg",
+        "Ke 3.0 mm",
+        "ke-chu-thap-op-lat-gach"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107701407,
+      "product_id": 34250374,
+      "sku": "KECHUTHAP-5.0",
+      "barcode": "KECHUTHAP-5.0",
+      "product_name": "Ke Chữ Thập Ốp Lát Gạch - Túi 1.0 kg",
+      "variant_name": "Ke 5.0mm",
+      "display_name": "Ke Chữ Thập Ốp Lát Gạch - Túi 1.0 kg - Ke 5.0mm",
+      "keywords": [
+        "KECHUTHAP-5.0",
+        "KECHUTHAP-5.0",
+        "Ke Chữ Thập Ốp Lát Gạch - Túi 1.0 kg",
+        "Ke 5.0mm",
+        "ke-chu-thap-op-lat-gach"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107701408,
+      "product_id": 34250374,
+      "sku": "KECHUTHAP-10",
+      "barcode": "KECHUTHAP-10",
+      "product_name": "Ke Chữ Thập Ốp Lát Gạch - Túi 1.0 kg",
+      "variant_name": "Ke 10 mm",
+      "display_name": "Ke Chữ Thập Ốp Lát Gạch - Túi 1.0 kg - Ke 10 mm",
+      "keywords": [
+        "KECHUTHAP-10",
+        "KECHUTHAP-10",
+        "Ke Chữ Thập Ốp Lát Gạch - Túi 1.0 kg",
+        "Ke 10 mm",
+        "ke-chu-thap-op-lat-gach"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107701452,
+      "product_id": 34250374,
+      "sku": "KECHUTHAP-2.5",
+      "barcode": "KECHUTHAP-2.5",
+      "product_name": "Ke Chữ Thập Ốp Lát Gạch - Túi 1.0 kg",
+      "variant_name": "Ke 2.5 mm",
+      "display_name": "Ke Chữ Thập Ốp Lát Gạch - Túi 1.0 kg - Ke 2.5 mm",
+      "keywords": [
+        "KECHUTHAP-2.5",
+        "KECHUTHAP-2.5",
+        "Ke Chữ Thập Ốp Lát Gạch - Túi 1.0 kg",
+        "Ke 2.5 mm",
+        "ke-chu-thap-op-lat-gach"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107692614,
+      "product_id": 34246819,
+      "sku": "BXD-T2",
+      "barcode": "BXD-T2",
+      "product_name": "T2 - Bay Trát Lá Đề Cán Gỗ -  Thép 0.7 ly",
+      "variant_name": "Default Title",
+      "display_name": "T2 - Bay Trát Lá Đề Cán Gỗ -  Thép 0.7 ly",
+      "keywords": [
+        "BXD-T2",
+        "BXD-T2",
+        "T2 - Bay Trát Lá Đề Cán Gỗ -  Thép 0.7 ly",
+        "Default Title",
+        "bay-la-de-chuyen-trat-9x17cm",
+        "bay xây dựng cao cấp"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107689633,
+      "product_id": 34244887,
+      "sku": "BXD-X6",
+      "barcode": "BXD-X6",
+      "product_name": "X6 - Bay Xây Lá Đề - Đế Su",
+      "variant_name": "Default Title",
+      "display_name": "X6 - Bay Xây Lá Đề - Đế Su",
+      "keywords": [
+        "BXD-X6",
+        "BXD-X6",
+        "X6 - Bay Xây Lá Đề - Đế Su",
+        "Default Title",
+        "bay-xay-la-de-de-su",
+        "bay xây dựng cao cấp"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 104448929,
+      "product_id": 33729740,
+      "sku": "HITGACH-1C",
+      "barcode": "HITGACH-1C",
+      "product_name": "Hít gạch DETO - 3 loại",
+      "variant_name": "1 chạc (đơn)",
+      "display_name": "Hít gạch DETO - 3 loại - 1 chạc (đơn)",
+      "keywords": [
+        "HITGACH-1C",
+        "HITGACH-1C",
+        "Hít gạch DETO - 3 loại",
+        "1 chạc (đơn)",
+        "hit-gach-hit-kinh"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 104448930,
+      "product_id": 33729740,
+      "sku": "HITGACH-2C",
+      "barcode": "HITGACH-2C",
+      "product_name": "Hít gạch DETO - 3 loại",
+      "variant_name": "2 chạc (đôi)",
+      "display_name": "Hít gạch DETO - 3 loại - 2 chạc (đôi)",
+      "keywords": [
+        "HITGACH-2C",
+        "HITGACH-2C",
+        "Hít gạch DETO - 3 loại",
+        "2 chạc (đôi)",
+        "hit-gach-hit-kinh"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 104448931,
+      "product_id": 33729740,
+      "sku": "HITGACH-3C",
+      "barcode": "HITGACH-3C",
+      "product_name": "Hít gạch DETO - 3 loại",
+      "variant_name": "3 chạc",
+      "display_name": "Hít gạch DETO - 3 loại - 3 chạc",
+      "keywords": [
+        "HITGACH-3C",
+        "HITGACH-3C",
+        "Hít gạch DETO - 3 loại",
+        "3 chạc",
+        "hit-gach-hit-kinh"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 104063640,
+      "product_id": 33650343,
+      "sku": "KEGACH-1.0-L2",
+      "barcode": "KEGACH-1.0-L2",
+      "product_name": "1 Kg Ke Cân Bằng Ốp Lát Gạch - Loại 2",
+      "variant_name": "Ke dày 1.0mm",
+      "display_name": "1 Kg Ke Cân Bằng Ốp Lát Gạch - Loại 2 - Ke dày 1.0mm",
+      "keywords": [
+        "KEGACH-1.0-L2",
+        "KEGACH-1.0-L2",
+        "1 Kg Ke Cân Bằng Ốp Lát Gạch - Loại 2",
+        "Ke dày 1.0mm",
+        "1-kg-ke-can-bang-op-lat-gach-loai-2"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 104063641,
+      "product_id": 33650343,
+      "sku": "KEGACH-1.5-L2",
+      "barcode": "KEGACH-1.5-L2",
+      "product_name": "1 Kg Ke Cân Bằng Ốp Lát Gạch - Loại 2",
+      "variant_name": "Ke dày 1.5mm",
+      "display_name": "1 Kg Ke Cân Bằng Ốp Lát Gạch - Loại 2 - Ke dày 1.5mm",
+      "keywords": [
+        "KEGACH-1.5-L2",
+        "KEGACH-1.5-L2",
+        "1 Kg Ke Cân Bằng Ốp Lát Gạch - Loại 2",
+        "Ke dày 1.5mm",
+        "1-kg-ke-can-bang-op-lat-gach-loai-2"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 104063642,
+      "product_id": 33650343,
+      "sku": "KEGACH-2.0-L2",
+      "barcode": "KEGACH-2.0-L2",
+      "product_name": "1 Kg Ke Cân Bằng Ốp Lát Gạch - Loại 2",
+      "variant_name": "Ke dày 2.0mm",
+      "display_name": "1 Kg Ke Cân Bằng Ốp Lát Gạch - Loại 2 - Ke dày 2.0mm",
+      "keywords": [
+        "KEGACH-2.0-L2",
+        "KEGACH-2.0-L2",
+        "1 Kg Ke Cân Bằng Ốp Lát Gạch - Loại 2",
+        "Ke dày 2.0mm",
+        "1-kg-ke-can-bang-op-lat-gach-loai-2"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 103633569,
+      "product_id": 33568138,
+      "sku": "DEMAYCATRON",
+      "barcode": "DEMAYCATRON",
+      "product_name": "Đế Máy Cắt Ron Gạch",
+      "variant_name": "Default Title",
+      "display_name": "Đế Máy Cắt Ron Gạch",
+      "keywords": [
+        "DEMAYCATRON",
+        "DEMAYCATRON",
+        "Đế Máy Cắt Ron Gạch",
+        "Default Title",
+        "de-may-cat-ron-gach"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 103633497,
+      "product_id": 33568087,
+      "sku": "MAYCATRON",
+      "barcode": "MAYCATRON",
+      "product_name": "Máy Cắt mạch, cắt ron Gạch Có Hút Bụi",
+      "variant_name": "Default Title",
+      "display_name": "Máy Cắt mạch, cắt ron Gạch Có Hút Bụi",
+      "keywords": [
+        "MAYCATRON",
+        "MAYCATRON",
+        "Máy Cắt mạch, cắt ron Gạch Có Hút Bụi",
+        "Default Title",
+        "may-lam-sach-ron-gach"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 101266082,
+      "product_id": 33233257,
+      "sku": "BXD-X5",
+      "barcode": "BXD-X5",
+      "product_name": "X5: Bay Xây Lá Đề Đế Đồng",
+      "variant_name": "Default Title",
+      "display_name": "X5: Bay Xây Lá Đề Đế Đồng",
+      "keywords": [
+        "BXD-X5",
+        "BXD-X5",
+        "X5: Bay Xây Lá Đề Đế Đồng",
+        "Default Title",
+        "bay-xay-la-de-de-dong",
+        "bay xây dựng cao cấp"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 100654191,
+      "product_id": 33120236,
+      "sku": "OL-CV-100CL2-1.0",
+      "barcode": "OL-CV-100CL2-1.0",
+      "product_name": "Bộ 100 ke cân bằng ốp lát gạch tái sử dụng - LOẠI 2 kim 1,0mm",
+      "variant_name": "[Tặng 100 kim] Bộ 100 ke cân bằng ốp lát gạch tái sử dụng - LOẠI 2 kim 1,0mm",
+      "display_name": "Bộ 100 ke cân bằng ốp lát gạch tái sử dụng - LOẠI 2 kim 1,0mm - [Tặng 100 kim] Bộ 100 ke cân bằng ốp lát gạch tái sử dụng - LOẠI 2 kim 1,0mm",
+      "keywords": [
+        "OL-CV-100CL2-1.0",
+        "OL-CV-100CL2-1.0",
+        "Bộ 100 ke cân bằng ốp lát gạch tái sử dụng - LOẠI 2 kim 1,0mm",
+        "[Tặng 100 kim] Bộ 100 ke cân bằng ốp lát gạch tái sử dụng - LOẠI 2 kim 1,0mm",
+        "bo-100-ke-can-bang-op-lat-gach-tai-su-dung-loai-2-kim-1-0mm-1"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 100654174,
+      "product_id": 33120227,
+      "sku": "OL-CV-100CL2-1.5",
+      "barcode": "OL-CV-100CL2-1.5",
+      "product_name": "Bộ 100 ke cân bằng ốp lát gạch tái sử dụng - LOẠI 2 kim 1,5mm",
+      "variant_name": "[Tặng 100 kim] Bộ 100 ke cân bằng ốp lát gạch tái sử dụng - LOẠI 2 kim 1,5mm",
+      "display_name": "Bộ 100 ke cân bằng ốp lát gạch tái sử dụng - LOẠI 2 kim 1,5mm - [Tặng 100 kim] Bộ 100 ke cân bằng ốp lát gạch tái sử dụng - LOẠI 2 kim 1,5mm",
+      "keywords": [
+        "OL-CV-100CL2-1.5",
+        "OL-CV-100CL2-1.5",
+        "Bộ 100 ke cân bằng ốp lát gạch tái sử dụng - LOẠI 2 kim 1,5mm",
+        "[Tặng 100 kim] Bộ 100 ke cân bằng ốp lát gạch tái sử dụng - LOẠI 2 kim 1,5mm",
+        "bo-100-ke-can-bang-op-lat-gach-tai-su-dung-loai-2-kim-1-5mm"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 100654166,
+      "product_id": 33120225,
+      "sku": "OL-CV-100CL2-1.2",
+      "barcode": "OL-CV-100CL2-1.2",
+      "product_name": "Bộ 100 ke cân bằng ốp lát gạch tái sử dụng - LOẠI 2 kim 1,2mm",
+      "variant_name": "[Tặng 100 kim] Bộ 100 ke cân bằng ốp lát gạch tái sử dụng - LOẠI 2 kim 1,2mm",
+      "display_name": "Bộ 100 ke cân bằng ốp lát gạch tái sử dụng - LOẠI 2 kim 1,2mm - [Tặng 100 kim] Bộ 100 ke cân bằng ốp lát gạch tái sử dụng - LOẠI 2 kim 1,2mm",
+      "keywords": [
+        "OL-CV-100CL2-1.2",
+        "OL-CV-100CL2-1.2",
+        "Bộ 100 ke cân bằng ốp lát gạch tái sử dụng - LOẠI 2 kim 1,2mm",
+        "[Tặng 100 kim] Bộ 100 ke cân bằng ốp lát gạch tái sử dụng - LOẠI 2 kim 1,2mm",
+        "bo-100-ke-can-bang-op-lat-gach-tai-su-dung-loai-2-kim-1-2mm"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 100654165,
+      "product_id": 33120224,
+      "sku": "OL-CV-100CL2-1.0",
+      "barcode": "OL-CV-100CL2-1.0",
+      "product_name": "Bộ 100 ke cân bằng ốp lát gạch tái sử dụng - LOẠI 2 kim 1,0mm",
+      "variant_name": "Bộ 100 ke cân bằng ốp lát gạch tái sử dụng - LOẠI 2 kim 1,0mm",
+      "display_name": "Bộ 100 ke cân bằng ốp lát gạch tái sử dụng - LOẠI 2 kim 1,0mm",
+      "keywords": [
+        "OL-CV-100CL2-1.0",
+        "OL-CV-100CL2-1.0",
+        "Bộ 100 ke cân bằng ốp lát gạch tái sử dụng - LOẠI 2 kim 1,0mm",
+        "Bộ 100 ke cân bằng ốp lát gạch tái sử dụng - LOẠI 2 kim 1,0mm",
+        "bo-100-ke-can-bang-op-lat-gach-tai-su-dung-loai-2-kim-1-0mm"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 100330727,
+      "product_id": 33050398,
+      "sku": "VITCANBANG-KIM-1.0",
+      "barcode": "VITCANBANG-KIM-1.0",
+      "product_name": "Kim T Thay Thế Vít Vặn Cân Bằng Gạch Ốp Lát - Túi 100 Kim",
+      "variant_name": "Loại Kim T dày 1.0mm",
+      "display_name": "Kim T Thay Thế Vít Vặn Cân Bằng Gạch Ốp Lát - Túi 100 Kim - Loại Kim T dày 1.0mm",
+      "keywords": [
+        "VITCANBANG-KIM-1.0",
+        "VITCANBANG-KIM-1.0",
+        "Kim T Thay Thế Vít Vặn Cân Bằng Gạch Ốp Lát - Túi 100 Kim",
+        "Loại Kim T dày 1.0mm",
+        "kim-thay-the-chot-van-can-bang-gach-op-lat-tai-su-dung-duoc-nhieu-lan"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 100330728,
+      "product_id": 33050398,
+      "sku": "VITCANBANG-KIM-1.2",
+      "barcode": "VITCANBANG-KIM-1.2",
+      "product_name": "Kim T Thay Thế Vít Vặn Cân Bằng Gạch Ốp Lát - Túi 100 Kim",
+      "variant_name": "Loại Kim T dày 1.2mm",
+      "display_name": "Kim T Thay Thế Vít Vặn Cân Bằng Gạch Ốp Lát - Túi 100 Kim - Loại Kim T dày 1.2mm",
+      "keywords": [
+        "VITCANBANG-KIM-1.2",
+        "VITCANBANG-KIM-1.2",
+        "Kim T Thay Thế Vít Vặn Cân Bằng Gạch Ốp Lát - Túi 100 Kim",
+        "Loại Kim T dày 1.2mm",
+        "kim-thay-the-chot-van-can-bang-gach-op-lat-tai-su-dung-duoc-nhieu-lan"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 100330729,
+      "product_id": 33050398,
+      "sku": "VITCANBANG-KIM-1.5",
+      "barcode": "VITCANBANG-KIM-1.5",
+      "product_name": "Kim T Thay Thế Vít Vặn Cân Bằng Gạch Ốp Lát - Túi 100 Kim",
+      "variant_name": "Loại Kim T dày 1.5mm",
+      "display_name": "Kim T Thay Thế Vít Vặn Cân Bằng Gạch Ốp Lát - Túi 100 Kim - Loại Kim T dày 1.5mm",
+      "keywords": [
+        "VITCANBANG-KIM-1.5",
+        "VITCANBANG-KIM-1.5",
+        "Kim T Thay Thế Vít Vặn Cân Bằng Gạch Ốp Lát - Túi 100 Kim",
+        "Loại Kim T dày 1.5mm",
+        "kim-thay-the-chot-van-can-bang-gach-op-lat-tai-su-dung-duoc-nhieu-lan"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 100323494,
+      "product_id": 33045821,
+      "sku": "TGRC-CB",
+      "barcode": "TGRC-CB",
+      "product_name": "Combo thước gạt răng cưa ốp lát 60cm và 40cm",
+      "variant_name": "Combo thước gạt răng cưa ốp lát 60cm và 40cm",
+      "display_name": "Combo thước gạt răng cưa ốp lát 60cm và 40cm",
+      "keywords": [
+        "TGRC-CB",
+        "TGRC-CB",
+        "Combo thước gạt răng cưa ốp lát 60cm và 40cm",
+        "Combo thước gạt răng cưa ốp lát 60cm và 40cm",
+        "combo-thuoc-gat-rang-cua-op-lat-60cm-va-40cm"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 100243212,
+      "product_id": 33018093,
+      "sku": "CATGACH",
+      "barcode": "CATGACH",
+      "product_name": "Bộ Dụng Cụ Cắt Gạch Cầm Tay Tiện Dụng, Nhỏ Gọn",
+      "variant_name": "Default Title",
+      "display_name": "Bộ Dụng Cụ Cắt Gạch Cầm Tay Tiện Dụng, Nhỏ Gọn",
+      "keywords": [
+        "CATGACH",
+        "CATGACH",
+        "Bộ Dụng Cụ Cắt Gạch Cầm Tay Tiện Dụng, Nhỏ Gọn",
+        "Default Title",
+        "bo-dung-cu-cat-gach-tien-dung-gon-nhe"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 100242795,
+      "product_id": 33017941,
+      "sku": "THUOC-6K",
+      "barcode": "THUOC-6K",
+      "product_name": "Thước 6 Khúc Định Vị Khoét Lỗ Gạch - Inox 304",
+      "variant_name": "Default Title",
+      "display_name": "Thước 6 Khúc Định Vị Khoét Lỗ Gạch - Inox 304",
+      "keywords": [
+        "THUOC-6K",
+        "THUOC-6K",
+        "Thước 6 Khúc Định Vị Khoét Lỗ Gạch - Inox 304",
+        "Default Title",
+        "thuoc-6-khuc-dinh-vi-khoet-lo-gach-men"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 100242691,
+      "product_id": 33017885,
+      "sku": "GAYRABOP",
+      "barcode": "GAYRABOP",
+      "product_name": "Gậy Rà Bộp Gạch - Dụng Cụ Nghiệm Thu Gạch Ốp Lát",
+      "variant_name": "Default Title",
+      "display_name": "Gậy Rà Bộp Gạch - Dụng Cụ Nghiệm Thu Gạch Ốp Lát",
+      "keywords": [
+        "GAYRABOP",
+        "GAYRABOP",
+        "Gậy Rà Bộp Gạch - Dụng Cụ Nghiệm Thu Gạch Ốp Lát",
+        "Default Title",
+        "cay-ra-bop-tuong-trat-gach-op-lat"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 100242388,
+      "product_id": 33017640,
+      "sku": "SUNGBANKEO-D",
+      "barcode": "SUNGBANKEO-D",
+      "product_name": "Súng Bơm Keo 2 Thành Phần - Loại Đỏ",
+      "variant_name": "Default Title",
+      "display_name": "Súng Bơm Keo 2 Thành Phần - Loại Đỏ",
+      "keywords": [
+        "SUNGBANKEO-D",
+        "SUNGBANKEO-D",
+        "Súng Bơm Keo 2 Thành Phần - Loại Đỏ",
+        "Default Title",
+        "sung-bom-keo-chit-mach-keo-cha-ron-2-thanh-phan-epoxy-7corlo-saveto-hilti"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 100241835,
+      "product_id": 33017409,
+      "sku": "VOIPHUNSUONG",
+      "barcode": "VOIPHUNSUONG",
+      "product_name": "Vòi Phun Sương Chống Bụi Cho Máy Cắt Gạch",
+      "variant_name": "Default Title",
+      "display_name": "Vòi Phun Sương Chống Bụi Cho Máy Cắt Gạch",
+      "keywords": [
+        "VOIPHUNSUONG",
+        "VOIPHUNSUONG",
+        "Vòi Phun Sương Chống Bụi Cho Máy Cắt Gạch",
+        "Default Title",
+        "voi-phun-suong-chong-bui-cho-may-cat-gach-cam-tay"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 100241746,
+      "product_id": 33017349,
+      "sku": "GALIPGACH45",
+      "barcode": "GALIPGACH45",
+      "product_name": "Chân đế bàn mòi cắt cạnh - Gá líp cạnh máy cắt góc gạnh 45 độ",
+      "variant_name": "Default Title",
+      "display_name": "Chân đế bàn mòi cắt cạnh - Gá líp cạnh máy cắt góc gạnh 45 độ",
+      "keywords": [
+        "GALIPGACH45",
+        "GALIPGACH45",
+        "Chân đế bàn mòi cắt cạnh - Gá líp cạnh máy cắt góc gạnh 45 độ",
+        "Default Title",
+        "chan-de-ban-mai-moi-cat-canh-ga-lip-canh-may-cat-goc-ganh-45-do"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 100241499,
+      "product_id": 33017204,
+      "sku": "CB-(XNG-T+XNG-N)",
+      "barcode": "BXNG-CB",
+      "product_name": "Combo bàn xả nhám góc TRONG và NGÒAI",
+      "variant_name": "Combo bàn xả nhám góc TRONG và NGÒAI",
+      "display_name": "Combo bàn xả nhám góc TRONG và NGÒAI",
+      "keywords": [
+        "CB-(XNG-T+XNG-N)",
+        "BXNG-CB",
+        "Combo bàn xả nhám góc TRONG và NGÒAI",
+        "Combo bàn xả nhám góc TRONG và NGÒAI",
+        "combo-ban-xa-nham-goc-su-dung-giay-nham-thuong-de-thay-the"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 100241441,
+      "product_id": 33017175,
+      "sku": "XNG-N",
+      "barcode": "XNG-N",
+      "product_name": "Bàn xả nhám góc",
+      "variant_name": "GÓC NGOÀI",
+      "display_name": "Bàn xả nhám góc - GÓC NGOÀI",
+      "keywords": [
+        "XNG-N",
+        "XNG-N",
+        "Bàn xả nhám góc",
+        "GÓC NGOÀI",
+        "ban-xa-nham-goc-inox-304-su-dung-giay-nham-thuong-de-thay-the"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 100241445,
+      "product_id": 33017175,
+      "sku": "XNG-T",
+      "barcode": "XNG-T",
+      "product_name": "Bàn xả nhám góc",
+      "variant_name": "GÓC TRONG",
+      "display_name": "Bàn xả nhám góc - GÓC TRONG",
+      "keywords": [
+        "XNG-T",
+        "XNG-T",
+        "Bàn xả nhám góc",
+        "GÓC TRONG",
+        "ban-xa-nham-goc-inox-304-su-dung-giay-nham-thuong-de-thay-the"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 100233157,
+      "product_id": 33014258,
+      "sku": "BCR-CB-25",
+      "barcode": "BCR-CB-25",
+      "product_name": "Combo bay cắt ron 25x10 VUÔNG + TRÒN",
+      "variant_name": "Combo bay cắt ron 25x10 VUÔNG + TRÒN",
+      "display_name": "Combo bay cắt ron 25x10 VUÔNG + TRÒN",
+      "keywords": [
+        "BCR-CB-25",
+        "BCR-CB-25",
+        "Combo bay cắt ron 25x10 VUÔNG + TRÒN",
+        "Combo bay cắt ron 25x10 VUÔNG + TRÒN",
+        "combo-bay-cat-ron-25x10-vuong-tron-1"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 100233035,
+      "product_id": 33014181,
+      "sku": "BCR-CB-20",
+      "barcode": "BCR-CB-20",
+      "product_name": "Combo bay cắt ron 20x10 VUÔNG + TRÒN",
+      "variant_name": "Combo bay cắt ron 20x10 VUÔNG + TRÒN",
+      "display_name": "Combo bay cắt ron 20x10 VUÔNG + TRÒN",
+      "keywords": [
+        "BCR-CB-20",
+        "BCR-CB-20",
+        "Combo bay cắt ron 20x10 VUÔNG + TRÒN",
+        "Combo bay cắt ron 20x10 VUÔNG + TRÒN",
+        "combo-bay-cat-ron-20x10-vuong-tron-1"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 100232902,
+      "product_id": 33014107,
+      "sku": "BRC-15T",
+      "barcode": "BRC-15T",
+      "product_name": "Bay Răng Cưa Ốp Lát - Răng 15x10mm",
+      "variant_name": "TAY TRÁI",
+      "display_name": "Bay Răng Cưa Ốp Lát - Răng 15x10mm - TAY TRÁI",
+      "keywords": [
+        "BRC-15T",
+        "BRC-15T",
+        "Bay Răng Cưa Ốp Lát - Răng 15x10mm",
+        "TAY TRÁI",
+        "bay-rang-cua-op-lat-rang-15x10mm-la-thep-luoi-cua-65mn-day-1-1mm",
+        "bay xây dựng cao cấp"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 100232911,
+      "product_id": 33014107,
+      "sku": "BRC-15P_TX",
+      "barcode": "BRC-15P_TX",
+      "product_name": "Bay Răng Cưa Ốp Lát - Răng 15x10mm",
+      "variant_name": "TAY PHẢI",
+      "display_name": "Bay Răng Cưa Ốp Lát - Răng 15x10mm - TAY PHẢI",
+      "keywords": [
+        "BRC-15P_TX",
+        "BRC-15P_TX",
+        "Bay Răng Cưa Ốp Lát - Răng 15x10mm",
+        "TAY PHẢI",
+        "bay-rang-cua-op-lat-rang-15x10mm-la-thep-luoi-cua-65mn-day-1-1mm",
+        "bay xây dựng cao cấp"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 100200188,
+      "product_id": 33012429,
+      "sku": "CB-4BCT-TX",
+      "barcode": "CB-4BCT-TX",
+      "product_name": "Combo 4 Bay Cán Tre truyền thống-THÉP XANH",
+      "variant_name": "Combo 4 Bay Cán Tre truyền thống-THÉP XANH",
+      "display_name": "Combo 4 Bay Cán Tre truyền thống-THÉP XANH",
+      "keywords": [
+        "CB-4BCT-TX",
+        "CB-4BCT-TX",
+        "Combo 4 Bay Cán Tre truyền thống-THÉP XANH",
+        "Combo 4 Bay Cán Tre truyền thống-THÉP XANH",
+        "combo-4-bay-binh-dinh-can-tre-du-loai-kich-thuoc-1",
+        "bay xây dựng cao cấp"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 100199065,
+      "product_id": 33011816,
+      "sku": "BXD-N-CB",
+      "barcode": "BXD-N-CB",
+      "product_name": "Combo 2 Bay Núi Chuyên Cho Thợ Xây và Trát",
+      "variant_name": "Combo 2 Bay Núi - Loại Trung và Lớn",
+      "display_name": "Combo 2 Bay Núi Chuyên Cho Thợ Xây và Trát - Combo 2 Bay Núi - Loại Trung và Lớn",
+      "keywords": [
+        "BXD-N-CB",
+        "BXD-N-CB",
+        "Combo 2 Bay Núi Chuyên Cho Thợ Xây và Trát",
+        "Combo 2 Bay Núi - Loại Trung và Lớn",
+        "combo-2-bay-nui-chuyen-cho-tho-xay-va-trat-1"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 100150983,
+      "product_id": 33004911,
+      "sku": "BXD-N-1019",
+      "barcode": "BXD-N-1019",
+      "product_name": "Bay Núi - Đa năng chuyên xây và tô",
+      "variant_name": "cở Đại 10x19cm",
+      "display_name": "Bay Núi - Đa năng chuyên xây và tô - cở Đại 10x19cm",
+      "keywords": [
+        "BXD-N-1019",
+        "BXD-N-1019",
+        "Bay Núi - Đa năng chuyên xây và tô",
+        "cở Đại 10x19cm",
+        "bay-nui-kt-10x19cm-chuyen-cho-tho-xay-va-trat-thep-luoi-cua-day-0-9mm",
+        "bay xây dựng cao cấp"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 100198804,
+      "product_id": 33004911,
+      "sku": "BXD-N-0917",
+      "barcode": "BXD-N-0917",
+      "product_name": "Bay Núi - Đa năng chuyên xây và tô",
+      "variant_name": "cở TRUNG 9x17cm",
+      "display_name": "Bay Núi - Đa năng chuyên xây và tô - cở TRUNG 9x17cm",
+      "keywords": [
+        "BXD-N-0917",
+        "BXD-N-0917",
+        "Bay Núi - Đa năng chuyên xây và tô",
+        "cở TRUNG 9x17cm",
+        "bay-nui-kt-10x19cm-chuyen-cho-tho-xay-va-trat-thep-luoi-cua-day-0-9mm",
+        "bay xây dựng cao cấp"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 100147932,
+      "product_id": 33003970,
+      "sku": "BXD_CT_TX_1018",
+      "barcode": "BXD_CT_TX_1018",
+      "product_name": "Bay Bình Định Cán Tre truyền thống",
+      "variant_name": "Loại LỚN 9,5x18cm",
+      "display_name": "Bay Bình Định Cán Tre truyền thống - Loại LỚN 9,5x18cm",
+      "keywords": [
+        "BXD_CT_TX_1018",
+        "BXD_CT_TX_1018",
+        "Bay Bình Định Cán Tre truyền thống",
+        "Loại LỚN 9,5x18cm",
+        "bay-binh-dinh-18x10cm-can-tre-thep-luoi-cua-day-0-9mm-phu-hop-xay-va-to",
+        "bay xây dựng cao cấp"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107685244,
+      "product_id": 33003970,
+      "sku": "BXD-CT_TX_0816",
+      "barcode": "BXD-CT_TX_0816",
+      "product_name": "Bay Bình Định Cán Tre truyền thống",
+      "variant_name": "Loại TRUNG 8x16cm",
+      "display_name": "Bay Bình Định Cán Tre truyền thống - Loại TRUNG 8x16cm",
+      "keywords": [
+        "BXD-CT_TX_0816",
+        "BXD-CT_TX_0816",
+        "Bay Bình Định Cán Tre truyền thống",
+        "Loại TRUNG 8x16cm",
+        "bay-binh-dinh-18x10cm-can-tre-thep-luoi-cua-day-0-9mm-phu-hop-xay-va-to",
+        "bay xây dựng cao cấp"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107685306,
+      "product_id": 33003970,
+      "sku": "BXD_CT_TX_0613",
+      "barcode": "BXD_CT_TX_0613",
+      "product_name": "Bay Bình Định Cán Tre truyền thống",
+      "variant_name": "Loại NHỎ 6x13cm",
+      "display_name": "Bay Bình Định Cán Tre truyền thống - Loại NHỎ 6x13cm",
+      "keywords": [
+        "BXD_CT_TX_0613",
+        "BXD_CT_TX_0613",
+        "Bay Bình Định Cán Tre truyền thống",
+        "Loại NHỎ 6x13cm",
+        "bay-binh-dinh-18x10cm-can-tre-thep-luoi-cua-day-0-9mm-phu-hop-xay-va-to",
+        "bay xây dựng cao cấp"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107685307,
+      "product_id": 33003970,
+      "sku": "BXD-CT_TX_0411",
+      "barcode": "BXD-CT_TX_0411",
+      "product_name": "Bay Bình Định Cán Tre truyền thống",
+      "variant_name": "Bay CHỈ 4x11cm",
+      "display_name": "Bay Bình Định Cán Tre truyền thống - Bay CHỈ 4x11cm",
+      "keywords": [
+        "BXD-CT_TX_0411",
+        "BXD-CT_TX_0411",
+        "Bay Bình Định Cán Tre truyền thống",
+        "Bay CHỈ 4x11cm",
+        "bay-binh-dinh-18x10cm-can-tre-thep-luoi-cua-day-0-9mm-phu-hop-xay-va-to",
+        "bay xây dựng cao cấp"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 99893999,
+      "product_id": 32979464,
+      "sku": "THUOC-2K-40",
+      "barcode": "THUOC-2K-40",
+      "product_name": "Thước 2 Khúc Lấy Dấu Khoan Lỗ Gạch - Inox 304",
+      "variant_name": "Dài 40cm",
+      "display_name": "Thước 2 Khúc Lấy Dấu Khoan Lỗ Gạch - Inox 304 - Dài 40cm",
+      "keywords": [
+        "THUOC-2K-40",
+        "THUOC-2K-40",
+        "Thước 2 Khúc Lấy Dấu Khoan Lỗ Gạch - Inox 304",
+        "Dài 40cm",
+        "thuoc-lay-dau-khoan-khoet-lo-gach-thuoc-2-doan-lay-dau-ong-nuoc"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 99894000,
+      "product_id": 32979464,
+      "sku": "THUOC-2K-60",
+      "barcode": "THUOC-2K-60",
+      "product_name": "Thước 2 Khúc Lấy Dấu Khoan Lỗ Gạch - Inox 304",
+      "variant_name": "Dài 60cm",
+      "display_name": "Thước 2 Khúc Lấy Dấu Khoan Lỗ Gạch - Inox 304 - Dài 60cm",
+      "keywords": [
+        "THUOC-2K-60",
+        "THUOC-2K-60",
+        "Thước 2 Khúc Lấy Dấu Khoan Lỗ Gạch - Inox 304",
+        "Dài 60cm",
+        "thuoc-lay-dau-khoan-khoet-lo-gach-thuoc-2-doan-lay-dau-ong-nuoc"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 99892072,
+      "product_id": 32977899,
+      "sku": "OL-NK-KE-100-1.0mm",
+      "barcode": "OL-NK-KE-100-1.0mm",
+      "product_name": "Túi 100 chiếc Ke trắng cân bằng Ốp Lát Gạch (Loại tốt)",
+      "variant_name": "Ke dày 1.0mm",
+      "display_name": "Túi 100 chiếc Ke trắng cân bằng Ốp Lát Gạch (Loại tốt) - Ke dày 1.0mm",
+      "keywords": [
+        "OL-NK-KE-100-1.0mm",
+        "OL-NK-KE-100-1.0mm",
+        "Túi 100 chiếc Ke trắng cân bằng Ốp Lát Gạch (Loại tốt)",
+        "Ke dày 1.0mm",
+        "tui-100-chiec-ke-trang-can-bang-op-lat-gach-loai-tot"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 99892073,
+      "product_id": 32977899,
+      "sku": "OL-NK-KE-100-1.5mm",
+      "barcode": "OL-NK-KE-100-1.5mm",
+      "product_name": "Túi 100 chiếc Ke trắng cân bằng Ốp Lát Gạch (Loại tốt)",
+      "variant_name": "Ke dày 1.5mm",
+      "display_name": "Túi 100 chiếc Ke trắng cân bằng Ốp Lát Gạch (Loại tốt) - Ke dày 1.5mm",
+      "keywords": [
+        "OL-NK-KE-100-1.5mm",
+        "OL-NK-KE-100-1.5mm",
+        "Túi 100 chiếc Ke trắng cân bằng Ốp Lát Gạch (Loại tốt)",
+        "Ke dày 1.5mm",
+        "tui-100-chiec-ke-trang-can-bang-op-lat-gach-loai-tot"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 99892074,
+      "product_id": 32977899,
+      "sku": "OL-NK-KE-100-2.0mm",
+      "barcode": "OL-NK-KE-100-2.0mm",
+      "product_name": "Túi 100 chiếc Ke trắng cân bằng Ốp Lát Gạch (Loại tốt)",
+      "variant_name": "Ke dày 2.0mm",
+      "display_name": "Túi 100 chiếc Ke trắng cân bằng Ốp Lát Gạch (Loại tốt) - Ke dày 2.0mm",
+      "keywords": [
+        "OL-NK-KE-100-2.0mm",
+        "OL-NK-KE-100-2.0mm",
+        "Túi 100 chiếc Ke trắng cân bằng Ốp Lát Gạch (Loại tốt)",
+        "Ke dày 2.0mm",
+        "tui-100-chiec-ke-trang-can-bang-op-lat-gach-loai-tot"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 99880105,
+      "product_id": 32973990,
+      "sku": "OL-KG-CB-10",
+      "barcode": "OL-KG-CB-10",
+      "product_name": "Combo 10 Kích nâng gạch ốp lát tường - con đội kê gạch men ốp tường Loại 3 trụ hàng loại 1",
+      "variant_name": "Combo 10 Kích nâng gạch ốp lát tường - con đội kê gạch men ốp tường Loại 3 trụ hàng loại 1",
+      "display_name": "Combo 10 Kích nâng gạch ốp lát tường - con đội kê gạch men ốp tường Loại 3 trụ hàng loại 1",
+      "keywords": [
+        "OL-KG-CB-10",
+        "OL-KG-CB-10",
+        "Combo 10 Kích nâng gạch ốp lát tường - con đội kê gạch men ốp tường Loại 3 trụ hàng loại 1",
+        "Combo 10 Kích nâng gạch ốp lát tường - con đội kê gạch men ốp tường Loại 3 trụ hàng loại 1",
+        "combo-10-kich-nang-gach-op-lat-tuong-con-doi-ke-gach-men-op-tuong-loai-3-tru-hang-loai-1"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 99880036,
+      "product_id": 32973940,
+      "sku": "KNG-620",
+      "barcode": "KNG-620",
+      "product_name": "Kích nâng Gạch Ốp Tường _Loại 620gr",
+      "variant_name": "Default Title",
+      "display_name": "Kích nâng Gạch Ốp Tường _Loại 620gr",
+      "keywords": [
+        "KNG-620",
+        "KNG-620",
+        "Kích nâng Gạch Ốp Tường _Loại 620gr",
+        "Default Title",
+        "kich-nang-gach-op-lat-tuong-con-doi-ke-gach-men-op-tuong-loai-3-tru-hang-loai-1"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 99878915,
+      "product_id": 32973332,
+      "sku": "VITCANBANG-L1-1.0",
+      "barcode": "VITCANBANG-L1-1.0",
+      "product_name": "Ke Vặn Cân Bằng Gạch Ốp Lát - Loại Cao Cấp - Túi 50 cái",
+      "variant_name": "Kim T dày 1.0mm",
+      "display_name": "Ke Vặn Cân Bằng Gạch Ốp Lát - Loại Cao Cấp - Túi 50 cái - Kim T dày 1.0mm",
+      "keywords": [
+        "VITCANBANG-L1-1.0",
+        "VITCANBANG-L1-1.0",
+        "Ke Vặn Cân Bằng Gạch Ốp Lát - Loại Cao Cấp - Túi 50 cái",
+        "Kim T dày 1.0mm",
+        "tui-50-chot-van-can-bang-gach-op-lat-tai-su-dung-duoc-nhieu-lan-loai-1"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 99878916,
+      "product_id": 32973332,
+      "sku": "VITCANBANG-L1-1.5",
+      "barcode": "VITCANBANG-L1-1.5",
+      "product_name": "Ke Vặn Cân Bằng Gạch Ốp Lát - Loại Cao Cấp - Túi 50 cái",
+      "variant_name": "Kim T dày 1.5mm",
+      "display_name": "Ke Vặn Cân Bằng Gạch Ốp Lát - Loại Cao Cấp - Túi 50 cái - Kim T dày 1.5mm",
+      "keywords": [
+        "VITCANBANG-L1-1.5",
+        "VITCANBANG-L1-1.5",
+        "Ke Vặn Cân Bằng Gạch Ốp Lát - Loại Cao Cấp - Túi 50 cái",
+        "Kim T dày 1.5mm",
+        "tui-50-chot-van-can-bang-gach-op-lat-tai-su-dung-duoc-nhieu-lan-loai-1"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 99894014,
+      "product_id": 32973332,
+      "sku": "VITCANBANG-L1-1.2",
+      "barcode": "VITCANBANG-L1-1.2",
+      "product_name": "Ke Vặn Cân Bằng Gạch Ốp Lát - Loại Cao Cấp - Túi 50 cái",
+      "variant_name": "Kim T dày 1.2mm",
+      "display_name": "Ke Vặn Cân Bằng Gạch Ốp Lát - Loại Cao Cấp - Túi 50 cái - Kim T dày 1.2mm",
+      "keywords": [
+        "VITCANBANG-L1-1.2",
+        "VITCANBANG-L1-1.2",
+        "Ke Vặn Cân Bằng Gạch Ốp Lát - Loại Cao Cấp - Túi 50 cái",
+        "Kim T dày 1.2mm",
+        "tui-50-chot-van-can-bang-gach-op-lat-tai-su-dung-duoc-nhieu-lan-loai-1"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 99877691,
+      "product_id": 32973059,
+      "sku": "OL-NK-CB1-2.0mm",
+      "barcode": "OL-NK-CB1-2.0mm",
+      "product_name": "Combo Nêm ke cân bằng ốp lát gạch - Gồm 700 ke trắng 2.0mm + 350 nêm tam giác + 1 kìm siết.",
+      "variant_name": "Combo Nêm ke cân bằng ốp lát gạch - Gồm 700 ke trắng 2.0mm + 340 nêm tam giác + 1 kìm siết.",
+      "display_name": "Combo Nêm ke cân bằng ốp lát gạch - Gồm 700 ke trắng 2.0mm + 350 nêm tam giác + 1 kìm siết. - Combo Nêm ke cân bằng ốp lát gạch - Gồm 700 ke trắng 2.0mm + 340 nêm tam giác + 1 kìm siết.",
+      "keywords": [
+        "OL-NK-CB1-2.0mm",
+        "OL-NK-CB1-2.0mm",
+        "Combo Nêm ke cân bằng ốp lát gạch - Gồm 700 ke trắng 2.0mm + 350 nêm tam giác + 1 kìm siết.",
+        "Combo Nêm ke cân bằng ốp lát gạch - Gồm 700 ke trắng 2.0mm + 340 nêm tam giác + 1 kìm siết.",
+        "combo-nem-ke-can-bang-op-lat-gach-gom-700-ke-trang-2-0mm-350-nem-tam-giac-1-kim-siet"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 99877644,
+      "product_id": 32973054,
+      "sku": "OL-NK-CB1-1.5mm",
+      "barcode": "OL-NK-CB1-1.5mm",
+      "product_name": "Combo Nêm ke cân bằng ốp lát gạch - Gồm 700 ke trắng 1.0mm + 350 nêm tam giác + 1 kìm siết.",
+      "variant_name": "Combo Nêm ke cân bằng ốp lát gạch - Gồm 700 ke trắng 1.5mm + 340 nêm tam giác + 1 kìm siết.",
+      "display_name": "Combo Nêm ke cân bằng ốp lát gạch - Gồm 700 ke trắng 1.0mm + 350 nêm tam giác + 1 kìm siết. - Combo Nêm ke cân bằng ốp lát gạch - Gồm 700 ke trắng 1.5mm + 340 nêm tam giác + 1 kìm siết.",
+      "keywords": [
+        "OL-NK-CB1-1.5mm",
+        "OL-NK-CB1-1.5mm",
+        "Combo Nêm ke cân bằng ốp lát gạch - Gồm 700 ke trắng 1.0mm + 350 nêm tam giác + 1 kìm siết.",
+        "Combo Nêm ke cân bằng ốp lát gạch - Gồm 700 ke trắng 1.5mm + 340 nêm tam giác + 1 kìm siết.",
+        "combo-nem-ke-can-bang-op-lat-gach-gom-700-ke-trang-1-0mm-350-nem-tam-giac-1-kim-siet"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 99877360,
+      "product_id": 32972928,
+      "sku": "OL-NK-CB1-1.0mm",
+      "barcode": "OL-NK-CB1-1.0mm",
+      "product_name": "Combo Nêm ke cân bằng ốp lát gạch - Gồm 700 ke trắng + 350 nêm tam giác + 1 kìm siết.",
+      "variant_name": "Combo Nêm ke cân bằng ốp lát gạch - Gồm 700 ke trắng 1.0mm + 340 nêm tam giác + 1 kìm siết.",
+      "display_name": "Combo Nêm ke cân bằng ốp lát gạch - Gồm 700 ke trắng + 350 nêm tam giác + 1 kìm siết. - Combo Nêm ke cân bằng ốp lát gạch - Gồm 700 ke trắng 1.0mm + 340 nêm tam giác + 1 kìm siết.",
+      "keywords": [
+        "OL-NK-CB1-1.0mm",
+        "OL-NK-CB1-1.0mm",
+        "Combo Nêm ke cân bằng ốp lát gạch - Gồm 700 ke trắng + 350 nêm tam giác + 1 kìm siết.",
+        "Combo Nêm ke cân bằng ốp lát gạch - Gồm 700 ke trắng 1.0mm + 340 nêm tam giác + 1 kìm siết.",
+        "combo-nem-ke-can-bang-op-lat-gach-gom-700-ke-trang-350-nem-tam-giac-1-kim-siet"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 99876847,
+      "product_id": 32972813,
+      "sku": "NEMGACH-160",
+      "barcode": "NEMGACH-160",
+      "product_name": "Nêm Cân Bằng Ốp Lát Gạch - Loại Cao Cấp",
+      "variant_name": "Túi 1kg (160 nêm)",
+      "display_name": "Nêm Cân Bằng Ốp Lát Gạch - Loại Cao Cấp - Túi 1kg (160 nêm)",
+      "keywords": [
+        "NEMGACH-160",
+        "NEMGACH-160",
+        "Nêm Cân Bằng Ốp Lát Gạch - Loại Cao Cấp",
+        "Túi 1kg (160 nêm)",
+        "1-kg-nem-tam-giac-nem-can-bang-op-lat-gach-khoang-170-chiec"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 104064722,
+      "product_id": 32972813,
+      "sku": "NEMGACH-100",
+      "barcode": "NEMGACH-100",
+      "product_name": "Nêm Cân Bằng Ốp Lát Gạch - Loại Cao Cấp",
+      "variant_name": "Túi lẻ 100 nêm",
+      "display_name": "Nêm Cân Bằng Ốp Lát Gạch - Loại Cao Cấp - Túi lẻ 100 nêm",
+      "keywords": [
+        "NEMGACH-100",
+        "NEMGACH-100",
+        "Nêm Cân Bằng Ốp Lát Gạch - Loại Cao Cấp",
+        "Túi lẻ 100 nêm",
+        "1-kg-nem-tam-giac-nem-can-bang-op-lat-gach-khoang-170-chiec"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 99876608,
+      "product_id": 32972704,
+      "sku": "KCB-1L",
+      "barcode": "KCB-1L",
+      "product_name": "Ke Trắng Cân Bằng ốp lát gạch",
+      "variant_name": "Độ dày 1 ly",
+      "display_name": "Ke Trắng Cân Bằng ốp lát gạch - Độ dày 1 ly",
+      "keywords": [
+        "KCB-1L",
+        "KCB-1L",
+        "Ke Trắng Cân Bằng ốp lát gạch",
+        "Độ dày 1 ly",
+        "1-kg-ke-trang-can-bang-op-lat-gach-khoang-350-chiec"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 99876609,
+      "product_id": 32972704,
+      "sku": "KCB-1.5L",
+      "barcode": "KCB-1.5L",
+      "product_name": "Ke Trắng Cân Bằng ốp lát gạch",
+      "variant_name": "Độ dày 1.5 ly",
+      "display_name": "Ke Trắng Cân Bằng ốp lát gạch - Độ dày 1.5 ly",
+      "keywords": [
+        "KCB-1.5L",
+        "KCB-1.5L",
+        "Ke Trắng Cân Bằng ốp lát gạch",
+        "Độ dày 1.5 ly",
+        "1-kg-ke-trang-can-bang-op-lat-gach-khoang-350-chiec"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 99876610,
+      "product_id": 32972704,
+      "sku": "KCB-2L",
+      "barcode": "KCB-2L",
+      "product_name": "Ke Trắng Cân Bằng ốp lát gạch",
+      "variant_name": "Độ dày 2.0 ly",
+      "display_name": "Ke Trắng Cân Bằng ốp lát gạch - Độ dày 2.0 ly",
+      "keywords": [
+        "KCB-2L",
+        "KCB-2L",
+        "Ke Trắng Cân Bằng ốp lát gạch",
+        "Độ dày 2.0 ly",
+        "1-kg-ke-trang-can-bang-op-lat-gach-khoang-350-chiec"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 99876164,
+      "product_id": 32972508,
+      "sku": "KIMSIETNEM",
+      "barcode": "KIMSIETNEM",
+      "product_name": "Kìm Siết Nêm Ke Cân Bằng Ốp Lát Gạch",
+      "variant_name": "Default Title",
+      "display_name": "Kìm Siết Nêm Ke Cân Bằng Ốp Lát Gạch",
+      "keywords": [
+        "KIMSIETNEM",
+        "KIMSIETNEM",
+        "Kìm Siết Nêm Ke Cân Bằng Ốp Lát Gạch",
+        "Default Title",
+        "kimm-siet-nem-ke-op-lat-gach"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 99853669,
+      "product_id": 32964712,
+      "sku": "OL-CCT-1.0",
+      "barcode": "OL-CCT-1.0",
+      "product_name": "Túi 100g cử lát gạch chữ thập 1mm, 1.5mm, 2mm 2.5mm",
+      "variant_name": "100g cử 1.0mm",
+      "display_name": "Túi 100g cử lát gạch chữ thập 1mm, 1.5mm, 2mm 2.5mm - 100g cử 1.0mm",
+      "keywords": [
+        "OL-CCT-1.0",
+        "OL-CCT-1.0",
+        "Túi 100g cử lát gạch chữ thập 1mm, 1.5mm, 2mm 2.5mm",
+        "100g cử 1.0mm",
+        "tui-100g-cu-lat-gach-chu-thap-1mm-1-5mm-2mm-2-5mm"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 99853670,
+      "product_id": 32964712,
+      "sku": "OL-CCT-1.5",
+      "barcode": "OL-CCT-1.5",
+      "product_name": "Túi 100g cử lát gạch chữ thập 1mm, 1.5mm, 2mm 2.5mm",
+      "variant_name": "100g cử 1.5mm",
+      "display_name": "Túi 100g cử lát gạch chữ thập 1mm, 1.5mm, 2mm 2.5mm - 100g cử 1.5mm",
+      "keywords": [
+        "OL-CCT-1.5",
+        "OL-CCT-1.5",
+        "Túi 100g cử lát gạch chữ thập 1mm, 1.5mm, 2mm 2.5mm",
+        "100g cử 1.5mm",
+        "tui-100g-cu-lat-gach-chu-thap-1mm-1-5mm-2mm-2-5mm"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 99853671,
+      "product_id": 32964712,
+      "sku": "OL-CCT-2.0",
+      "barcode": "OL-CCT-2.0",
+      "product_name": "Túi 100g cử lát gạch chữ thập 1mm, 1.5mm, 2mm 2.5mm",
+      "variant_name": "100g cử 2.0mm",
+      "display_name": "Túi 100g cử lát gạch chữ thập 1mm, 1.5mm, 2mm 2.5mm - 100g cử 2.0mm",
+      "keywords": [
+        "OL-CCT-2.0",
+        "OL-CCT-2.0",
+        "Túi 100g cử lát gạch chữ thập 1mm, 1.5mm, 2mm 2.5mm",
+        "100g cử 2.0mm",
+        "tui-100g-cu-lat-gach-chu-thap-1mm-1-5mm-2mm-2-5mm"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 99853672,
+      "product_id": 32964712,
+      "sku": "OL-CCT-2.5",
+      "barcode": "OL-CCT-2.5",
+      "product_name": "Túi 100g cử lát gạch chữ thập 1mm, 1.5mm, 2mm 2.5mm",
+      "variant_name": "100 cử 2.5mm",
+      "display_name": "Túi 100g cử lát gạch chữ thập 1mm, 1.5mm, 2mm 2.5mm - 100 cử 2.5mm",
+      "keywords": [
+        "OL-CCT-2.5",
+        "OL-CCT-2.5",
+        "Túi 100g cử lát gạch chữ thập 1mm, 1.5mm, 2mm 2.5mm",
+        "100 cử 2.5mm",
+        "tui-100g-cu-lat-gach-chu-thap-1mm-1-5mm-2mm-2-5mm"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 99852953,
+      "product_id": 32964469,
+      "sku": "CHARON-D",
+      "barcode": "CHARON-D",
+      "product_name": "Dụng Cụ Chà Ron Polyurethane Thông Minh - Miếng Cao Cu Chít Mạch Gạch",
+      "variant_name": "Màu Đen",
+      "display_name": "Dụng Cụ Chà Ron Polyurethane Thông Minh - Miếng Cao Cu Chít Mạch Gạch - Màu Đen",
+      "keywords": [
+        "CHARON-D",
+        "CHARON-D",
+        "Dụng Cụ Chà Ron Polyurethane Thông Minh - Miếng Cao Cu Chít Mạch Gạch",
+        "Màu Đen",
+        "dung-cu-cha-ron-polyurethane-thong-minh-mieng-cao-su-chit-mach-gach"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107800617,
+      "product_id": 32964469,
+      "sku": "CHARON-X",
+      "barcode": "CHARON-X",
+      "product_name": "Dụng Cụ Chà Ron Polyurethane Thông Minh - Miếng Cao Cu Chít Mạch Gạch",
+      "variant_name": "Màu xanh",
+      "display_name": "Dụng Cụ Chà Ron Polyurethane Thông Minh - Miếng Cao Cu Chít Mạch Gạch - Màu xanh",
+      "keywords": [
+        "CHARON-X",
+        "CHARON-X",
+        "Dụng Cụ Chà Ron Polyurethane Thông Minh - Miếng Cao Cu Chít Mạch Gạch",
+        "Màu xanh",
+        "dung-cu-cha-ron-polyurethane-thong-minh-mieng-cao-su-chit-mach-gach"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 99667967,
+      "product_id": 32924064,
+      "sku": "BCR-CB-20",
+      "barcode": "BCR-CB-20",
+      "product_name": "Combo bay cắt ron 20x10 VUÔNG + TRÒN",
+      "variant_name": "COMBO Bay cắt ron 20x10 VUÔNG + TRÒN",
+      "display_name": "Combo bay cắt ron 20x10 VUÔNG + TRÒN",
+      "keywords": [
+        "BCR-CB-20",
+        "BCR-CB-20",
+        "Combo bay cắt ron 20x10 VUÔNG + TRÒN",
+        "COMBO Bay cắt ron 20x10 VUÔNG + TRÒN",
+        "combo-bay-cat-ron-20x10-vuong-tron"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 99667966,
+      "product_id": 32924063,
+      "sku": "BCR-CB-25",
+      "barcode": "BCR-CB-25",
+      "product_name": "COMBO Bay cắt ron 25x10 VUÔNG + TRÒN",
+      "variant_name": "COMBO Bay cắt ron 25x10 VUÔNG + TRÒN",
+      "display_name": "COMBO Bay cắt ron 25x10 VUÔNG + TRÒN",
+      "keywords": [
+        "BCR-CB-25",
+        "BCR-CB-25",
+        "COMBO Bay cắt ron 25x10 VUÔNG + TRÒN",
+        "COMBO Bay cắt ron 25x10 VUÔNG + TRÒN",
+        "combo-bay-cat-ron-25x10-vuong-tron"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 99528229,
+      "product_id": 32908837,
+      "sku": "TDGV-DC-5.0",
+      "barcode": "TDGV-DC-5.0",
+      "product_name": "Dây cáp inox 304 dày 7 zem thay thế vào thước dây gạt vữa",
+      "variant_name": "Dây 5 m",
+      "display_name": "Dây cáp inox 304 dày 7 zem thay thế vào thước dây gạt vữa - Dây 5 m",
+      "keywords": [
+        "TDGV-DC-5.0",
+        "TDGV-DC-5.0",
+        "Dây cáp inox 304 dày 7 zem thay thế vào thước dây gạt vữa",
+        "Dây 5 m",
+        "day-cap-inox-304-day-7-zem-thay-the-vao-thuoc-day-gat-vua"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 99528232,
+      "product_id": 32908837,
+      "sku": "TDGV-DC-2.2",
+      "barcode": "TDGV-DC-2.2",
+      "product_name": "Dây cáp inox 304 dày 7 zem thay thế vào thước dây gạt vữa",
+      "variant_name": "Dây 2,2 m",
+      "display_name": "Dây cáp inox 304 dày 7 zem thay thế vào thước dây gạt vữa - Dây 2,2 m",
+      "keywords": [
+        "TDGV-DC-2.2",
+        "TDGV-DC-2.2",
+        "Dây cáp inox 304 dày 7 zem thay thế vào thước dây gạt vữa",
+        "Dây 2,2 m",
+        "day-cap-inox-304-day-7-zem-thay-the-vao-thuoc-day-gat-vua"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 99528233,
+      "product_id": 32908837,
+      "sku": "TDGV-DC-10",
+      "barcode": "TDGV-DC-10",
+      "product_name": "Dây cáp inox 304 dày 7 zem thay thế vào thước dây gạt vữa",
+      "variant_name": "Dây 10 m",
+      "display_name": "Dây cáp inox 304 dày 7 zem thay thế vào thước dây gạt vữa - Dây 10 m",
+      "keywords": [
+        "TDGV-DC-10",
+        "TDGV-DC-10",
+        "Dây cáp inox 304 dày 7 zem thay thế vào thước dây gạt vữa",
+        "Dây 10 m",
+        "day-cap-inox-304-day-7-zem-thay-the-vao-thuoc-day-gat-vua"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 99319975,
+      "product_id": 32874336,
+      "sku": "BXNG-LOM",
+      "barcode": "BXNG-LOM",
+      "product_name": "Bàn xả nhám góc lõm - Inox 304 - Sử dụng giấy nhám thường dễ thay thế",
+      "variant_name": "Default Title",
+      "display_name": "Bàn xả nhám góc lõm - Inox 304 - Sử dụng giấy nhám thường dễ thay thế",
+      "keywords": [
+        "BXNG-LOM",
+        "BXNG-LOM",
+        "Bàn xả nhám góc lõm - Inox 304 - Sử dụng giấy nhám thường dễ thay thế",
+        "Default Title",
+        "ban-xa-nham-goc-lom-inox-304-su-dung-giay-nham-thuong-de-thay-the"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 99232248,
+      "product_id": 32849526,
+      "sku": "TDGV-HC-1.5",
+      "barcode": "TDGV-HC-1.5",
+      "product_name": "Thước dây gạt vữa hoàn chỉnh",
+      "variant_name": "Dài 1.5m",
+      "display_name": "Thước dây gạt vữa hoàn chỉnh - Dài 1.5m",
+      "keywords": [
+        "TDGV-HC-1.5",
+        "TDGV-HC-1.5",
+        "Thước dây gạt vữa hoàn chỉnh",
+        "Dài 1.5m",
+        "thuoc-day-gat-vua-hoan-chinh-dai-2-met"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 100201155,
+      "product_id": 32849526,
+      "sku": "TDGV-HC-1.0",
+      "barcode": "TDGV-HC-1.0",
+      "product_name": "Thước dây gạt vữa hoàn chỉnh",
+      "variant_name": "Dài 1.0m",
+      "display_name": "Thước dây gạt vữa hoàn chỉnh - Dài 1.0m",
+      "keywords": [
+        "TDGV-HC-1.0",
+        "TDGV-HC-1.0",
+        "Thước dây gạt vữa hoàn chỉnh",
+        "Dài 1.0m",
+        "thuoc-day-gat-vua-hoan-chinh-dai-2-met"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 100201156,
+      "product_id": 32849526,
+      "sku": "TDGV-HC-2.0",
+      "barcode": "TDGV-HC-2.0",
+      "product_name": "Thước dây gạt vữa hoàn chỉnh",
+      "variant_name": "Dài 2.0m",
+      "display_name": "Thước dây gạt vữa hoàn chỉnh - Dài 2.0m",
+      "keywords": [
+        "TDGV-HC-2.0",
+        "TDGV-HC-2.0",
+        "Thước dây gạt vữa hoàn chỉnh",
+        "Dài 2.0m",
+        "thuoc-day-gat-vua-hoan-chinh-dai-2-met"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 98467202,
+      "product_id": 32729176,
+      "sku": "MKRC-STD",
+      "barcode": "MKRC-STD",
+      "product_name": "Máng Kéo răng cưa Thép Mạ Tĩnh Điện - Có tay nắm",
+      "variant_name": "Default Title",
+      "display_name": "Máng Kéo răng cưa Thép Mạ Tĩnh Điện - Có tay nắm",
+      "keywords": [
+        "MKRC-STD",
+        "MKRC-STD",
+        "Máng Kéo răng cưa Thép Mạ Tĩnh Điện - Có tay nắm",
+        "Default Title",
+        "mang-keo-rang-cua-thep-ma-kem-khong-tay-nam"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 97744156,
+      "product_id": 32538289,
+      "sku": "PVN34",
+      "barcode": "PVN34",
+      "product_name": "MÁNG KÉO RĂNG CƯA - không tay nắm",
+      "variant_name": "Default Title",
+      "display_name": "MÁNG KÉO RĂNG CƯA - không tay nắm",
+      "keywords": [
+        "PVN34",
+        "PVN34",
+        "MÁNG KÉO RĂNG CƯA - không tay nắm",
+        "Default Title",
+        "mang-keo-rang-cua-khong-tay-nam"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 97743023,
+      "product_id": 32537994,
+      "sku": "MKRC-I-TNT",
+      "barcode": "MKRC-I-TNT",
+      "product_name": "Máng Kéo Răng Cưa INOX LOẠI TIÊU CHUẨN, KT:60-1M13-Tay nắm thép",
+      "variant_name": "Default Title",
+      "display_name": "Máng Kéo Răng Cưa INOX LOẠI TIÊU CHUẨN, KT:60-1M13-Tay nắm thép",
+      "keywords": [
+        "MKRC-I-TNT",
+        "MKRC-I-TNT",
+        "Máng Kéo Răng Cưa INOX LOẠI TIÊU CHUẨN, KT:60-1M13-Tay nắm thép",
+        "Default Title",
+        "mang-keo-rang-cua-co-tay-nam",
+        "Dụng Cụ Chuyên Dụng"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 88391475,
+      "product_id": 30986935,
+      "sku": "BCR-TH",
+      "barcode": "BCR-TH",
+      "product_name": "Bay Cắt Ron chỉ âm tường loại Trụ Cổng Hình Thang",
+      "variant_name": "Default Title",
+      "display_name": "Bay Cắt Ron chỉ âm tường loại Trụ Cổng Hình Thang",
+      "keywords": [
+        "BCR-TH",
+        "BCR-TH",
+        "Bay Cắt Ron chỉ âm tường loại Trụ Cổng Hình Thang",
+        "Default Title",
+        "bay-cat-ron-chi-tru-cong-hinh-thang-bay-xay-dung-thien-quang"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107590611,
+      "product_id": 30986932,
+      "sku": "BCR-CB-2510",
+      "barcode": "BCR-CB-2510",
+      "product_name": "Bay Cắt Ron Chỉ Âm Tường VUÔNG 20x10mm",
+      "variant_name": "Combo VUÔNG + TRÒN",
+      "display_name": "Bay Cắt Ron Chỉ Âm Tường VUÔNG 20x10mm - Combo VUÔNG + TRÒN",
+      "keywords": [
+        "BCR-CB-2510",
+        "BCR-CB-2510",
+        "Bay Cắt Ron Chỉ Âm Tường VUÔNG 20x10mm",
+        "Combo VUÔNG + TRÒN",
+        "bay-cat-ron-chi-vuong-25x10mm-thien-quang"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 111195517,
+      "product_id": 30986932,
+      "sku": "BCR-V25",
+      "barcode": "BCR-V25",
+      "product_name": "Bay Cắt Ron Chỉ Âm Tường VUÔNG 20x10mm",
+      "variant_name": "Default Title",
+      "display_name": "Bay Cắt Ron Chỉ Âm Tường VUÔNG 20x10mm",
+      "keywords": [
+        "BCR-V25",
+        "BCR-V25",
+        "Bay Cắt Ron Chỉ Âm Tường VUÔNG 20x10mm",
+        "Default Title",
+        "bay-cat-ron-chi-vuong-25x10mm-thien-quang"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 88391250,
+      "product_id": 30986899,
+      "sku": "BXD-V-TT",
+      "barcode": "BXD-V-TT",
+      "product_name": "Bay Xây Vuông - Thép Trắng",
+      "variant_name": "Default Title",
+      "display_name": "Bay Xây Vuông - Thép Trắng",
+      "keywords": [
+        "BXD-V-TT",
+        "BXD-V-TT",
+        "Bay Xây Vuông - Thép Trắng",
+        "Default Title",
+        "bay-vuong-a1-kt-17-9-cm-la-thep-luoi-cua-65mn-day-1-1mm-bay-xay-dung-thien-quang",
+        "bay xây dựng cao cấp"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 88391002,
+      "product_id": 30986806,
+      "sku": "BXD-T1",
+      "barcode": "BXD-T1",
+      "product_name": "T1-Bay trát TRUYỀN THỐNG gỗ - 0.7 ly",
+      "variant_name": "Default Title",
+      "display_name": "T1-Bay trát TRUYỀN THỐNG gỗ - 0.7 ly",
+      "keywords": [
+        "BXD-T1",
+        "BXD-T1",
+        "T1-Bay trát TRUYỀN THỐNG gỗ - 0.7 ly",
+        "Default Title",
+        "bay-to-trat-tuong-co-lon-17-9-2-cm-la-thep-luoi-cua-65mn-day-0-7mm-bay-xay-dung-thien-quang",
+        "bay xây dựng cao cấp"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 88390958,
+      "product_id": 30986794,
+      "sku": "CCB-50",
+      "barcode": "CCB-50",
+      "product_name": "Chốt cân bằng tái sử dụng - Loại cao cấp A1",
+      "variant_name": "Túi 50 cái (1 kiềm)",
+      "display_name": "Chốt cân bằng tái sử dụng - Loại cao cấp A1 - Túi 50 cái (1 kiềm)",
+      "keywords": [
+        "CCB-50",
+        "CCB-50",
+        "Chốt cân bằng tái sử dụng - Loại cao cấp A1",
+        "Túi 50 cái (1 kiềm)",
+        "chot-can-bang-tai-su-dung-loai-cao-cap-a1"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 88391000,
+      "product_id": 30986794,
+      "sku": "CCB-100",
+      "barcode": "CCB-100",
+      "product_name": "Chốt cân bằng tái sử dụng - Loại cao cấp A1",
+      "variant_name": "Túi 100 cái (2 kiềm)",
+      "display_name": "Chốt cân bằng tái sử dụng - Loại cao cấp A1 - Túi 100 cái (2 kiềm)",
+      "keywords": [
+        "CCB-100",
+        "CCB-100",
+        "Chốt cân bằng tái sử dụng - Loại cao cấp A1",
+        "Túi 100 cái (2 kiềm)",
+        "chot-can-bang-tai-su-dung-loai-cao-cap-a1"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 107591909,
+      "product_id": 30986754,
+      "sku": "BCR-T20",
+      "barcode": "BCR-T20",
+      "product_name": "Bay cắt ron chỉ TRÒN",
+      "variant_name": "Tròn 20x10",
+      "display_name": "Bay cắt ron chỉ TRÒN - Tròn 20x10",
+      "keywords": [
+        "BCR-T20",
+        "BCR-T20",
+        "Bay cắt ron chỉ TRÒN",
+        "Tròn 20x10",
+        "bay-cat-ron-tron-20x10mm-thien-quang"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 110837981,
+      "product_id": 30986754,
+      "sku": "BCR-CB-2010",
+      "barcode": "BCR-CB-2010",
+      "product_name": "Bay cắt ron chỉ TRÒN",
+      "variant_name": "Combo Vuông + Tròn 20x10",
+      "display_name": "Bay cắt ron chỉ TRÒN - Combo Vuông + Tròn 20x10",
+      "keywords": [
+        "BCR-CB-2010",
+        "BCR-CB-2010",
+        "Bay cắt ron chỉ TRÒN",
+        "Combo Vuông + Tròn 20x10",
+        "bay-cat-ron-tron-20x10mm-thien-quang"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 88390807,
+      "product_id": 30986736,
+      "sku": "THUOC5M",
+      "barcode": "THUOC5M",
+      "product_name": "Thước Cuộn 5m cao cấp - Chống va đập, siêu bền",
+      "variant_name": "Default Title",
+      "display_name": "Thước Cuộn 5m cao cấp - Chống va đập, siêu bền",
+      "keywords": [
+        "THUOC5M",
+        "THUOC5M",
+        "Thước Cuộn 5m cao cấp - Chống va đập, siêu bền",
+        "Default Title",
+        "hcm-thuoc-day-5m-cao-cap-chong-va-dap-sieu-ben"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 88390744,
+      "product_id": 30986724,
+      "sku": "TGRC-60",
+      "barcode": "TGRC-60",
+      "product_name": "Thước Gạt Răng Cưa Ốp Lát",
+      "variant_name": "Dài 60cm",
+      "display_name": "Thước Gạt Răng Cưa Ốp Lát - Dài 60cm",
+      "keywords": [
+        "TGRC-60",
+        "TGRC-60",
+        "Thước Gạt Răng Cưa Ốp Lát",
+        "Dài 60cm",
+        "thuoc-gat-vua-rang-cua-inox-60cm-x-8cm-bay-xay-dung-thien-quang"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 100233682,
+      "product_id": 30986724,
+      "sku": "TGRC-40",
+      "barcode": "TGRC-40",
+      "product_name": "Thước Gạt Răng Cưa Ốp Lát",
+      "variant_name": "Dài 40cm",
+      "display_name": "Thước Gạt Răng Cưa Ốp Lát - Dài 40cm",
+      "keywords": [
+        "TGRC-40",
+        "TGRC-40",
+        "Thước Gạt Răng Cưa Ốp Lát",
+        "Dài 40cm",
+        "thuoc-gat-vua-rang-cua-inox-60cm-x-8cm-bay-xay-dung-thien-quang"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 88390656,
+      "product_id": 30986695,
+      "sku": "BCR-V50",
+      "barcode": "BCR-V50",
+      "product_name": "Bay Cắt Ron Chỉ Âm Tường VUÔNG 20x10mm",
+      "variant_name": "Vuông 50x10",
+      "display_name": "Bay Cắt Ron Chỉ Âm Tường VUÔNG 20x10mm - Vuông 50x10",
+      "keywords": [
+        "BCR-V50",
+        "BCR-V50",
+        "Bay Cắt Ron Chỉ Âm Tường VUÔNG 20x10mm",
+        "Vuông 50x10",
+        "bay-cat-ron-chi-vuong-50x10mm-thien-quang"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 88390576,
+      "product_id": 30986665,
+      "sku": "MKRC-I-KTN",
+      "barcode": "MKRC-I-KTN",
+      "product_name": "Máng Kéo Răng Cưa INOX 304 - KHÔNG TAY NẮM",
+      "variant_name": "Default Title",
+      "display_name": "Máng Kéo Răng Cưa INOX 304 - KHÔNG TAY NẮM",
+      "keywords": [
+        "MKRC-I-KTN",
+        "MKRC-I-KTN",
+        "Máng Kéo Răng Cưa INOX 304 - KHÔNG TAY NẮM",
+        "Default Title",
+        "mang-keo-rang-cua-inox-dai-60cm-den-1-2m-bay-xay-dung-thien-quang"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 88390558,
+      "product_id": 30986662,
+      "sku": "BCR-T25",
+      "barcode": "BCR-T25",
+      "product_name": "Bay cắt ron chỉ TRÒN",
+      "variant_name": "Tròn 25x10",
+      "display_name": "Bay cắt ron chỉ TRÒN - Tròn 25x10",
+      "keywords": [
+        "BCR-T25",
+        "BCR-T25",
+        "Bay cắt ron chỉ TRÒN",
+        "Tròn 25x10",
+        "bay-cat-ron-chi-tron-25x10mm-thien-quang"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 88390474,
+      "product_id": 30986648,
+      "sku": "BXD-C1",
+      "barcode": "BXD-C1",
+      "product_name": "C1-Bay Chỉ Cao Cấp_Cán gỗ_KT: 15x5cm",
+      "variant_name": "Default Title",
+      "display_name": "C1-Bay Chỉ Cao Cấp_Cán gỗ_KT: 15x5cm",
+      "keywords": [
+        "BXD-C1",
+        "BXD-C1",
+        "C1-Bay Chỉ Cao Cấp_Cán gỗ_KT: 15x5cm",
+        "Default Title",
+        "bay-chi-cao-cap-15x5cm-bay-xay-dung-thien-quang",
+        "bay xây dựng cao cấp"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 88390457,
+      "product_id": 30986641,
+      "sku": "BCR-V30",
+      "barcode": "BCR-V30",
+      "product_name": "Bay Cắt Ron Chỉ Âm Tường VUÔNG 20x10mm",
+      "variant_name": "Vuông 30x10",
+      "display_name": "Bay Cắt Ron Chỉ Âm Tường VUÔNG 20x10mm - Vuông 30x10",
+      "keywords": [
+        "BCR-V30",
+        "BCR-V30",
+        "Bay Cắt Ron Chỉ Âm Tường VUÔNG 20x10mm",
+        "Vuông 30x10",
+        "bay-cat-ron-chi-vuong-30x10mm-thien-quang"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 88390385,
+      "product_id": 30986614,
+      "sku": "BXD-BC-T",
+      "barcode": "BC-13x6",
+      "product_name": "[HCM] BAY CẮT CHỈ 13,5x6cm chuyên dùng đắp chỉ tô trát - Bay xây dựng Thiên Quang",
+      "variant_name": "Default Title",
+      "display_name": "[HCM] BAY CẮT CHỈ 13,5x6cm chuyên dùng đắp chỉ tô trát - Bay xây dựng Thiên Quang",
+      "keywords": [
+        "BXD-BC-T",
+        "BC-13x6",
+        "[HCM] BAY CẮT CHỈ 13,5x6cm chuyên dùng đắp chỉ tô trát - Bay xây dựng Thiên Quang",
+        "Default Title",
+        "hcm-bay-cat-chi-13-5x6cm-chuyen-dung-dap-chi-to-trat-bay-xay-dung-thien-quang"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 88390227,
+      "product_id": 30986586,
+      "sku": "BCR-V15",
+      "barcode": "BCR-V15",
+      "product_name": "Bay Cắt Ron Chỉ Âm Tường VUÔNG 20x10mm",
+      "variant_name": "Vuông 15x10",
+      "display_name": "Bay Cắt Ron Chỉ Âm Tường VUÔNG 20x10mm - Vuông 15x10",
+      "keywords": [
+        "BCR-V15",
+        "BCR-V15",
+        "Bay Cắt Ron Chỉ Âm Tường VUÔNG 20x10mm",
+        "Vuông 15x10",
+        "bay-cat-ron-chi-vuong-15x10mm-thien-quang"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 88390150,
+      "product_id": 30986583,
+      "sku": "BCR-V20",
+      "barcode": "BCR-V20",
+      "product_name": "Bay Cắt Ron Chỉ Âm Tường VUÔNG 20x10mm",
+      "variant_name": "Vuông 20x10",
+      "display_name": "Bay Cắt Ron Chỉ Âm Tường VUÔNG 20x10mm - Vuông 20x10",
+      "keywords": [
+        "BCR-V20",
+        "BCR-V20",
+        "Bay Cắt Ron Chỉ Âm Tường VUÔNG 20x10mm",
+        "Vuông 20x10",
+        "bay-cat-ron-chi-vuong-20x10mm-thien-quang"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 88390125,
+      "product_id": 30986581,
+      "sku": "TDGV-BLK-2.0",
+      "barcode": "TDGV-BLK-2.0",
+      "product_name": "Bộ Linh Kiện Lắp Ráp Thước Dây Gạt Vữa 2m",
+      "variant_name": "Bộ linh kiện 2m",
+      "display_name": "Bộ Linh Kiện Lắp Ráp Thước Dây Gạt Vữa 2m - Bộ linh kiện 2m",
+      "keywords": [
+        "TDGV-BLK-2.0",
+        "TDGV-BLK-2.0",
+        "Bộ Linh Kiện Lắp Ráp Thước Dây Gạt Vữa 2m",
+        "Bộ linh kiện 2m",
+        "bo-thuoc-day-gat-vua-trat-tuong-bay-xay-dung-thien-quang"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 100750629,
+      "product_id": 30986581,
+      "sku": "TDGV-BLK-1.5",
+      "barcode": "TDGV-BLK-1.5",
+      "product_name": "Bộ Linh Kiện Lắp Ráp Thước Dây Gạt Vữa 2m",
+      "variant_name": "Bộ linh kiện 1.5m",
+      "display_name": "Bộ Linh Kiện Lắp Ráp Thước Dây Gạt Vữa 2m - Bộ linh kiện 1.5m",
+      "keywords": [
+        "TDGV-BLK-1.5",
+        "TDGV-BLK-1.5",
+        "Bộ Linh Kiện Lắp Ráp Thước Dây Gạt Vữa 2m",
+        "Bộ linh kiện 1.5m",
+        "bo-thuoc-day-gat-vua-trat-tuong-bay-xay-dung-thien-quang"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 100750630,
+      "product_id": 30986581,
+      "sku": "TDGV-BLK-1.0",
+      "barcode": "TDGV-BLK-1.0",
+      "product_name": "Bộ Linh Kiện Lắp Ráp Thước Dây Gạt Vữa 2m",
+      "variant_name": "Bộ linh kiện 1.0m",
+      "display_name": "Bộ Linh Kiện Lắp Ráp Thước Dây Gạt Vữa 2m - Bộ linh kiện 1.0m",
+      "keywords": [
+        "TDGV-BLK-1.0",
+        "TDGV-BLK-1.0",
+        "Bộ Linh Kiện Lắp Ráp Thước Dây Gạt Vữa 2m",
+        "Bộ linh kiện 1.0m",
+        "bo-thuoc-day-gat-vua-trat-tuong-bay-xay-dung-thien-quang"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 88390003,
+      "product_id": 30986529,
+      "sku": "BXD-X1",
+      "barcode": "BXD-X1",
+      "product_name": "X1 - Bay Xây Truyền Thống A1",
+      "variant_name": "Default Title",
+      "display_name": "X1 - Bay Xây Truyền Thống A1",
+      "keywords": [
+        "BXD-X1",
+        "BXD-X1",
+        "X1 - Bay Xây Truyền Thống A1",
+        "Default Title",
+        "bay-xay-a1-thien-quang-la-thep-65mn-sieu-ben-day-1-1mm",
+        "bay xây dựng cao cấp"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 88389948,
+      "product_id": 30986513,
+      "sku": "BXD-X9",
+      "barcode": "BXD-X9",
+      "product_name": "X9 - Bay Xây Xoài Bình Định",
+      "variant_name": "Default Title",
+      "display_name": "X9 - Bay Xây Xoài Bình Định",
+      "keywords": [
+        "BXD-X9",
+        "BXD-X9",
+        "X9 - Bay Xây Xoài Bình Định",
+        "Default Title",
+        "bay-xoai-binh-dinh-17x9-cm-bay-xay-dung-thien-quang",
+        "bay xây dựng cao cấp"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 88389758,
+      "product_id": 30986436,
+      "sku": "BXD-X2",
+      "barcode": "BXD-X2",
+      "product_name": "X2 - Bay Xây Truyền Thống Cán Trắng",
+      "variant_name": "Default Title",
+      "display_name": "X2 - Bay Xây Truyền Thống Cán Trắng",
+      "keywords": [
+        "BXD-X2",
+        "BXD-X2",
+        "X2 - Bay Xây Truyền Thống Cán Trắng",
+        "Default Title",
+        "bay-xay-can-trang-kich-thuoc-9x17-cm-thep-luoi-cua-65mn-day-1-1mm-thien-quang-smarttools",
+        "bay xây dựng cao cấp"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 86992860,
+      "product_id": 30674241,
+      "sku": "PRI448884",
+      "barcode": "",
+      "product_name": "Bộ dụng cụ vặn vít đa năng 10 chi tiết Bosch 2607019510 (Xanh rêu)",
+      "variant_name": "2m",
+      "display_name": "Bộ dụng cụ vặn vít đa năng 10 chi tiết Bosch 2607019510 (Xanh rêu) - 2m",
+      "keywords": [
+        "PRI448884",
+        "Bộ dụng cụ vặn vít đa năng 10 chi tiết Bosch 2607019510 (Xanh rêu)",
+        "2m",
+        "bo-dung-cu-van-vit-da-nang-10-chi-tiet-bosch-2607019510-xanh-reu"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 88385033,
+      "product_id": 30674241,
+      "sku": "PRI448885",
+      "barcode": "",
+      "product_name": "Bộ dụng cụ vặn vít đa năng 10 chi tiết Bosch 2607019510 (Xanh rêu)",
+      "variant_name": "3m",
+      "display_name": "Bộ dụng cụ vặn vít đa năng 10 chi tiết Bosch 2607019510 (Xanh rêu) - 3m",
+      "keywords": [
+        "PRI448885",
+        "Bộ dụng cụ vặn vít đa năng 10 chi tiết Bosch 2607019510 (Xanh rêu)",
+        "3m",
+        "bo-dung-cu-van-vit-da-nang-10-chi-tiet-bosch-2607019510-xanh-reu"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 88385034,
+      "product_id": 30674241,
+      "sku": "PRI448886",
+      "barcode": "",
+      "product_name": "Bộ dụng cụ vặn vít đa năng 10 chi tiết Bosch 2607019510 (Xanh rêu)",
+      "variant_name": "4m",
+      "display_name": "Bộ dụng cụ vặn vít đa năng 10 chi tiết Bosch 2607019510 (Xanh rêu) - 4m",
+      "keywords": [
+        "PRI448886",
+        "Bộ dụng cụ vặn vít đa năng 10 chi tiết Bosch 2607019510 (Xanh rêu)",
+        "4m",
+        "bo-dung-cu-van-vit-da-nang-10-chi-tiet-bosch-2607019510-xanh-reu"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 86992859,
+      "product_id": 30674240,
+      "sku": "PRI146182",
+      "barcode": "",
+      "product_name": "Máy khoan động lực Bosch GSB 13 RE SET 100 chi tiết 650W (Xanh)",
+      "variant_name": "Default Title",
+      "display_name": "Máy khoan động lực Bosch GSB 13 RE SET 100 chi tiết 650W (Xanh)",
+      "keywords": [
+        "PRI146182",
+        "Máy khoan động lực Bosch GSB 13 RE SET 100 chi tiết 650W (Xanh)",
+        "Default Title",
+        "may-khoan-dong-luc-bosch-gsb-13-re-set-100-chi-tiet-650w-xanh"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 86992858,
+      "product_id": 30674239,
+      "sku": "396410",
+      "barcode": "",
+      "product_name": "Máy phun xịt rửa áp lực cao Bosch Easy Aquatak 110 1300W (Xanh lá)",
+      "variant_name": "Default Title",
+      "display_name": "Máy phun xịt rửa áp lực cao Bosch Easy Aquatak 110 1300W (Xanh lá)",
+      "keywords": [
+        "396410",
+        "Máy phun xịt rửa áp lực cao Bosch Easy Aquatak 110 1300W (Xanh lá)",
+        "Default Title",
+        "may-phun-xit-rua-ap-luc-cao-bosch-easy-aquatak-110-1300w-xanh-la"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 86992857,
+      "product_id": 30674238,
+      "sku": "",
+      "barcode": "",
+      "product_name": "Máy cắt sắt Bosch GCO 200 2000W + 3 tờ giấy nhám",
+      "variant_name": "Default Title",
+      "display_name": "Máy cắt sắt Bosch GCO 200 2000W + 3 tờ giấy nhám",
+      "keywords": [
+        "Máy cắt sắt Bosch GCO 200 2000W + 3 tờ giấy nhám",
+        "Default Title",
+        "may-cat-sat-bosch-gco-200-2000w-3-to-giay-nham"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 86992856,
+      "product_id": 30674237,
+      "sku": "PRI451103",
+      "barcode": "",
+      "product_name": "Máy khoan Professional Bosch GBM 320 320W (Xanh dương)",
+      "variant_name": "Default Title",
+      "display_name": "Máy khoan Professional Bosch GBM 320 320W (Xanh dương)",
+      "keywords": [
+        "PRI451103",
+        "Máy khoan Professional Bosch GBM 320 320W (Xanh dương)",
+        "Default Title",
+        "may-khoan-professional-bosch-gbm-320-320w-xanh-duong"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 86992855,
+      "product_id": 30674236,
+      "sku": "PRI713524",
+      "barcode": "",
+      "product_name": "Máy khoan búa Bosch GBH 2-24 RE 790W",
+      "variant_name": "Default Title",
+      "display_name": "Máy khoan búa Bosch GBH 2-24 RE 790W",
+      "keywords": [
+        "PRI713524",
+        "Máy khoan búa Bosch GBH 2-24 RE 790W",
+        "Default Title",
+        "may-khoan-bua-bosch-gbh-2-24-re-790w"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 86992854,
+      "product_id": 30674235,
+      "sku": "PRI1190156",
+      "barcode": "",
+      "product_name": "Máy khoan vặn vít dùng pin Bosch GSB 180 LI",
+      "variant_name": "Default Title",
+      "display_name": "Máy khoan vặn vít dùng pin Bosch GSB 180 LI",
+      "keywords": [
+        "PRI1190156",
+        "Máy khoan vặn vít dùng pin Bosch GSB 180 LI",
+        "Default Title",
+        "may-khoan-van-vit-dung-pin-bosch-gsb-180-li"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 86992853,
+      "product_id": 30674234,
+      "sku": "PRI1190156",
+      "barcode": "",
+      "product_name": "Máy khoan vặn vít dùng pin Bosch",
+      "variant_name": "Default Title",
+      "display_name": "Máy khoan vặn vít dùng pin Bosch",
+      "keywords": [
+        "PRI1190156",
+        "Máy khoan vặn vít dùng pin Bosch",
+        "Default Title",
+        "may-khoan-van-vit-dung-pin-bosch"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 86992852,
+      "product_id": 30674233,
+      "sku": "",
+      "barcode": "",
+      "product_name": "Máy khoan búa D25032 DeWALT",
+      "variant_name": "Default Title",
+      "display_name": "Máy khoan búa D25032 DeWALT",
+      "keywords": [
+        "Máy khoan búa D25032 DeWALT",
+        "Default Title",
+        "may-khoan-bua-d25032-dewalt"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 86992851,
+      "product_id": 30674232,
+      "sku": "",
+      "barcode": "",
+      "product_name": "Bộ nén khí không dây FLEXVOLT® 60V MAX * 2.5 Gallon",
+      "variant_name": "Default Title",
+      "display_name": "Bộ nén khí không dây FLEXVOLT® 60V MAX * 2.5 Gallon",
+      "keywords": [
+        "Bộ nén khí không dây FLEXVOLT® 60V MAX * 2.5 Gallon",
+        "Default Title",
+        "bo-nen-khi-khong-day-flexvolt-60v-max-2-5-gallon"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 86992850,
+      "product_id": 30674231,
+      "sku": "",
+      "barcode": "",
+      "product_name": "Máy khoan động lực 650w dewalt dwd024k(13mm,0-2800rpm) kem vali+mui",
+      "variant_name": "Default Title",
+      "display_name": "Máy khoan động lực 650w dewalt dwd024k(13mm,0-2800rpm) kem vali+mui",
+      "keywords": [
+        "Máy khoan động lực 650w dewalt dwd024k(13mm,0-2800rpm) kem vali+mui",
+        "Default Title",
+        "may-khoan-dong-luc-650w-dewalt-dwd024k-13mm-0-2800rpm-kem-vali-mui"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 86992849,
+      "product_id": 30674230,
+      "sku": "",
+      "barcode": "",
+      "product_name": "Máy thổi hơi nóng Dewalt d26414",
+      "variant_name": "Default Title",
+      "display_name": "Máy thổi hơi nóng Dewalt d26414",
+      "keywords": [
+        "Máy thổi hơi nóng Dewalt d26414",
+        "Default Title",
+        "may-thoi-hoi-nong-dewalt-d26414"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 86992848,
+      "product_id": 30674229,
+      "sku": "",
+      "barcode": "",
+      "product_name": "Máy mài bàn 2 đá dewalt dw725r (373w-150mm)",
+      "variant_name": "Default Title",
+      "display_name": "Máy mài bàn 2 đá dewalt dw725r (373w-150mm)",
+      "keywords": [
+        "Máy mài bàn 2 đá dewalt dw725r (373w-150mm)",
+        "Default Title",
+        "may-mai-ban-2-da-dewalt-dw725r-373w-150mm"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 86992847,
+      "product_id": 30674228,
+      "sku": "",
+      "barcode": "",
+      "product_name": "Máy khoan búa 2 chức năng dewalt d25032k",
+      "variant_name": "Default Title",
+      "display_name": "Máy khoan búa 2 chức năng dewalt d25032k",
+      "keywords": [
+        "Máy khoan búa 2 chức năng dewalt d25032k",
+        "Default Title",
+        "may-khoan-bua-2-chuc-nang-dewalt-d25032k"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 86992846,
+      "product_id": 30674227,
+      "sku": "",
+      "barcode": "",
+      "product_name": "Máy khoan búa 3 chức năng dewalt d25133k",
+      "variant_name": "Default Title",
+      "display_name": "Máy khoan búa 3 chức năng dewalt d25133k",
+      "keywords": [
+        "Máy khoan búa 3 chức năng dewalt d25133k",
+        "Default Title",
+        "may-khoan-bua-3-chuc-nang-dewalt-d25133k"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 86992845,
+      "product_id": 30674226,
+      "sku": "",
+      "barcode": "",
+      "product_name": "Máy khoan động lực 650w dewalt dwd024",
+      "variant_name": "Default Title",
+      "display_name": "Máy khoan động lực 650w dewalt dwd024",
+      "keywords": [
+        "Máy khoan động lực 650w dewalt dwd024",
+        "Default Title",
+        "may-khoan-dong-luc-650w-dewalt-dwd024"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 86992843,
+      "product_id": 30674225,
+      "sku": "",
+      "barcode": "",
+      "product_name": "Máy khoan đảo chiều 550W DEWALT DWD022K",
+      "variant_name": "Vàng",
+      "display_name": "Máy khoan đảo chiều 550W DEWALT DWD022K - Vàng",
+      "keywords": [
+        "Máy khoan đảo chiều 550W DEWALT DWD022K",
+        "Vàng",
+        "may-khoan-dao-chieu-550w-dewalt-dwd022k"
+      ],
+      "active": true
+    },
+    {
+      "variant_id": 86992844,
+      "product_id": 30674225,
+      "sku": "",
+      "barcode": "",
+      "product_name": "Máy khoan đảo chiều 550W DEWALT DWD022K",
+      "variant_name": "Đen",
+      "display_name": "Máy khoan đảo chiều 550W DEWALT DWD022K - Đen",
+      "keywords": [
+        "Máy khoan đảo chiều 550W DEWALT DWD022K",
+        "Đen",
+        "may-khoan-dao-chieu-550w-dewalt-dwd022k"
+      ],
+      "active": true
+    }
+  ]
+}
