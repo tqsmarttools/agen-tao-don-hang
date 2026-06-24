@@ -274,6 +274,8 @@ function withStepMutation(payload, order, patch) {
   nextPayload.progress.failed_steps = nextPayload.step_checklist.filter((item) => item.failed).length;
   nextPayload.progress.next_pending_step =
     nextPayload.step_checklist.find((item) => !item.completed && !item.failed)?.order || null;
+  nextPayload.progress.next_actionable_step =
+    nextPayload.step_checklist.find((item) => !item.completed)?.order || null;
   return nextPayload;
 }
 

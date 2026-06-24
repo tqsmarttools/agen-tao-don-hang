@@ -6,6 +6,8 @@ function normalizeAscii(value) {
   return normalizeText(value)
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
+    .replace(/đ/g, "d")
+    .replace(/Đ/g, "D")
     .toLowerCase();
 }
 
@@ -60,9 +62,7 @@ export function createChromePhoneOrderLiveAdapter({ tab, baseUrl }) {
     },
 
     async searchCustomerByPhone(step) {
-      const input = tab.playwright.getByPlaceholder("Tìm theo tên, SĐT, mã khách hàng ... (F4)", {
-        exact: true,
-      });
+      const input = tab.playwright.locator("input#buttonF4");
       await fillSingle(tab, input, step.phone || "");
       await waitForStableUi(tab);
     },
@@ -74,6 +74,18 @@ export function createChromePhoneOrderLiveAdapter({ tab, baseUrl }) {
         context?.payload?.customer?.phone ||
         "",
       );
+
+      const isCustomerAttached = async () => {
+        const attachedSnap = await snapshotText(tab);
+        const normalizedSnap = normalizeAscii(attachedSnap);
+        return (
+          (!expectedName || normalizedSnap.includes(normalizeAscii(expectedName))) &&
+          (!expectedPhone || attachedSnap.includes(expectedPhone)) &&
+          attachedSnap.includes("Địa chỉ giao hàng") &&
+          !attachedSnap.includes("Chưa có thông tin khách hàng")
+        );
+      };
+
       const menuReady = await waitForCondition(async () => {
         const menuItems = tab.playwright.getByRole("menuitem");
         const menuCount = await menuItems.count();
@@ -90,7 +102,7 @@ export function createChromePhoneOrderLiveAdapter({ tab, baseUrl }) {
         }
 
         return null;
-      });
+      }, { attempts: 8, delayMs: 450 });
 
       const snap = await snapshotText(tab);
       const menuItems = menuReady?.menuItems || tab.playwright.getByRole("menuitem");
@@ -99,7 +111,9 @@ export function createChromePhoneOrderLiveAdapter({ tab, baseUrl }) {
       if (menuCount === 1) {
         await menuItems.click();
         await waitForStableUi(tab);
-        return;
+        if (await waitForCondition(isCustomerAttached, { attempts: 6, delayMs: 500 })) {
+          return;
+        }
       }
 
       if (menuCount >= 1 && expectedPhone) {
@@ -108,17 +122,13 @@ export function createChromePhoneOrderLiveAdapter({ tab, baseUrl }) {
         if (phoneCount === 1) {
           await phoneCandidate.click();
           await waitForStableUi(tab);
-          return;
-        }
-
-        if (menuCount === 1) {
-          await menuItems.click();
-          await waitForStableUi(tab);
-          return;
+          if (await waitForCondition(isCustomerAttached, { attempts: 6, delayMs: 500 })) {
+            return;
+          }
         }
       }
 
-      if (expectedName && snap.includes(expectedName)) {
+      if (await isCustomerAttached()) {
         return;
       }
 
@@ -135,7 +145,9 @@ export function createChromePhoneOrderLiveAdapter({ tab, baseUrl }) {
       if (count === 1) {
         await candidate.click();
         await waitForStableUi(tab);
-        return;
+        if (await waitForCondition(isCustomerAttached, { attempts: 6, delayMs: 500 })) {
+          return;
+        }
       }
 
       throw new Error(
@@ -186,7 +198,7 @@ export function createChromePhoneOrderLiveAdapter({ tab, baseUrl }) {
           throw new Error(`Could not locate a unique product row for SKU ${step.sku} after add.`);
         }
 
-        const quantityInputs = row.locator('input');
+        const quantityInputs = row.locator("input");
         const inputCount = await quantityInputs.count();
         if (inputCount < 1) {
           throw new Error(`Could not locate quantity input for SKU ${step.sku}.`);
