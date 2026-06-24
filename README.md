@@ -1,38 +1,48 @@
-# Agen tạo đơn hàng
+# agen-tao-don-hang
 
-Mobile-first Sapo phone-order workflow and AI-assisted order creation agent for Thiên Quang Smarttools.
+Mobile-first Sapo phone-order workflow and AI-assisted order creation agent for Thien Quang Smarttools.
 
-## Mục tiêu
+## Current state
 
-Khi khách gọi điện trực tiếp, admin có thể mở dashboard trên điện thoại, nhập thông tin đơn thật nhanh, rồi gửi hàng chờ cho AI tạo đơn trên Sapo.
+This repository has moved past pure MVP planning.
 
-## Luồng MVP
+It now includes:
 
-1. Admin nhập SĐT khách.
-2. Dashboard gợi ý khách cũ và địa chỉ cũ nếu có.
-3. Admin chọn tỉnh/huyện/xã, nhập địa chỉ cụ thể.
-4. Admin tìm sản phẩm theo SKU/tên, chọn nhiều sản phẩm và nhập số lượng.
-5. Admin nhập tổng giá trị đơn hàng đã bao gồm phí ship.
-6. Admin bấm Gửi AI tạo đơn.
-7. Máy/AI xử lý queue, dry-run kiểm tra dữ liệu, rồi tạo đơn trên Sapo khi đủ điều kiện.
+- a working mobile-first dashboard shell
+- local queue and dry-run processing scripts
+- exported local data flow for products, addresses, and customer lookup
+- a confirmed browser-tested Sapo + GHN order-creation runbook
 
-## Nguyên tắc an toàn
+## Main goal
 
-- Dashboard điện thoại không giữ token Sapo.
-- Dữ liệu khách hàng và đơn hàng phải được mã hóa hoặc lưu trong inbox riêng.
-- Mọi thao tác tạo đơn thật phải có dry-run và audit log.
-- Nếu sản phẩm, địa chỉ hoặc tổng tiền chưa rõ, AI trả trạng thái cần bổ sung thay vì tạo đơn sai.
+Let an internal admin receive a direct phone call, capture the order quickly on a phone, and hand the request to an AI workflow that can validate the request and create the order in Sapo.
 
-## Dữ liệu nền
+## Operating principles
 
-- Product catalog: tên sản phẩm, SKU, variant_id, từ khóa search.
-- Address catalog: tỉnh/huyện/xã và mã địa chỉ tương ứng.
-- Customer index: SĐT, tên khách cũ, địa chỉ từng dùng, lần mua gần nhất.
+- Admin works on mobile, not desktop.
+- Dashboard never stores Sapo write credentials.
+- Product selection must be fast: search by SKU or product name.
+- Address entry must be guided: province, district, ward, then address detail.
+- AI should validate in dry-run mode before real order creation.
+- Pickup shift stays blank by default and is only selected when the admin note explicitly requests it.
 
-## Trạng thái hàng chờ
+## Repository map
 
-- pending_ai: admin đã gửi yêu cầu tạo đơn.
-- need_more_info: thiếu thông tin cần admin bổ sung.
-- ready: đủ dữ liệu để tạo đơn.
-- created: đã tạo đơn Sapo thành công.
-- failed: tạo đơn lỗi, cần kiểm tra thủ công.
+- `apps/dashboard/` - mobile dashboard UI and local queue experience
+- `scripts/` - local export, validation, inbox, and dry-run build scripts
+- `docs/` - scope, data contracts, and real-world operating notes
+- `site/` - committed public site output used by GitHub Pages
+- `integrations/google-apps-script/` - inbox bridge for queue handoff
+
+## Recommended reading order
+
+1. [Repository status](docs/repository-status.md)
+2. [MVP scope](docs/mvp-scope.md)
+3. [Data sources](docs/data-sources.md)
+4. [Real-world findings](docs/real-world-findings.md)
+
+## Important implementation notes
+
+- The dashboard sends structured queue payloads instead of writing to Sapo directly.
+- Real Sapo creation can be driven later through API or Chrome automation depending on the final integration path.
+- A live browser test has already confirmed that Sapo order creation plus GHN shipment creation works with this business flow.
