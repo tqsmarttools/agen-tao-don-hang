@@ -84,6 +84,13 @@ Quick status view:
 node scripts/show-phone-order-execution-status.mjs
 ```
 
+Current known live checkpoint:
+
+- request id: `sample-0983087947-001`
+- progress: `6/11`
+- next step: `7 - set_customer_total`
+- target total: `350000`
+
 Reset browser execution state before starting over:
 
 ```powershell

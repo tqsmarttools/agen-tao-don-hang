@@ -22,6 +22,15 @@ This repository contains both planning artifacts and working implementation arti
 - Real GHN shipping-record creation through Sapo
 - Default business rule: do not choose pickup shift unless explicitly requested in the admin note
 
+## Current live automation checkpoint
+
+- The resumable browser executor is live-wired through the Chrome adapter layer.
+- The current sample request is `sample-0983087947-001`.
+- Live execution has already completed steps 1-6 of 11 in the real Sapo create-order page.
+- The current next actionable step is step 7: `set_customer_total`.
+- The target customer-facing total for the current sample is `350000`.
+- No unintended submit happened during recent retries; the flow is still paused safely before final pricing and submit.
+
 ## Important local-only files
 
 The following generated data is intentionally local and not committed:
