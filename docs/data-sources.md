@@ -104,7 +104,14 @@ Local scripts:
 - `scripts/fetch-phone-order-inbox.mjs`
 - `scripts/import-phone-order-requests.mjs`
 - `scripts/update-phone-order-status.mjs`
+- `scripts/process-phone-order-requests.mjs`
+- `scripts/build-sapo-order-dry-run.mjs`
 
 Apps Script template:
 
 - `integrations/google-apps-script/ai-inbox/`
+
+## Processing notes
+
+- Queue processing now extracts shipping-related admin directives from the free-text note.
+- Default shipping rule: do not choose pickup shift unless the note explicitly asks for it.

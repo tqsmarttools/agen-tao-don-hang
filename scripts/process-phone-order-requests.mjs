@@ -24,8 +24,30 @@ function normalizeText(value) {
   return String(value || "").trim();
 }
 
+function normalizeAscii(value) {
+  return normalizeText(value)
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase();
+}
+
 function normalizePhone(value) {
   return String(value || "").replace(/\D/g, "");
+}
+
+function parseShippingInstructions(note) {
+  const rawNote = normalizeText(note);
+  const normalizedNote = normalizeAscii(rawNote);
+  const mentionsPickupShift =
+    normalizedNote.includes("ca lay hang") ||
+    normalizedNote.includes("ca lay") ||
+    normalizedNote.includes("lay hang");
+
+  return {
+    raw_note: rawNote,
+    requires_manual_pickup_shift: mentionsPickupShift,
+    requested_pickup_shift_note: mentionsPickupShift ? rawNote : "",
+  };
 }
 
 function findCustomerByPhone(customers, phone) {
@@ -89,6 +111,7 @@ function validateRequest(request, productsByVariantId, customers, addressIndexes
   const wardName = normalizeText(address.ward);
   const total = Number(request.order_total_including_shipping || 0);
   const items = Array.isArray(request.items) ? request.items : [];
+  const shippingInstructions = parseShippingInstructions(request.note);
 
   if (!phone) blockers.push("missing_customer_phone");
   if (!customerName) blockers.push("missing_customer_name");
@@ -104,6 +127,12 @@ function validateRequest(request, productsByVariantId, customers, addressIndexes
     notes.push(`Matched existing customer with ${matchedCustomer.order_count} previous orders.`);
   } else if (phone) {
     notes.push("No existing customer match found by exact phone.");
+  }
+
+  if (shippingInstructions.requires_manual_pickup_shift) {
+    notes.push("Admin note explicitly requests a pickup-shift instruction for the shipping step.");
+  } else {
+    notes.push("Leave pickup shift unselected unless the admin note explicitly requests one.");
   }
 
   const province = addressIndexes.provincesByName.get(provinceName.toLowerCase()) || null;
@@ -180,6 +209,7 @@ function validateRequest(request, productsByVariantId, customers, addressIndexes
       ward_code: ward?.ward_code || null,
     },
     product_matches: productMatches,
+    shipping_instructions: shippingInstructions,
     request_snapshot: request,
     updated_at: new Date().toISOString(),
   };

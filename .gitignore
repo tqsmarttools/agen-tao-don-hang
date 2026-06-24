@@ -7,3 +7,4 @@ data/ai-requests.json
 data/phone-order-processing-plan.json
 data/sapo-order-dry-run.json
 data/phone-order-config.json
+gcm-diagnose.log

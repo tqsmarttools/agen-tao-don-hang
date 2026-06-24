@@ -86,8 +86,29 @@ function normalizeText(value) {
   return String(value || "").trim();
 }
 
+function normalizeAscii(value) {
+  return normalizeText(value)
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase();
+}
+
 function normalizePhone(value) {
   return String(value || "").replace(/\D/g, "");
+}
+
+function shippingInstructionsFromNote(note) {
+  const rawNote = normalizeText(note);
+  const normalizedNote = normalizeAscii(rawNote);
+  const mentionsPickupShift =
+    normalizedNote.includes("ca lay hang") ||
+    normalizedNote.includes("ca lay") ||
+    normalizedNote.includes("lay hang");
+
+  return {
+    requires_manual_pickup_shift: mentionsPickupShift,
+    requested_pickup_shift_note: mentionsPickupShift ? rawNote : "",
+  };
 }
 
 function loadAiQueue() {
@@ -467,6 +488,8 @@ function payloadAddress() {
 }
 
 function buildPayload() {
+  const note = normalizeText(orderNoteInput.value);
+
   return {
     schema: "tq-sapo-phone-order-request/v1",
     requested_at: new Date().toISOString(),
@@ -482,7 +505,10 @@ function buildPayload() {
       quantity: item.quantity,
     })),
     order_total_including_shipping: Number(orderTotalInput.value || 0),
-    note: normalizeText(orderNoteInput.value),
+    note,
+    admin_directives: {
+      shipping: shippingInstructionsFromNote(note),
+    },
   };
 }
 

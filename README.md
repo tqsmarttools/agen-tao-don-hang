@@ -2,20 +2,47 @@
 
 Mobile-first Sapo phone-order workflow and AI-assisted order creation agent for Thien Quang Smarttools.
 
-## Current phase
+## Current state
 
-This repository is in MVP definition phase.
+This repository has moved past pure MVP planning.
 
-The first goal is to let an admin open a phone-friendly dashboard, enter a direct phone order quickly, and send a structured request to an AI workflow that creates the order in Sapo.
+It now includes:
 
-## Core direction
+- a working mobile-first dashboard shell
+- local queue and dry-run processing scripts
+- exported local data flow for products, addresses, and customer lookup
+- a confirmed browser-tested Sapo + GHN order-creation runbook
+
+## Main goal
+
+Let an internal admin receive a direct phone call, capture the order quickly on a phone, and hand the request to an AI workflow that can validate the request and create the order in Sapo.
+
+## Operating principles
 
 - Admin works on mobile, not desktop.
 - Dashboard never stores Sapo write credentials.
 - Product selection must be fast: search by SKU or product name.
 - Address entry must be guided: province, district, ward, then address detail.
-- AI must validate data in dry-run mode before creating a real Sapo order.
+- AI should validate in dry-run mode before real order creation.
+- Pickup shift stays blank by default and is only selected when the admin note explicitly requests it.
 
-## Initial docs
+## Repository map
 
-- [MVP scope](docs/mvp-scope.md)
+- `apps/dashboard/` - mobile dashboard UI and local queue experience
+- `scripts/` - local export, validation, inbox, and dry-run build scripts
+- `docs/` - scope, data contracts, and real-world operating notes
+- `site/` - committed public site output used by GitHub Pages
+- `integrations/google-apps-script/` - inbox bridge for queue handoff
+
+## Recommended reading order
+
+1. [Repository status](docs/repository-status.md)
+2. [MVP scope](docs/mvp-scope.md)
+3. [Data sources](docs/data-sources.md)
+4. [Real-world findings](docs/real-world-findings.md)
+
+## Important implementation notes
+
+- The dashboard sends structured queue payloads instead of writing to Sapo directly.
+- Real Sapo creation can be driven later through API or Chrome automation depending on the final integration path.
+- A live browser test has already confirmed that Sapo order creation plus GHN shipment creation works with this business flow.

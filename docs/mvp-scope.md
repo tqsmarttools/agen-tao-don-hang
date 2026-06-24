@@ -20,7 +20,7 @@ An admin should be able to receive a customer call, enter the order on a phone, 
 6. Admin searches and selects one or more products.
 7. Admin enters quantity for each selected product.
 8. Admin enters total order value including shipping.
-9. Admin adds optional notes.
+9. Admin adds optional notes, including any exceptional shipping instruction.
 10. Admin sends the request to the AI queue.
 11. AI validates the request in dry-run mode.
 12. If valid, AI creates the order in Sapo.
@@ -38,6 +38,8 @@ An admin should be able to receive a customer call, enter the order on a phone, 
 - Quantity input per selected product
 - Total order value input
 - Optional order note
+- Default shipping flow leaves pickup shift unselected
+- Pickup shift is only selected when the admin note explicitly requests it
 - Structured queue payload for AI processing
 - Dry-run validation before real Sapo order creation
 - Status tracking for queue items
@@ -52,6 +54,7 @@ An admin should be able to receive a customer call, enter the order on a phone, 
 - Automated shipping fee calculation
 - Full order editing after creation
 - Payment gateway integration
+- Automatic pickup-shift selection without an explicit admin note
 
 ## Required data sources
 
@@ -112,7 +115,13 @@ The dashboard should send a structured payload similar to:
     }
   ],
   "order_total_including_shipping": 350000,
-  "note": "Optional admin note"
+  "note": "Optional admin note. Use this only for exceptional instructions such as a requested pickup shift.",
+  "admin_directives": {
+    "shipping": {
+      "requires_manual_pickup_shift": false,
+      "requested_pickup_shift_note": ""
+    }
+  }
 }
 ```
 

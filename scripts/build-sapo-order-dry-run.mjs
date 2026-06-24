@@ -80,12 +80,18 @@ function buildDraftOrder(planItem) {
       metadata: {
         customer_match: planItem.customer_match,
         normalized_address: planItem.normalized_address,
+        shipping_instructions: planItem.shipping_instructions || {
+          raw_note: request.note || "",
+          requires_manual_pickup_shift: false,
+          requested_pickup_shift_note: "",
+        },
         processor_notes: planItem.notes || [],
         processor_blockers: planItem.blockers || [],
       },
     },
     warnings: [
       "Dashboard does not collect per-line pricing yet, so this draft preserves the expected total but does not resolve discounts or shipping allocation.",
+      "Leave pickup shift unselected by default. Only choose one when the admin note explicitly requests it.",
       "Real Sapo create-order implementation should verify whether API creation supports the intended phone-order flow or needs Chrome fallback.",
     ],
   };
