@@ -17,6 +17,14 @@ function parseArgs(argv) {
   return args;
 }
 
+function formatDetail(detail) {
+  if (!detail || typeof detail !== "object") {
+    return "";
+  }
+
+  return JSON.stringify(detail, null, 2);
+}
+
 async function main() {
   const args = parseArgs(process.argv.slice(2));
   const payload = await readJsonOrDefault(storePaths.workerOutputPath, null);
@@ -47,6 +55,15 @@ async function main() {
   if (nextPending) {
     console.log(`Next step: ${nextPending.order} - ${nextPending.action}`);
     console.log(`Guidance: ${nextPending.guidance}`);
+    if (nextPending.operator_note) {
+      console.log(`Operator note: ${nextPending.operator_note}`);
+    }
+
+    const detailText = formatDetail(nextPending.detail);
+    if (detailText) {
+      console.log("Step detail:");
+      console.log(detailText);
+    }
   } else {
     console.log("Next step: none");
   }
