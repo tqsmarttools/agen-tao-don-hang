@@ -62,8 +62,15 @@ The live wiring now exists at code level through:
 
 - `scripts/lib/chrome-phone-order-live-adapter.mjs`
 - `scripts/lib/phone-order-browser-live-runner.mjs`
+- `scripts/lib/phone-order-node-repl-live.mjs`
 
 These are intended to be invoked from a Chrome-capable runtime such as the existing Node REPL browser session, not from a plain standalone Node process.
+
+Recommended live entry from a Chrome-capable runtime:
+
+- claim the working Sapo tab
+- run `runClaimedSapoExecution(...)`
+- limit early trials with `maxSteps`
 
 Local smoke test for the live executor path without touching Chrome:
 
