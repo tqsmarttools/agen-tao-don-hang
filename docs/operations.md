@@ -99,6 +99,29 @@ Local smoke test for browser-step generation:
 node scripts/test-phone-order-browser-steps.mjs
 ```
 
+Dedicated automation-profile path for live Sapo execution:
+
+1. Open the dedicated profile once:
+
+```powershell
+node scripts/open-sapo-automation-profile.mjs
+```
+
+2. Sign into Sapo inside that dedicated automation browser window once.
+   The persistent automation profile is stored outside the repo under Local AppData so Playwright can use a space-free path reliably.
+
+3. Probe whether the dedicated profile is ready:
+
+```powershell
+node scripts/probe-sapo-automation-session.mjs
+```
+
+4. Run the existing live browser executor through Playwright on that dedicated profile:
+
+```powershell
+node scripts/run-phone-order-playwright-live.mjs --request-id <id> --max-steps 1
+```
+
 Quick status view:
 
 ```powershell
