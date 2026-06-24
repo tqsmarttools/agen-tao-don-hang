@@ -8,6 +8,7 @@ data/phone-order-processing-plan.json
 data/sapo-order-dry-run.json
 data/phone-order-config.json
 data/phone-order-execution-plan.json
+data/phone-order-execution-notes.md
 data/phone-order-worker-output.json
 data/phone-order-worker-log.json
 gcm-diagnose.log
