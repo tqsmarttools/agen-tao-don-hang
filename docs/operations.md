@@ -36,9 +36,21 @@ Optional dry-run claim preview:
 node scripts/run-phone-order-worker.mjs --dry-run
 ```
 
-5. Execute the generated bundle in Sapo using the validated browser flow.
+5. Convert the worker bundle into a browser-facing execution plan:
 
-6. Record the final outcome:
+```powershell
+node scripts/prepare-phone-order-execution.mjs
+```
+
+Optional selection by request ID:
+
+```powershell
+node scripts/prepare-phone-order-execution.mjs --request-id <id>
+```
+
+6. Execute the generated plan in Sapo using the validated browser flow.
+
+7. Record the final outcome:
 
 ```powershell
 node scripts/record-phone-order-result.mjs --request-id <id> --status created --sapo-order-code SON12345 --sapo-order-url https://example --shipment-code ABC123 --carrier GHN --partner-status "Cho lay hang"
@@ -61,6 +73,7 @@ node scripts/record-phone-order-result.mjs --request-id <id> --status failed --m
 
 ## Important local output files
 
+- `data/phone-order-execution-plan.json`
 - `data/phone-order-worker-output.json`
 - `data/phone-order-worker-log.json`
 

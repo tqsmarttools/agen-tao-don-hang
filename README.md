@@ -30,6 +30,7 @@ Let an internal admin receive a direct phone call, capture the order quickly on 
 
 - `apps/dashboard/` - mobile dashboard UI and local queue experience
 - `scripts/` - local export, validation, inbox, and dry-run build scripts
+- `scripts/` - local export, validation, worker, and execution-plan scripts
 - `docs/` - scope, data contracts, and real-world operating notes
 - `site/` - committed public site output used by GitHub Pages
 - `integrations/google-apps-script/` - inbox bridge for queue handoff

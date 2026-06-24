@@ -12,6 +12,7 @@ export const storePaths = {
   queuePath: path.join(dataDir, "ai-requests.json"),
   processingPlanPath: path.join(dataDir, "phone-order-processing-plan.json"),
   statusPath: path.join(dataDir, "ai-request-status.json"),
+  executionPlanPath: path.join(dataDir, "phone-order-execution-plan.json"),
   workerOutputPath: path.join(dataDir, "phone-order-worker-output.json"),
   workerLogPath: path.join(dataDir, "phone-order-worker-log.json"),
 };
