@@ -224,6 +224,19 @@ export function createChromePhoneOrderLiveAdapter({ tab, baseUrl }) {
 
       const desiredTotal = Number(step.amount || 0);
       const items = context.items;
+
+       if (items.length === 1) {
+        const singlePriceInputs = tab.playwright.locator('input[id^="price-line-item-"]');
+        const singleCount = await singlePriceInputs.count();
+        if (singleCount === 1) {
+          const quantity = Math.max(1, Number(items[0]?.quantity || 1));
+          const nextUnitPrice = Math.max(0, Math.round(desiredTotal / quantity));
+          await fillSingle(tab, singlePriceInputs, String(nextUnitPrice));
+          await waitForStableUi(tab);
+          return;
+        }
+      }
+
       const inspected = [];
 
       for (const item of items) {
