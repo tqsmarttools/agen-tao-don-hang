@@ -48,6 +48,12 @@ Optional selection by request ID:
 node scripts/prepare-phone-order-execution.mjs --request-id <id>
 ```
 
+Force a clean rebuild from queue + processing-plan state when a stale worker bundle should be ignored:
+
+```powershell
+node scripts/prepare-phone-order-execution.mjs --request-id <id> --from-state
+```
+
 6. Execute the generated plan in Sapo using the validated browser flow.
 
 Current lightweight executor scaffold:

@@ -99,6 +99,7 @@ function buildStepChecklist(executionPlan, previousPayload, args) {
     const failed = args.reset ? false : previous?.failed || false;
     const operatorNote =
       !args.reset && previous?.operator_note ? String(previous.operator_note) : "";
+    const liveResult = !args.reset && previous?.live_result ? previous.live_result : null;
 
     const nextStep = {
       order,
@@ -108,6 +109,7 @@ function buildStepChecklist(executionPlan, previousPayload, args) {
       detail: step,
       guidance: stepGuidance(step),
       operator_note: operatorNote,
+      live_result: liveResult,
       updated_at: previous?.updated_at || "",
     };
 
@@ -129,11 +131,13 @@ function buildStepChecklist(executionPlan, previousPayload, args) {
       nextStep.completed = false;
       nextStep.failed = false;
       nextStep.operator_note = args.note || "";
+      nextStep.live_result = null;
       nextStep.updated_at = new Date().toISOString();
     }
 
     if (args.reset) {
       nextStep.operator_note = "";
+      nextStep.live_result = null;
       nextStep.updated_at = "";
     }
 
@@ -196,7 +200,8 @@ function buildExecutionNotes(executionPlan, payload) {
     ...payload.step_checklist.flatMap((step) => {
       const mark = step.completed ? "x" : step.failed ? "!" : " ";
       const note = step.operator_note ? ` Note: ${step.operator_note}` : "";
-      return [`- [${mark}] Step ${step.order}: ${step.guidance}${note}`];
+      const liveEvidence = step.live_result ? ` Live result: ${JSON.stringify(step.live_result)}` : "";
+      return [`- [${mark}] Step ${step.order}: ${step.guidance}${note}${liveEvidence}`];
     }),
     "",
     "## Manual Checkpoints",
@@ -305,7 +310,7 @@ async function runLiveExecution(executionPlan, payload, args, adapter) {
     }
 
     try {
-      await adapter[methodName](step.detail, {
+      const liveResult = await adapter[methodName](step.detail, {
         executionPlan,
         payload: nextPayload,
         items: executionPlan.items || [],
@@ -314,7 +319,16 @@ async function runLiveExecution(executionPlan, payload, args, adapter) {
       nextPayload = withStepMutation(nextPayload, step.order, {
         completed: true,
         failed: false,
-        operator_note: `Completed by live adapter via ${methodName}.`,
+        operator_note:
+          liveResult && typeof liveResult === "object" && liveResult.note
+            ? String(liveResult.note)
+            : `Completed by live adapter via ${methodName}.`,
+        live_result:
+          liveResult && typeof liveResult === "object"
+            ? liveResult
+            : liveResult === undefined
+              ? null
+              : { value: liveResult },
       });
       await persistExecutorState(executionPlan, nextPayload);
 
@@ -324,12 +338,19 @@ async function runLiveExecution(executionPlan, payload, args, adapter) {
         execution_mode: nextPayload.execution_mode,
         step: step.order,
         action: step.action,
+        live_result:
+          liveResult && typeof liveResult === "object"
+            ? liveResult
+            : liveResult === undefined
+              ? null
+              : { value: liveResult },
       });
     } catch (error) {
       nextPayload = withStepMutation(nextPayload, step.order, {
         completed: false,
         failed: true,
         operator_note: error instanceof Error ? error.message : String(error),
+        live_result: null,
       });
       await persistExecutorState(executionPlan, nextPayload);
 

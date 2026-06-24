@@ -25,6 +25,14 @@ function formatDetail(detail) {
   return JSON.stringify(detail, null, 2);
 }
 
+function latestLiveResult(steps) {
+  const completedWithEvidence = [...steps]
+    .reverse()
+    .find((step) => step.completed && step.live_result);
+
+  return completedWithEvidence || null;
+}
+
 async function main() {
   const args = parseArgs(process.argv.slice(2));
   const payload = await readJsonOrDefault(storePaths.workerOutputPath, null);
@@ -41,6 +49,7 @@ async function main() {
 
   const steps = Array.isArray(payload.step_checklist) ? payload.step_checklist : [];
   const nextPending = steps.find((step) => !step.completed && !step.failed) || null;
+  const lastEvidenceStep = latestLiveResult(steps);
 
   console.log(`Request: ${payload.request_id}`);
   console.log(`Mode: ${payload.execution_mode}`);
@@ -75,6 +84,11 @@ async function main() {
   const failedSteps = steps.filter((step) => step.failed);
   if (failedSteps.length > 0) {
     console.log(`Failed steps: ${failedSteps.map((step) => step.order).join(", ")}`);
+  }
+
+  if (lastEvidenceStep) {
+    console.log(`Last live result: step ${lastEvidenceStep.order} - ${lastEvidenceStep.action}`);
+    console.log(formatDetail(lastEvidenceStep.live_result));
   }
 
   if (payload.record_commands?.created_template) {

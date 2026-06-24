@@ -13,12 +13,15 @@ import { buildBrowserStepsFromPlanLike } from "./lib/phone-order-browser-steps.m
 function parseArgs(argv) {
   const args = {
     requestId: "",
+    fromState: false,
   };
 
   for (let index = 0; index < argv.length; index += 1) {
     const arg = argv[index];
     if (arg === "--request-id") {
       args.requestId = argv[++index] || "";
+    } else if (arg === "--from-state") {
+      args.fromState = true;
     } else {
       throw new Error(`Unknown argument: ${arg}`);
     }
@@ -182,9 +185,11 @@ async function main() {
   });
 
   const bundles = Array.isArray(workerOutput.bundles) ? workerOutput.bundles : [];
-  let bundle = args.requestId
-    ? bundles.find((item) => item.request_id === args.requestId)
-    : bundles[0];
+  let bundle = args.fromState
+    ? null
+    : args.requestId
+      ? bundles.find((item) => item.request_id === args.requestId)
+      : bundles[0];
 
   if (!bundle) {
     const state = await loadPhoneOrderState();

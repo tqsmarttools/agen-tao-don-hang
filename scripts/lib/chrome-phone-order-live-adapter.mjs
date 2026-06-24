@@ -79,6 +79,11 @@ async function snapshotText(tab) {
   return tab.playwright.domSnapshot();
 }
 
+function extractOrderIdFromUrl(url) {
+  const match = String(url || "").match(/\/admin\/orders\/(\d+)(?:[/?#]|$)/);
+  return match ? match[1] : "";
+}
+
 function customerAttachedSnapshotChecks({
   snap,
   expectedName = "",
@@ -485,6 +490,7 @@ export function createChromePhoneOrderLiveAdapter({ tab, baseUrl }) {
     },
 
     async submitOrder(step) {
+      const beforeUrl = await tab.url();
       const primaryButtons = tab.playwright.locator("#buttonF1");
       const count = await primaryButtons.count();
       if (count === 2) {
@@ -502,6 +508,15 @@ export function createChromePhoneOrderLiveAdapter({ tab, baseUrl }) {
       });
       await clickSingle(tab, confirm);
       await waitForStableUi(tab);
+
+      const state = await this.snapshotState();
+      return {
+        note: "Submitted order in Sapo via live adapter.",
+        page_title: state.title,
+        page_url: state.url,
+        left_create_order_page: String(state.url || "") !== String(beforeUrl || ""),
+        order_id_from_url: extractOrderIdFromUrl(state.url),
+      };
     },
 
     async snapshotState() {

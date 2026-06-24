@@ -1,9 +1,17 @@
 import { runBrowserExecutor } from "./execute-phone-order-browser.mjs";
+import assert from "node:assert/strict";
+import { readFile, writeFile } from "node:fs/promises";
+import { existsSync } from "node:fs";
+import { storePaths } from "./lib/phone-order-store.mjs";
 
 function createMockAdapter() {
   const calls = [];
   const record = (name) => async () => {
     calls.push(name);
+    return {
+      note: `Mock completed ${name}`,
+      mock_step: name,
+    };
   };
 
   return {
@@ -28,6 +36,12 @@ function createMockAdapter() {
 async function main() {
   const { adapter, calls } = createMockAdapter();
   globalThis.phoneOrderBrowserAdapter = adapter;
+  const previousWorkerOutput = existsSync(storePaths.workerOutputPath)
+    ? await readFile(storePaths.workerOutputPath, "utf8")
+    : null;
+  const previousExecutionNotes = existsSync(storePaths.executionNotesPath)
+    ? await readFile(storePaths.executionNotesPath, "utf8")
+    : null;
 
   try {
     const result = await runBrowserExecutor({
@@ -45,7 +59,18 @@ async function main() {
     console.log(
       `Completed steps after smoke run: ${result.payload.progress.completed_steps}/${result.payload.progress.total_steps}`,
     );
+    assert.equal(result.payload.step_checklist[0].live_result?.mock_step, "openCreateOrderPage");
+    assert.equal(result.payload.step_checklist[1].live_result?.mock_step, "searchCustomerByPhone");
+    console.log("Live smoke test preserved structured live results.");
   } finally {
+    if (previousWorkerOutput !== null) {
+      await writeFile(storePaths.workerOutputPath, previousWorkerOutput, "utf8");
+    }
+
+    if (previousExecutionNotes !== null) {
+      await writeFile(storePaths.executionNotesPath, previousExecutionNotes, "utf8");
+    }
+
     delete globalThis.phoneOrderBrowserAdapter;
   }
 }
