@@ -64,6 +64,12 @@ Quick status view:
 node scripts/show-phone-order-execution-status.mjs
 ```
 
+Reset browser execution state before starting over:
+
+```powershell
+node scripts/reset-phone-order-execution.mjs
+```
+
 Mark a step complete while testing manually:
 
 ```powershell
