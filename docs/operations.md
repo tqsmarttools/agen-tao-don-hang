@@ -50,6 +50,26 @@ node scripts/prepare-phone-order-execution.mjs --request-id <id>
 
 6. Execute the generated plan in Sapo using the validated browser flow.
 
+Current lightweight executor scaffold:
+
+```powershell
+node scripts/execute-phone-order-browser.mjs --dry-run
+```
+
+This does not automate Chrome yet. It prepares the final browser-facing checklist payload and marks the handoff point where live browser automation will plug in.
+
+Quick status view:
+
+```powershell
+node scripts/show-phone-order-execution-status.mjs
+```
+
+Mark a step complete while testing manually:
+
+```powershell
+node scripts/execute-phone-order-browser.mjs --complete-step 1 --note "Opened create order page"
+```
+
 7. Record the final outcome:
 
 ```powershell
