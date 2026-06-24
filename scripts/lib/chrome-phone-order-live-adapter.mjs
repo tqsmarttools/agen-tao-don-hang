@@ -2,8 +2,27 @@ function normalizeText(value) {
   return String(value || "").trim();
 }
 
+function normalizeAscii(value) {
+  return normalizeText(value)
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase();
+}
+
 async function waitForStableUi(tab) {
   await tab.playwright.waitForTimeout(800);
+}
+
+async function waitForCondition(fn, { attempts = 6, delayMs = 400 } = {}) {
+  for (let attempt = 0; attempt < attempts; attempt += 1) {
+    const result = await fn();
+    if (result) {
+      return result;
+    }
+    await new Promise((resolve) => setTimeout(resolve, delayMs));
+  }
+
+  return null;
 }
 
 async function fillSingle(tab, locator, value) {
@@ -49,13 +68,56 @@ export function createChromePhoneOrderLiveAdapter({ tab, baseUrl }) {
     },
 
     async selectExistingCustomerIfShown(step, context) {
-      const snap = await snapshotText(tab);
       const expectedName = normalizeText(step.customer_name);
       const expectedPhone = normalizeText(
         context?.executionPlan?.request_snapshot?.customer?.phone ||
         context?.payload?.customer?.phone ||
         "",
       );
+      const menuReady = await waitForCondition(async () => {
+        const menuItems = tab.playwright.getByRole("menuitem");
+        const menuCount = await menuItems.count();
+        if (menuCount > 0) {
+          return { menuItems, menuCount };
+        }
+
+        const phoneCandidate = expectedPhone
+          ? tab.playwright.getByText(expectedPhone, { exact: false })
+          : null;
+        const phoneCount = phoneCandidate ? await phoneCandidate.count() : 0;
+        if (phoneCandidate && phoneCount > 0) {
+          return { menuItems, menuCount, phoneCandidate, phoneCount };
+        }
+
+        return null;
+      });
+
+      const snap = await snapshotText(tab);
+      const menuItems = menuReady?.menuItems || tab.playwright.getByRole("menuitem");
+      const menuCount = menuReady?.menuCount ?? (await menuItems.count());
+
+      if (menuCount === 1) {
+        await menuItems.click();
+        await waitForStableUi(tab);
+        return;
+      }
+
+      if (menuCount >= 1 && expectedPhone) {
+        const phoneCandidate = menuReady?.phoneCandidate || tab.playwright.getByText(expectedPhone, { exact: false });
+        const phoneCount = menuReady?.phoneCount ?? (await phoneCandidate.count());
+        if (phoneCount === 1) {
+          await phoneCandidate.click();
+          await waitForStableUi(tab);
+          return;
+        }
+
+        if (menuCount === 1) {
+          await menuItems.click();
+          await waitForStableUi(tab);
+          return;
+        }
+      }
+
       if (expectedName && snap.includes(expectedName)) {
         return;
       }
@@ -87,12 +149,12 @@ export function createChromePhoneOrderLiveAdapter({ tab, baseUrl }) {
 
     async ensureShippingAddress(step) {
       const address = step.address || {};
-      const snap = await snapshotText(tab);
+      const snap = normalizeAscii(await snapshotText(tab));
       const requiredParts = [
-        normalizeText(address.address_detail),
-        normalizeText(address.ward),
-        normalizeText(address.district),
-        normalizeText(address.province),
+        normalizeAscii(address.address_detail),
+        normalizeAscii(address.ward),
+        normalizeAscii(address.district),
+        normalizeAscii(address.province),
       ].filter(Boolean);
 
       const missing = requiredParts.filter((part) => !snap.includes(part));
