@@ -105,6 +105,12 @@ Quick status view:
 node scripts/show-phone-order-execution-status.mjs
 ```
 
+Refresh the prepared execution plan from queue state while preserving the current completed-step checkpoint:
+
+```powershell
+node scripts/refresh-phone-order-execution-state.mjs --request-id <id>
+```
+
 Current known live checkpoint:
 
 - request id: `sample-0983087947-001`

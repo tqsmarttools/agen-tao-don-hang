@@ -81,6 +81,12 @@ async function main() {
     console.log("Next step: none");
   }
 
+  if (payload.request_id) {
+    console.log(
+      `Refresh command: node scripts/refresh-phone-order-execution-state.mjs --request-id ${payload.request_id}`,
+    );
+  }
+
   const failedSteps = steps.filter((step) => step.failed);
   if (failedSteps.length > 0) {
     console.log(`Failed steps: ${failedSteps.map((step) => step.order).join(", ")}`);
