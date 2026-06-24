@@ -8,6 +8,8 @@ function normalizeAscii(value) {
     .replace(/[\u0300-\u036f]/g, "")
     .replace(/đ/g, "d")
     .replace(/Đ/g, "D")
+    .replace(/Ä‘/g, "d")
+    .replace(/Ä/g, "D")
     .toLowerCase();
 }
 
@@ -43,8 +45,58 @@ async function clickSingle(tab, locator) {
   await locator.click();
 }
 
+async function fillFirstMatching(root, selectors, value) {
+  for (const selector of selectors) {
+    const locator = root.locator(selector);
+    const count = await locator.count();
+    if (count < 1) {
+      continue;
+    }
+
+    await locator.first().fill(String(value));
+    return selector;
+  }
+
+  throw new Error(`Could not find a matching input for selectors: ${selectors.join(", ")}`);
+}
+
+async function clickFirstMatching(root, selectors) {
+  for (const selector of selectors) {
+    const locator = root.locator(selector);
+    const count = await locator.count();
+    if (count < 1) {
+      continue;
+    }
+
+    await locator.first().click();
+    return selector;
+  }
+
+  return "";
+}
+
 async function snapshotText(tab) {
   return tab.playwright.domSnapshot();
+}
+
+function customerAttachedSnapshotChecks({
+  snap,
+  expectedName = "",
+  expectedPhone = "",
+  addressDetail = "",
+}) {
+  const normalizedSnap = normalizeAscii(snap);
+  const requiredParts = [
+    normalizeAscii(expectedName),
+    normalizeAscii(expectedPhone),
+    normalizeAscii(addressDetail),
+  ].filter(Boolean);
+
+  return (
+    !snap.includes("ChÆ°a cÃ³ thÃ´ng tin khÃ¡ch hÃ ng") &&
+    snap.includes("Äá»‹a chá»‰ giao hÃ ng") &&
+    requiredParts.every((part) => normalizedSnap.includes(part))
+  );
 }
 
 export function createChromePhoneOrderLiveAdapter({ tab, baseUrl }) {
@@ -69,22 +121,14 @@ export function createChromePhoneOrderLiveAdapter({ tab, baseUrl }) {
 
     async selectExistingCustomerIfShown(step, context) {
       const expectedName = normalizeText(step.customer_name);
-      const expectedPhone = normalizeText(
-        context?.executionPlan?.request_snapshot?.customer?.phone ||
-        context?.payload?.customer?.phone ||
-        "",
-      );
+      const expectedPhone = normalizeText(step.phone || context?.executionPlan?.customer?.phone || "");
 
-      const isCustomerAttached = async () => {
-        const attachedSnap = await snapshotText(tab);
-        const normalizedSnap = normalizeAscii(attachedSnap);
-        return (
-          (!expectedName || normalizedSnap.includes(normalizeAscii(expectedName))) &&
-          (!expectedPhone || attachedSnap.includes(expectedPhone)) &&
-          attachedSnap.includes("Địa chỉ giao hàng") &&
-          !attachedSnap.includes("Chưa có thông tin khách hàng")
-        );
-      };
+      const isCustomerAttached = async () =>
+        customerAttachedSnapshotChecks({
+          snap: await snapshotText(tab),
+          expectedName,
+          expectedPhone,
+        });
 
       const menuReady = await waitForCondition(async () => {
         const menuItems = tab.playwright.getByRole("menuitem");
@@ -135,7 +179,7 @@ export function createChromePhoneOrderLiveAdapter({ tab, baseUrl }) {
       if (
         expectedPhone &&
         snap.includes(expectedPhone) &&
-        (snap.includes("Địa chỉ giao hàng") || snap.includes("Thong tin khach hang"))
+        (snap.includes("Äá»‹a chá»‰ giao hÃ ng") || snap.includes("Thong tin khach hang"))
       ) {
         return;
       }
@@ -155,8 +199,118 @@ export function createChromePhoneOrderLiveAdapter({ tab, baseUrl }) {
       );
     },
 
-    async createCustomerIfMissing() {
-      throw new Error("Live customer-creation handler is not wired yet. Use existing-customer requests first.");
+    async createCustomerIfMissing(step, context) {
+      const customerName = normalizeText(step.customer_name || context?.executionPlan?.customer?.request_name || "");
+      const customerPhone = normalizeText(step.phone || context?.executionPlan?.customer?.phone || "");
+      const address = step.address || context?.executionPlan?.normalized_address || {};
+
+      const isCustomerAttached = async () =>
+        customerAttachedSnapshotChecks({
+          snap: await snapshotText(tab),
+          expectedName: customerName,
+          expectedPhone: customerPhone,
+          addressDetail: address.address_detail,
+        });
+
+      if (await isCustomerAttached()) {
+        return;
+      }
+
+      const menuItems = tab.playwright.getByRole("menuitem");
+      const menuCount = await menuItems.count();
+      if (menuCount === 1) {
+        await menuItems.click();
+        await waitForStableUi(tab);
+      } else if (menuCount > 1 && customerPhone) {
+        const candidate = tab.playwright.getByText(customerPhone, { exact: false });
+        const candidateCount = await candidate.count();
+        if (candidateCount >= 1) {
+          await candidate.first().click();
+          await waitForStableUi(tab);
+        }
+      } else {
+        throw new Error("Could not find the create-customer entry point after phone search.");
+      }
+
+      const dialog = await waitForCondition(async () => {
+        const dialogs = tab.playwright.locator('[role="dialog"], .ant-modal, .modal-dialog');
+        const count = await dialogs.count();
+        return count > 0 ? dialogs.last() : null;
+      }, { attempts: 8, delayMs: 400 });
+
+      if (!dialog) {
+        throw new Error("Customer-creation modal did not appear.");
+      }
+
+      if (customerName) {
+        await fillFirstMatching(dialog, [
+          'input[name*="name" i]',
+          'input[id*="name" i]',
+          'input[autocomplete="name"]',
+          'input:not([type="hidden"]):not([type="tel"])',
+        ], customerName);
+      }
+
+      if (customerPhone) {
+        await fillFirstMatching(dialog, [
+          'input[name*="phone" i]',
+          'input[id*="phone" i]',
+          'input[type="tel"]',
+          'input[inputmode="tel"]',
+        ], customerPhone);
+      }
+
+      if (address.address_detail) {
+        await fillFirstMatching(dialog, [
+          'textarea[name*="address" i]',
+          'input[name*="address" i]',
+          'textarea[id*="address" i]',
+          'input[id*="address" i]',
+          "textarea",
+        ], address.address_detail);
+      }
+
+      const comboValues = [address.province, address.district, address.ward].filter(Boolean);
+      if (comboValues.length > 0) {
+        const comboInputs = dialog.locator('[role="combobox"] input, .ant-select-selection-search input');
+        const comboCount = await comboInputs.count();
+        for (let index = 0; index < Math.min(comboCount, comboValues.length); index += 1) {
+          const value = comboValues[index];
+          const input = comboInputs.nth(index);
+          await input.fill(String(value));
+          await waitForStableUi(tab);
+
+          const option = await waitForCondition(async () => {
+            const candidate = tab.playwright.getByText(String(value), { exact: false });
+            const count = await candidate.count();
+            return count > 0 ? candidate.first() : null;
+          }, { attempts: 6, delayMs: 350 });
+
+          if (!option) {
+            throw new Error(`Could not select address option: ${value}`);
+          }
+
+          await option.click();
+          await waitForStableUi(tab);
+        }
+      }
+
+      const clickedSaveSelector = await clickFirstMatching(dialog, [
+        'button[type="submit"]',
+        ".ant-modal-footer .ant-btn-primary",
+        'button[class*="primary"]',
+      ]);
+
+      if (!clickedSaveSelector) {
+        throw new Error("Could not find a save button in the customer-creation modal.");
+      }
+
+      await waitForStableUi(tab);
+      if (!(await waitForCondition(isCustomerAttached, { attempts: 8, delayMs: 500 }))) {
+        throw new Error(
+          `Customer was not confirmed after create/save: ${customerName}${customerPhone ? ` (${customerPhone})` : ""}`,
+        );
+      }
     },
 
     async ensureShippingAddress(step) {
@@ -176,7 +330,7 @@ export function createChromePhoneOrderLiveAdapter({ tab, baseUrl }) {
     },
 
     async addProductBySku(step) {
-      const input = tab.playwright.getByPlaceholder("Tìm theo tên, mã SKU, hoặc quét mã Barcode...(F3)", {
+      const input = tab.playwright.getByPlaceholder("TÃ¬m theo tÃªn, mÃ£ SKU, hoáº·c quÃ©t mÃ£ Barcode...(F3)", {
         exact: true,
       });
       await fillSingle(tab, input, step.sku || "");
@@ -211,10 +365,41 @@ export function createChromePhoneOrderLiveAdapter({ tab, baseUrl }) {
 
     async switchShippingMode(step) {
       const label =
-        step.mode === "carrier" ? "Đẩy qua hãng vận chuyển" : step.mode || "Đẩy qua hãng vận chuyển";
+        step.mode === "carrier" ? "Äáº©y qua hÃ£ng váº­n chuyá»ƒn" : step.mode || "Äáº©y qua hÃ£ng váº­n chuyá»ƒn";
       const button = tab.playwright.getByRole("button", { name: label, exact: true });
       await clickSingle(tab, button);
       await waitForStableUi(tab);
+
+      const preferredCarrier = normalizeText(step.preferred_carrier);
+      if (!preferredCarrier) {
+        return;
+      }
+
+      const snap = await snapshotText(tab);
+      if (snap.includes(preferredCarrier)) {
+        return;
+      }
+
+      const candidate = await waitForCondition(async () => {
+        const textMatch = tab.playwright.getByText(preferredCarrier, { exact: false });
+        const textCount = await textMatch.count();
+        if (textCount > 0) {
+          return textMatch.first();
+        }
+
+        const optionMatch = tab.playwright.getByRole("option", { name: preferredCarrier, exact: false });
+        const optionCount = await optionMatch.count();
+        if (optionCount > 0) {
+          return optionMatch.first();
+        }
+
+        return null;
+      }, { attempts: 6, delayMs: 400 });
+
+      if (candidate) {
+        await candidate.click();
+        await waitForStableUi(tab);
+      }
     },
 
     async setCustomerTotal(step, context) {
@@ -225,7 +410,7 @@ export function createChromePhoneOrderLiveAdapter({ tab, baseUrl }) {
       const desiredTotal = Number(step.amount || 0);
       const items = context.items;
 
-       if (items.length === 1) {
+      if (items.length === 1) {
         const singlePriceInputs = tab.playwright.locator('input[id^="price-line-item-"]');
         const singleCount = await singlePriceInputs.count();
         if (singleCount === 1) {
@@ -268,10 +453,7 @@ export function createChromePhoneOrderLiveAdapter({ tab, baseUrl }) {
         throw new Error("No adjustable line item found for total correction.");
       }
 
-      const runningTotal = inspected.reduce(
-        (sum, item) => sum + item.quantity * item.currentUnitPrice,
-        0,
-      );
+      const runningTotal = inspected.reduce((sum, item) => sum + item.quantity * item.currentUnitPrice, 0);
       const fixedWithoutLast = runningTotal - adjustable.quantity * adjustable.currentUnitPrice;
       const nextUnitPrice = Math.max(
         0,
@@ -289,7 +471,7 @@ export function createChromePhoneOrderLiveAdapter({ tab, baseUrl }) {
     },
 
     async setDeclaredPackageValue(step) {
-      const declared = tab.playwright.getByLabel("Khai báo giá trị gói hàng", { exact: true });
+      const declared = tab.playwright.getByLabel("Khai bÃ¡o giÃ¡ trá»‹ gÃ³i hÃ ng", { exact: true });
       await fillSingle(tab, declared, String(step.amount || 0));
       await waitForStableUi(tab);
     },

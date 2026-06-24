@@ -9,6 +9,7 @@ import {
   upsertStatusEntry,
   writeJson,
 } from "./lib/phone-order-store.mjs";
+import { buildBrowserStepsFromPlanLike } from "./lib/phone-order-browser-steps.mjs";
 
 function parseArgs(argv) {
   const args = {
@@ -46,61 +47,6 @@ function isReadyForExecution(planItem, statusEntry, queueRequest) {
   return status === "ready" || status === "pending_ai" || status === "";
 }
 
-function buildBrowserSteps(planItem) {
-  const request = planItem.request_snapshot;
-  const productLines = (planItem.product_matches || []).map((item) => ({
-    action: "add_product_by_sku",
-    sku: item.sku,
-    quantity: item.quantity,
-  }));
-
-  return [
-    {
-      action: "open_create_order_page",
-      target: "/admin/orders/create",
-    },
-    {
-      action: "search_customer_by_phone",
-      phone: request.customer?.phone || "",
-    },
-    {
-      action: planItem.customer_match ? "select_existing_customer_if_shown" : "create_customer_if_missing",
-      customer_name: request.customer?.name || "",
-    },
-    {
-      action: "ensure_shipping_address",
-      address: planItem.normalized_address,
-    },
-    ...productLines,
-    {
-      action: "switch_shipping_mode",
-      mode: "carrier",
-      preferred_carrier: "GHN",
-    },
-    {
-      action: "set_customer_total",
-      amount: request.order_total_including_shipping || 0,
-    },
-    {
-      action: "set_cod_amount",
-      amount: request.order_total_including_shipping || 0,
-    },
-    {
-      action: "set_declared_package_value",
-      amount: request.order_total_including_shipping || 0,
-    },
-    {
-      action: "leave_pickup_shift_blank_unless_requested",
-      requested_pickup_shift_note:
-        planItem.shipping_instructions?.requested_pickup_shift_note || "",
-    },
-    {
-      action: "submit_order",
-      confirmation_button: "Xac nhan tao don va giao hang",
-    },
-  ];
-}
-
 function buildExecutionBundle(planItem, queueRequest, statusEntry) {
   const request = planItem.request_snapshot;
   return {
@@ -128,7 +74,7 @@ function buildExecutionBundle(planItem, queueRequest, statusEntry) {
       requires_manual_pickup_shift: false,
       requested_pickup_shift_note: "",
     },
-    browser_steps: buildBrowserSteps(planItem),
+    browser_steps: buildBrowserStepsFromPlanLike(planItem),
     warnings: [
       "Use the validated Sapo create-order flow from docs/real-world-findings.md.",
       "Do not choose pickup shift unless the admin note explicitly requests it.",

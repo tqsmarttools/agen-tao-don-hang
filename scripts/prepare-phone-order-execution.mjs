@@ -8,6 +8,7 @@ import {
   storePaths,
   writeJson,
 } from "./lib/phone-order-store.mjs";
+import { buildBrowserStepsFromPlanLike } from "./lib/phone-order-browser-steps.mjs";
 
 function parseArgs(argv) {
   const args = {
@@ -108,61 +109,6 @@ function effectiveSourceStatus(planItem, statusEntry, queueRequest) {
   return statusEntry?.status || queueRequest?.status || planItem?.status || "";
 }
 
-function buildBrowserSteps(bundleLike) {
-  const request = bundleLike.request_snapshot;
-  const productLines = (bundleLike.product_matches || []).map((item) => ({
-    action: "add_product_by_sku",
-    sku: item.sku,
-    quantity: item.quantity,
-  }));
-
-  return [
-    {
-      action: "open_create_order_page",
-      target: "/admin/orders/create",
-    },
-    {
-      action: "search_customer_by_phone",
-      phone: request.customer?.phone || "",
-    },
-    {
-      action: bundleLike.customer_match ? "select_existing_customer_if_shown" : "create_customer_if_missing",
-      customer_name: request.customer?.name || "",
-    },
-    {
-      action: "ensure_shipping_address",
-      address: bundleLike.normalized_address,
-    },
-    ...productLines,
-    {
-      action: "switch_shipping_mode",
-      mode: "carrier",
-      preferred_carrier: "GHN",
-    },
-    {
-      action: "set_customer_total",
-      amount: request.order_total_including_shipping || 0,
-    },
-    {
-      action: "set_cod_amount",
-      amount: request.order_total_including_shipping || 0,
-    },
-    {
-      action: "set_declared_package_value",
-      amount: request.order_total_including_shipping || 0,
-    },
-    {
-      action: "leave_pickup_shift_blank_unless_requested",
-      requested_pickup_shift_note:
-        bundleLike.shipping_instructions?.requested_pickup_shift_note || "",
-    },
-    {
-      action: "submit_order",
-      confirmation_button: "Xac nhan tao don va giao hang",
-    },
-  ];
-}
-
 function rebuildBundleFromState(args, queueRequest, planItem, statusEntry) {
   if (!queueRequest || !planItem) {
     return null;
@@ -196,7 +142,7 @@ function rebuildBundleFromState(args, queueRequest, planItem, statusEntry) {
     request_snapshot: planItem.request_snapshot,
     product_matches: planItem.product_matches || [],
     customer_match: planItem.customer_match,
-    browser_steps: buildBrowserSteps(planItem),
+    browser_steps: buildBrowserStepsFromPlanLike(planItem),
     warnings: [
       "Execution bundle was rebuilt from queue + processing plan because no fresh worker bundle was available.",
       "Do not choose pickup shift unless the admin note explicitly requests it.",

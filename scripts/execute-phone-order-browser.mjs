@@ -60,9 +60,9 @@ function stepGuidance(detail) {
     case "search_customer_by_phone":
       return `Search customer by phone: ${detail.phone}.`;
     case "select_existing_customer_if_shown":
-      return `Select the existing customer if the phone lookup shows the expected match: ${detail.customer_name}.`;
+      return `Select the existing customer if the phone lookup shows the expected match: ${detail.customer_name} (${detail.phone || "no phone provided"}).`;
     case "create_customer_if_missing":
-      return `Create a new customer if phone lookup does not return a usable match: ${detail.customer_name}.`;
+      return `Create a new customer if phone lookup does not return a usable match: ${detail.customer_name} (${detail.phone || "no phone provided"}).`;
     case "ensure_shipping_address":
       return "Verify province, district, ward, and address detail match the normalized address.";
     case "add_product_by_sku":
@@ -168,7 +168,7 @@ function buildExecutorPayload(executionPlan, previousPayload, args) {
     step_checklist: stepChecklist,
     record_commands: executionPlan.record_commands || {},
     warnings: [
-      "This executor still stops short of real Chrome automation. It prepares and tracks the browser run state only.",
+      "Standalone executor runs prepare and track browser state. Live execution is available when a browser adapter is injected.",
       ...(executionPlan.warnings || []),
     ],
   };

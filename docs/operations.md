@@ -56,7 +56,9 @@ Current lightweight executor scaffold:
 node scripts/execute-phone-order-browser.mjs --dry-run
 ```
 
-This does not automate Chrome yet. It prepares the final browser-facing checklist payload and marks the handoff point where live browser automation will plug in.
+This prepares or refreshes the final browser-facing checklist payload.
+
+Live browser execution is now supported when the executor is called from a Chrome-capable runtime that injects the adapter layer.
 
 The live wiring now exists at code level through:
 
@@ -72,10 +74,23 @@ Recommended live entry from a Chrome-capable runtime:
 - run `runClaimedSapoExecution(...)`
 - limit early trials with `maxSteps`
 
+Important current live coverage:
+
+- existing-customer selection is wired
+- new-customer creation is now wired with best-effort modal filling based on phone, name, and normalized address
+- GHN carrier preference is now re-checked after switching shipping mode
+- total, COD, and declared-value steps remain resumable
+
 Local smoke test for the live executor path without touching Chrome:
 
 ```powershell
 node scripts/test-phone-order-browser-live-smoke.mjs
+```
+
+Local smoke test for browser-step generation:
+
+```powershell
+node scripts/test-phone-order-browser-steps.mjs
 ```
 
 Quick status view:

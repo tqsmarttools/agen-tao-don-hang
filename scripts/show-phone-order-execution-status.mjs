@@ -64,6 +64,10 @@ async function main() {
       console.log("Step detail:");
       console.log(detailText);
     }
+
+    console.log(
+      `Retry command: node scripts/prepare-phone-order-step-retry.mjs --request-id ${payload.request_id} --step ${nextPending.order}`,
+    );
   } else {
     console.log("Next step: none");
   }
@@ -71,6 +75,14 @@ async function main() {
   const failedSteps = steps.filter((step) => step.failed);
   if (failedSteps.length > 0) {
     console.log(`Failed steps: ${failedSteps.map((step) => step.order).join(", ")}`);
+  }
+
+  if (payload.record_commands?.created_template) {
+    console.log(`Created command: ${payload.record_commands.created_template}`);
+  }
+
+  if (payload.record_commands?.failed_template) {
+    console.log(`Failed command: ${payload.record_commands.failed_template}`);
   }
 }
 

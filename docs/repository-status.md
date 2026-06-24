@@ -25,6 +25,8 @@ This repository contains both planning artifacts and working implementation arti
 ## Current live automation checkpoint
 
 - The resumable browser executor is live-wired through the Chrome adapter layer.
+- Shared browser-step generation now feeds both worker output and prepared execution plans.
+- The live adapter now carries phone and normalized address data into the new-customer creation step.
 - The current sample request is `sample-0983087947-001`.
 - Live execution has already completed steps 1-6 of 11 in the real Sapo create-order page.
 - The current next actionable step is step 7: `set_customer_total`.
