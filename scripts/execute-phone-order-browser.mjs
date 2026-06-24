@@ -10,8 +10,10 @@ function parseArgs(argv) {
   const args = {
     requestId: "",
     dryRun: false,
+    live: false,
     completeStep: 0,
     failStep: 0,
+    maxSteps: 0,
     note: "",
     reset: false,
   };
@@ -22,10 +24,14 @@ function parseArgs(argv) {
       args.requestId = argv[++index] || "";
     } else if (arg === "--dry-run") {
       args.dryRun = true;
+    } else if (arg === "--live") {
+      args.live = true;
     } else if (arg === "--complete-step") {
       args.completeStep = Math.max(0, Number(argv[++index] || 0));
     } else if (arg === "--fail-step") {
       args.failStep = Math.max(0, Number(argv[++index] || 0));
+    } else if (arg === "--max-steps") {
+      args.maxSteps = Math.max(0, Number(argv[++index] || 0));
     } else if (arg === "--note") {
       args.note = argv[++index] || "";
     } else if (arg === "--reset") {
@@ -135,6 +141,7 @@ function buildExecutorPayload(executionPlan, previousPayload, args) {
     request_id: executionPlan.request_id,
     execution_mode: "chrome-sapo-browser-executor",
     dry_run: args.dryRun,
+    live_mode_requested: args.live,
     ready_for_live_execution: executionPlan.ready_for_browser_automation === true,
     progress: {
       total_steps: stepChecklist.length,
@@ -159,6 +166,7 @@ function buildExecutionNotes(executionPlan, payload) {
     "",
     `- Request ID: \`${executionPlan.request_id}\``,
     `- Ready for live execution: \`${payload.ready_for_live_execution}\``,
+    `- Live mode requested: \`${payload.live_mode_requested}\``,
     `- Total steps: \`${payload.progress.total_steps}\``,
     `- Completed steps: \`${payload.progress.completed_steps}\``,
     `- Failed steps: \`${payload.progress.failed_steps}\``,
@@ -190,8 +198,141 @@ function buildExecutionNotes(executionPlan, payload) {
   return `${lines.join("\n")}\n`;
 }
 
-async function main() {
-  const args = parseArgs(process.argv.slice(2));
+function resolveAdapter() {
+  if (globalThis.phoneOrderBrowserAdapter) {
+    return globalThis.phoneOrderBrowserAdapter;
+  }
+
+  return null;
+}
+
+function nextPendingSteps(payload, maxSteps) {
+  const pending = (payload.step_checklist || []).filter((step) => !step.completed && !step.failed);
+  if (!maxSteps || maxSteps >= pending.length) {
+    return pending;
+  }
+  return pending.slice(0, maxSteps);
+}
+
+function handlerMethodName(action) {
+  switch (action) {
+    case "open_create_order_page":
+      return "openCreateOrderPage";
+    case "search_customer_by_phone":
+      return "searchCustomerByPhone";
+    case "select_existing_customer_if_shown":
+      return "selectExistingCustomerIfShown";
+    case "create_customer_if_missing":
+      return "createCustomerIfMissing";
+    case "ensure_shipping_address":
+      return "ensureShippingAddress";
+    case "add_product_by_sku":
+      return "addProductBySku";
+    case "switch_shipping_mode":
+      return "switchShippingMode";
+    case "set_customer_total":
+      return "setCustomerTotal";
+    case "set_cod_amount":
+      return "setCodAmount";
+    case "set_declared_package_value":
+      return "setDeclaredPackageValue";
+    case "leave_pickup_shift_blank_unless_requested":
+      return "leavePickupShiftBlankUnlessRequested";
+    case "submit_order":
+      return "submitOrder";
+    default:
+      return "";
+  }
+}
+
+function withStepMutation(payload, order, patch) {
+  const nextPayload = structuredClone(payload);
+  const step = nextPayload.step_checklist.find((item) => item.order === order);
+  if (!step) {
+    throw new Error(`Step ${order} was not found in the executor payload.`);
+  }
+
+  Object.assign(step, patch, { updated_at: new Date().toISOString() });
+  nextPayload.exported_at = new Date().toISOString();
+  nextPayload.progress.total_steps = nextPayload.step_checklist.length;
+  nextPayload.progress.completed_steps = nextPayload.step_checklist.filter((item) => item.completed).length;
+  nextPayload.progress.failed_steps = nextPayload.step_checklist.filter((item) => item.failed).length;
+  nextPayload.progress.next_pending_step =
+    nextPayload.step_checklist.find((item) => !item.completed && !item.failed)?.order || null;
+  return nextPayload;
+}
+
+async function persistExecutorState(executionPlan, payload) {
+  const notes = buildExecutionNotes(executionPlan, payload);
+  await writeJson(storePaths.workerOutputPath, payload);
+  await writeText(storePaths.executionNotesPath, notes);
+}
+
+async function runLiveExecution(executionPlan, payload, args, adapter) {
+  if (!payload.ready_for_live_execution) {
+    throw new Error("Execution plan is not marked ready for live browser execution.");
+  }
+
+  if (!adapter) {
+    throw new Error(
+      "Live browser mode requires a phoneOrderBrowserAdapter on globalThis. Inject an adapter before calling execute-phone-order-browser.mjs with --live.",
+    );
+  }
+
+  let nextPayload = payload;
+  const steps = nextPendingSteps(payload, args.maxSteps);
+  for (const step of steps) {
+    const methodName = handlerMethodName(step.action);
+    if (!methodName || typeof adapter[methodName] !== "function") {
+      throw new Error(`No live handler is available for action: ${step.action}`);
+    }
+
+    try {
+      await adapter[methodName](step.detail, {
+        executionPlan,
+        payload: nextPayload,
+        items: executionPlan.items || [],
+      });
+
+      nextPayload = withStepMutation(nextPayload, step.order, {
+        completed: true,
+        failed: false,
+        operator_note: `Completed by live adapter via ${methodName}.`,
+      });
+      await persistExecutorState(executionPlan, nextPayload);
+
+      await appendWorkerLog({
+        request_id: executionPlan.request_id,
+        event_type: "browser_executor_live_step_completed",
+        execution_mode: nextPayload.execution_mode,
+        step: step.order,
+        action: step.action,
+      });
+    } catch (error) {
+      nextPayload = withStepMutation(nextPayload, step.order, {
+        completed: false,
+        failed: true,
+        operator_note: error instanceof Error ? error.message : String(error),
+      });
+      await persistExecutorState(executionPlan, nextPayload);
+
+      await appendWorkerLog({
+        request_id: executionPlan.request_id,
+        event_type: "browser_executor_live_step_failed",
+        execution_mode: nextPayload.execution_mode,
+        step: step.order,
+        action: step.action,
+        note: error instanceof Error ? error.message : String(error),
+      });
+      throw error;
+    }
+  }
+
+  return nextPayload;
+}
+
+export async function runBrowserExecutor(rawArgs) {
+  const args = Array.isArray(rawArgs) ? parseArgs(rawArgs) : rawArgs;
   const executionPlan = await readJsonOrDefault(storePaths.executionPlanPath, null);
 
   if (!executionPlan) {
@@ -207,27 +348,39 @@ async function main() {
   }
 
   const previousPayload = await readJsonOrDefault(storePaths.workerOutputPath, null);
-  const payload = buildExecutorPayload(executionPlan, previousPayload, args);
-  const notes = buildExecutionNotes(executionPlan, payload);
+  let payload = buildExecutorPayload(executionPlan, previousPayload, args);
+  await persistExecutorState(executionPlan, payload);
 
-  await writeJson(storePaths.workerOutputPath, payload);
-  await writeText(storePaths.executionNotesPath, notes);
+  if (args.live) {
+    payload = await runLiveExecution(executionPlan, payload, args, resolveAdapter());
+  }
 
   await appendWorkerLog({
     request_id: executionPlan.request_id,
-    event_type: args.completeStep
-      ? "browser_executor_step_completed"
-      : args.failStep
-        ? "browser_executor_step_failed"
-        : args.reset
-          ? "browser_executor_reset"
-          : "browser_executor_prepared",
+    event_type: args.live
+      ? "browser_executor_live_run_finished"
+      : args.completeStep
+        ? "browser_executor_step_completed"
+        : args.failStep
+          ? "browser_executor_step_failed"
+          : args.reset
+            ? "browser_executor_reset"
+            : "browser_executor_prepared",
     execution_mode: payload.execution_mode,
     dry_run: args.dryRun,
     step: args.completeStep || args.failStep || 0,
     note: args.note || "",
   });
 
+  return {
+    args,
+    executionPlan,
+    payload,
+  };
+}
+
+async function main() {
+  const { args, executionPlan } = await runBrowserExecutor(process.argv.slice(2));
   console.log(
     `${args.dryRun ? "Prepared" : "Updated"} browser executor payload for ${executionPlan.request_id} at ${storePaths.workerOutputPath}`,
   );

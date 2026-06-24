@@ -58,6 +58,19 @@ node scripts/execute-phone-order-browser.mjs --dry-run
 
 This does not automate Chrome yet. It prepares the final browser-facing checklist payload and marks the handoff point where live browser automation will plug in.
 
+The live wiring now exists at code level through:
+
+- `scripts/lib/chrome-phone-order-live-adapter.mjs`
+- `scripts/lib/phone-order-browser-live-runner.mjs`
+
+These are intended to be invoked from a Chrome-capable runtime such as the existing Node REPL browser session, not from a plain standalone Node process.
+
+Local smoke test for the live executor path without touching Chrome:
+
+```powershell
+node scripts/test-phone-order-browser-live-smoke.mjs
+```
+
 Quick status view:
 
 ```powershell
