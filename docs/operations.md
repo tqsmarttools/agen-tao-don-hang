@@ -96,6 +96,12 @@ Mark a step complete while testing manually:
 node scripts/execute-phone-order-browser.mjs --complete-step 1 --note "Opened create order page"
 ```
 
+Clear a failed or completed step before retrying it:
+
+```powershell
+node scripts/execute-phone-order-browser.mjs --clear-step 3 --note "Retrying customer selection"
+```
+
 7. Record the final outcome:
 
 ```powershell

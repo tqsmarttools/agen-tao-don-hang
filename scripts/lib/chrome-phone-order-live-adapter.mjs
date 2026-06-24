@@ -48,10 +48,23 @@ export function createChromePhoneOrderLiveAdapter({ tab, baseUrl }) {
       await waitForStableUi(tab);
     },
 
-    async selectExistingCustomerIfShown(step) {
+    async selectExistingCustomerIfShown(step, context) {
       const snap = await snapshotText(tab);
       const expectedName = normalizeText(step.customer_name);
+      const expectedPhone = normalizeText(
+        context?.executionPlan?.request_snapshot?.customer?.phone ||
+        context?.payload?.customer?.phone ||
+        "",
+      );
       if (expectedName && snap.includes(expectedName)) {
+        return;
+      }
+
+      if (
+        expectedPhone &&
+        snap.includes(expectedPhone) &&
+        (snap.includes("Địa chỉ giao hàng") || snap.includes("Thong tin khach hang"))
+      ) {
         return;
       }
 
@@ -63,7 +76,9 @@ export function createChromePhoneOrderLiveAdapter({ tab, baseUrl }) {
         return;
       }
 
-      throw new Error(`Could not confirm or select existing customer: ${expectedName}`);
+      throw new Error(
+        `Could not confirm or select existing customer: ${expectedName}${expectedPhone ? ` (${expectedPhone})` : ""}`,
+      );
     },
 
     async createCustomerIfMissing() {

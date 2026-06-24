@@ -40,6 +40,9 @@ async function main() {
   console.log(
     `Progress: ${payload.progress?.completed_steps || 0}/${payload.progress?.total_steps || steps.length} completed`,
   );
+  if (payload.progress?.next_actionable_step) {
+    console.log(`Next actionable step: ${payload.progress.next_actionable_step}`);
+  }
 
   if (nextPending) {
     console.log(`Next step: ${nextPending.order} - ${nextPending.action}`);

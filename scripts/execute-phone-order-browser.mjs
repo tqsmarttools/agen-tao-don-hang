@@ -5,6 +5,7 @@ import {
   writeJson,
   writeText,
 } from "./lib/phone-order-store.mjs";
+import { pathToFileURL } from "node:url";
 
 function parseArgs(argv) {
   const args = {
@@ -13,6 +14,7 @@ function parseArgs(argv) {
     live: false,
     completeStep: 0,
     failStep: 0,
+    clearStep: 0,
     maxSteps: 0,
     note: "",
     reset: false,
@@ -30,6 +32,8 @@ function parseArgs(argv) {
       args.completeStep = Math.max(0, Number(argv[++index] || 0));
     } else if (arg === "--fail-step") {
       args.failStep = Math.max(0, Number(argv[++index] || 0));
+    } else if (arg === "--clear-step") {
+      args.clearStep = Math.max(0, Number(argv[++index] || 0));
     } else if (arg === "--max-steps") {
       args.maxSteps = Math.max(0, Number(argv[++index] || 0));
     } else if (arg === "--note") {
@@ -41,8 +45,9 @@ function parseArgs(argv) {
     }
   }
 
-  if (args.completeStep && args.failStep) {
-    throw new Error("Use either --complete-step or --fail-step, not both.");
+  const activeMutations = [args.completeStep, args.failStep, args.clearStep].filter(Boolean).length;
+  if (activeMutations > 1) {
+    throw new Error("Use only one of --complete-step, --fail-step, or --clear-step at a time.");
   }
 
   return args;
@@ -120,6 +125,13 @@ function buildStepChecklist(executionPlan, previousPayload, args) {
       nextStep.updated_at = new Date().toISOString();
     }
 
+    if (args.clearStep === order) {
+      nextStep.completed = false;
+      nextStep.failed = false;
+      nextStep.operator_note = args.note || "";
+      nextStep.updated_at = new Date().toISOString();
+    }
+
     if (args.reset) {
       nextStep.operator_note = "";
       nextStep.updated_at = "";
@@ -134,6 +146,7 @@ function buildExecutorPayload(executionPlan, previousPayload, args) {
   const completedSteps = stepChecklist.filter((step) => step.completed).length;
   const failedSteps = stepChecklist.filter((step) => step.failed).length;
   const nextPendingStep = stepChecklist.find((step) => !step.completed && !step.failed) || null;
+  const nextActionableStep = stepChecklist.find((step) => !step.completed) || null;
 
   return {
     schema: "tq-sapo-phone-order-browser-executor/v1",
@@ -148,6 +161,7 @@ function buildExecutorPayload(executionPlan, previousPayload, args) {
       completed_steps: completedSteps,
       failed_steps: failedSteps,
       next_pending_step: nextPendingStep?.order || null,
+      next_actionable_step: nextActionableStep?.order || null,
     },
     preflight: executionPlan.preflight || [],
     manual_checkpoints: executionPlan.manual_checkpoints || [],
@@ -171,6 +185,7 @@ function buildExecutionNotes(executionPlan, payload) {
     `- Completed steps: \`${payload.progress.completed_steps}\``,
     `- Failed steps: \`${payload.progress.failed_steps}\``,
     `- Next pending step: \`${payload.progress.next_pending_step ?? "none"}\``,
+    `- Next actionable step: \`${payload.progress.next_actionable_step ?? "none"}\``,
     "",
     "## Preflight",
     "",
@@ -360,15 +375,17 @@ export async function runBrowserExecutor(rawArgs) {
     event_type: args.live
       ? "browser_executor_live_run_finished"
       : args.completeStep
-        ? "browser_executor_step_completed"
-        : args.failStep
-          ? "browser_executor_step_failed"
-          : args.reset
-            ? "browser_executor_reset"
-            : "browser_executor_prepared",
+      ? "browser_executor_step_completed"
+      : args.failStep
+        ? "browser_executor_step_failed"
+        : args.clearStep
+          ? "browser_executor_step_cleared"
+        : args.reset
+          ? "browser_executor_reset"
+          : "browser_executor_prepared",
     execution_mode: payload.execution_mode,
     dry_run: args.dryRun,
-    step: args.completeStep || args.failStep || 0,
+    step: args.completeStep || args.failStep || args.clearStep || 0,
     note: args.note || "",
   });
 
@@ -386,7 +403,15 @@ async function main() {
   );
 }
 
-main().catch((error) => {
-  console.error(error.stack || String(error));
-  process.exit(1);
-});
+const isDirectRun =
+  typeof process !== "undefined" &&
+  Array.isArray(process.argv) &&
+  process.argv[1] &&
+  import.meta.url === pathToFileURL(process.argv[1]).href;
+
+if (isDirectRun) {
+  main().catch((error) => {
+    console.error(error.stack || String(error));
+    process.exit(1);
+  });
+}
