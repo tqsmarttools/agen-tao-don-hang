@@ -13,21 +13,52 @@ export const storePaths = {
   processingPlanPath: path.join(dataDir, "phone-order-processing-plan.json"),
   statusPath: path.join(dataDir, "ai-request-status.json"),
   executionPlanPath: path.join(dataDir, "phone-order-execution-plan.json"),
+  executionNotesPath: path.join(dataDir, "phone-order-execution-notes.md"),
   workerOutputPath: path.join(dataDir, "phone-order-worker-output.json"),
   workerLogPath: path.join(dataDir, "phone-order-worker-log.json"),
 };
+
+function parseJsonLenient(rawText) {
+  const sanitized = String(rawText || "").replace(/^\uFEFF/, "");
+
+  try {
+    return JSON.parse(sanitized);
+  } catch {
+    const trimmed = sanitized.trimEnd();
+    for (let index = trimmed.length - 1; index >= 0; index -= 1) {
+      const char = trimmed[index];
+      if (char !== "}" && char !== "]") {
+        continue;
+      }
+
+      const candidate = trimmed.slice(0, index + 1);
+      try {
+        return JSON.parse(candidate);
+      } catch {
+        continue;
+      }
+    }
+
+    throw new Error("Could not recover a valid JSON payload from the file contents.");
+  }
+}
 
 export async function readJsonOrDefault(filePath, fallback) {
   if (!existsSync(filePath)) {
     return fallback;
   }
 
-  return JSON.parse((await readFile(filePath, "utf8")).replace(/^\uFEFF/, ""));
+  return parseJsonLenient(await readFile(filePath, "utf8"));
 }
 
 export async function writeJson(filePath, payload) {
   await mkdir(path.dirname(filePath), { recursive: true });
   await writeFile(filePath, `${JSON.stringify(payload, null, 2)}\n`, "utf8");
+}
+
+export async function writeText(filePath, text) {
+  await mkdir(path.dirname(filePath), { recursive: true });
+  await writeFile(filePath, text, "utf8");
 }
 
 export async function loadPhoneOrderState() {
