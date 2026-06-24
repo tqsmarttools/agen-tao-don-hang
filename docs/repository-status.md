@@ -13,6 +13,7 @@ This repository contains both planning artifacts and working implementation arti
 - Province, district, ward address selection using exported GHN master data
 - Customer suggestion by phone number using local customer index data
 - Local processing scripts that validate queue requests and build dry-run Sapo order payloads
+- Script-first worker entry points for claiming ready requests and recording execution results
 - GitHub Pages deployment workflow for the committed `site/` output
 
 ## What is already validated in practice
@@ -39,6 +40,8 @@ The following generated data is intentionally local and not committed:
 2. `docs/mvp-scope.md`
 3. `docs/data-sources.md`
 4. `docs/real-world-findings.md`
-5. `apps/dashboard/app.js`
-6. `scripts/process-phone-order-requests.mjs`
-7. `scripts/build-sapo-order-dry-run.mjs`
+5. `docs/operations.md`
+6. `apps/dashboard/app.js`
+7. `scripts/process-phone-order-requests.mjs`
+8. `scripts/run-phone-order-worker.mjs`
+9. `scripts/record-phone-order-result.mjs`

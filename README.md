@@ -40,9 +40,11 @@ Let an internal admin receive a direct phone call, capture the order quickly on 
 2. [MVP scope](docs/mvp-scope.md)
 3. [Data sources](docs/data-sources.md)
 4. [Real-world findings](docs/real-world-findings.md)
+5. [Operations](docs/operations.md)
 
 ## Important implementation notes
 
 - The dashboard sends structured queue payloads instead of writing to Sapo directly.
+- The preferred operational path is script-first: deterministic queue processing first, browser execution second, AI only as fallback.
 - Real Sapo creation can be driven later through API or Chrome automation depending on the final integration path.
 - A live browser test has already confirmed that Sapo order creation plus GHN shipment creation works with this business flow.
