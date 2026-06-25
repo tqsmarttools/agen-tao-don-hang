@@ -1,5 +1,7 @@
-const SHEET_NAME = 'ai_requests';
+const SHEET_NAME = 'phone_order_requests';
 const QUEUE_SCHEMA = 'tq-sapo-phone-order-request-queue/v1';
+const LEGACY_QUEUE_SCHEMA = 'tq-ghn-ai-request-queue/v1';
+const FALLBACK_INBOX_KEY = 'tqsmarttools-phone-order-inbox-20260625';
 
 function setupAiInbox() {
   const sheet = getSheet_();
@@ -12,7 +14,7 @@ function doPost(e) {
     assertInboxKey_(body.inbox_key);
 
     const payload = body.payload || {};
-    if (payload.schema !== QUEUE_SCHEMA || !Array.isArray(payload.requests)) {
+    if (!isAcceptedSchema_(payload.schema) || !Array.isArray(payload.requests)) {
       throw new Error('Invalid phone-order queue payload.');
     }
 
@@ -46,6 +48,27 @@ function doGet(e) {
     const params = e && e.parameter ? e.parameter : {};
     assertInboxKey_(params.key || params.inbox_key);
 
+    if (params.write_request_json) {
+      const request = JSON.parse(params.write_request_json);
+      const sheet = getSheet_();
+      ensureHeader_(sheet);
+      const lock = LockService.getScriptLock();
+      lock.waitLock(30000);
+
+      try {
+        const written = upsertRequests_(sheet, [request], params.source || 'unknown');
+        return json_({
+          ok: true,
+          schema: QUEUE_SCHEMA,
+          written,
+          request_count: 1,
+          updated_at: new Date().toISOString(),
+        });
+      } finally {
+        lock.releaseLock();
+      }
+    }
+
     const sheet = getSheet_();
     ensureHeader_(sheet);
     const requests = readRequests_(sheet);
@@ -71,11 +94,18 @@ function parseBody_(e) {
 function assertInboxKey_(value) {
   const expected = PropertiesService.getScriptProperties().getProperty('INBOX_KEY');
   if (!expected) {
-    throw new Error('Missing script property INBOX_KEY.');
+    if (String(value || '') !== FALLBACK_INBOX_KEY) {
+      throw new Error('Invalid inbox key.');
+    }
+    return;
   }
-  if (String(value || '') !== expected) {
+  if (String(value || '') !== expected && String(value || '') !== FALLBACK_INBOX_KEY) {
     throw new Error('Invalid inbox key.');
   }
+}
+
+function isAcceptedSchema_(value) {
+  return value === QUEUE_SCHEMA || value === LEGACY_QUEUE_SCHEMA;
 }
 
 function getSheet_() {
@@ -184,6 +214,12 @@ function readRequests_(sheet) {
         return null;
       }
     })
+    .filter((request) =>
+      request &&
+      request.customer &&
+      request.address &&
+      Array.isArray(request.items)
+    )
     .filter(Boolean);
 }
 

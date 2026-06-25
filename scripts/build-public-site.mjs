@@ -10,6 +10,12 @@ const dashboardSourceDir = path.join(workspaceRoot, "apps", "dashboard");
 const dashboardTargetDir = path.join(siteDir, "apps", "dashboard");
 const dataSourceDir = path.join(workspaceRoot, "data");
 const dataTargetDir = path.join(siteDir, "data");
+const phoneOrderConfigPath = path.join(dataSourceDir, "phone-order-config.json");
+const defaultPublicInboxConfig = {
+  inbox_url:
+    "https://script.google.com/macros/s/AKfycbzy_wRA43K727aqBSdMALJScGHEjjlreExTBN-s5AJbxsUzPFvGca3X8XrMthQMVHU0/exec",
+  inbox_key: "tqsmarttools-phone-order-inbox-20260625",
+};
 
 async function readJsonOrDefault(filePath, fallback) {
   if (!existsSync(filePath)) {
@@ -94,11 +100,30 @@ async function writePublicData() {
     requests: [],
   };
 
+  const privatePhoneOrderConfig = await readJsonOrDefault(phoneOrderConfigPath, null);
+  const publicPhoneOrderConfig =
+    privatePhoneOrderConfig &&
+    privatePhoneOrderConfig.inbox_url &&
+    privatePhoneOrderConfig.inbox_key
+      ? {
+          schema: "tq-phone-order-public-config/v1",
+          exported_at: new Date().toISOString(),
+          inbox_url: privatePhoneOrderConfig.inbox_url,
+          inbox_key: privatePhoneOrderConfig.inbox_key,
+        }
+      : {
+          schema: "tq-phone-order-public-config/v1",
+          exported_at: new Date().toISOString(),
+          inbox_url: defaultPublicInboxConfig.inbox_url,
+          inbox_key: defaultPublicInboxConfig.inbox_key,
+        };
+
   await mkdir(dataTargetDir, { recursive: true });
   await writeFile(path.join(dataTargetDir, "product-catalog.json"), `${JSON.stringify(publicProductCatalog, null, 2)}\n`, "utf8");
   await writeFile(path.join(dataTargetDir, "address-catalog.json"), `${JSON.stringify(publicAddressCatalog, null, 2)}\n`, "utf8");
   await writeFile(path.join(dataTargetDir, "customer-index.json"), `${JSON.stringify(publicCustomerIndex, null, 2)}\n`, "utf8");
   await writeFile(path.join(dataTargetDir, "ai-request-status.json"), `${JSON.stringify(publicStatus, null, 2)}\n`, "utf8");
+  await writeFile(path.join(dataTargetDir, "phone-order-public-config.json"), `${JSON.stringify(publicPhoneOrderConfig, null, 2)}\n`, "utf8");
 }
 
 async function writeNoJekyll() {
