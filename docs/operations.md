@@ -4,6 +4,48 @@
 
 Run the phone-order flow in a script-first way so the common case does not require live AI reasoning.
 
+## Current API-first finding
+
+There are two different "order creation" lanes in practice:
+
+- The legacy/private Admin API helper (`mysapo.net` + Basic auth) can create plain order records through `POST /admin/orders.json`.
+- The real Sapo Omni "Tao don va giao hang" screen uses the logged-in web session on `mysapogo.com` and submits a richer internal payload to the same path `POST /admin/orders.json`.
+
+The richer Omni payload is the one that creates the expected operational result:
+
+- order code like `SON24416`
+- fulfillment / packing record like `FUN32172`
+- carrier-linked shipment block
+- visible progress in the Omni order-detail workflow
+
+Captured supporting internal endpoints from the real Omni flow:
+
+- `POST /admin/shipping_services/ghn/estimate_fee.json`
+- `POST /admin/shipping_services/sapo_express/shipping_services.json`
+- `POST /admin/orders.json`
+
+Useful local artifacts:
+
+- `data/sapo-ui-create-order-capture.json`
+- `data/sapo-ui-new-customer-capture.json`
+- `scripts/capture-sapo-ui-create-order-network.mjs`
+- `scripts/create-sapo-omni-order-existing-customer.mjs`
+- `scripts/create-sapo-omni-order-from-request.mjs`
+- `scripts/run-phone-order-omni-session-queue.mjs`
+
+Important scope note:
+
+- `scripts/create-sapo-omni-order-existing-customer.mjs` was the first narrow prototype for existing customers.
+- `scripts/create-sapo-omni-order-from-request.mjs` is now the preferred lane for request-driven execution.
+- The current unified session lane can:
+  - search active customer by phone
+  - create a customer through `POST /admin/customers.json` when none exists
+  - resolve Sapo internal city / district / ward ids
+  - estimate GHN shipping
+  - create a real Omni order through `POST /admin/orders.json`
+  - record the created `SON...` order back into the local queue/status files
+- Browser automation remains available as a fallback lane, but it is no longer the preferred path for the common case.
+
 ## Recommended execution order
 
 1. Fetch inbox queue:
@@ -55,6 +97,30 @@ node scripts/prepare-phone-order-execution.mjs --request-id <id> --from-state
 ```
 
 6. Execute the generated plan in Sapo using the validated browser flow.
+
+Preferred session-API lane for a specific ready request:
+
+```powershell
+node scripts/create-sapo-omni-order-from-request.mjs --request-id <id> --submit
+```
+
+Preview only:
+
+```powershell
+node scripts/create-sapo-omni-order-from-request.mjs --request-id <id>
+```
+
+Preferred sequential queue runner for the session-API lane:
+
+```powershell
+node scripts/run-phone-order-omni-session-queue.mjs --limit 5
+```
+
+Notes:
+
+- this runner is sequential and oldest-first
+- on success it writes back `created` status and the `SON...` order URL
+- on failure it marks the request `failed` and continues to the next request in later runs
 
 Current lightweight executor scaffold:
 
@@ -121,6 +187,19 @@ node scripts/probe-sapo-automation-session.mjs
 ```powershell
 node scripts/run-phone-order-playwright-live.mjs --request-id <id> --max-steps 1
 ```
+
+Sequential queue runner for multiple ready orders:
+
+```powershell
+node scripts/run-phone-order-sequential-queue.mjs --limit 5
+```
+
+Notes:
+
+- requests are processed oldest-first
+- the runner handles one order at a time
+- by default it stops before the final submit step by capping at step `10`
+- add `--submit` only when you truly want the runner to continue through real order creation
 
 Quick status view:
 

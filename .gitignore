@@ -11,6 +11,11 @@ data/phone-order-execution-plan.json
 data/phone-order-execution-notes.md
 data/phone-order-worker-output.json
 data/phone-order-worker-log.json
+data/sapo-ui-*-capture.json
+data/sapo-omni-order-*-preview.json
+data/sapo-omni-order-*-submit.json
 data/chrome-profile-clone/
 data/sapo-automation-profile/
 gcm-diagnose.log
+tmp-*.png
+scripts/tmp-*.json

@@ -81,6 +81,12 @@ const clearQueueButton = document.querySelector("#clearQueue");
 const sendQueueButton = document.querySelector("#sendQueue");
 const inboxUrlInput = document.querySelector("#inboxUrl");
 const inboxKeyInput = document.querySelector("#inboxKey");
+const opsPanel = document.querySelector("#opsPanel");
+const payloadPanel = document.querySelector("#payloadPanel");
+const opsPanelHeading = opsPanel?.querySelector(".panel-heading");
+const inboxConfigPanel = opsPanel?.querySelector(".inbox-config");
+const queueActionsPanel = opsPanel?.querySelector(".queue-actions");
+const hiddenCompletionStatuses = new Set(["created"]);
 
 function normalizeText(value) {
   return String(value || "").trim();
@@ -95,6 +101,19 @@ function normalizeAscii(value) {
 
 function normalizePhone(value) {
   return String(value || "").replace(/\D/g, "");
+}
+
+function digitsOnly(value) {
+  return String(value || "").replace(/\D/g, "");
+}
+
+function formatCurrencyInput(value) {
+  const digits = digitsOnly(value);
+  if (!digits) {
+    return "";
+  }
+
+  return Number(digits).toLocaleString("vi-VN");
 }
 
 function shippingInstructionsFromNote(note) {
@@ -141,6 +160,45 @@ function saveInboxConfig() {
       inbox_key: normalizeText(inboxKeyInput.value),
     }),
   );
+  syncAdvancedPanels();
+}
+
+function currentInboxConfig() {
+  return {
+    inbox_url: normalizeText(inboxUrlInput.value),
+    inbox_key: normalizeText(inboxKeyInput.value),
+  };
+}
+
+function syncAdvancedPanels() {
+  const config = currentInboxConfig();
+  const hasInboxConfig = Boolean(config.inbox_url && config.inbox_key);
+  const hasQueuedRequests = visibleQueueRequests().length > 0;
+  const showStatusPanel = hasQueuedRequests;
+  const showAdvanced = isDebugMode() || (!hasInboxConfig && !isLocalhostRuntime());
+  const setVisibility = (element, visible) => {
+    if (!element) {
+      return;
+    }
+
+    element.hidden = !visible;
+    element.style.display = visible ? "" : "none";
+  };
+
+  if (opsPanel) {
+    opsPanel.hidden = !showStatusPanel;
+    opsPanel.style.display = showStatusPanel ? "" : "none";
+    opsPanel.classList.toggle("status-only", showStatusPanel && !showAdvanced);
+  }
+
+  if (payloadPanel) {
+    setVisibility(payloadPanel, showAdvanced);
+  }
+
+  setVisibility(opsPanelHeading, showAdvanced);
+  setVisibility(inboxConfigPanel, showAdvanced);
+  setVisibility(queueActionsPanel, showAdvanced);
+  setVisibility(queueMessage, showAdvanced);
 }
 
 function productSearchHaystack(item) {
@@ -148,6 +206,18 @@ function productSearchHaystack(item) {
     .concat(item.keywords || [])
     .join(" ")
     .toLowerCase();
+}
+
+function isLocalhostRuntime() {
+  return ["127.0.0.1", "localhost"].includes(window.location.hostname);
+}
+
+function isDebugMode() {
+  return new URLSearchParams(window.location.search).get("debug") === "1";
+}
+
+function localInboxEndpoint() {
+  return `${window.location.origin}/__local_ai_inbox`;
 }
 
 async function loadProductCatalog() {
@@ -225,7 +295,9 @@ async function loadCustomerIndex() {
 
 async function loadAiStatuses() {
   try {
-    const response = await fetch(aiStatusPath);
+    const response = await fetch(`${aiStatusPath}?t=${Date.now()}`, {
+      cache: "no-store",
+    });
     if (!response.ok) {
       throw new Error(`HTTP ${response.status}`);
     }
@@ -234,6 +306,14 @@ async function loadAiStatuses() {
   } catch (error) {
     return [];
   }
+}
+
+async function refreshAiStatuses() {
+  const aiStatuses = await loadAiStatuses();
+  state.aiStatuses = new Map(
+    aiStatuses.map((request) => [request.request_id, request]),
+  );
+  renderQueue();
 }
 
 function populateProvinceOptions() {
@@ -454,6 +534,10 @@ function renderSelectedItems() {
 }
 
 function effectiveRequestStatus(request) {
+  if (request?.execution_result?.status) {
+    return request.execution_result.status;
+  }
+
   const synced = state.aiStatuses.get(request.request_id);
   return synced?.status || request.status;
 }
@@ -461,6 +545,12 @@ function effectiveRequestStatus(request) {
 function effectiveRequestMessage(request) {
   const synced = state.aiStatuses.get(request.request_id);
   return synced?.message || "";
+}
+
+function visibleQueueRequests() {
+  return [...state.aiQueue]
+    .reverse()
+    .filter((request) => !hiddenCompletionStatuses.has(effectiveRequestStatus(request)));
 }
 
 function currentRequestPayload() {
@@ -504,7 +594,7 @@ function buildPayload() {
       name: item.name,
       quantity: item.quantity,
     })),
-    order_total_including_shipping: Number(orderTotalInput.value || 0),
+    order_total_including_shipping: Number(digitsOnly(orderTotalInput.value) || 0),
     note,
     admin_directives: {
       shipping: shippingInstructionsFromNote(note),
@@ -546,6 +636,7 @@ function queuePayload() {
 function renderPayloadPreview() {
   const payload = buildPayload();
   payloadPreview.textContent = JSON.stringify(payload, null, 2);
+  syncAdvancedPanels();
 }
 
 function resetEntryForm() {
@@ -571,16 +662,18 @@ function resetEntryForm() {
 }
 
 function renderQueue() {
-  if (state.aiQueue.length === 0) {
+  syncAdvancedPanels();
+  const visibleRequests = visibleQueueRequests();
+  if (visibleRequests.length === 0) {
     queueItemsContainer.className = "selected-items empty-state";
-    queueItemsContainer.textContent = "Chưa có yêu cầu nào trong queue.";
+    queueItemsContainer.textContent = "Chua co don hang nao dang cho xu ly.";
     return;
   }
 
   queueItemsContainer.className = "selected-items";
   queueItemsContainer.innerHTML = "";
 
-  for (const request of [...state.aiQueue].reverse()) {
+  for (const request of visibleRequests) {
     const effectiveStatus = effectiveRequestStatus(request);
     const effectiveMessage = effectiveRequestMessage(request);
     const card = document.createElement("article");
@@ -619,32 +712,41 @@ async function copyText(value) {
   textarea.remove();
 }
 
-async function sendQueueToInbox() {
-  const config = {
-    inbox_url: normalizeText(inboxUrlInput.value),
-    inbox_key: normalizeText(inboxKeyInput.value),
-  };
+async function sendRequestsToInbox(requests) {
+  const config = currentInboxConfig();
+  const useLocalInbox = isLocalhostRuntime() && (!config.inbox_url || !config.inbox_key);
 
-  if (!config.inbox_url || !config.inbox_key) {
-    queueMessage.textContent = "Can nhap inbox URL va inbox key.";
-    return;
+  if (!useLocalInbox && (!config.inbox_url || !config.inbox_key)) {
+    return {
+      ok: false,
+      reason: "missing_config",
+      message: "Can nhap inbox URL va inbox key.",
+    };
   }
 
   saveInboxConfig();
 
-  if (state.aiQueue.length === 0) {
-    queueMessage.textContent = "Queue dang rong, chua co gi de gui.";
-    return;
+  if (!Array.isArray(requests) || requests.length === 0) {
+    return {
+      ok: false,
+      reason: "empty_requests",
+      message: "Queue dang rong, chua co gi de gui.",
+    };
   }
 
   const body = {
-    inbox_key: config.inbox_key,
+    inbox_key: useLocalInbox ? "local-dev-inbox" : config.inbox_key,
     source: "dashboard-phone-order",
-    payload: queuePayload(),
+    payload: {
+      schema: aiQueueSchema,
+      exported_at: new Date().toISOString(),
+      request_count: requests.length,
+      requests,
+    },
   };
 
   try {
-    const response = await fetch(config.inbox_url, {
+    const response = await fetch(useLocalInbox ? localInboxEndpoint() : config.inbox_url, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -656,10 +758,24 @@ async function sendQueueToInbox() {
       throw new Error(`HTTP ${response.status}`);
     }
 
-    queueMessage.textContent = `Da gui ${state.aiQueue.length} yeu cau len inbox.`;
+    return {
+      ok: true,
+      message: useLocalInbox
+        ? `Da gui ${requests.length} yeu cau vao local inbox tren may nay.`
+        : `Da gui ${requests.length} yeu cau len inbox.`,
+    };
   } catch (error) {
-    queueMessage.textContent = `Gui inbox that bai: ${error.message}`;
+    return {
+      ok: false,
+      reason: "send_failed",
+      message: `Gui inbox that bai: ${error.message}`,
+    };
   }
+}
+
+async function sendQueueToInbox() {
+  const result = await sendRequestsToInbox(state.aiQueue);
+  queueMessage.textContent = result.message;
 }
 
 function downloadJson(filename, value) {
@@ -674,7 +790,7 @@ function downloadJson(filename, value) {
   URL.revokeObjectURL(url);
 }
 
-function addCurrentRequestToQueue() {
+async function addCurrentRequestToQueue() {
   const payload = buildPayload();
   const validationError = validatePayload(payload);
 
@@ -691,8 +807,27 @@ function addCurrentRequestToQueue() {
   payloadPreview.textContent = JSON.stringify(queuePayload(), null, 2);
   resetEntryForm();
   renderPayloadPreview();
-  formMessage.textContent = "Da gui yeu cau tao don. Co the nhap don tiep theo.";
-  queueMessage.textContent = `Queue hien co ${state.aiQueue.length} yeu cau.`;
+
+  const sendResult = await sendRequestsToInbox([request]);
+  if (sendResult.ok) {
+    formMessage.textContent =
+      isLocalhostRuntime()
+        ? "Da gui yeu cau tao don vao local inbox tren may nay. Co the nhap don tiep theo."
+        : "Da gui yeu cau tao don len inbox. Co the nhap don tiep theo.";
+    queueMessage.textContent = sendResult.message;
+    return;
+  }
+
+  if (sendResult.reason === "missing_config") {
+    formMessage.textContent =
+      "Da luu yeu cau tren may nay, nhung chua gui inbox vi thieu inbox URL hoac inbox key.";
+    queueMessage.textContent = sendResult.message;
+    return;
+  }
+
+  formMessage.textContent =
+    "Da luu yeu cau tren may nay, nhung gui inbox that bai. Kiem tra ket noi va thu lai.";
+  queueMessage.textContent = sendResult.message;
 }
 
 async function initialize() {
@@ -720,13 +855,35 @@ async function initialize() {
   renderSelectedItems();
   renderQueue();
   renderPayloadPreview();
+  syncAdvancedPanels();
 
   if ("serviceWorker" in navigator) {
-    try {
-      await navigator.serviceWorker.register("./sw.js");
-    } catch (error) {
-      console.error("Cannot register service worker", error);
+    if (isLocalhostRuntime()) {
+      try {
+        const registrations = await navigator.serviceWorker.getRegistrations();
+        await Promise.all(registrations.map((registration) => registration.unregister()));
+        if ("caches" in window) {
+          const keys = await caches.keys();
+          await Promise.all(keys.map((key) => caches.delete(key)));
+        }
+      } catch (error) {
+        console.error("Cannot clear local service workers", error);
+      }
+    } else {
+      try {
+        await navigator.serviceWorker.register("./sw.js");
+      } catch (error) {
+        console.error("Cannot register service worker", error);
+      }
     }
+  }
+
+  if (isLocalhostRuntime()) {
+    window.setInterval(() => {
+      refreshAiStatuses().catch((error) => {
+        console.error("Cannot refresh AI statuses", error);
+      });
+    }, 5000);
   }
 }
 
@@ -747,7 +904,15 @@ districtSelect.addEventListener("change", () => {
 wardSelect.addEventListener("change", renderPayloadPreview);
 addressDetailInput.addEventListener("input", renderPayloadPreview);
 productSearchInput.addEventListener("input", (event) => renderProductResults(event.target.value));
-orderTotalInput.addEventListener("input", renderPayloadPreview);
+orderTotalInput.addEventListener("input", (event) => {
+  const start = event.target.selectionStart || 0;
+  const beforeLength = event.target.value.length;
+  event.target.value = formatCurrencyInput(event.target.value);
+  const afterLength = event.target.value.length;
+  const nextPosition = Math.max(0, start + (afterLength - beforeLength));
+  event.target.setSelectionRange(nextPosition, nextPosition);
+  renderPayloadPreview();
+});
 orderNoteInput.addEventListener("input", renderPayloadPreview);
 
 queueRequestButton.addEventListener("click", addCurrentRequestToQueue);

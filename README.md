@@ -49,3 +49,18 @@ Let an internal admin receive a direct phone call, capture the order quickly on 
 - The preferred operational path is script-first: deterministic queue processing first, browser execution second, AI only as fallback.
 - Real Sapo creation can be driven through the live Chrome adapter path today, with API still available as a future integration path.
 - A live browser test has already confirmed that Sapo order creation plus GHN shipment creation works with this business flow.
+
+## Mobile app access
+
+The repository already includes a GitHub Pages workflow at `.github/workflows/deploy-pages.yml`.
+
+After pushing `master`, the expected public dashboard URL is:
+
+- `https://tqsmarttools.github.io/agen-tao-don-hang/`
+
+The Pages root now redirects to `./apps/dashboard/index.html`, so mobile users do not need to remember the longer dashboard path.
+
+For home-screen install:
+
+- Android Chrome: open the Pages URL, then use `Add to Home screen` / `Install app`
+- iPhone Safari: open the Pages URL, then use `Share` -> `Add to Home Screen`

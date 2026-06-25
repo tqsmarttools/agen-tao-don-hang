@@ -145,6 +145,17 @@ textarea {
   resize: vertical;
 }
 
+#orderTotal {
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+}
+
+#orderTotal::placeholder {
+  font-weight: 400;
+  color: rgba(111, 93, 85, 0.72);
+}
+
 .address-grid {
   display: grid;
   gap: 12px;
@@ -238,6 +249,18 @@ textarea {
   background: rgba(255, 255, 255, 0.46);
   color: var(--muted);
   padding: 16px;
+}
+
+.panel.status-only {
+  padding-top: 14px;
+}
+
+.panel.status-only::before {
+  opacity: 0.65;
+}
+
+.panel.status-only .selected-items {
+  margin-top: 0;
 }
 
 .quantity-row {

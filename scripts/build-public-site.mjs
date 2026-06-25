@@ -105,11 +105,29 @@ async function writeNoJekyll() {
   await writeFile(path.join(siteDir, ".nojekyll"), "", "utf8");
 }
 
+async function writeLandingPage() {
+  const html = `<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="refresh" content="0; url=./apps/dashboard/index.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TQ Orders</title>
+  </head>
+  <body>
+    <p>Redirecting to <a href="./apps/dashboard/index.html">the dashboard</a>...</p>
+  </body>
+</html>
+`;
+  await writeFile(path.join(siteDir, "index.html"), html, "utf8");
+}
+
 async function main() {
   await rm(siteDir, { recursive: true, force: true });
   await mkdir(siteDir, { recursive: true });
   await copyDashboardFiles();
   await writePublicData();
+  await writeLandingPage();
   await writeNoJekyll();
   console.log(`Built public site at ${siteDir}`);
 }
