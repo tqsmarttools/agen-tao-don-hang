@@ -6,6 +6,7 @@ const publicConfigPath = "../../data/phone-order-public-config.json";
 const aiQueueStorageKey = "tq-sapo-phone-order-ai-queue-v1";
 const aiInboxConfigStorageKey = "tq-sapo-phone-order-inbox-config-v1";
 const aiQueueSchema = "tq-sapo-phone-order-request-queue/v1";
+const localPendingEchoWindowMs = 10 * 60 * 1000;
 
 const fallbackCustomers = [];
 
@@ -146,6 +147,10 @@ function saveAiQueue() {
   localStorage.setItem(aiQueueStorageKey, JSON.stringify(state.aiQueue));
 }
 
+function persistVisibleQueue() {
+  saveAiQueue();
+}
+
 function mergeRequestsById(localRequests, sharedRequests) {
   const merged = new Map();
 
@@ -173,6 +178,43 @@ function mergeRequestsById(localRequests, sharedRequests) {
   return [...merged.values()].sort((left, right) =>
     String(left.requested_at || "").localeCompare(String(right.requested_at || "")),
   );
+}
+
+function shouldKeepLocalPendingRequest(request, sharedRequestIds) {
+  if (!request?.request_id || sharedRequestIds.has(request.request_id)) {
+    return false;
+  }
+
+  const status = normalizeText(request.status);
+  if (!["pending_ai", "ready", ""].includes(status)) {
+    return false;
+  }
+
+  if (normalizeText(request.execution_result?.status) === "created") {
+    return false;
+  }
+
+  const echoUntil = Date.parse(request.local_echo_until || "");
+  return Number.isFinite(echoUntil) && echoUntil > Date.now();
+}
+
+function reconcileLiveQueue(localRequests, sharedRequests) {
+  if (isLocalhostRuntime()) {
+    return mergeRequestsById(localRequests, sharedRequests);
+  }
+
+  const sharedRequestIds = new Set(
+    (Array.isArray(sharedRequests) ? sharedRequests : [])
+      .map((request) => request?.request_id)
+      .filter(Boolean),
+  );
+  const carriedLocalRequests = (Array.isArray(localRequests) ? localRequests : []).filter((request) =>
+    shouldKeepLocalPendingRequest(request, sharedRequestIds),
+  );
+  const liveQueue = mergeRequestsById(carriedLocalRequests, sharedRequests);
+  state.aiQueue = liveQueue;
+  persistVisibleQueue();
+  return liveQueue;
 }
 
 function loadInboxConfig() {
@@ -408,7 +450,7 @@ async function refreshAiStatuses() {
   );
   const sharedQueue = await loadSharedQueueRequests();
   state.sharedQueue = sharedQueue;
-  state.aiQueue = mergeRequestsById(loadAiQueue(), sharedQueue);
+  state.aiQueue = reconcileLiveQueue(loadAiQueue(), sharedQueue);
   renderQueue();
 }
 
@@ -656,6 +698,7 @@ function currentRequestPayload() {
     status: "pending_ai",
     requested_at: new Date().toISOString(),
     updated_at: new Date().toISOString(),
+    local_echo_until: new Date(Date.now() + localPendingEchoWindowMs).toISOString(),
     customer: payload.customer,
     address: payload.address,
     items: payload.items,
@@ -979,7 +1022,7 @@ async function initialize() {
   }
 
   state.sharedQueue = await loadSharedQueueRequests();
-  state.aiQueue = mergeRequestsById(localQueue, state.sharedQueue);
+  state.aiQueue = reconcileLiveQueue(localQueue, state.sharedQueue);
 
   populateProvinceOptions();
   renderProductResults("");
