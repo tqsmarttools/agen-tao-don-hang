@@ -90,7 +90,7 @@ const payloadPanel = document.querySelector("#payloadPanel");
 const opsPanelHeading = opsPanel?.querySelector(".panel-heading");
 const inboxConfigPanel = opsPanel?.querySelector(".inbox-config");
 const queueActionsPanel = opsPanel?.querySelector(".queue-actions");
-const hiddenCompletionStatuses = new Set();
+const hiddenCompletionStatuses = new Set(["created"]);
 
 function normalizeText(value) {
   return String(value || "").trim();
@@ -198,6 +198,10 @@ function shouldKeepLocalPendingRequest(request, sharedRequestIds) {
   return Number.isFinite(echoUntil) && echoUntil > Date.now();
 }
 
+function shouldRetainInVisibleQueue(request) {
+  return !hiddenCompletionStatuses.has(effectiveRequestStatus(request));
+}
+
 function reconcileLiveQueue(localRequests, sharedRequests) {
   if (isLocalhostRuntime()) {
     return mergeRequestsById(localRequests, sharedRequests);
@@ -211,7 +215,8 @@ function reconcileLiveQueue(localRequests, sharedRequests) {
   const carriedLocalRequests = (Array.isArray(localRequests) ? localRequests : []).filter((request) =>
     shouldKeepLocalPendingRequest(request, sharedRequestIds),
   );
-  const liveQueue = mergeRequestsById(carriedLocalRequests, sharedRequests);
+  const liveQueue = mergeRequestsById(carriedLocalRequests, sharedRequests)
+    .filter((request) => shouldRetainInVisibleQueue(request) || shouldKeepLocalPendingRequest(request, sharedRequestIds));
   state.aiQueue = liveQueue;
   persistVisibleQueue();
   return liveQueue;
@@ -688,7 +693,7 @@ function effectiveRequestMessage(request) {
 function visibleQueueRequests() {
   return [...state.aiQueue]
     .reverse()
-    .filter((request) => !hiddenCompletionStatuses.has(effectiveRequestStatus(request)));
+    .filter((request) => shouldRetainInVisibleQueue(request));
 }
 
 function currentRequestPayload() {
