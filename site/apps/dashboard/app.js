@@ -146,6 +146,10 @@ function saveAiQueue() {
   localStorage.setItem(aiQueueStorageKey, JSON.stringify(state.aiQueue));
 }
 
+function persistVisibleQueue() {
+  saveAiQueue();
+}
+
 function mergeRequestsById(localRequests, sharedRequests) {
   const merged = new Map();
 
@@ -173,6 +177,17 @@ function mergeRequestsById(localRequests, sharedRequests) {
   return [...merged.values()].sort((left, right) =>
     String(left.requested_at || "").localeCompare(String(right.requested_at || "")),
   );
+}
+
+function reconcileLiveQueue(localRequests, sharedRequests) {
+  if (isLocalhostRuntime()) {
+    return mergeRequestsById(localRequests, sharedRequests);
+  }
+
+  const liveQueue = mergeRequestsById([], sharedRequests);
+  state.aiQueue = liveQueue;
+  persistVisibleQueue();
+  return liveQueue;
 }
 
 function loadInboxConfig() {
@@ -408,7 +423,7 @@ async function refreshAiStatuses() {
   );
   const sharedQueue = await loadSharedQueueRequests();
   state.sharedQueue = sharedQueue;
-  state.aiQueue = mergeRequestsById(loadAiQueue(), sharedQueue);
+  state.aiQueue = reconcileLiveQueue(loadAiQueue(), sharedQueue);
   renderQueue();
 }
 
@@ -979,7 +994,7 @@ async function initialize() {
   }
 
   state.sharedQueue = await loadSharedQueueRequests();
-  state.aiQueue = mergeRequestsById(localQueue, state.sharedQueue);
+  state.aiQueue = reconcileLiveQueue(localQueue, state.sharedQueue);
 
   populateProvinceOptions();
   renderProductResults("");
