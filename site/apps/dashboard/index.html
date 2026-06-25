@@ -12,7 +12,7 @@
     <link rel="manifest" href="./manifest.webmanifest" />
     <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png" />
-    <link rel="stylesheet" href="./styles.css?v=20260624c" />
+    <link rel="stylesheet" href="./styles.css?v=20260625b" />
   </head>
   <body>
     <div class="page-shell">
@@ -130,11 +130,34 @@
         </section>
 
         <section id="opsPanel" class="panel" hidden>
-          <div class="panel-heading" hidden></div>
-          <div class="inbox-config" hidden></div>
+          <div class="panel-heading" hidden>
+            <h2>Ket noi inbox</h2>
+          </div>
+          <div class="inbox-config" hidden>
+            <label class="field">
+              <span>Inbox URL</span>
+              <input
+                id="inboxUrl"
+                type="url"
+                inputmode="url"
+                placeholder="https://script.google.com/macros/s/.../exec"
+              />
+            </label>
+
+            <label class="field">
+              <span>Inbox key</span>
+              <input
+                id="inboxKey"
+                type="text"
+                placeholder="Nhap inbox key"
+              />
+            </label>
+
+            <p class="helper-text">
+              Nhap 1 lan de dien thoai gui don vao inbox that va nhan trang thai tao don.
+            </p>
+          </div>
           <div class="queue-actions" hidden></div>
-          <input id="inboxUrl" type="hidden" />
-          <input id="inboxKey" type="hidden" />
           <button id="sendQueue" class="ghost-button" type="button" hidden>Gui inbox</button>
           <button id="copyQueue" class="ghost-button" type="button" hidden>Copy queue</button>
           <button id="downloadQueue" class="ghost-button" type="button" hidden>Tai queue JSON</button>
@@ -149,6 +172,6 @@
       </main>
     </div>
 
-    <script type="module" src="./app.js?v=20260624c"></script>
+    <script type="module" src="./app.js?v=20260625b"></script>
   </body>
 </html>
