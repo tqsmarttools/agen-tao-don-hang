@@ -56,6 +56,7 @@ const state = {
   addressCatalog: fallbackAddressCatalog,
   selectedItems: [],
   aiQueue: [],
+  sharedQueue: [],
   aiStatuses: new Map(),
   showInboxSetup: false,
 };
@@ -145,6 +146,35 @@ function saveAiQueue() {
   localStorage.setItem(aiQueueStorageKey, JSON.stringify(state.aiQueue));
 }
 
+function mergeRequestsById(localRequests, sharedRequests) {
+  const merged = new Map();
+
+  for (const request of [...sharedRequests, ...localRequests]) {
+    if (!request?.request_id) {
+      continue;
+    }
+
+    const existing = merged.get(request.request_id) || {};
+    merged.set(request.request_id, {
+      ...existing,
+      ...request,
+      customer: {
+        ...(existing.customer || {}),
+        ...(request.customer || {}),
+      },
+      address: {
+        ...(existing.address || {}),
+        ...(request.address || {}),
+      },
+      execution_result: request.execution_result || existing.execution_result,
+    });
+  }
+
+  return [...merged.values()].sort((left, right) =>
+    String(left.requested_at || "").localeCompare(String(right.requested_at || "")),
+  );
+}
+
 function loadInboxConfig() {
   try {
     const raw = localStorage.getItem(aiInboxConfigStorageKey);
@@ -186,9 +216,8 @@ function remoteInboxReadUrl(config = currentInboxConfig()) {
 
 function syncAdvancedPanels() {
   const config = currentInboxConfig();
-  const hasInboxConfig = Boolean(config.inbox_url && config.inbox_key);
   const hasQueuedRequests = visibleQueueRequests().length > 0;
-  const showAdvanced = isDebugMode() || state.showInboxSetup;
+  const showAdvanced = isDebugMode();
   const showStatusPanel = hasQueuedRequests || showAdvanced;
   const setVisibility = (element, visible) => {
     if (!element) {
@@ -328,6 +357,32 @@ async function loadAiStatuses() {
   }
 }
 
+async function loadSharedQueueRequests() {
+  const config = currentInboxConfig();
+  const remoteReadUrl =
+    !isLocalhostRuntime() && config.inbox_url && config.inbox_key
+      ? remoteInboxReadUrl(config)
+      : "";
+
+  if (!remoteReadUrl) {
+    return [];
+  }
+
+  try {
+    const response = await fetch(remoteReadUrl, {
+      cache: "no-store",
+    });
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}`);
+    }
+
+    const payload = await response.json();
+    return Array.isArray(payload.requests) ? payload.requests : [];
+  } catch (error) {
+    return [];
+  }
+}
+
 async function loadPublicInboxConfig() {
   try {
     const response = await fetch(`${publicConfigPath}?t=${Date.now()}`, {
@@ -351,6 +406,9 @@ async function refreshAiStatuses() {
   state.aiStatuses = new Map(
     aiStatuses.map((request) => [request.request_id, request]),
   );
+  const sharedQueue = await loadSharedQueueRequests();
+  state.sharedQueue = sharedQueue;
+  state.aiQueue = mergeRequestsById(loadAiQueue(), sharedQueue);
   renderQueue();
 }
 
@@ -861,7 +919,6 @@ async function addCurrentRequestToQueue() {
   }
 
   if (sendResult.reason === "missing_config") {
-    state.showInboxSetup = true;
     syncAdvancedPanels();
     formMessage.textContent =
       "Da luu yeu cau tren may nay, nhung chua gui inbox vi thieu inbox URL hoac inbox key.";
@@ -886,7 +943,7 @@ async function initialize() {
   state.productCatalog = productCatalog;
   state.addressCatalog = addressCatalog;
   state.customers = customerIndex;
-  state.aiQueue = loadAiQueue();
+  const localQueue = loadAiQueue();
   state.aiStatuses = new Map(
     aiStatuses.map((request) => [request.request_id, request]),
   );
@@ -901,6 +958,9 @@ async function initialize() {
   if (inboxConfig.inbox_url && inboxConfig.inbox_key) {
     saveInboxConfig();
   }
+
+  state.sharedQueue = await loadSharedQueueRequests();
+  state.aiQueue = mergeRequestsById(localQueue, state.sharedQueue);
 
   populateProvinceOptions();
   renderProductResults("");
