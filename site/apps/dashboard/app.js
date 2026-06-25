@@ -1029,6 +1029,14 @@ async function initialize() {
   }
 }
 
+async function refreshOnAppResume() {
+  try {
+    await refreshAiStatuses();
+  } catch (error) {
+    console.error("Cannot refresh on app resume", error);
+  }
+}
+
 customerPhoneInput.addEventListener("input", (event) => {
   renderCustomerSuggestions(event.target.value);
   renderPayloadPreview();
@@ -1083,3 +1091,17 @@ inboxUrlInput.addEventListener("change", saveInboxConfig);
 inboxKeyInput.addEventListener("change", saveInboxConfig);
 
 initialize();
+
+window.addEventListener("focus", () => {
+  refreshOnAppResume();
+});
+
+window.addEventListener("pageshow", () => {
+  refreshOnAppResume();
+});
+
+document.addEventListener("visibilitychange", () => {
+  if (document.visibilityState === "visible") {
+    refreshOnAppResume();
+  }
+});
