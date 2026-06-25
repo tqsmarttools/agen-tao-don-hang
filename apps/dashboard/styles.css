@@ -282,6 +282,13 @@ textarea {
   gap: 12px;
 }
 
+.helper-text {
+  margin: 2px 2px 0;
+  color: #7a6255;
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
 .queue-card-top {
   display: flex;
   justify-content: space-between;

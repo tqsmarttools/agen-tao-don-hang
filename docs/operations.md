@@ -2,7 +2,17 @@
 
 ## Goal
 
-Run the phone-order flow in a script-first way so the common case does not require live AI reasoning.
+Run the phone-order flow in a script-first way so the common case does not require live AI reasoning or manual desktop work.
+
+## Runtime overview
+
+The production-friendly path is now:
+
+1. Admin opens the public mobile dashboard.
+2. The dashboard sends a structured request into the shared inbox bridge.
+3. The local machine fetches the inbox, imports it into the working queue, and validates it.
+4. The local machine creates the real Sapo + GHN order through the Omni session-API lane.
+5. The created result is written back into local state, and the shared inbox keeps only still-pending requests.
 
 ## Current API-first finding
 
@@ -66,7 +76,26 @@ node scripts/import-phone-order-requests.mjs
 node scripts/process-phone-order-requests.mjs
 ```
 
-4. Claim the next ready request for execution and emit the browser bundle:
+Optional quick intake smoke check for the newest request:
+
+```powershell
+node scripts/check-latest-phone-order-intake.mjs
+```
+
+4. Preferred production execution: run the Omni session queue for ready requests.
+
+```powershell
+node scripts/run-phone-order-omni-session-queue.mjs --limit 5
+```
+
+Notes:
+
+- requests are processed sequentially, oldest first
+- requests already marked `created` are skipped automatically
+- on success the runner writes back `created` status and the `SON...` order URL
+- on failure it marks the request `failed`
+
+5. Browser fallback path: claim the next ready request and emit the browser bundle:
 
 ```powershell
 node scripts/run-phone-order-worker.mjs
@@ -78,7 +107,7 @@ Optional dry-run claim preview:
 node scripts/run-phone-order-worker.mjs --dry-run
 ```
 
-5. Convert the worker bundle into a browser-facing execution plan:
+6. Convert the worker bundle into a browser-facing execution plan:
 
 ```powershell
 node scripts/prepare-phone-order-execution.mjs
@@ -96,7 +125,7 @@ Force a clean rebuild from queue + processing-plan state when a stale worker bun
 node scripts/prepare-phone-order-execution.mjs --request-id <id> --from-state
 ```
 
-6. Execute the generated plan in Sapo using the validated browser flow.
+7. Execute the generated plan in Sapo using the validated browser flow.
 
 Preferred session-API lane for a specific ready request:
 
@@ -109,18 +138,6 @@ Preview only:
 ```powershell
 node scripts/create-sapo-omni-order-from-request.mjs --request-id <id>
 ```
-
-Preferred sequential queue runner for the session-API lane:
-
-```powershell
-node scripts/run-phone-order-omni-session-queue.mjs --limit 5
-```
-
-Notes:
-
-- this runner is sequential and oldest-first
-- on success it writes back `created` status and the `SON...` order URL
-- on failure it marks the request `failed` and continues to the next request in later runs
 
 Current lightweight executor scaffold:
 
@@ -238,7 +255,7 @@ Clear a failed or completed step before retrying it:
 node scripts/execute-phone-order-browser.mjs --clear-step 3 --note "Retrying customer selection"
 ```
 
-7. Record the final outcome:
+8. Record the final outcome:
 
 ```powershell
 node scripts/record-phone-order-result.mjs --request-id <id> --status created --sapo-order-code SON12345 --sapo-order-url https://example --shipment-code ABC123 --carrier GHN --partner-status "Cho lay hang"
@@ -258,6 +275,7 @@ node scripts/record-phone-order-result.mjs --request-id <id> --status failed --m
 - only use pickup shift when the admin note explicitly requests it
 - COD defaults to the admin-entered total order value
 - declared package value defaults to the admin-entered total order value
+- do not auto-submit clearly fake or throwaway test requests unless the operator intentionally wants that test to become a real Sapo order
 
 ## Important local output files
 

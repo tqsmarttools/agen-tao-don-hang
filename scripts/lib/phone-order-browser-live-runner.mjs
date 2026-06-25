@@ -6,6 +6,7 @@ export async function runPhoneOrderBrowserLive({
   baseUrl,
   requestId = "",
   maxSteps = 0,
+  reset = false,
 }) {
   if (!tab) {
     throw new Error("runPhoneOrderBrowserLive requires a claimed browser tab.");
@@ -23,7 +24,7 @@ export async function runPhoneOrderBrowserLive({
       failStep: 0,
       maxSteps,
       note: "",
-      reset: false,
+      reset,
     });
   } finally {
     delete globalThis.phoneOrderBrowserAdapter;

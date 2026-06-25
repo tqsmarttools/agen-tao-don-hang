@@ -33,6 +33,7 @@ export async function runClaimedSapoExecution({
   baseUrl,
   requestId = "",
   maxSteps = 0,
+  reset = false,
 }) {
   if (!browser) {
     throw new Error("runClaimedSapoExecution requires a browser instance.");
@@ -49,5 +50,6 @@ export async function runClaimedSapoExecution({
     baseUrl,
     requestId,
     maxSteps,
+    reset,
   });
 }

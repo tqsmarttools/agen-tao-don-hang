@@ -48,6 +48,25 @@ function doGet(e) {
     const params = e && e.parameter ? e.parameter : {};
     assertInboxKey_(params.key || params.inbox_key);
 
+    if (params.delete_request_id) {
+      const sheet = getSheet_();
+      ensureHeader_(sheet);
+      const lock = LockService.getScriptLock();
+      lock.waitLock(30000);
+
+      try {
+        const deleted = deleteRequests_(sheet, String(params.delete_request_id || '').split(','));
+        return json_({
+          ok: true,
+          schema: QUEUE_SCHEMA,
+          deleted,
+          updated_at: new Date().toISOString(),
+        });
+      } finally {
+        lock.releaseLock();
+      }
+    }
+
     if (params.write_request_json) {
       const request = JSON.parse(params.write_request_json);
       const sheet = getSheet_();
@@ -221,6 +240,37 @@ function readRequests_(sheet) {
       Array.isArray(request.items)
     )
     .filter(Boolean);
+}
+
+function deleteRequests_(sheet, requestIds) {
+  const wanted = requestIds
+    .map((value) => String(value || '').trim())
+    .filter(Boolean);
+
+  if (wanted.length === 0) {
+    return 0;
+  }
+
+  const lastRow = sheet.getLastRow();
+  if (lastRow < 2) {
+    return 0;
+  }
+
+  const values = sheet.getRange(2, 1, lastRow - 1, 1).getValues();
+  const rowsToDelete = [];
+
+  values.forEach((row, index) => {
+    const requestId = String(row[0] || '').trim();
+    if (wanted.indexOf(requestId) >= 0) {
+      rowsToDelete.push(index + 2);
+    }
+  });
+
+  rowsToDelete
+    .sort((left, right) => right - left)
+    .forEach((rowNumber) => sheet.deleteRow(rowNumber));
+
+  return rowsToDelete.length;
 }
 
 function json_(value) {

@@ -4,14 +4,15 @@ Mobile-first Sapo phone-order workflow and AI-assisted order creation agent for 
 
 ## Current state
 
-This repository has moved past pure MVP planning.
+This repository is now beyond MVP planning and already supports a real operating flow.
 
 It now includes:
 
-- a working mobile-first dashboard shell
-- local queue and dry-run processing scripts
-- exported local data flow for products, addresses, and customer lookup
-- a confirmed browser-tested Sapo + GHN order-creation runbook
+- a working mobile-first dashboard that can run from GitHub Pages on iPhone and Android
+- a shared inbox bridge so phone submissions sync across devices
+- exported product, address, and customer-search data for the mobile UI
+- a validated Sapo Omni session-API lane that creates real Sapo + GHN orders
+- a browser automation fallback lane for live Sapo troubleshooting and recovery
 
 ## Main goal
 
@@ -46,19 +47,24 @@ Let an internal admin receive a direct phone call, capture the order quickly on 
 ## Important implementation notes
 
 - The dashboard sends structured queue payloads instead of writing to Sapo directly.
-- The preferred operational path is script-first: deterministic queue processing first, browser execution second, AI only as fallback.
-- Real Sapo creation can be driven through the live Chrome adapter path today, with API still available as a future integration path.
-- A live browser test has already confirmed that Sapo order creation plus GHN shipment creation works with this business flow.
+- The preferred operational path is script-first: shared inbox -> local queue -> Sapo Omni session API.
+- Browser automation remains available as a fallback lane when the session API lane needs troubleshooting or UI validation.
+- The public mobile app never contains Sapo write credentials. It only talks to the inbox bridge.
+- Real Sapo order creation plus GHN shipment creation has already been confirmed with this business flow.
 
 ## Mobile app access
 
 The repository already includes a GitHub Pages workflow at `.github/workflows/deploy-pages.yml`.
 
-After pushing `master`, the expected public dashboard URL is:
+The expected public dashboard URL is:
 
 - `https://tqsmarttools.github.io/agen-tao-don-hang/`
 
-The Pages root now redirects to `./apps/dashboard/index.html`, so mobile users do not need to remember the longer dashboard path.
+Notes:
+
+- GitHub Pages serves the committed `site/` artifact from branch `main`.
+- Source changes are developed in the main workspace, then synced to the Pages worktree before publishing.
+- The Pages root redirects to `./apps/dashboard/index.html`, so mobile users do not need to remember the longer dashboard path.
 
 For home-screen install:
 

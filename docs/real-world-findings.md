@@ -6,6 +6,8 @@ As of 2026-06-24, the team has already validated one full browser-assisted Sapo 
 
 This matters because the repository is no longer only an MVP idea. The dashboard, local dry-run pipeline, and Chrome-assisted Sapo flow now have at least one confirmed end-to-end path.
 
+The public mobile dashboard plus shared inbox path has also been validated, so pending requests can now be seen from both iPhone and Android after the app refreshes.
+
 ## Confirmed successful flow
 
 The following flow was completed successfully in Sapo:
@@ -75,6 +77,12 @@ If the admin writes an instruction such as `ca lay hang`, `ca lay`, or another e
 - The Codex Chrome extension must be attached to the Chrome profile that actually contains the working Sapo session.
 - In this workspace, the validated profile has been `Profile 5`.
 - If Chrome restarts into another profile, browser attachment can fail even when Chrome itself is open.
+
+## Shared inbox notes
+
+- The public dashboard should never receive Sapo write credentials.
+- Cross-device sync works by writing requests into the shared inbox bridge, then reading the same pending queue back out.
+- If a device appears stale, foregrounding the app again should trigger a refresh on the current public build.
 
 ## Example shorthand interpretation
 

@@ -8,30 +8,30 @@ This repository contains both planning artifacts and working implementation arti
 
 - Mobile-first dashboard at `apps/dashboard/`
 - PWA shell and icons
-- Local queue storage in the browser
+- Shared queue storage and cross-device pending-status sync through the inbox bridge
 - Product catalog search using exported Sapo product data
 - Province, district, ward address selection using exported GHN master data
 - Customer suggestion by phone number using local customer index data
-- Local processing scripts that validate queue requests and build dry-run Sapo order payloads
+- Local processing scripts that validate queue requests and build execution-ready payloads
 - Script-first worker entry points for claiming ready requests and recording execution results
+- Real shared inbox bridge in `integrations/google-apps-script/`
+- Real Sapo Omni session-API order creation in `scripts/create-sapo-omni-order-from-request.mjs`
 - GitHub Pages deployment workflow for the committed `site/` output
 
 ## What is already validated in practice
 
-- Real Sapo order creation through Chrome
+- Real mobile submission from the public dashboard into the shared inbox
+- Real Sapo order creation through the Omni session API lane
 - Real GHN shipping-record creation through Sapo
 - Default business rule: do not choose pickup shift unless explicitly requested in the admin note
 
 ## Current live automation checkpoint
 
-- The resumable browser executor is live-wired through the Chrome adapter layer.
-- Shared browser-step generation now feeds both worker output and prepared execution plans.
-- The live adapter now carries phone and normalized address data into the new-customer creation step.
-- The current sample request is `sample-0983087947-001`.
-- Live execution has already completed steps 1-6 of 11 in the real Sapo create-order page.
-- The current next actionable step is step 7: `set_customer_total`.
-- The target customer-facing total for the current sample is `350000`.
-- No unintended submit happened during recent retries; the flow is still paused safely before final pricing and submit.
+- The public dashboard is live at `https://tqsmarttools.github.io/agen-tao-don-hang/`.
+- The mobile app now reads public product/address data and writes real requests into the shared inbox.
+- Public devices refresh pending items again when the app returns to the foreground.
+- The Sapo Omni session-API lane is now the preferred execution path for ready requests.
+- The browser executor remains in the repo as a fallback and diagnostic lane, not the default production lane.
 
 ## Important local-only files
 

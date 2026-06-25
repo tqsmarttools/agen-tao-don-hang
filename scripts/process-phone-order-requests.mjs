@@ -184,7 +184,10 @@ function validateRequest(request, productsByVariantId, customers, addressIndexes
     });
   }
 
-  const status = blockers.length === 0 ? "ready" : "need_more_info";
+  const isAlreadyCreated =
+    normalizeText(request.status) === "created" ||
+    normalizeText(request.execution_result?.status) === "created";
+  const status = isAlreadyCreated ? "created" : blockers.length === 0 ? "ready" : "need_more_info";
 
   return {
     request_id: request.request_id,
@@ -251,9 +254,11 @@ async function main() {
       customer_name: item.request_snapshot.customer?.name || "",
       customer_phone: item.request_snapshot.customer?.phone || "",
       message:
-        item.status === "ready"
-          ? "Ready for Sapo order creation."
-          : `Need more info: ${item.blockers.join(", ")}`,
+        item.status === "created"
+          ? `Created in Sapo Omni: ${item.request_snapshot.execution_result?.sapo_order_code || ""}`.trim()
+          : item.status === "ready"
+            ? "Ready for Sapo order creation."
+            : `Need more info: ${item.blockers.join(", ")}`,
     })),
   };
 
@@ -262,7 +267,11 @@ async function main() {
   await writeFile(statusPath, `${JSON.stringify(statusPayload, null, 2)}\n`, "utf8");
 
   const readyCount = items.filter((item) => item.status === "ready").length;
-  console.log(`Processed ${items.length} requests. Ready: ${readyCount}. Need more info: ${items.length - readyCount}.`);
+  const createdCount = items.filter((item) => item.status === "created").length;
+  const needMoreInfoCount = items.filter((item) => item.status === "need_more_info").length;
+  console.log(
+    `Processed ${items.length} requests. Created: ${createdCount}. Ready: ${readyCount}. Need more info: ${needMoreInfoCount}.`,
+  );
 }
 
 main().catch((error) => {

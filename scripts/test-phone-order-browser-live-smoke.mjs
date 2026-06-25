@@ -33,9 +33,19 @@ function createMockAdapter() {
   };
 }
 
+async function loadExecutionPlanRequestId() {
+  if (!existsSync(storePaths.executionPlanPath)) {
+    return "sample-0983087947-001";
+  }
+
+  const payload = JSON.parse((await readFile(storePaths.executionPlanPath, "utf8")).replace(/^\uFEFF/, ""));
+  return payload?.request_id || "sample-0983087947-001";
+}
+
 async function main() {
   const { adapter, calls } = createMockAdapter();
   globalThis.phoneOrderBrowserAdapter = adapter;
+  const requestId = await loadExecutionPlanRequestId();
   const previousWorkerOutput = existsSync(storePaths.workerOutputPath)
     ? await readFile(storePaths.workerOutputPath, "utf8")
     : null;
@@ -45,7 +55,7 @@ async function main() {
 
   try {
     const result = await runBrowserExecutor({
-      requestId: "sample-0983087947-001",
+      requestId,
       dryRun: false,
       live: true,
       completeStep: 0,

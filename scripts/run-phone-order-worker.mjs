@@ -43,6 +43,10 @@ function isReadyForExecution(planItem, statusEntry, queueRequest) {
     return false;
   }
 
+  if (queueRequest?.execution_result?.status === "created") {
+    return false;
+  }
+
   const status = effectiveStatus(planItem, statusEntry, queueRequest);
   return status === "ready" || status === "pending_ai" || status === "";
 }
