@@ -86,7 +86,7 @@ const payloadPanel = document.querySelector("#payloadPanel");
 const opsPanelHeading = opsPanel?.querySelector(".panel-heading");
 const inboxConfigPanel = opsPanel?.querySelector(".inbox-config");
 const queueActionsPanel = opsPanel?.querySelector(".queue-actions");
-const hiddenCompletionStatuses = new Set(["created"]);
+const hiddenCompletionStatuses = new Set();
 
 function normalizeText(value) {
   return String(value || "").trim();
@@ -170,11 +170,20 @@ function currentInboxConfig() {
   };
 }
 
+function remoteInboxReadUrl(config = currentInboxConfig()) {
+  if (!config.inbox_url || !config.inbox_key) {
+    return "";
+  }
+
+  const separator = config.inbox_url.includes("?") ? "&" : "?";
+  return `${config.inbox_url}${separator}inbox_key=${encodeURIComponent(config.inbox_key)}`;
+}
+
 function syncAdvancedPanels() {
   const config = currentInboxConfig();
   const hasInboxConfig = Boolean(config.inbox_url && config.inbox_key);
   const hasQueuedRequests = visibleQueueRequests().length > 0;
-  const showStatusPanel = hasQueuedRequests;
+  const showStatusPanel = hasQueuedRequests || (!isLocalhostRuntime() && !hasInboxConfig);
   const showAdvanced = isDebugMode() || (!hasInboxConfig && !isLocalhostRuntime());
   const setVisibility = (element, visible) => {
     if (!element) {
@@ -294,8 +303,14 @@ async function loadCustomerIndex() {
 }
 
 async function loadAiStatuses() {
+  const config = currentInboxConfig();
+  const remoteReadUrl =
+    !isLocalhostRuntime() && config.inbox_url && config.inbox_key
+      ? remoteInboxReadUrl(config)
+      : "";
+
   try {
-    const response = await fetch(`${aiStatusPath}?t=${Date.now()}`, {
+    const response = await fetch(remoteReadUrl || `${aiStatusPath}?t=${Date.now()}`, {
       cache: "no-store",
     });
     if (!response.ok) {
@@ -678,6 +693,9 @@ function renderQueue() {
     const effectiveMessage = effectiveRequestMessage(request);
     const card = document.createElement("article");
     card.className = "selected-card";
+    if (effectiveStatus === "created") {
+      card.classList.add("queue-card-created");
+    }
     card.innerHTML = `
       <div class="queue-card-top">
         <strong>${request.customer.name || "Chua co ten khach"}</strong>
@@ -810,6 +828,7 @@ async function addCurrentRequestToQueue() {
 
   const sendResult = await sendRequestsToInbox([request]);
   if (sendResult.ok) {
+    await refreshAiStatuses();
     formMessage.textContent =
       isLocalhostRuntime()
         ? "Da gui yeu cau tao don vao local inbox tren may nay. Co the nhap don tiep theo."
@@ -882,6 +901,17 @@ async function initialize() {
     window.setInterval(() => {
       refreshAiStatuses().catch((error) => {
         console.error("Cannot refresh AI statuses", error);
+      });
+    }, 5000);
+  } else {
+    window.setInterval(() => {
+      const config = currentInboxConfig();
+      if (!config.inbox_url || !config.inbox_key) {
+        return;
+      }
+
+      refreshAiStatuses().catch((error) => {
+        console.error("Cannot refresh live inbox statuses", error);
       });
     }, 5000);
   }
