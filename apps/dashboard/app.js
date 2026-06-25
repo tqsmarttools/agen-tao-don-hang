@@ -814,6 +814,7 @@ async function copyText(value) {
 async function sendRequestsToInbox(requests) {
   const config = currentInboxConfig();
   const useLocalInbox = isLocalhostRuntime() && (!config.inbox_url || !config.inbox_key);
+  const useRemoteGetWrite = !isLocalhostRuntime();
 
   if (!useLocalInbox && (!config.inbox_url || !config.inbox_key)) {
     return {
@@ -845,13 +846,31 @@ async function sendRequestsToInbox(requests) {
   };
 
   try {
-    const response = await fetch(useLocalInbox ? localInboxEndpoint() : config.inbox_url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(body),
-    });
+    let response;
+
+    if (useRemoteGetWrite) {
+      const [request] = requests;
+      const separator = config.inbox_url.includes("?") ? "&" : "?";
+      const requestJson = encodeURIComponent(JSON.stringify(request));
+      const source = encodeURIComponent("dashboard-phone-order");
+      const inboxKey = encodeURIComponent(config.inbox_key);
+      const writeUrl =
+        `${config.inbox_url}${separator}inbox_key=${inboxKey}` +
+        `&source=${source}` +
+        `&write_request_json=${requestJson}`;
+
+      response = await fetch(writeUrl, {
+        cache: "no-store",
+      });
+    } else {
+      response = await fetch(useLocalInbox ? localInboxEndpoint() : config.inbox_url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(body),
+      });
+    }
 
     if (!response.ok) {
       throw new Error(`HTTP ${response.status}`);
