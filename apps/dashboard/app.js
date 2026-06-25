@@ -56,6 +56,7 @@ const state = {
   selectedItems: [],
   aiQueue: [],
   aiStatuses: new Map(),
+  showInboxSetup: false,
 };
 
 const customerPhoneInput = document.querySelector("#customerPhone");
@@ -160,6 +161,9 @@ function saveInboxConfig() {
       inbox_key: normalizeText(inboxKeyInput.value),
     }),
   );
+  if (normalizeText(inboxUrlInput.value) && normalizeText(inboxKeyInput.value)) {
+    state.showInboxSetup = false;
+  }
   syncAdvancedPanels();
 }
 
@@ -183,8 +187,8 @@ function syncAdvancedPanels() {
   const config = currentInboxConfig();
   const hasInboxConfig = Boolean(config.inbox_url && config.inbox_key);
   const hasQueuedRequests = visibleQueueRequests().length > 0;
-  const showStatusPanel = hasQueuedRequests || (!isLocalhostRuntime() && !hasInboxConfig);
-  const showAdvanced = isDebugMode() || (!hasInboxConfig && !isLocalhostRuntime());
+  const showAdvanced = isDebugMode() || state.showInboxSetup;
+  const showStatusPanel = hasQueuedRequests || showAdvanced;
   const setVisibility = (element, visible) => {
     if (!element) {
       return;
@@ -838,6 +842,8 @@ async function addCurrentRequestToQueue() {
   }
 
   if (sendResult.reason === "missing_config") {
+    state.showInboxSetup = true;
+    syncAdvancedPanels();
     formMessage.textContent =
       "Da luu yeu cau tren may nay, nhung chua gui inbox vi thieu inbox URL hoac inbox key.";
     queueMessage.textContent = sendResult.message;
