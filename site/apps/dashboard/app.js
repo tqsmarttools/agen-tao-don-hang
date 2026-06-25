@@ -6,6 +6,7 @@ const publicConfigPath = "../../data/phone-order-public-config.json";
 const aiQueueStorageKey = "tq-sapo-phone-order-ai-queue-v1";
 const aiInboxConfigStorageKey = "tq-sapo-phone-order-inbox-config-v1";
 const aiQueueSchema = "tq-sapo-phone-order-request-queue/v1";
+const localPendingEchoWindowMs = 10 * 60 * 1000;
 
 const fallbackCustomers = [];
 
@@ -179,12 +180,38 @@ function mergeRequestsById(localRequests, sharedRequests) {
   );
 }
 
+function shouldKeepLocalPendingRequest(request, sharedRequestIds) {
+  if (!request?.request_id || sharedRequestIds.has(request.request_id)) {
+    return false;
+  }
+
+  const status = normalizeText(request.status);
+  if (!["pending_ai", "ready", ""].includes(status)) {
+    return false;
+  }
+
+  if (normalizeText(request.execution_result?.status) === "created") {
+    return false;
+  }
+
+  const echoUntil = Date.parse(request.local_echo_until || "");
+  return Number.isFinite(echoUntil) && echoUntil > Date.now();
+}
+
 function reconcileLiveQueue(localRequests, sharedRequests) {
   if (isLocalhostRuntime()) {
     return mergeRequestsById(localRequests, sharedRequests);
   }
 
-  const liveQueue = mergeRequestsById([], sharedRequests);
+  const sharedRequestIds = new Set(
+    (Array.isArray(sharedRequests) ? sharedRequests : [])
+      .map((request) => request?.request_id)
+      .filter(Boolean),
+  );
+  const carriedLocalRequests = (Array.isArray(localRequests) ? localRequests : []).filter((request) =>
+    shouldKeepLocalPendingRequest(request, sharedRequestIds),
+  );
+  const liveQueue = mergeRequestsById(carriedLocalRequests, sharedRequests);
   state.aiQueue = liveQueue;
   persistVisibleQueue();
   return liveQueue;
@@ -671,6 +698,7 @@ function currentRequestPayload() {
     status: "pending_ai",
     requested_at: new Date().toISOString(),
     updated_at: new Date().toISOString(),
+    local_echo_until: new Date(Date.now() + localPendingEchoWindowMs).toISOString(),
     customer: payload.customer,
     address: payload.address,
     items: payload.items,
