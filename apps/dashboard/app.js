@@ -2,6 +2,7 @@ const productCatalogPath = "../../data/product-catalog.json";
 const addressCatalogPath = "../../data/address-catalog.json";
 const customerIndexPath = "../../data/customer-index.json";
 const aiStatusPath = "../../data/ai-request-status.json";
+const publicConfigPath = "../../data/phone-order-public-config.json";
 const aiQueueStorageKey = "tq-sapo-phone-order-ai-queue-v1";
 const aiInboxConfigStorageKey = "tq-sapo-phone-order-inbox-config-v1";
 const aiQueueSchema = "tq-sapo-phone-order-request-queue/v1";
@@ -185,9 +186,8 @@ function remoteInboxReadUrl(config = currentInboxConfig()) {
 
 function syncAdvancedPanels() {
   const config = currentInboxConfig();
-  const hasInboxConfig = Boolean(config.inbox_url && config.inbox_key);
   const hasQueuedRequests = visibleQueueRequests().length > 0;
-  const showAdvanced = isDebugMode() || state.showInboxSetup;
+  const showAdvanced = isDebugMode();
   const showStatusPanel = hasQueuedRequests || showAdvanced;
   const setVisibility = (element, visible) => {
     if (!element) {
@@ -324,6 +324,24 @@ async function loadAiStatuses() {
     return Array.isArray(payload.requests) ? payload.requests : [];
   } catch (error) {
     return [];
+  }
+}
+
+async function loadPublicInboxConfig() {
+  try {
+    const response = await fetch(`${publicConfigPath}?t=${Date.now()}`, {
+      cache: "no-store",
+    });
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}`);
+    }
+    const payload = await response.json();
+    return {
+      inbox_url: normalizeText(payload.inbox_url),
+      inbox_key: normalizeText(payload.inbox_key),
+    };
+  } catch (error) {
+    return { inbox_url: "", inbox_key: "" };
   }
 }
 
@@ -842,7 +860,6 @@ async function addCurrentRequestToQueue() {
   }
 
   if (sendResult.reason === "missing_config") {
-    state.showInboxSetup = true;
     syncAdvancedPanels();
     formMessage.textContent =
       "Da luu yeu cau tren may nay, nhung chua gui inbox vi thieu inbox URL hoac inbox key.";
@@ -856,11 +873,12 @@ async function addCurrentRequestToQueue() {
 }
 
 async function initialize() {
-  const [productCatalog, addressCatalog, customerIndex, aiStatuses] = await Promise.all([
+  const [productCatalog, addressCatalog, customerIndex, aiStatuses, publicInboxConfig] = await Promise.all([
     loadProductCatalog(),
     loadAddressCatalog(),
     loadCustomerIndex(),
     loadAiStatuses(),
+    loadPublicInboxConfig(),
   ]);
 
   state.productCatalog = productCatalog;
@@ -871,9 +889,16 @@ async function initialize() {
     aiStatuses.map((request) => [request.request_id, request]),
   );
 
-  const inboxConfig = loadInboxConfig();
+  const savedInboxConfig = loadInboxConfig();
+  const inboxConfig =
+    savedInboxConfig.inbox_url && savedInboxConfig.inbox_key
+      ? savedInboxConfig
+      : publicInboxConfig;
   inboxUrlInput.value = inboxConfig.inbox_url || "";
   inboxKeyInput.value = inboxConfig.inbox_key || "";
+  if (inboxConfig.inbox_url && inboxConfig.inbox_key) {
+    saveInboxConfig();
+  }
 
   populateProvinceOptions();
   renderProductResults("");
