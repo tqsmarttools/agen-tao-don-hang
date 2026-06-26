@@ -6,7 +6,7 @@ const publicConfigPath = "../../data/phone-order-public-config.json";
 const aiQueueStorageKey = "tq-sapo-phone-order-ai-queue-v1";
 const aiInboxConfigStorageKey = "tq-sapo-phone-order-inbox-config-v1";
 const aiQueueSchema = "tq-sapo-phone-order-request-queue/v1";
-const publicDataVersion = "20260626e";
+const publicDataVersion = "20260626f";
 const localPendingEchoWindowMs = 10 * 60 * 1000;
 
 const fallbackCustomers = [];
@@ -1073,23 +1073,15 @@ async function initialize() {
   syncAdvancedPanels();
 
   if ("serviceWorker" in navigator) {
-    if (isLocalhostRuntime()) {
-      try {
-        const registrations = await navigator.serviceWorker.getRegistrations();
-        await Promise.all(registrations.map((registration) => registration.unregister()));
-        if ("caches" in window) {
-          const keys = await caches.keys();
-          await Promise.all(keys.map((key) => caches.delete(key)));
-        }
-      } catch (error) {
-        console.error("Cannot clear local service workers", error);
+    try {
+      const registrations = await navigator.serviceWorker.getRegistrations();
+      await Promise.all(registrations.map((registration) => registration.unregister()));
+      if ("caches" in window) {
+        const keys = await caches.keys();
+        await Promise.all(keys.map((key) => caches.delete(key)));
       }
-    } else {
-      try {
-        await navigator.serviceWorker.register("./sw.js");
-      } catch (error) {
-        console.error("Cannot register service worker", error);
-      }
+    } catch (error) {
+      console.error("Cannot clear service workers", error);
     }
   }
 
