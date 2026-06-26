@@ -6,7 +6,7 @@ const publicConfigPath = "../../data/phone-order-public-config.json";
 const aiQueueStorageKey = "tq-sapo-phone-order-ai-queue-v1";
 const aiInboxConfigStorageKey = "tq-sapo-phone-order-inbox-config-v1";
 const aiQueueSchema = "tq-sapo-phone-order-request-queue/v1";
-const publicDataVersion = "20260626c";
+const publicDataVersion = "20260626e";
 const localPendingEchoWindowMs = 10 * 60 * 1000;
 
 const fallbackCustomers = [];
