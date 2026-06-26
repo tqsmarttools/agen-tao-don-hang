@@ -57,6 +57,45 @@ body {
   letter-spacing: -0.04em;
 }
 
+.hero-topbar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.hero-title-block {
+  min-width: 0;
+}
+
+.hero-sync-text {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.hero-refresh-button {
+  flex: 0 0 auto;
+  border: 1px solid rgba(182, 77, 32, 0.24);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--brand-strong);
+  padding: 11px 18px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 140ms ease, background 140ms ease, opacity 140ms ease;
+}
+
+.hero-refresh-button:hover {
+  transform: translateY(-1px);
+}
+
+.hero-refresh-button:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
 .hero-copy {
   max-width: 52ch;
   margin: 14px 0 0;
@@ -322,6 +361,16 @@ textarea {
   color: #2d7a43;
 }
 
+.queue-card-waiting-approval {
+  border: 1px solid rgba(182, 77, 32, 0.22);
+  background: linear-gradient(180deg, rgba(255, 248, 240, 0.96), rgba(255, 255, 255, 0.96));
+}
+
+.queue-card-waiting-approval .queue-status {
+  background: rgba(182, 77, 32, 0.14);
+  color: var(--brand-strong);
+}
+
 .queue-card-failed {
   border: 1px solid rgba(180, 35, 24, 0.22);
   background: linear-gradient(180deg, rgba(255, 244, 242, 0.96), rgba(255, 255, 255, 0.96));
@@ -367,5 +416,16 @@ textarea {
 
   .address-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .hero-topbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-refresh-button {
+    align-self: flex-start;
   }
 }

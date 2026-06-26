@@ -6,7 +6,7 @@ const publicConfigPath = "../../data/phone-order-public-config.json";
 const aiQueueStorageKey = "tq-sapo-phone-order-ai-queue-v1";
 const aiInboxConfigStorageKey = "tq-sapo-phone-order-inbox-config-v1";
 const aiQueueSchema = "tq-sapo-phone-order-request-queue/v1";
-const publicDataVersion = "20260626g";
+const publicDataVersion = "20260627a";
 const localPendingEchoWindowMs = 10 * 60 * 1000;
 
 const fallbackCustomers = [];
@@ -61,6 +61,8 @@ const state = {
   sharedQueue: [],
   aiStatuses: new Map(),
   showInboxSetup: false,
+  lastSyncedAt: "",
+  refreshInFlight: false,
 };
 
 const customerPhoneInput = document.querySelector("#customerPhone");
@@ -91,7 +93,9 @@ const payloadPanel = document.querySelector("#payloadPanel");
 const opsPanelHeading = opsPanel?.querySelector(".panel-heading");
 const inboxConfigPanel = opsPanel?.querySelector(".inbox-config");
 const queueActionsPanel = opsPanel?.querySelector(".queue-actions");
-const hiddenCompletionStatuses = new Set(["created"]);
+const syncStatusText = document.querySelector("#syncStatusText");
+const refreshStatusButton = document.querySelector("#refreshStatusButton");
+const hiddenCompletionStatuses = new Set(["created", "cancelled"]);
 
 function normalizeText(value) {
   return String(value || "").trim();
@@ -119,6 +123,50 @@ function formatCurrencyInput(value) {
   }
 
   return Number(digits).toLocaleString("vi-VN");
+}
+
+function formatSyncTime(value) {
+  const parsed = Date.parse(value || "");
+  if (!Number.isFinite(parsed)) {
+    return "Chua co du lieu dong bo.";
+  }
+
+  return new Date(parsed)
+    .toLocaleString("vi-VN", {
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+    })
+    .replace(",", "");
+}
+
+function latestTimestamp(...values) {
+  const candidates = values
+    .map((value) => {
+      const parsed = Date.parse(value || "");
+      return Number.isFinite(parsed) ? parsed : 0;
+    })
+    .filter(Boolean);
+
+  if (candidates.length === 0) {
+    return "";
+  }
+
+  return new Date(Math.max(...candidates)).toISOString();
+}
+
+function renderSyncStatus() {
+  if (syncStatusText) {
+    syncStatusText.textContent = `Cap nhat: ${formatSyncTime(state.lastSyncedAt)}`;
+  }
+
+  if (refreshStatusButton) {
+    refreshStatusButton.disabled = state.refreshInFlight;
+    refreshStatusButton.textContent = state.refreshInFlight ? "Dang lam moi..." : "Lam moi";
+  }
 }
 
 function shippingInstructionsFromNote(note) {
@@ -407,9 +455,15 @@ async function loadAiStatuses() {
       throw new Error(`HTTP ${response.status}`);
     }
     const payload = await response.json();
-    return Array.isArray(payload.requests) ? payload.requests : [];
+    return {
+      requests: Array.isArray(payload.requests) ? payload.requests : [],
+      exportedAt: payload.exported_at || "",
+    };
   } catch (error) {
-    return [];
+    return {
+      requests: [],
+      exportedAt: "",
+    };
   }
 }
 
@@ -421,7 +475,10 @@ async function loadSharedQueueRequests() {
       : "";
 
   if (!remoteReadUrl) {
-    return [];
+    return {
+      requests: [],
+      exportedAt: "",
+    };
   }
 
   try {
@@ -433,9 +490,15 @@ async function loadSharedQueueRequests() {
     }
 
     const payload = await response.json();
-    return Array.isArray(payload.requests) ? payload.requests : [];
+    return {
+      requests: Array.isArray(payload.requests) ? payload.requests : [],
+      exportedAt: payload.exported_at || "",
+    };
   } catch (error) {
-    return [];
+    return {
+      requests: [],
+      exportedAt: "",
+    };
   }
 }
 
@@ -458,14 +521,24 @@ async function loadPublicInboxConfig() {
 }
 
 async function refreshAiStatuses() {
-  const aiStatuses = await loadAiStatuses();
+  state.refreshInFlight = true;
+  renderSyncStatus();
+
+  const aiStatusesPayload = await loadAiStatuses();
   state.aiStatuses = new Map(
-    aiStatuses.map((request) => [request.request_id, request]),
+    aiStatusesPayload.requests.map((request) => [request.request_id, request]),
   );
-  const sharedQueue = await loadSharedQueueRequests();
-  state.sharedQueue = sharedQueue;
-  state.aiQueue = reconcileLiveQueue(loadAiQueue(), sharedQueue);
+  const sharedQueuePayload = await loadSharedQueueRequests();
+  state.sharedQueue = sharedQueuePayload.requests;
+  state.aiQueue = reconcileLiveQueue(loadAiQueue(), sharedQueuePayload.requests);
+  state.lastSyncedAt = latestTimestamp(
+    aiStatusesPayload.exportedAt,
+    sharedQueuePayload.exportedAt,
+    state.lastSyncedAt,
+  );
+  state.refreshInFlight = false;
   renderQueue();
+  renderSyncStatus();
 }
 
 function populateProvinceOptions() {
@@ -728,6 +801,14 @@ function effectiveRequestMessage(request) {
   return "Tao don that bai, can kiem tra lai.";
 }
 
+function displayRequestStatus(status) {
+  const normalized = normalizeText(status);
+  if (normalized === "waiting_approval") {
+    return "cho_duyet";
+  }
+  return normalized || "pending_ai";
+}
+
 function visibleQueueRequests() {
   return [...state.aiQueue]
     .reverse()
@@ -862,13 +943,15 @@ function renderQueue() {
     card.className = "selected-card";
     if (effectiveStatus === "created") {
       card.classList.add("queue-card-created");
+    } else if (effectiveStatus === "waiting_approval") {
+      card.classList.add("queue-card-waiting-approval");
     } else if (effectiveStatus === "failed") {
       card.classList.add("queue-card-failed");
     }
     card.innerHTML = `
       <div class="queue-card-top">
         <strong>${request.customer.name || "Chua co ten khach"}</strong>
-        <span class="queue-status">${effectiveStatus}</span>
+        <span class="queue-status">${displayRequestStatus(effectiveStatus)}</span>
       </div>
       <div class="meta">SDT: ${request.customer.phone || "Chua co SDT"}</div>
       <div class="helper">${request.items.length} san pham - Tong ${request.order_total_including_shipping.toLocaleString("vi-VN")} VND</div>
@@ -1039,7 +1122,7 @@ async function addCurrentRequestToQueue() {
 }
 
 async function initialize() {
-  const [productCatalog, addressCatalog, customerIndex, aiStatuses, publicInboxConfig] = await Promise.all([
+  const [productCatalog, addressCatalog, customerIndex, aiStatusesPayload, publicInboxConfig] = await Promise.all([
     loadProductCatalog(),
     loadAddressCatalog(),
     loadCustomerIndex(),
@@ -1060,7 +1143,7 @@ async function initialize() {
   }
   const localQueue = loadAiQueue();
   state.aiStatuses = new Map(
-    aiStatuses.map((request) => [request.request_id, request]),
+    aiStatusesPayload.requests.map((request) => [request.request_id, request]),
   );
 
   const savedInboxConfig = loadInboxConfig();
@@ -1076,14 +1159,20 @@ async function initialize() {
     saveInboxConfig();
   }
 
-  state.sharedQueue = await loadSharedQueueRequests();
+  const sharedQueuePayload = await loadSharedQueueRequests();
+  state.sharedQueue = sharedQueuePayload.requests;
   state.aiQueue = reconcileLiveQueue(localQueue, state.sharedQueue);
+  state.lastSyncedAt = latestTimestamp(
+    aiStatusesPayload.exportedAt,
+    sharedQueuePayload.exportedAt,
+  );
 
   populateProvinceOptions();
   renderProductResults("");
   renderSelectedItems();
   renderQueue();
   renderPayloadPreview();
+  renderSyncStatus();
   syncAdvancedPanels();
 
   if ("serviceWorker" in navigator) {
@@ -1156,6 +1245,9 @@ orderTotalInput.addEventListener("input", (event) => {
 orderNoteInput.addEventListener("input", renderPayloadPreview);
 
 queueRequestButton.addEventListener("click", addCurrentRequestToQueue);
+refreshStatusButton?.addEventListener("click", () => {
+  refreshOnAppResume();
+});
 
 copyQueueButton.addEventListener("click", async () => {
   await copyText(JSON.stringify(queuePayload(), null, 2));

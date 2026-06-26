@@ -12,13 +12,21 @@
     <link rel="manifest" href="./manifest.webmanifest" />
     <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png" />
-    <link rel="stylesheet" href="./styles.css?v=20260626g" />
+    <link rel="stylesheet" href="./styles.css?v=20260627a" />
   </head>
   <body>
     <div class="page-shell">
       <header class="hero">
         <p class="eyebrow">Thien Quang Smarttools</p>
-        <h1>Agen tao don hang</h1>
+        <div class="hero-topbar">
+          <div class="hero-title-block">
+            <h1>Agen tao don hang</h1>
+            <p id="syncStatusText" class="hero-sync-text">Cap nhat: Dang tai du lieu...</p>
+          </div>
+          <button id="refreshStatusButton" class="hero-refresh-button" type="button">
+            Lam moi
+          </button>
+        </div>
       </header>
 
       <main class="dashboard">
@@ -172,6 +180,6 @@
       </main>
     </div>
 
-    <script type="module" src="./app.js?v=20260626g"></script>
+    <script type="module" src="./app.js?v=20260627a"></script>
   </body>
 </html>
