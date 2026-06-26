@@ -6,6 +6,7 @@ const publicConfigPath = "../../data/phone-order-public-config.json";
 const aiQueueStorageKey = "tq-sapo-phone-order-ai-queue-v1";
 const aiInboxConfigStorageKey = "tq-sapo-phone-order-inbox-config-v1";
 const aiQueueSchema = "tq-sapo-phone-order-request-queue/v1";
+const publicDataVersion = "20260626b";
 const localPendingEchoWindowMs = 10 * 60 * 1000;
 
 const fallbackCustomers = [];
@@ -310,9 +311,13 @@ function localInboxEndpoint() {
   return `${window.location.origin}/__local_ai_inbox`;
 }
 
+function versionedAssetPath(assetPath) {
+  return `${assetPath}?v=${publicDataVersion}`;
+}
+
 async function loadProductCatalog() {
   try {
-    const response = await fetch(productCatalogPath);
+    const response = await fetch(versionedAssetPath(productCatalogPath));
     if (!response.ok) {
       throw new Error(`HTTP ${response.status}`);
     }
@@ -327,7 +332,7 @@ async function loadProductCatalog() {
 
 async function loadAddressCatalog() {
   try {
-    const response = await fetch(addressCatalogPath);
+    const response = await fetch(versionedAssetPath(addressCatalogPath));
     if (!response.ok) {
       throw new Error(`HTTP ${response.status}`);
     }
@@ -370,7 +375,7 @@ async function loadAddressCatalog() {
 
 async function loadCustomerIndex() {
   try {
-    const response = await fetch(customerIndexPath);
+    const response = await fetch(versionedAssetPath(customerIndexPath));
     if (!response.ok) {
       throw new Error(`HTTP ${response.status}`);
     }
