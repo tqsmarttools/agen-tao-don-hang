@@ -6,7 +6,7 @@ const publicConfigPath = "../../data/phone-order-public-config.json";
 const aiQueueStorageKey = "tq-sapo-phone-order-ai-queue-v1";
 const aiInboxConfigStorageKey = "tq-sapo-phone-order-inbox-config-v1";
 const aiQueueSchema = "tq-sapo-phone-order-request-queue/v1";
-const publicDataVersion = "20260627a";
+const publicDataVersion = "20260627b";
 const localPendingEchoWindowMs = 10 * 60 * 1000;
 
 const fallbackCustomers = [];
@@ -777,6 +777,10 @@ function effectiveRequestMessage(request) {
     "";
   const status = effectiveRequestStatus(request);
 
+  if (status === "waiting_approval") {
+    return "";
+  }
+
   if (status !== "failed") {
     return rawMessage;
   }
@@ -807,6 +811,15 @@ function displayRequestStatus(status) {
     return "cho_duyet";
   }
   return normalized || "pending_ai";
+}
+
+function requestItemLines(request) {
+  const items = Array.isArray(request?.items) ? request.items : [];
+  return items.map((item) => {
+    const label = normalizeText(item.sku) || normalizeText(item.name) || "San pham";
+    const quantity = Math.max(1, Number(item.quantity || 1));
+    return `${label} (SL: ${String(quantity).padStart(2, "0")})`;
+  });
 }
 
 function visibleQueueRequests() {
@@ -955,6 +968,7 @@ function renderQueue() {
       </div>
       <div class="meta">SDT: ${request.customer.phone || "Chua co SDT"}</div>
       <div class="helper">${request.items.length} san pham - Tong ${request.order_total_including_shipping.toLocaleString("vi-VN")} VND</div>
+      <div class="helper queue-item-lines">${requestItemLines(request).join("<br />")}</div>
       <div class="helper">${request.address.address_detail}, ${request.address.ward}, ${request.address.district}, ${request.address.province}</div>
       <div class="helper">Tao luc: ${new Date(request.requested_at).toLocaleString("vi-VN")}</div>
       ${effectiveMessage ? `<div class="helper ${effectiveStatus === "failed" ? "helper-error" : ""}">${effectiveMessage}</div>` : ""}

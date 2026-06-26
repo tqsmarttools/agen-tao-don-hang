@@ -361,6 +361,10 @@ textarea {
   color: #2d7a43;
 }
 
+.queue-item-lines {
+  white-space: normal;
+}
+
 .queue-card-waiting-approval {
   border: 1px solid rgba(182, 77, 32, 0.22);
   background: linear-gradient(180deg, rgba(255, 248, 240, 0.96), rgba(255, 255, 255, 0.96));
