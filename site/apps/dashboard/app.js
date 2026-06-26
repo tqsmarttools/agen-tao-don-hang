@@ -6,7 +6,7 @@ const publicConfigPath = "../../data/phone-order-public-config.json";
 const aiQueueStorageKey = "tq-sapo-phone-order-ai-queue-v1";
 const aiInboxConfigStorageKey = "tq-sapo-phone-order-inbox-config-v1";
 const aiQueueSchema = "tq-sapo-phone-order-request-queue/v1";
-const publicDataVersion = "20260626e";
+const publicDataVersion = "20260626g";
 const localPendingEchoWindowMs = 10 * 60 * 1000;
 
 const fallbackCustomers = [];
@@ -135,9 +135,13 @@ function shippingInstructionsFromNote(note) {
   };
 }
 
+function runtimeStorage() {
+  return isLocalhostRuntime() ? localStorage : sessionStorage;
+}
+
 function loadAiQueue() {
   try {
-    const raw = localStorage.getItem(aiQueueStorageKey);
+    const raw = runtimeStorage().getItem(aiQueueStorageKey);
     return raw ? JSON.parse(raw) : [];
   } catch (error) {
     return [];
@@ -145,7 +149,7 @@ function loadAiQueue() {
 }
 
 function saveAiQueue() {
-  localStorage.setItem(aiQueueStorageKey, JSON.stringify(state.aiQueue));
+  runtimeStorage().setItem(aiQueueStorageKey, JSON.stringify(state.aiQueue));
 }
 
 function persistVisibleQueue() {
@@ -225,7 +229,7 @@ function reconcileLiveQueue(localRequests, sharedRequests) {
 
 function loadInboxConfig() {
   try {
-    const raw = localStorage.getItem(aiInboxConfigStorageKey);
+    const raw = runtimeStorage().getItem(aiInboxConfigStorageKey);
     return raw ? JSON.parse(raw) : { inbox_url: "", inbox_key: "" };
   } catch (error) {
     return { inbox_url: "", inbox_key: "" };
@@ -233,7 +237,7 @@ function loadInboxConfig() {
 }
 
 function saveInboxConfig() {
-  localStorage.setItem(
+  runtimeStorage().setItem(
     aiInboxConfigStorageKey,
     JSON.stringify({
       inbox_url: normalizeText(inboxUrlInput.value),
@@ -1046,6 +1050,14 @@ async function initialize() {
   state.productCatalog = productCatalog;
   state.addressCatalog = addressCatalog;
   state.customers = customerIndex;
+  if (!isLocalhostRuntime()) {
+    try {
+      localStorage.removeItem(aiQueueStorageKey);
+      localStorage.removeItem(aiInboxConfigStorageKey);
+    } catch (error) {
+      console.error("Cannot clear stale public localStorage", error);
+    }
+  }
   const localQueue = loadAiQueue();
   state.aiStatuses = new Map(
     aiStatuses.map((request) => [request.request_id, request]),
@@ -1053,9 +1065,11 @@ async function initialize() {
 
   const savedInboxConfig = loadInboxConfig();
   const inboxConfig =
-    savedInboxConfig.inbox_url && savedInboxConfig.inbox_key
-      ? savedInboxConfig
-      : publicInboxConfig;
+    !isLocalhostRuntime() && publicInboxConfig.inbox_url && publicInboxConfig.inbox_key
+      ? publicInboxConfig
+      : savedInboxConfig.inbox_url && savedInboxConfig.inbox_key
+        ? savedInboxConfig
+        : publicInboxConfig;
   inboxUrlInput.value = inboxConfig.inbox_url || "";
   inboxKeyInput.value = inboxConfig.inbox_key || "";
   if (inboxConfig.inbox_url && inboxConfig.inbox_key) {
@@ -1073,23 +1087,15 @@ async function initialize() {
   syncAdvancedPanels();
 
   if ("serviceWorker" in navigator) {
-    if (isLocalhostRuntime()) {
-      try {
-        const registrations = await navigator.serviceWorker.getRegistrations();
-        await Promise.all(registrations.map((registration) => registration.unregister()));
-        if ("caches" in window) {
-          const keys = await caches.keys();
-          await Promise.all(keys.map((key) => caches.delete(key)));
-        }
-      } catch (error) {
-        console.error("Cannot clear local service workers", error);
+    try {
+      const registrations = await navigator.serviceWorker.getRegistrations();
+      await Promise.all(registrations.map((registration) => registration.unregister()));
+      if ("caches" in window) {
+        const keys = await caches.keys();
+        await Promise.all(keys.map((key) => caches.delete(key)));
       }
-    } else {
-      try {
-        await navigator.serviceWorker.register("./sw.js");
-      } catch (error) {
-        console.error("Cannot register service worker", error);
-      }
+    } catch (error) {
+      console.error("Cannot clear service workers", error);
     }
   }
 
