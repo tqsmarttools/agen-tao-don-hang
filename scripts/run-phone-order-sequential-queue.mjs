@@ -11,6 +11,7 @@ import {
   upsertStatusEntry,
   writeJson,
 } from "./lib/phone-order-store.mjs";
+import { syncRequestToSharedInbox } from "./lib/shared-inbox-sync.mjs";
 
 function parseArgs(argv) {
   const args = {
@@ -89,8 +90,22 @@ function pickReadyRequests(state, limit) {
 async function runNodeScript(scriptPath, scriptArgs) {
   await new Promise((resolve, reject) => {
     const child = spawn(process.execPath, [scriptPath, ...scriptArgs], {
-      stdio: "inherit",
+      stdio: ["ignore", "pipe", "pipe"],
       cwd: process.cwd(),
+    });
+    let stdoutBuffer = "";
+    let stderrBuffer = "";
+
+    child.stdout.on("data", (chunk) => {
+      const text = String(chunk || "");
+      stdoutBuffer += text;
+      process.stdout.write(text);
+    });
+
+    child.stderr.on("data", (chunk) => {
+      const text = String(chunk || "");
+      stderrBuffer += text;
+      process.stderr.write(text);
     });
 
     child.on("error", reject);
@@ -100,7 +115,24 @@ async function runNodeScript(scriptPath, scriptArgs) {
         return;
       }
 
-      reject(new Error(`${scriptPath} exited with code ${code}`));
+      const firstErrorLine = stderrBuffer
+        .trim()
+        .split(/\r?\n/)
+        .filter(Boolean)
+        [0];
+      const lastOutputLine = stdoutBuffer
+        .trim()
+        .split(/\r?\n/)
+        .filter(Boolean)
+        .slice(-1)[0];
+
+      reject(
+        new Error(
+          firstErrorLine ||
+            lastOutputLine ||
+            `${scriptPath} exited with code ${code}`,
+        ),
+      );
     });
   });
 }
@@ -127,6 +159,8 @@ async function markFailed(requestId, message) {
   updateQueueRequest(state.queuePayload, requestId, {
     status: "failed",
     updated_at: now,
+    message,
+    last_error: message,
   });
 
   upsertStatusEntry(state.statusPayload, {
@@ -146,6 +180,9 @@ async function markFailed(requestId, message) {
 
   await writeJson(storePaths.queuePath, state.queuePayload);
   await writeJson(storePaths.statusPath, state.statusPayload);
+  await syncRequestToSharedInbox(queueRequest, {
+    source: "browser-sequential-order-failed",
+  }).catch(() => {});
 }
 
 async function main() {

@@ -93,7 +93,42 @@ Notes:
 - requests are processed sequentially, oldest first
 - requests already marked `created` are skipped automatically
 - on success the runner writes back `created` status and the `SON...` order URL
-- on failure it marks the request `failed`
+- on failure it marks the request `failed` and syncs the error back to the mobile app queue
+
+## Scheduled worker for the 24/24 machine
+
+Recommended worker loop for the dedicated always-on machine:
+
+```powershell
+node scripts/run-phone-order-scheduled-cycle.mjs --limit 10
+```
+
+This performs one full cycle:
+
+1. fetch inbox
+2. import queue
+3. process requests
+4. create ready Sapo orders through the Omni session lane
+
+If another cycle is still running, the lock file prevents overlap.
+
+Install a Windows Scheduled Task for every 30 minutes:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts/install-phone-order-worker-schedule.ps1 -Minutes 30 -Limit 10
+```
+
+Remove the task later if needed:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts/uninstall-phone-order-worker-schedule.ps1
+```
+
+Useful runtime artifacts:
+
+- `data/scheduled-worker-last.log`
+- `data/phone-order-scheduled-cycle-last.json`
+- `data/phone-order-scheduled-cycle.lock`
 
 5. Browser fallback path: claim the next ready request and emit the browser bundle:
 

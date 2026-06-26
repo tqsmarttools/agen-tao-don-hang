@@ -9,6 +9,7 @@ import {
   upsertStatusEntry,
   writeJson,
 } from "./lib/phone-order-store.mjs";
+import { syncRequestToSharedInbox } from "./lib/shared-inbox-sync.mjs";
 
 function parseArgs(argv) {
   const args = {
@@ -83,6 +84,12 @@ async function main() {
   updateQueueRequest(state.queuePayload, args.requestId, {
     status: args.status,
     updated_at: now,
+    message:
+      args.message ||
+      (args.status === "created"
+        ? `Created in Sapo${args.sapoOrderCode ? `: ${args.sapoOrderCode}` : ""}.`
+        : `Execution finished with status: ${args.status}.`),
+    last_error: args.status === "failed" ? args.message || args.operatorNote || `Execution finished with status: ${args.status}.` : "",
     execution_result: result,
   });
 
@@ -107,6 +114,12 @@ async function main() {
 
   await writeJson(storePaths.queuePath, state.queuePayload);
   await writeJson(storePaths.statusPath, state.statusPayload);
+
+  if (queueRequest) {
+    await syncRequestToSharedInbox(queueRequest, {
+      source: "record-phone-order-result",
+    });
+  }
 
   const outputPayload = {
     schema: "tq-sapo-phone-order-result/v1",

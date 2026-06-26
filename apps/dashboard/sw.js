@@ -1,4 +1,4 @@
-const CACHE_NAME = "tq-order-dashboard-v8";
+const CACHE_NAME = "tq-order-dashboard-v10";
 const ASSETS = [
   "./",
   "./index.html",

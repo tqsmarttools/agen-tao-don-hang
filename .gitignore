@@ -11,6 +11,9 @@ data/phone-order-execution-plan.json
 data/phone-order-execution-notes.md
 data/phone-order-worker-output.json
 data/phone-order-worker-log.json
+data/phone-order-scheduled-cycle-last.json
+data/phone-order-scheduled-cycle.lock
+data/scheduled-worker-last.log
 data/sapo-ui-*-capture.json
 data/sapo-omni-order-*-preview.json
 data/sapo-omni-order-*-submit.json

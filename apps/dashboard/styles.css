@@ -193,6 +193,12 @@ textarea {
   line-height: 1.45;
 }
 
+.helper-error {
+  color: #b42318;
+  font-style: italic;
+  font-weight: 400;
+}
+
 .suggestion-actions,
 .product-card-footer,
 .selected-card-footer,
@@ -314,6 +320,16 @@ textarea {
 .queue-card-created .queue-status {
   background: rgba(55, 140, 80, 0.16);
   color: #2d7a43;
+}
+
+.queue-card-failed {
+  border: 1px solid rgba(180, 35, 24, 0.22);
+  background: linear-gradient(180deg, rgba(255, 244, 242, 0.96), rgba(255, 255, 255, 0.96));
+}
+
+.queue-card-failed .queue-status {
+  background: rgba(180, 35, 24, 0.14);
+  color: #b42318;
 }
 
 .payload-preview {

@@ -18,12 +18,11 @@ import {
   upsertStatusEntry,
   writeJson,
 } from "./lib/phone-order-store.mjs";
+import { syncRequestToSharedInbox } from "./lib/shared-inbox-sync.mjs";
 
 const scriptDir = path.dirname(fileURLToPath(import.meta.url));
 const workspaceRoot = path.join(scriptDir, "..");
 const dataDir = path.join(workspaceRoot, "data");
-const phoneOrderConfigPath = path.join(dataDir, "phone-order-config.json");
-
 const shopDefaults = {
   locationId: 680305,
   assigneeId: 985325,
@@ -96,10 +95,6 @@ function toIntlPhone(phone) {
 
 async function readAddressCatalog() {
   return JSON.parse(await readFile(path.join(dataDir, "address-catalog.json"), "utf8"));
-}
-
-async function readPhoneOrderConfig() {
-  return JSON.parse(await readFile(phoneOrderConfigPath, "utf8"));
 }
 
 function canonicalAddressNames(addressCatalog, normalizedAddress) {
@@ -318,43 +313,6 @@ async function withSessionPage(fn) {
       await context.close().catch(() => {});
     }
   }
-}
-
-async function syncRequestToSharedInbox(request) {
-  let config;
-  try {
-    config = await readPhoneOrderConfig();
-  } catch {
-    return { ok: false, skipped: true, reason: "missing_phone_order_config" };
-  }
-
-  if (!config.inbox_url || !config.inbox_key) {
-    return { ok: false, skipped: true, reason: "missing_inbox_values" };
-  }
-
-  const response = await fetch(config.inbox_url, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      inbox_key: config.inbox_key,
-      source: "omni-session-order-sync",
-      payload: {
-        schema: "tq-sapo-phone-order-request-queue/v1",
-        exported_at: new Date().toISOString(),
-        request_count: 1,
-        requests: [request],
-      },
-    }),
-  });
-
-  const text = await response.text();
-  if (!response.ok) {
-    throw new Error(`Shared inbox sync failed: HTTP ${response.status} ${text}`);
-  }
-
-  return { ok: true, body: text };
 }
 
 async function fetchJson(page, relativeUrl, options = {}) {
