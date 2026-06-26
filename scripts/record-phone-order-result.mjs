@@ -51,7 +51,7 @@ function parseArgs(argv) {
 
   if (!args.requestId || !args.status) {
     throw new Error(
-      "Usage: node scripts/record-phone-order-result.mjs --request-id <id> --status <created|failed|need_more_info> [options]",
+      "Usage: node scripts/record-phone-order-result.mjs --request-id <id> --status <created|waiting_approval|failed|need_more_info> [options]",
     );
   }
 
@@ -88,6 +88,8 @@ async function main() {
       args.message ||
       (args.status === "created"
         ? `Created in Sapo${args.sapoOrderCode ? `: ${args.sapoOrderCode}` : ""}.`
+        : args.status === "waiting_approval"
+          ? `Da tao don cho duyet tren Sapo${args.sapoOrderCode ? `: ${args.sapoOrderCode}` : ""}.`
         : `Execution finished with status: ${args.status}.`),
     last_error: args.status === "failed" ? args.message || args.operatorNote || `Execution finished with status: ${args.status}.` : "",
     execution_result: result,
@@ -103,6 +105,8 @@ async function main() {
       args.message ||
       (args.status === "created"
         ? `Created in Sapo${args.sapoOrderCode ? `: ${args.sapoOrderCode}` : ""}.`
+        : args.status === "waiting_approval"
+          ? `Da tao don cho duyet tren Sapo${args.sapoOrderCode ? `: ${args.sapoOrderCode}` : ""}.`
         : `Execution finished with status: ${args.status}.`),
   });
 

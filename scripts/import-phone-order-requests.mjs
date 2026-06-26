@@ -20,10 +20,25 @@ async function readJsonOrDefault(filePath, fallback) {
 function mergeRequests(existingRequests, inboxRequests) {
   const byId = new Map(existingRequests.map((request) => [request.request_id, request]));
   for (const request of inboxRequests) {
-    byId.set(request.request_id, {
-      ...byId.get(request.request_id),
-      ...request,
-    });
+    const existing = byId.get(request.request_id) || {};
+    const existingUpdatedAt = Date.parse(existing.updated_at || existing.requested_at || "");
+    const incomingUpdatedAt = Date.parse(request.updated_at || request.requested_at || "");
+    const preferExisting =
+      Number.isFinite(existingUpdatedAt) &&
+      (!Number.isFinite(incomingUpdatedAt) || existingUpdatedAt > incomingUpdatedAt);
+
+    byId.set(
+      request.request_id,
+      preferExisting
+        ? {
+            ...request,
+            ...existing,
+          }
+        : {
+            ...existing,
+            ...request,
+          },
+    );
   }
   return [...byId.values()].sort((left, right) => String(left.requested_at).localeCompare(String(right.requested_at)));
 }
@@ -39,6 +54,11 @@ function buildStatusPayload(requests) {
       updated_at: request.updated_at || request.requested_at || new Date().toISOString(),
       customer_name: request.customer?.name || "",
       customer_phone: request.customer?.phone || "",
+      message:
+        request.message ||
+        request.execution_result?.operator_note ||
+        request.last_error ||
+        "",
     })),
   };
 }

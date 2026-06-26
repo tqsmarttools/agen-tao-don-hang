@@ -18,6 +18,12 @@ export const storePaths = {
   workerLogPath: path.join(dataDir, "phone-order-worker-log.json"),
 };
 
+export const phoneOrderTerminalStatuses = new Set(["created", "waiting_approval", "cancelled"]);
+
+export function isTerminalExecutionStatus(status) {
+  return phoneOrderTerminalStatuses.has(String(status || "").trim());
+}
+
 function parseJsonLenient(rawText) {
   const sanitized = String(rawText || "").replace(/^\uFEFF/, "");
 

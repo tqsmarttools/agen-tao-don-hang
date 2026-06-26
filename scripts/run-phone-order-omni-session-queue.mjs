@@ -4,6 +4,7 @@ import {
   findPlanItem,
   findQueueRequest,
   findStatusEntry,
+  isTerminalExecutionStatus,
   loadPhoneOrderState,
   storePaths,
   updateQueueRequest,
@@ -15,12 +16,15 @@ import { syncRequestToSharedInbox } from "./lib/shared-inbox-sync.mjs";
 function parseArgs(argv) {
   const args = {
     limit: 1,
+    includeFailed: false,
   };
 
   for (let index = 0; index < argv.length; index += 1) {
     const arg = argv[index];
     if (arg === "--limit") {
       args.limit = Math.max(1, Number(argv[++index] || 1));
+    } else if (arg === "--include-failed") {
+      args.includeFailed = true;
     } else {
       throw new Error(`Unknown argument: ${arg}`);
     }
@@ -30,23 +34,27 @@ function parseArgs(argv) {
 }
 
 function effectiveStatus(planItem, statusEntry, queueRequest) {
-  return statusEntry?.status || queueRequest?.status || planItem?.status || "";
+  return queueRequest?.status || statusEntry?.status || planItem?.status || "";
 }
 
-function isReadyForSubmit(planItem, statusEntry, queueRequest) {
+function isReadyForSubmit(planItem, statusEntry, queueRequest, options = {}) {
   if (!planItem || planItem.status !== "ready") {
     return false;
   }
 
-  if (queueRequest?.execution_result?.status === "created") {
+  if (isTerminalExecutionStatus(queueRequest?.execution_result?.status)) {
     return false;
   }
 
   const status = effectiveStatus(planItem, statusEntry, queueRequest);
-  return status === "ready" || status === "pending_ai" || status === "" || status === "failed";
+  if (status === "failed") {
+    return Boolean(options.includeFailed);
+  }
+
+  return status === "ready" || status === "pending_ai" || status === "";
 }
 
-function pickReadyRequests(state, limit) {
+function pickReadyRequests(state, limit, options = {}) {
   const requests = Array.isArray(state.queuePayload.requests) ? state.queuePayload.requests : [];
   const sorted = [...requests].sort((left, right) =>
     String(left.requested_at || "").localeCompare(String(right.requested_at || "")),
@@ -56,7 +64,7 @@ function pickReadyRequests(state, limit) {
   for (const queueRequest of sorted) {
     const planItem = findPlanItem(state.planPayload, queueRequest.request_id);
     const statusEntry = findStatusEntry(state.statusPayload, queueRequest.request_id);
-    if (!isReadyForSubmit(planItem, statusEntry, queueRequest)) {
+    if (!isReadyForSubmit(planItem, statusEntry, queueRequest, options)) {
       continue;
     }
 
@@ -161,7 +169,9 @@ async function markFailed(requestId, message) {
 async function main() {
   const args = parseArgs(process.argv.slice(2));
   const state = await loadPhoneOrderState();
-  const requestIds = pickReadyRequests(state, args.limit);
+  const requestIds = pickReadyRequests(state, args.limit, {
+    includeFailed: args.includeFailed,
+  });
 
   if (requestIds.length === 0) {
     console.log("No ready requests available for Omni session processing.");

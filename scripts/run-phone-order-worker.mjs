@@ -3,6 +3,7 @@ import {
   findPlanItem,
   findQueueRequest,
   findStatusEntry,
+  isTerminalExecutionStatus,
   loadPhoneOrderState,
   storePaths,
   updateQueueRequest,
@@ -35,7 +36,7 @@ function parseArgs(argv) {
 }
 
 function effectiveStatus(planItem, statusEntry, queueRequest) {
-  return statusEntry?.status || queueRequest?.status || planItem?.status || "";
+  return queueRequest?.status || statusEntry?.status || planItem?.status || "";
 }
 
 function isReadyForExecution(planItem, statusEntry, queueRequest) {
@@ -43,7 +44,7 @@ function isReadyForExecution(planItem, statusEntry, queueRequest) {
     return false;
   }
 
-  if (queueRequest?.execution_result?.status === "created") {
+  if (isTerminalExecutionStatus(queueRequest?.execution_result?.status)) {
     return false;
   }
 

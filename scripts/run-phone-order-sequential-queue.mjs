@@ -4,6 +4,7 @@ import {
   findQueueRequest,
   findStatusEntry,
   appendWorkerLog,
+  isTerminalExecutionStatus,
   loadPhoneOrderState,
   readJsonOrDefault,
   storePaths,
@@ -44,13 +45,13 @@ function parseArgs(argv) {
 }
 
 function effectiveStatus(planItem, statusEntry, queueRequest) {
-  return statusEntry?.status || queueRequest?.status || planItem?.status || "";
+  return queueRequest?.status || statusEntry?.status || planItem?.status || "";
 }
 
 function isAlreadyCompleted(queueRequest, statusEntry) {
   return (
-    queueRequest?.execution_result?.status === "created" ||
-    statusEntry?.status === "created"
+    isTerminalExecutionStatus(queueRequest?.execution_result?.status) ||
+    isTerminalExecutionStatus(statusEntry?.status)
   );
 }
 

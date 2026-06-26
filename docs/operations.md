@@ -112,11 +112,15 @@ This performs one full cycle:
 
 If another cycle is still running, the lock file prevents overlap.
 
-Install a Windows Scheduled Task for every 30 minutes:
+Install auto-start for the dedicated worker machine:
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File scripts/install-phone-order-worker-schedule.ps1 -Minutes 30 -Limit 10
+powershell -ExecutionPolicy Bypass -File scripts/install-phone-order-worker-schedule.ps1 -IntervalSeconds 5 -Limit 10
 ```
+
+This worker stays alive and runs one cycle every 5 seconds by default.
+
+The installer first tries a Windows Scheduled Task. If Windows blocks task registration for the current user session, it falls back to a Startup-folder launcher for the same continuous loop.
 
 Remove the task later if needed:
 

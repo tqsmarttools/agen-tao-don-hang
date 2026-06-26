@@ -12,6 +12,7 @@ import {
   findPlanItem,
   findQueueRequest,
   findStatusEntry,
+  isTerminalExecutionStatus,
   loadPhoneOrderState,
   storePaths,
   updateQueueRequest,
@@ -23,6 +24,7 @@ import { syncRequestToSharedInbox } from "./lib/shared-inbox-sync.mjs";
 const scriptDir = path.dirname(fileURLToPath(import.meta.url));
 const workspaceRoot = path.join(scriptDir, "..");
 const dataDir = path.join(workspaceRoot, "data");
+const workerCreatedStatus = "waiting_approval";
 const shopDefaults = {
   locationId: 680305,
   assigneeId: 985325,
@@ -153,15 +155,6 @@ function buildCanonicalAddressBlock(planItem, addressCatalog) {
   };
 }
 
-function applyResolvedSapoNames(addressBlock, sapoAddressIds) {
-  return {
-    ...addressBlock,
-    city: sapoAddressIds.city.name,
-    district: sapoAddressIds.district.name,
-    ward: sapoAddressIds.ward.name,
-  };
-}
-
 function normalizeCompare(value) {
   return String(value || "")
     .normalize("NFD")
@@ -174,56 +167,12 @@ function normalizeCompare(value) {
 
 function normalizeAddressName(value) {
   return normalizeCompare(value)
+    .replace(/[()\-_,./]+/g, " ")
+    .replace(/\s+/g, " ")
+    .replace(/^tinh\s+/i, "")
     .replace(/^tp[.\s]+/i, "")
     .replace(/^thanh pho\s+/i, "")
     .trim();
-}
-
-async function resolveSapoAddressIds(page, addressBlock) {
-  const citiesPayload = await fetchJson(page, "/admin/cities.json?hierarchy=3level");
-  const cities = Array.isArray(citiesPayload.cities) ? citiesPayload.cities : [];
-  const city = cities.find(
-    (item) =>
-      normalizeCompare(item.name) === normalizeCompare(addressBlock.city) ||
-      normalizeAddressName(item.name) === normalizeAddressName(addressBlock.city),
-  );
-  if (!city) {
-    throw new Error(`Could not resolve Sapo city for ${addressBlock.city}.`);
-  }
-
-  const districtsPayload = await fetchJson(
-    page,
-    `/admin/districts.json?city_id=${city.id}&hierarchy=3level`,
-  );
-  const districts = Array.isArray(districtsPayload.districts) ? districtsPayload.districts : [];
-  const district = districts.find(
-    (item) =>
-      normalizeCompare(item.name) === normalizeCompare(addressBlock.district) ||
-      normalizeAddressName(item.name) === normalizeAddressName(addressBlock.district),
-  );
-  if (!district) {
-    throw new Error(`Could not resolve Sapo district for ${addressBlock.district}.`);
-  }
-
-  const wardsPayload = await fetchJson(
-    page,
-    `/admin/districts/${district.id}/wards.json?hierarchy=3level`,
-  );
-  const wards = Array.isArray(wardsPayload.wards) ? wardsPayload.wards : [];
-  const ward = wards.find(
-    (item) =>
-      normalizeCompare(item.name) === normalizeCompare(addressBlock.ward) ||
-      normalizeAddressName(item.name) === normalizeAddressName(addressBlock.ward),
-  );
-  if (!ward) {
-    throw new Error(`Could not resolve Sapo ward for ${addressBlock.ward}.`);
-  }
-
-  return {
-    city,
-    district,
-    ward,
-  };
 }
 
 function retailPriceForVariant(variant) {
@@ -440,114 +389,21 @@ async function fetchVariantsForMatches(page, productMatches) {
   return new Map(entries);
 }
 
-async function estimateGhnService(page, addressBlock, total, totalItem, totalWeight) {
-  const payload = await fetchJson(page, "/admin/shipping_services/ghn/estimate_fee.json", {
-    method: "POST",
-    body: {
-      estimate_fee_request: {
-        location_id: shopDefaults.locationId,
-        pickup_city: shopDefaults.pickupCity,
-        pickup_district: shopDefaults.pickupDistrict,
-        pickup_ward: shopDefaults.pickupWard,
-        pickup_address: shopDefaults.pickupAddress,
-        shipping_city: addressBlock.city,
-        shipping_district: addressBlock.district,
-        shipping_ward: addressBlock.ward,
-        shipping_address: addressBlock.address1,
-        weight: totalWeight,
-        length: shopDefaults.defaultPackage.length,
-        width: shopDefaults.defaultPackage.width,
-        height: shopDefaults.defaultPackage.height,
-        cod: total,
-        shipping_account_id: shopDefaults.shippingAccountId,
-        inventory_id: shopDefaults.inventoryId,
-        total_item: totalItem,
-        insurance: 0,
-        discount_code: "",
-      },
-    },
-  });
-
-  return (payload.estimate_fees || [])[0] || null;
-}
-
-function buildShipmentDetail({
-  requestName,
-  requestPhone,
-  addressBlock,
-  sapoAddressIds,
-  lines,
-  total,
-  totalWeight,
-  service,
-}) {
-  return {
-    partial_return: false,
-    bundle_packages: false,
-    shop_id: shopDefaults.inventoryId,
-    warehouse_phone: shopDefaults.warehousePhone,
-    warehouse_address: `${shopDefaults.pickupAddress}, ${shopDefaults.pickupWard}, ${shopDefaults.pickupDistrict}, ${shopDefaults.pickupCity}, Vietnam`,
-    width: shopDefaults.defaultPackage.width,
-    length: shopDefaults.defaultPackage.length,
-    height: shopDefaults.defaultPackage.height,
-    insurance_value: 0,
-    weight: totalWeight,
-    pick_station_id: 0,
-    coupon: "",
-    service_id: service.service_code,
-    service_type_id: service.service_id,
-    service_name: service.service_name,
-    payment_type_id: 1,
-    note: "",
-    required_note: shopDefaults.ghnRequiredNote,
-    content: `${lines.map((line) => line.matched_name || line.sku).join(", ")},`,
-    cod_failed_amount: 0,
-    return_phone: null,
-    return_district_id: 0,
-    return_ward_code: null,
-    return_address: shopDefaults.warehouseAddressForCarrier,
-    receiver_name: requestName,
-    receiver_phone: normalizePhone(requestPhone),
-    receiver_address: addressBlock.address1,
-    receiver_ward: addressBlock.ward,
-    receiver_district_id: sapoAddressIds.district.id,
-    shipping_city: addressBlock.city,
-    shipping_district: addressBlock.district,
-    shipping_ward: addressBlock.ward,
-    shipping_address: addressBlock.address1,
-    shipping_phone: normalizePhone(requestPhone),
-    shipping_name: requestName,
-    items: lines.map((line) => ({
-      name: line.matched_name || line.sku,
-      code: line.sku,
-      quantity: Number(line.quantity || 1),
-    })),
-    _diagnostic_cod_total: total,
-  };
-}
-
 function buildOrderPayload({
   planItem,
   customerRecord,
   addressBlock,
-  sapoAddressIds,
   variantsById,
   allocatedLines,
-  service,
 }) {
   const request = planItem.request_snapshot || {};
   const customer = request.customer || {};
-  const total = Number(request.order_total_including_shipping || 0);
   const orderAddress = buildOrderAddress(customerRecord, addressBlock, customer.phone || "");
   const shippingAddress = buildShippingAddressRecord(customerRecord, addressBlock, customer.phone || "");
-  const totalWeight = allocatedLines.reduce((sum, line) => {
-    const variant = variantsById.get(line.variant_id);
-    return sum + Number(variant?.weight_value || 0) * Number(line.quantity || 1);
-  }, 0);
 
   return {
     order: {
-      status: "finalized",
+      status: "draft",
       customer_id: customerRecord.id,
       billing_address: orderAddress,
       shipping_address: shippingAddress,
@@ -580,42 +436,6 @@ function buildOrderPayload({
         };
       }),
       discount_items: [],
-      expected_delivery_type: "courier",
-      fulfillments: [
-        {
-          assignee_id: shopDefaults.assigneeId,
-          billing_address: orderAddress,
-          delivery_type: "courier",
-          notes: "",
-          shipment: {
-            delivery_fee: 0,
-            cod_amount: total,
-            weight: totalWeight,
-            width: shopDefaults.defaultPackage.width,
-            height: shopDefaults.defaultPackage.height,
-            length: shopDefaults.defaultPackage.length,
-            operation_system: "web",
-            delivery_service_provider_id: shopDefaults.deliveryServiceProviderId,
-            note: "",
-            service_name: service.service_name,
-            freight_amount: service.final_fee,
-            detail: JSON.stringify(
-              buildShipmentDetail({
-                requestName: customer.name || customerRecord.name || "",
-                requestPhone: customer.phone || "",
-                addressBlock,
-                sapoAddressIds,
-                lines: allocatedLines,
-                total,
-                totalWeight,
-                service,
-              }),
-            ),
-            freight_payer: "shop",
-            shipping_account_id: shopDefaults.shippingAccountId,
-          },
-        },
-      ],
       coupon_code: null,
       promotion_redemptions: [],
       operation_system: "web",
@@ -629,6 +449,24 @@ async function main() {
   const planItem = findPlanItem(state.planPayload, args.requestId);
   if (!planItem) {
     throw new Error(`Request not found in processing plan: ${args.requestId}`);
+  }
+
+  const queueRequest = findQueueRequest(state.queuePayload, args.requestId);
+  if (isTerminalExecutionStatus(queueRequest?.execution_result?.status)) {
+    console.log(
+      JSON.stringify(
+        {
+          ok: true,
+          skipped: true,
+          reason: "already_terminal",
+          request_id: args.requestId,
+          status: queueRequest?.execution_result?.status || queueRequest?.status || "",
+        },
+        null,
+        2,
+      ),
+    );
+    return;
   }
 
   const addressCatalog = await readAddressCatalog();
@@ -652,34 +490,12 @@ async function main() {
       Number(request.order_total_including_shipping || 0),
     );
 
-    const totalItem = allocatedLines.reduce((sum, line) => sum + Number(line.quantity || 1), 0);
-    const totalWeight = allocatedLines.reduce((sum, line) => {
-      const variant = variantsById.get(line.variant_id);
-      return sum + Number(variant?.weight_value || 0) * Number(line.quantity || 1);
-    }, 0);
-
-    const sapoAddressIds = await resolveSapoAddressIds(page, addressBlock);
-    const resolvedAddressBlock = applyResolvedSapoNames(addressBlock, sapoAddressIds);
-
-    const service = await estimateGhnService(
-      page,
-      resolvedAddressBlock,
-      Number(request.order_total_including_shipping || 0),
-      totalItem,
-      totalWeight,
-    );
-    if (!service) {
-      throw new Error("GHN estimate returned no service.");
-    }
-
     const payload = buildOrderPayload({
       planItem,
       customerRecord,
-      addressBlock: resolvedAddressBlock,
-      sapoAddressIds,
+      addressBlock,
       variantsById,
       allocatedLines,
-      service,
     });
 
     let response = null;
@@ -694,9 +510,7 @@ async function main() {
       request_id: args.requestId,
       customerCreated,
       customerRecord,
-      addressBlock: resolvedAddressBlock,
-      sapoAddressIds,
-      service,
+      addressBlock,
       allocatedLines,
       payload,
       response,
@@ -720,24 +534,24 @@ async function main() {
 
     if (queueRequest) {
       updateQueueRequest(state.queuePayload, args.requestId, {
-        status: "created",
+        status: workerCreatedStatus,
         updated_at: now,
         execution_result: {
-          status: "created",
+          status: workerCreatedStatus,
           recorded_at: now,
           sapo_order_code: result.response.order.code,
           sapo_order_url: orderUrl,
           shipment_code: "",
-          carrier: "GHN",
+          carrier: "",
           partner_status: "Chờ lấy hàng",
-          operator_note: "Created via Sapo Omni session API lane.",
+          operator_note: "Created as a draft order waiting for admin approval.",
         },
       });
     }
 
     upsertStatusEntry(state.statusPayload, {
       request_id: args.requestId,
-      status: "created",
+      status: workerCreatedStatus,
       updated_at: now,
       customer_name:
         result.customerRecord?.name ||
@@ -749,12 +563,12 @@ async function main() {
         queueRequest?.customer?.phone ||
         statusEntry?.customer_phone ||
         "",
-      message: `Created in Sapo Omni: ${result.response.order.code}.`,
+      message: `Da tao don cho duyet tren Sapo: ${result.response.order.code}.`,
     });
 
     await appendWorkerLog({
       request_id: args.requestId,
-      event_type: "omni_session_order_created",
+      event_type: "omni_session_order_waiting_approval_created",
       sapo_order_id: result.response.order.id,
       sapo_order_code: result.response.order.code,
       sapo_order_url: orderUrl,
@@ -778,8 +592,9 @@ async function main() {
         customer_created: result.customerCreated,
         customer_id: result.customerRecord?.id || null,
         customer_name: result.customerRecord?.name || null,
-        estimated_service: result.service?.service_name || null,
-        estimated_fee: result.service?.final_fee || null,
+        created_order_status: result.response?.order?.status || null,
+        estimated_service: null,
+        estimated_fee: null,
         created_order_id: result.response?.order?.id || null,
         created_order_code: result.response?.order?.code || null,
         created_order_url: result.response?.order?.id
