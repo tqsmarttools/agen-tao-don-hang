@@ -6,7 +6,7 @@ const publicConfigPath = "../../data/phone-order-public-config.json";
 const aiQueueStorageKey = "tq-sapo-phone-order-ai-queue-v1";
 const aiInboxConfigStorageKey = "tq-sapo-phone-order-inbox-config-v1";
 const aiQueueSchema = "tq-sapo-phone-order-request-queue/v1";
-const publicDataVersion = "20260626b";
+const publicDataVersion = "20260626c";
 const localPendingEchoWindowMs = 10 * 60 * 1000;
 
 const fallbackCustomers = [];
@@ -692,7 +692,7 @@ function effectiveRequestStatus(request) {
 
 function effectiveRequestMessage(request) {
   const synced = state.aiStatuses.get(request.request_id);
-  return synced?.message || "";
+  return synced?.message || request?.message || request?.last_error || request?.execution_result?.operator_note || "";
 }
 
 function visibleQueueRequests() {
@@ -829,6 +829,8 @@ function renderQueue() {
     card.className = "selected-card";
     if (effectiveStatus === "created") {
       card.classList.add("queue-card-created");
+    } else if (effectiveStatus === "failed") {
+      card.classList.add("queue-card-failed");
     }
     card.innerHTML = `
       <div class="queue-card-top">
@@ -839,7 +841,7 @@ function renderQueue() {
       <div class="helper">${request.items.length} san pham - Tong ${request.order_total_including_shipping.toLocaleString("vi-VN")} VND</div>
       <div class="helper">${request.address.address_detail}, ${request.address.ward}, ${request.address.district}, ${request.address.province}</div>
       <div class="helper">Tao luc: ${new Date(request.requested_at).toLocaleString("vi-VN")}</div>
-      ${effectiveMessage ? `<div class="helper">${effectiveMessage}</div>` : ""}
+      ${effectiveMessage ? `<div class="helper ${effectiveStatus === "failed" ? "helper-error" : ""}">${effectiveMessage}</div>` : ""}
     `;
 
     queueItemsContainer.append(card);
