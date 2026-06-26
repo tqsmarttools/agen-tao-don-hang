@@ -692,7 +692,36 @@ function effectiveRequestStatus(request) {
 
 function effectiveRequestMessage(request) {
   const synced = state.aiStatuses.get(request.request_id);
-  return synced?.message || request?.message || request?.last_error || request?.execution_result?.operator_note || "";
+  const rawMessage =
+    synced?.message ||
+    request?.message ||
+    request?.last_error ||
+    request?.execution_result?.operator_note ||
+    "";
+  const status = effectiveRequestStatus(request);
+
+  if (status !== "failed") {
+    return rawMessage;
+  }
+
+  const normalized = normalizeAscii(rawMessage);
+  if (normalized.includes("401") || normalized.includes("unauthorized")) {
+    return "Can dang nhap lai Sapo tren may worker.";
+  }
+  if (normalized.includes("ghn estimate returned no service")) {
+    return "GHN chua tra ve dich vu phu hop.";
+  }
+  if (normalized.includes("could not resolve sapo city")) {
+    return "Khong doi chieu duoc tinh/thanh tren Sapo.";
+  }
+  if (normalized.includes("could not resolve sapo district")) {
+    return "Khong doi chieu duoc quan/huyen tren Sapo.";
+  }
+  if (normalized.includes("could not resolve sapo ward")) {
+    return "Khong doi chieu duoc phuong/xa tren Sapo.";
+  }
+
+  return "Tao don that bai, can kiem tra lai.";
 }
 
 function visibleQueueRequests() {

@@ -195,7 +195,8 @@ textarea {
 
 .helper-error {
   color: #b42318;
-  font-weight: 700;
+  font-style: italic;
+  font-weight: 400;
 }
 
 .suggestion-actions,
