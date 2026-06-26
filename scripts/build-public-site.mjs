@@ -11,6 +11,7 @@ const dashboardTargetDir = path.join(siteDir, "apps", "dashboard");
 const dataSourceDir = path.join(workspaceRoot, "data");
 const dataTargetDir = path.join(siteDir, "data");
 const phoneOrderConfigPath = path.join(dataSourceDir, "phone-order-config.json");
+const customerIndexPath = path.join(dataSourceDir, "customer-index.json");
 const defaultPublicInboxConfig = {
   inbox_url:
     "https://script.google.com/macros/s/AKfycbzy_wRA43K727aqBSdMALJScGHEjjlreExTBN-s5AJbxsUzPFvGca3X8XrMthQMVHU0/exec",
@@ -38,6 +39,10 @@ async function writePublicData() {
     provinces: [],
     districts: [],
     wards_by_district_id: {},
+  });
+  const customerIndex = await readJsonOrDefault(customerIndexPath, {
+    customers: [],
+    customer_count: 0,
   });
 
   const publicProductCatalog = {
@@ -89,8 +94,23 @@ async function writePublicData() {
   const publicCustomerIndex = {
     schema: "tq-customer-index/v1",
     exported_at: new Date().toISOString(),
-    customer_count: 0,
-    customers: [],
+    customer_count: customerIndex.customer_count || (customerIndex.customers || []).length,
+    customers: (customerIndex.customers || []).map((customer) => ({
+      phone: customer.phone,
+      customer_name: customer.customer_name,
+      order_count: customer.order_count || 0,
+      last_order_at: customer.last_order_at || "",
+      addresses: Array.isArray(customer.addresses)
+        ? customer.addresses.slice(0, 1).map((address) => ({
+            address_detail: address.address_detail || "",
+            ward: address.ward || "",
+            district: address.district || "",
+            province: address.province || "",
+            ward_code: address.ward_code || "",
+            district_id: address.district_id || null,
+          }))
+        : [],
+    })),
   };
 
   const publicStatus = {
